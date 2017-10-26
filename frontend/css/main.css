@@ -28,7 +28,7 @@
         min-height: 550px;
     }
     .signup-container{
-        min-height: 650px;
+        min-height: 700px;
     }
     .forgotpassword-container{
         min-height: 500px; 
@@ -72,14 +72,21 @@
     display: flex;
     flex-direction: column;
     }
-    .signup-data{
+    .signup-data, .newpassword-data{
     font-size: 1.5em;
-    margin: 10px 0;
     padding: 10px;
     padding-left: 20px;
     color:#0F3B75;
     }
-    #signup-submit, #forgotpassword-submit, #login-submit{
+    .signup-data{
+        margin: 10px 0;
+    }
+    #signup-password1{
+        margin-top: -20px;
+        margin-bottom: 30px;
+    }
+
+    #signup-submit, #newpassword-submit, #forgotpassword-submit, #login-submit{
     font-size: 1.5em;
     font-weight:bold;    
     margin: 0 auto;
@@ -99,6 +106,10 @@
     }
     #login-submit{
     width: 50%;
+    }
+    #newpassword-submit{
+        width: 20%;
+        margin-top: 30px;
     }
     #signup-signin, #login-signin {
     color: white;  
@@ -123,7 +134,7 @@
     #signup-signin a, #login-signin a, #signup-forgot a{
     color: white;  
     }
-    .signup-data:focus, .signup-data:hover{
+    .signup-data:focus, .signup-data:hover, .newpassword-data:focus, .newpassword-data:hover{
     border: 2px solid #0F3B75;
     box-shadow: 0 0 5px #fff;
     }
@@ -131,7 +142,7 @@
     border: none;
     box-shadow: none;
     }
-    #signup-submit:hover, #forgotpassword-submit:hover, #login-submit:hover{
+    #signup-submit:hover, #newpassword-submit:hover, #newpassword-submit:focus, #forgotpassword-submit:hover, #login-submit:hover{
     background-color: #0F3B75;
     color: #fff;
     }
@@ -144,6 +155,9 @@
     color: #0F3B75;
     font-size:1.6em;
     align-self: flex-end;            
+    }
+    #newpassword-eye{
+        top: -30px;
     }
     @media screen and (max-width:500px){
     #signup-submit{
@@ -158,7 +172,7 @@
     margin-right: 0;
     max-width:100%;
     }
-    #forgotpassword-submit{
+    #forgotpassword-submit, #newpassword-submit{
     display: block;
     text-align:center;
     width: 35%;    
@@ -168,10 +182,16 @@
         max-width:100%;
     }
     }
-    .forgotpassword-innerform p {
+    .email-good{
+        font-size: 2em;
+        color: greenyellow;
+    }
+
+    .forgotpassword-text {
     font-size: 1.5em;
     text-align: center;
 }
+<<<<<<< HEAD
 
 /* These rules are for the location listing and paybills pages by drumzminister*/
 
@@ -219,3 +239,72 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 /*Next user should start on the next line*/
+=======
+.container.DailyTransaction{
+	border: solid 2px #0F3B75 ;
+}
+.row.DailyTransaction{
+	margin-left: 8%;
+	margin-right: 10%;
+	border-radius: 30px;
+	padding-right: -10px;
+}
+.DailyTransaction-trans{
+	color: #fff;
+	background-color: #0F3B75;
+}
+.transaction.DailyTransaction1{
+	text-align: right;
+	color: #fff;
+	background-color: #0F3B75;
+	margin-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px ;
+	font-size: 20px;
+
+}
+button{background-color: #fff;
+		border-width:  2px ;
+}
+.btn.btn-lg.active{
+	background-color: #0F3B75;
+	color: #fff;
+}
+.btn.btn-lg{
+	border: solid 2px #0F3B75 ;
+	border-radius: 21px;
+	color: #0F3B75;
+}
+
+.DailyTransaction2{
+	border: solid 1px #0F3B75;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-right: 5%;
+}
+.paid.DailyTransaction3{
+	text-align: right;
+	font-size: 20px;
+	color: #0F3B75;
+}
+.amount.DailyTransaction3{
+	color: #0F3B75;
+	font-size: 20px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.amount.DailyTransaction4{
+	color: #0F3B75;
+	font-size: 20px;
+}
+.end.DailyTransaction3{
+	text-align: right;
+	color: #0F3B75;
+}
+#month{
+	padding-right: -5px;
+}
+/*
+-----------------------------------------------------------------------------------------------------------------------
+Next user should start on the next line*/
+>>>>>>> c7d3606544bc35cc3073e5d893176993e4f3342b
