@@ -1,3 +1,10 @@
+/* These rules are universal*/
+.body{
+    font-family: Lato, sans-serif;
+}
+/* These rules are universal stops here*/
+/*--------------------------------------------------------------------------
+--------------------------------------------------------------------------*/
 /* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
 .signup-body{
     font-size: 100%;
@@ -165,6 +172,50 @@
     font-size: 1.5em;
     text-align: center;
 }
-/*
+
+/* These rules are for the location listing and paybills pages by drumzminister*/
+
+.profile-borderColour{
+    border: 2px #0F3B75 solid;
+}
+.profile-boxColour{
+    background: #0F3B75;
+    color: white;
+    margin-bottom: 3%;
+    padding:1%;
+}
+.profile-box2{
+    box-shadow: 1px 2px 3px #676A6D;
+    border-radius:5px;
+    margin: 0 auto;
+    font-weight:bold;
+    padding: .3%;
+}
+.profile-box3{
+    box-shadow: 1px 2px 3px #676A6D;
+    border-radius:5px;
+    margin: 0 auto;
+    font-weight:bold;
+    padding: .3%;
+}
+
+.profile-margin{
+    margin-bottom: 2%;
+}
+.profile-static{
+    margin-top: 5%;
+}
+.profile-rower{
+    margin:3%;
+}
+.paybills-margin{
+    margin-top: 15%;
+}
+.paybills-margin2{
+    margin-top: 7%;
+    margin-bottom: 10%;
+}
+
 -----------------------------------------------------------------------------------------------------------------------
-Next user should start on the next line*/
+
+/*Next user should start on the next line*/
