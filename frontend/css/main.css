@@ -195,7 +195,7 @@
 /* These rules are for the location listing and paybills pages by drumzminister*/
 
 .profile-borderColor{
-    border: 2px #0F3B75 solid;
+    border: 2px  solid #0F3B75;
 }
 .profile-boxColour{
     background: #0F3B75;
