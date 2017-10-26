@@ -234,6 +234,18 @@
     margin-top: 7%;
     margin-bottom: 10%;
 }
+.daily-active{
+    background:#0F3B75;
+    border-radius: 20px;
+    color:white;
+}
+.daily-inactive{
+    border: 2px #0F3B75 solid;
+    border-radius: 20px;
+    color:#0F3B75;
+}
+
+
 
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -305,7 +317,84 @@ button{background-color: #fff;
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/
+.paymentsuccessful-rectangle{
+	height:500px;
+	border:3px solid #0F3B75;
+    margin-top: 120px;
+    text-align: center;
+}
 
+.paymentsuccessful-text-center{
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 24px;
+    color: #0F3B75;
+    margin-top:-120px;
+}
 
+.paymentsuccessful-circle{
+	margin-left: 20px;
+    margin-top: 100px;
+}
+/*
+-----------------------------------------------------------------------------------------------------------------------
+Next user should start on the next line*/
+.otp-rectangle-box{
+	height:550px;
+	border:3px solid #0F3B75;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.otp-text{
+    font-family: Lato;
+    font-weight: bold;
+    color: #0F3B75;
+    margin-top:100px;
+}
+.otp-p{
+    font-size: 13px;
+    padding-bottom: 20px; 
+}
+.otp-textbox{
+    border:1.5px solid #0F3B75;
+    height: 40px;
+}
+
+.otp-button{
+    background-color: #0F3B75;
+    color:white;
+    border-radius:20px;
+    font-family: Lato;
+    font-size: medium;
+    font-weight: bold;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    margin-top:20px;
+}
+.otp-button:hover{
+    background-color: #104790;
+    color:white;
+}
+.otp-resend{
+    margin: 60px;
+}
+.otp-resend p {
+    color:#0F3B75;
+    font-weight: bold;
+}
+.otp-resend button {
+    border: 1.5px solid #0F3B75;
+    color: #0F3B75;
+    font-weight: bold;
+    font-size: medium;
+    width: 250px;
+    height: 50px;
+}
+/*
+-----------------------------------------------------------------------------------------------------------------------
+Next user should start on the next line*/
 
 
