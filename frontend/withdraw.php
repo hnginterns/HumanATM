@@ -56,9 +56,9 @@
                                     <label for="location">LOCATION</label>
                                     <input type="text" name="payment-location" id="" class="withdraw-data" placeholder="NO 3 BARREL STRT YABA">
                                 </div>
-                                <div class="form-group">
-                                    <label for="time">DELIVERY TIME</label>                                    
-                                    <input type="text" name="payment-time" class="withdraw-data"id="" placeholder="15 minutes">
+                                <div class="form-group" style="font-weight:bold">
+                                    <p>DELIVERY TIME</p>                                    
+                                    <p class="withdraw-data" id="">15 minutes</p>
                                 </div>
                                 <div class="">              
                                     <p id='withdraw-delivery'>
