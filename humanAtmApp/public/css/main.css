@@ -1,0 +1,347 @@
+/* These rules are universal*/
+.body{
+    font-family: Lato, sans-serif;
+}
+/* These rules are universal stops here*/
+/*--------------------------------------------------------------------------
+--------------------------------------------------------------------------*/
+/* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
+.signup-body{
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: Lato, sans-serif;
+    }
+    .signup-container, .forgotpassword-container, .login-container{
+    display:-webkit-flex;
+    display:flex;
+    max-width: 760px;    
+    margin: auto;
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    left:0;
+    right:0;
+    background-color:#0F3B75;
+    color: #fff;
+    }
+    .login-container{
+        min-height: 550px;
+    }
+    .signup-container{
+        min-height: 700px;
+    }
+    .forgotpassword-container{
+        min-height: 500px; 
+    }
+    .signup-content{
+    position: absolute;
+    top: 50px;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    width:90%;
+    margin:0 auto;
+    }
+    .signup-header{
+    text-align: center;
+    }
+    .signup-h1{
+    max-width: 157px;
+    margin: auto;
+    text-align: left;
+    height: auto;
+    }
+    #signup-head{
+    margin-top: 15px;
+    margin-bottom:0;
+    font-size: 3em;
+    height: 33px;
+    }
+    #signup-p{
+    font-variant: small-caps;
+    font-size: 0.8em;
+    padding-left: 0.2em;            
+    }
+    .signup-form{
+    margin-top: 20px;
+    }
+    .forgotpassword-form{
+    margin-top: 30px;
+    }
+    .signup-innerform, .forgotpassword-innerform{
+    display: flex;
+    flex-direction: column;
+    }
+    .signup-data, .newpassword-data{
+    font-size: 1.5em;
+    padding: 10px;
+    padding-left: 20px;
+    color:#0F3B75;
+    }
+    .signup-data{
+        margin: 10px 0;
+    }
+    #signup-password1{
+        margin-top: -20px;
+        margin-bottom: 30px;
+    }
+
+    #signup-submit, #newpassword-submit, #forgotpassword-submit, #login-submit{
+    font-size: 1.5em;
+    font-weight:bold;    
+    margin: 0 auto;
+    color:#0F3B75;
+    padding:8px 3px;
+    padding-right:3px;
+    text-align:center;
+    -webkit-transition: background-color 1s; /* Safari */
+    transition: background-color 1s;
+    }
+    #signup-submit{
+    width: 60%;
+    }
+    #forgotpassword-submit{
+    width: 20%;
+    margin-top: 20px;
+    }
+    #login-submit{
+    width: 50%;
+    }
+    #newpassword-submit{
+        width: 20%;
+        margin-top: 30px;
+    }
+    #signup-signin, #login-signin {
+    color: white;  
+    font-size: 1.2em;
+    text-align:right;
+    margin-top: 10px;
+    margin-right: 130px;
+    }
+    #signup-signin{
+    max-width: 80%;
+    }
+    #login-signin{
+    max-width:75%;
+    }
+    #signup-forgot{
+    color: white;  
+    font-size: 1.2em;
+    text-align:right;
+    position: relative;
+    top: -30px;
+    }
+    #signup-signin a, #login-signin a, #signup-forgot a{
+    color: white;  
+    }
+    .signup-data:focus, .signup-data:hover, .newpassword-data:focus, .newpassword-data:hover{
+    border: 2px solid #0F3B75;
+    box-shadow: 0 0 5px #fff;
+    }
+    #signup-submit:focus, #forgotpassword-submit:focus, #login-submit:focus{
+    border: none;
+    box-shadow: none;
+    }
+    #signup-submit:hover, #newpassword-submit:hover, #newpassword-submit:focus, #forgotpassword-submit:hover, #login-submit:hover{
+    background-color: #0F3B75;
+    color: #fff;
+    }
+    .signup-eye{
+    position: relative;
+    text-align:right;
+    margin-right: 30px;
+    top: -40px;
+    width:10%;
+    color: #0F3B75;
+    font-size:1.6em;
+    align-self: flex-end;            
+    }
+    #newpassword-eye{
+        top: -30px;
+    }
+    @media screen and (max-width:500px){
+    #signup-submit{
+        font-size:1.3em;
+    }
+    #login-span, #login-span1{
+        display: block;
+        text-align:center;
+        width: 100%;    
+    }
+    #signup-signin{
+    margin-right: 0;
+    max-width:100%;
+    }
+    #forgotpassword-submit, #newpassword-submit{
+    display: block;
+    text-align:center;
+    width: 35%;    
+    }
+    #login-signin{
+        margin-right: 0;
+        max-width:100%;
+    }
+    }
+    .email-good{
+        font-size: 2em;
+        color: greenyellow;
+    }
+
+    .forgotpassword-text {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* These rules are for the location listing, transaction pages, user profile, payment successful and paybills pages by drumzminister*/
+
+.profile-borderColor{
+    border: 2px  solid #0F3B75;
+}
+.profile-boxColour{
+    background: #0F3B75;
+    color: white;
+    margin-bottom: 3%;
+    padding:1%;
+}
+.profile-box2{
+    box-shadow: 1px 2px 3px #676A6D;
+    border-radius:5px;
+    margin: 0 auto;
+    font-weight:bold;
+    padding: .3%;
+}
+.profile-box3{
+    box-shadow: 1px 2px 3px #676A6D;
+    border-radius:5px;
+    margin: 0 auto;
+    font-weight:bold;
+    padding: .3%;
+}
+
+.profile-margin{
+    margin-bottom: 2%;
+}
+.profile-static{
+    margin-top: 5%;
+}
+.profile-rower{
+    margin:3%;
+}
+.paybills-margin{
+    margin-top: 15%;
+}
+.paybills-margin2{
+    margin-top: 7%;
+    margin-bottom: 10%;
+}
+.daily-active{
+    border: 2px #0F3B75 solid;
+    background:#0F3B75;
+    border-radius: 20px;
+    color:white;
+}
+.daily-inactive{
+    border: 2px #0F3B75 solid;
+    border-radius: 20px;
+}
+.daily-margin{
+    margin-top:3%;
+}
+.daily-borderColor{
+    border: 2px  solid #0F3B75;
+    box-shadow: 1px 3px 10px #08111D;
+    color: #0F3B75;
+    margin-bottom: 5%;
+}
+.userpage-shadow{
+    box-shadow: 0 1px 15px #0F3B75;
+    border-radius: 10px;
+}
+.userpage-inactive{
+    border: 2px #0F3B75 solid;
+    border-radius: 20px;
+}
+.userpage-margin{
+    margin-top: 7%;
+}
+.userpage-image{
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    border: 2px #0F3B75 solid;
+}
+.userpage-mar h3{
+    font-size: 1.6em;
+}
+.userpage-bottom{
+    margin-bottom: 5%;
+}
+.payment-margin{
+    margin-top: 15%;
+}
+.payment-margin2{
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+/*
+-----------------------------------------------------------------------------------------------------------------------
+Next user should start on the next line*/
+.otp-rectangle-box{
+	height:550px;
+	border:3px solid #0F3B75;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.otp-text{
+    font-family: Lato;
+    font-weight: bold;
+    color: #0F3B75;
+    margin-top:100px;
+}
+.otp-p{
+    font-size: 13px;
+    padding-bottom: 20px; 
+}
+.otp-textbox{
+    border:1.5px solid #0F3B75;
+    height: 40px;
+}
+
+.otp-button{
+    background-color: #0F3B75;
+    color:white;
+    border-radius:20px;
+    font-family: Lato;
+    font-size: medium;
+    font-weight: bold;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    margin-top:20px;
+}
+.otp-button:hover{
+    background-color: #104790;
+    color:white;
+}
+.otp-resend{
+    margin: 60px;
+}
+.otp-resend p {
+    color:#0F3B75;
+    font-weight: bold;
+}
+.otp-resend button {
+    border: 1.5px solid #0F3B75;
+    color: #0F3B75;
+    font-weight: bold;
+    font-size: medium;
+    width: 250px;
+    height: 50px;
+}
+/*
+-----------------------------------------------------------------------------------------------------------------------
+Next user should start on the next line*/
+
