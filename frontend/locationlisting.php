@@ -6,11 +6,13 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <title> Profile | HumanATM</title>
+        <title> Location | HumanATM</title>
     </head>
    
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid daily-margin">
+            <!-- header -->
+            <?php include"header.php"; ?>
             <div class="row profile-rower">
                     <div class="col-md-8 col-md-offset-2 profile-borderColor">
                         <div class="row">
