@@ -235,6 +235,7 @@
     margin-bottom: 10%;
 }
 .daily-active{
+    border: 2px #0F3B75 solid;
     background:#0F3B75;
     border-radius: 20px;
     color:white;
@@ -242,7 +243,15 @@
 .daily-inactive{
     border: 2px #0F3B75 solid;
     border-radius: 20px;
-    color:#0F3B75;
+}
+.daily-margin{
+    margin-top:3%;
+}
+.daily-borderColor{
+    border: 2px  solid #0F3B75;
+    box-shadow: 1px 3px 10px #08111D;
+    color: #0F3B75;
+    margin-bottom: 5%;
 }
 
 
