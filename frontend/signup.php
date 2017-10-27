@@ -22,7 +22,7 @@
 <body class='signup-body'>
     
     <section>
-        
+        <?php include('header.php') ?>
     </section>
     <section id='' class='signup-container'>
         <div class = "container signup-content">

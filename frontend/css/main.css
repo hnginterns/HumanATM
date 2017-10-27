@@ -1,16 +1,15 @@
 /* These rules are universal*/
 .body{
     font-family: Lato, sans-serif;
+    box-sizing: border-box;
 }
 /* These rules are universal stops here*/
 /*--------------------------------------------------------------------------
 --------------------------------------------------------------------------*/
 /* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
 .signup-body{
-    font-size: 100%;
-    box-sizing: border-box;
-    font-family: Lato, sans-serif;
-    }
+    font-size: 100%;}
+
     .signup-container, .forgotpassword-container, .login-container{
     display:-webkit-flex;
     display:flex;
@@ -368,6 +367,197 @@ Next user should start on the next line*/
     width: 250px;
     height: 50px;
 }
+/*This css rules are for the profile, withdraw and payment pages by jeni*/
+.profile-container{
+    display:block;
+    max-width: 720px;
+    min-height:auto;
+    margin: auto;
+    position: relative;
+    border: 3px solid #0F3B75;
+    top: 70px;
+    bottom: 0px;
+    left:0;
+    right:0;
+    color: #0F3B75;
+}
+.profile-content{
+    margin-bottom: 100px;
+}
+.withdraw-content{
+    margin-bottom: 50px;
+}
+.profile-request p{
+    background-color: #0F3B75;
+    color: white;
+    text-align: right;
+    margin: 0;
+    padding: 15px;
+    padding-right: 20px;
+    font-size: 1.4em;
+}
+.profile-menu {
+    margin: 40px auto;
+    text-align: center;
+    display:inline;
+}
+.profile-menu button {
+    display: inline-block;
+    border: 2px solid #0F3B75;
+    padding: 10px;
+    font-size: 1.4em;
+    width: 170px;
+    height: 40px;
+    margin: 15px;
+    text-align: center;
+    background-color: white;
+}
+.profile-menu button.active {
+    background-color: #0F3B75;
+    color: white;            
+}
+.profile-image{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    text-align: center;
+    background-color:#0F3B75;
+    margin: 50px auto;
+}
+.profile-info{
+    width: 80%;
+    margin: 30px auto;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+.withdraw-info{
+    width: 80%;
+    margin-top: 70px;
+    margin: 30px auto;
+    font-size: 1.25em;
+}
+.profile-2 {
+    border-bottom: 2px solid #0F3B75;
+    padding: 3px 0;
+}
+.profile-data{
+    margin-top: 50px;
+}
+.profile-data p{
+    margin: 3px 0;
+    text-decoration: none;
+}
+.profile-supermenu{
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+.profile-innerform{
+    margin-top: 50px;
+}
+.withdraw-data{
+    display:block;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #0f3b75;
+    font-size: 1.1em;
+    color:#0F3B75; 
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+.withdraw-submit{
+    display: block;
+    font-size: 1.3em;
+    font-weight:bold;
+    width: 50%;
+    margin: 20px auto;       
+    padding:8px 3px;
+    padding-right:3px;
+    border: 2px solid #0f3b75;
+    text-align:center;
+    -webkit-transition: background-color 1s; /* Safari */
+    transition: background-color 1s;
+}
+#payment-submit{
+    margin-top: 0;
+    color: white;
+    background-color:#0F3B75;
+}
+#withdraw-submit{
+    margin-top: 50px;
+    color: white;
+    background-color:#0F3B75;
+}
+#withdraw-submit1{
+    margin-bottom: 0;
+    background-color: white;
+    color:#0F3B75;
+}
+#withdraw-delivery, #payment-delivery {
+    color: #0f3b75;  
+    font-size: 1em;
+    margin: auto;
+    margin-top: 0;
+    width:50%;
+    font-weight: bold;
+    word-spacing: 80px;            
+    padding: 10px;
+    padding-top: 0;
+}
+#payment-delivery{
+    margin-top: 50px;    
+    text-align: center;
+}
+input.withdraw-data:focus, input.withdraw-data:hover{
+    box-shadow: none !important;
+    border-color: #0F3B75 !important;
+    outline: none !important;
+}
+#withdraw-submit:focus, #payment-submit:focus, #withdraw-submit1:focus{
+    border: none;
+    box-shadow: none;
+}
+#withdraw-submit:hover, #payment-submit:hover{
+    background-color: #fff;
+    color: #0F3B75;
+    border: 2px solid #0F3B75
+}
+#withdraw-submit1:hover{
+    background-color: #0F3B75;
+    color: #fff;
+}
+@media screen and (max-width:500px){
+    #withdraw-submit, #withdraw-submit1, #payment-submit{
+        font-size:1.3em;
+        width: 90%;
+    }
+    #withdraw-span, #withdraw-span1{
+        display: inline;
+        text-align:center;          
+    }
+    #payment-span1{
+        display: block;
+        text-align:center;
+        width: 100%;    
+    }
+    #withdraw-delivery{
+        width: 100%;
+        word-spacing: 0;
+        text-align: center;
+    }
+    #payment-delivery{
+    max-width:100%;
+    }
+}
+.withdraw-label{
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/
