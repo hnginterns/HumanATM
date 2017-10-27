@@ -192,7 +192,7 @@
     text-align: center;
 }
 
-/* These rules are for the location listing and paybills pages by drumzminister*/
+/* These rules are for the location listing, transaction pages, user profile and paybills pages by drumzminister*/
 
 .profile-borderColor{
     border: 2px  solid #0F3B75;
@@ -253,75 +253,28 @@
     color: #0F3B75;
     margin-bottom: 5%;
 }
-
-
-
------------------------------------------------------------------------------------------------------------------------
-
-/*Next user should start on the next line*/
-.container.DailyTransaction{
-	border: solid 2px #0F3B75 ;
+.userpage-shadow{
+    box-shadow: 0 1px 15px #0F3B75;
+    border-radius: 10px;
 }
-.row.DailyTransaction{
-	margin-left: 8%;
-	margin-right: 10%;
-	border-radius: 30px;
-	padding-right: -10px;
+.userpage-inactive{
+    border: 2px #0F3B75 solid;
+    border-radius: 20px;
 }
-.DailyTransaction-trans{
-	color: #fff;
-	background-color: #0F3B75;
+.userpage-margin{
+    margin-top: 7%;
 }
-.transaction.DailyTransaction1{
-	text-align: right;
-	color: #fff;
-	background-color: #0F3B75;
-	margin-right: 30px;
-	padding-top: 20px;
-	padding-bottom: 20px ;
-	font-size: 20px;
-
+.userpage-image{
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    border: 2px #0F3B75 solid;
 }
-button{background-color: #fff;
-		border-width:  2px ;
+.userpage-mar h3{
+    font-size: 1.6em;
 }
-.btn.btn-lg.active{
-	background-color: #0F3B75;
-	color: #fff;
-}
-.btn.btn-lg{
-	border: solid 2px #0F3B75 ;
-	border-radius: 21px;
-	color: #0F3B75;
-}
-
-.DailyTransaction2{
-	border: solid 1px #0F3B75;
-	margin-top: 40px;
-	margin-bottom: 40px;
-	margin-right: 5%;
-}
-.paid.DailyTransaction3{
-	text-align: right;
-	font-size: 20px;
-	color: #0F3B75;
-}
-.amount.DailyTransaction3{
-	color: #0F3B75;
-	font-size: 20px;
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
-.amount.DailyTransaction4{
-	color: #0F3B75;
-	font-size: 20px;
-}
-.end.DailyTransaction3{
-	text-align: right;
-	color: #0F3B75;
-}
-#month{
-	padding-right: -5px;
+.userpage-bottom{
+    margin-bottom: 5%;
 }
 /*
 -----------------------------------------------------------------------------------------------------------------------
