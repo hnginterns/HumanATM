@@ -18,95 +18,12 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <style>
-    .profile-body{
-            font-size: 100%;
-            box-sizing: border-box;
-            font-family: Lato, sans-serif;
-        }
-        .profile-container{
-            display:block;
-            max-width: 720px;
-            min-height:auto;
-            margin: auto;
-            position: relative;
-            border: 3px solid #0F3B75;
-            top: 70px;
-            bottom: 0px;
-            left:0;
-            right:0;
-            color: #0F3B75;
-        }
-        .profile-content{
-            position: relative;
-            top: 0;
-            bottom: 30px;
-            left: 0;
-            right: 0;
-            width:100%;
-            margin-bottom: 100px;
-        }
-        .profile-request p{
-            background-color: #0F3B75;
-            color: white;
-            text-align: right;
-            margin: 0;
-            padding: 15px;
-            padding-right: 20px;
-            font-size: 1.3em;
-        }
-        .profile-menu {
-            margin: 40px auto;
-            text-align: center;
-            display:inline;
-        }
-        .profile-menu button {
-            display: inline-block;
-            border: 2px solid #0F3B75;
-            padding: 10px;
-            font-size: 1.3em;
-            width: 160px;
-            height: 40px;
-            margin: 15px;
-            text-align: center;
-            background-color: white;
-        }
-        .profile-menu button.active {
-            background-color: #0F3B75;
-            color: white;            
-        }
-        .profile-image{
-            height: 140px;
-            width: 140px;
-            border-radius: 50%;
-            text-align: center;
-            background-color:#0F3B75;
-            margin: 50px auto;
-        }
-        .profile-info{
-            width: 80%;
-            margin: 30px auto;
-            font-size: 1.4em;
-            font-weight: 600;
-        }
-        .profile-2 {
-            border-bottom: 2px solid #0F3B75;
-            padding: 3px 0;
-        }
-        .profile-data{
-            margin-top: 50px;
-        }
-        .profile-data p{
-            margin: 3px 0;
-            text-decoration: none;
-        }
-        .profile-supermenu{
-            width: 90%;
-            margin: 20px auto;
-            text-align: center;
-        }
-        
+    
 </style>
-<body class="profile-body">
+<body class="signup-body">
+    <section>
+        <?php include('header.php') ?>
+    </section>
     <section class="container">
         <div class="profile-container">
                 <div class="profile-content">
