@@ -8,7 +8,9 @@
 
 </head>
 <body>
-    <div class="container">
+        <div class="container-fluid daily-margin">
+                <!-- header -->
+                <?php include"header.php"; ?>
         <div class="row">
             <div class="col-sm-offset-3 col-sm-6 otp-rectangle-box" >
                 <div class="otp-text">

@@ -10,6 +10,8 @@
     </head>
     <body>
        <div class="container-fluid">
+                    <!-- header -->
+                    <?php include"header.php"; ?>
             <div class="row profile-rower">
                     <div class="col-md-8 col-md-offset-2 userpage-shadow">
                         <div class="row userpage-margin">

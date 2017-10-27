@@ -192,7 +192,7 @@
     text-align: center;
 }
 
-/* These rules are for the location listing, transaction pages, user profile and paybills pages by drumzminister*/
+/* These rules are for the location listing, transaction pages, user profile, payment successful and paybills pages by drumzminister*/
 
 .profile-borderColor{
     border: 2px  solid #0F3B75;
@@ -276,28 +276,14 @@
 .userpage-bottom{
     margin-bottom: 5%;
 }
-/*
------------------------------------------------------------------------------------------------------------------------
-Next user should start on the next line*/
-.paymentsuccessful-rectangle{
-	height:500px;
-	border:3px solid #0F3B75;
-    margin-top: 120px;
-    text-align: center;
+.payment-margin{
+    margin-top: 15%;
+}
+.payment-margin2{
+    margin-top: 15%;
+    margin-bottom: 10%;
 }
 
-.paymentsuccessful-text-center{
-    font-family: Lato;
-    font-weight: bold;
-    font-size: 24px;
-    color: #0F3B75;
-    margin-top:-120px;
-}
-
-.paymentsuccessful-circle{
-	margin-left: 20px;
-    margin-top: 100px;
-}
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/
@@ -358,5 +344,4 @@ Next user should start on the next line*/
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/
-
 
