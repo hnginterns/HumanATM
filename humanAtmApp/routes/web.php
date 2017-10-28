@@ -14,6 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/human-atm', function () {
+    return view('human-atm-profile');
+});
+Route::get('/location', function () {
+    return view('locationlisting');
+});
 
 Auth::routes();
 
