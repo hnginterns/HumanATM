@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -32,7 +32,7 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="HumanATMNavbar">
-                <ul class="nav navbar-nav navbar-right" id="header-color" >
+                <ul class="nav navbar-nav navbar-right" id="header-color2" >
                     <li class="active"><a href="#">WALLET</a></li>
                     <li><a href="dailytransaction.php">TRANSACTIONS</a></li>
                     <li><a href="#">PAY BILLS</a></li>

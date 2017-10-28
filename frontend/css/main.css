@@ -760,5 +760,32 @@ Next user should start on the next line*/
     font-weight: bold;
     color:#ffffff;
 }
------------------------------------------------------------------------------------------------------------------------
-Next user should start on the next line*/
+/* rules for other pages header and footer*/
+
+#header-color2 > li > a{
+    color:#0F3B75;
+    font-weight: bold;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,.navbar-nav > li > a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    border-radius:0px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: #0F3B75;
+    color: #0F3B75;
+    background-color: transparent !important;
+}
+.navbar-nav > li > a{
+    border-radius:0px;
+}
+.navbar-header .hamburger {
+    background-color: #ffffff;
+}
+.navbar-header .hamburger > span {
+    background-color: #0F3B75;
+}
+.navbar-header{
+    background-color: #0F3B75;
+}
