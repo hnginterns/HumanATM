@@ -635,8 +635,120 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     padding-right: 15px;
 }
 
+/* Edit user  */
+.editusertext-blue{
+    color: #0F3B75;
+    font-weight: bold;
+    font-size: 1.3em;
+}
 
+.edituser-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;    
+    background-color: #0F3B75;
+    border: 2px #0F3B75 solid;
+}
+
+.edituserpage-shadow{
+    box-shadow: 0 1px 15px #0F3B75;
+    border-radius: 10px;
+    margin-top:5%;
+}
+
+.edituserpage-margin1{
+    margin-top: 3%;
+}
+
+.edituserpage-margin{
+    margin-top: 0 !important;
+    margin-bottom: 10%;
+}
+
+.edituserpage-form{
+    box-sizing: border-box;
+    margin-bottom: 5%;
+    padding: 10px;
+    border-radius: 0 !important;
+}
+
+.edituserpage-btn{
+    box-sizing: border-box;
+    padding:5px 45px;
+    border-radius: 0 !important;   
+    font-size: 0.8em; 
+    border: 0;
+}
+
+.edituserpage-btn.blue{
+    box-sizing: border-box;
+    padding:5px 45px;
+    border-radius: 0 !important;  
+    background-color: #0F3B75;
+    color: #ffffff;  
+}
+
+.edituserpage-btn.white{
+    box-sizing: border-box;
+    padding:5px 45px;
+    border-radius: 0 !important;  
+    background-color: #E1E1E1;
+    color: #ffffff;  
+}
+
+@media(min-width : 760px){
+    .edituserpage-btn{
+        box-sizing: border-box;
+        padding:10px 35px;
+        border-radius: 0 !important;   
+        font-size: 0.8em; 
+        border: 0;
+    }
+    
+    .edituserpage-btn.blue{
+        box-sizing: border-box;
+        padding:10px 35px;
+        border-radius: 0 !important;  
+        background-color: #0F3B75;
+        color: #ffffff;  
+    }
+    
+    .edituserpage-btn.white{
+        box-sizing: border-box;
+        padding:10px 35px;
+        border-radius: 0 !important;  
+        background-color: #E1E1E1;
+        color: #ffffff;  
+    }
+}
+
+@media (max-width : 760px) {    
+.edituserpage-btn{
+    box-sizing: border-box;
+    padding:5px 15px;
+    border-radius: 0 !important;   
+    font-size: 0.7em; 
+    border: 0;
+    margin-right: 10px;
+}
+.edituserpage-btn.white{
+    box-sizing: border-box;
+    padding:5px 10px;
+    border-radius: 0 !important;  
+    background-color: #E1E1E1;
+    color: #ffffff; 
+    
+} 
+
+.edituserpage-btn.blue{
+    box-sizing: border-box;
+    padding:5px 10px;
+    border-radius: 0 !important;  
+    background-color: #0F3B75;
+    color: #ffffff;  
+    margin-left: 30px;    
+}
+}
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/
-
