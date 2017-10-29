@@ -1,25 +1,12 @@
-{{-- <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <title> Monthly Transaction | HumanATM</title>
-    </head> --}}
-     @extends('layouts.app')
+@extends('layouts.app')
 
-       @section('title')
-        <title> Monthly Transaction | HumanATM</title>
-       @endsection
+    @section('title')
+    <title> Monthly Transaction | HumanATM</title>
+    @endsection
 
-       @section('content')
-   
-    <body>
+    @section('content')
+
         <div class="container-fluid daily-margin">
-             <!-- header -->
-             @include('heder')
             <div class="row profile-rower">
                     <div class="col-md-8 col-md-offset-2 profile-borderColor">
                         <div class="row">
@@ -29,15 +16,15 @@
                         </div>
                         <div class="row paybills-margin2">
                             <div class="col-md-2 col-md-offset-2 text-center daily-inactive">
-                                <h4><a href="dailytransaction.php"><span style="color:#0F3B75;"><strong>Today</strong></span></a></h4>
+                                <h4><a href="dailytransaction"><span style="color:#0F3B75;"><strong>Today</strong></span></a></h4>
                                    
                             </div>
                             <div class="col-md-2 col-md-offset-1 text-center daily-inactive">
-                                <h4><a href="weeklytransaction.php"><span style="color:#0F3B75;"><strong>Week</strong></span></a></h4>
+                                <h4><a href="weeklytransaction"><span style="color:#0F3B75;"><strong>Week</strong></span></a></h4>
                                    
                             </div>
                             <div class="col-md-2 col-md-offset-1 text-center daily-active">
-                                <h4><a href="monthlytransaction.php"><span style="color:white"><strong>Month</strong></span></a></h4>
+                                <h4><a href="monthlytransaction"><span style="color:white"><strong>Month</strong></span></a></h4>
                                    
                             </div>
                             
@@ -117,7 +104,5 @@
             </div>
 
         </div>
-           
-    </body>
     @endsection
     

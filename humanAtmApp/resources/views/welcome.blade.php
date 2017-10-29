@@ -31,10 +31,10 @@
         </div>
         <div class="collapse navbar-collapse" id="HumanATMNavbar">
             <ul class="nav navbar-nav navbar-right" id="header-color" >
-                <li><a href="#">WALLET</a></li>
+                <li><a href="/wallet">WALLET</a></li>
                 <li><a href="#">TRANSACTIONS</a></li>
-                <li><a href="#">PAY BILLS</a></li>
-                <li><a href="#" >INVITE FRIENDS</a></li>
+                <li><a href="/paybills">PAY BILLS</a></li>
+                <li><a href="/invite" >INVITE FRIENDS</a></li>
             </ul>
         </div>
     </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="row">
                     <div class="col-xs-6 col-xs-offset-1 col-md-4 col-md-offset-1">
-                        <button class="btn btn-block btn-primary header-mar"> INVITE FRIENDS</button>
+                        <a href="/invite" class="btn btn-block btn-primary header-mar"> INVITE FRIENDS</a>
                     </div>
             </div>
             <div class="row daily-margin">

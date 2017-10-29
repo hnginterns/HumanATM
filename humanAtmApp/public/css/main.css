@@ -44,7 +44,7 @@
     }
     #signup-head{
     margin-top: 15px;
-    margin-bottom:0;
+     margin-bottom: 0; 
     font-size: 3em;
     height: 33px;
     }
@@ -223,7 +223,7 @@
     margin-top:3%;
 }
 .daily-borderColor{
-    border: 2px  solid #0F3B75;
+    /* border: 2px  solid #0F3B75; */
     box-shadow: 1px 3px 10px #08111D;
     color: #0F3B75;
     margin-bottom: 5%;

@@ -1,23 +1,12 @@
-{{-- <!DOCTYPE html>
-<html>
-<head>
-	<title>Payment Successful Page</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<link rel="stylesheet"  href="css/main.css">
+@extends('layouts.app')
 
-    </head> --}}
-     @extends('layouts.app')
+    @section('title')
+        <title> Payment Successful | HumanATM</title>
+    @endsection
 
-       @section('title')
-        <title> Payment Successful Page | HumanATM</title>
-       @endsection
+    @section('content')
 
-       @section('content')
-    <body>
         <div class="container-fluid daily-margin">
-                <!-- header -->
-                 @include('header') 
                     <div class="row profile-rower">
                          <div class="col-md-8 col-md-offset-2 profile-borderColor daily-margin">
                               <div class="row">
@@ -38,7 +27,6 @@
         
         </div>
 
-    </body>
 @endsection
 
 

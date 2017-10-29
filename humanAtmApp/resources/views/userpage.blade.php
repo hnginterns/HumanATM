@@ -1,16 +1,11 @@
+@extends('layouts.app')
 
-     @extends('layouts.app')
-
-       @section('title')
+    @section('title')
         <title> User Profile | HumanATM</title>
-       @endsection
+    @endsection
 
-       @section('content')
-    <body>
-       <div class="container-fluid">
-                    <!-- header -->
-                    @include('header')
-            <div class="row profile-rower">
+    @section('content')
+
                     <div class="col-md-8 col-md-offset-2 userpage-shadow">
                         <div class="row userpage-margin">
                             <div class="col-md-7 col-md-offset-1 text-center">
@@ -26,7 +21,6 @@
                                 <h3><span style="color:#828282"> Name: </span></h3>
                             </div>
                             <div class="col-xs-6 col-md-4 col-md-offset-1">
-                                <h3><b>{{$user->name}}</b></h3>
                             </div>
                         </div>
                         <div class="row userpage-mar">
@@ -42,7 +36,6 @@
                                 <h3><span style="color:#828282"> Wallet ID: </span></h3>
                             </div>
                             <div class="col-xs-6 col-md-4 col-md-offset-1">
-                                <h3><b>{{$user->walletId}}</b></h3>
                             </div>
                         </div>
                         <div class="row userpage-mar">
@@ -50,7 +43,6 @@
                                 <h3><span style="color:#828282"> Email Address: </span></h3>
                             </div>
                             <div class="col-xs-4 col-md-4 col-md-offset-1">
-                                <h3><b>{{$user->email}}</b></h3>
                             </div>
                         </div>
                         <div class="row userpage-mar">

@@ -1,6 +1,3 @@
-
-
-
 @extends('layouts.app')
 
 @section('title')
@@ -9,10 +6,6 @@
 
 @section('content')
 
-<body class='signup-body'>
-    <section>
-        @include('header')
-    </section>
     <section id='' class='signup-container'>
         <div class = "container signup-content">
             <div class="signup-header">
@@ -94,7 +87,7 @@
 
                 </div>
                 <div class="signup-h1">
-                    <p id='signup-head'>HumanATM</p>
+                    <p id='signup-head'>HumanATM</p><br>
                     <p id='signup-p'>FOR THE NEXT BILLION USERS</p>
                 </div>                
             </div>
@@ -140,19 +133,19 @@
                     
 
                     <input type="submit" class="signup-data" id="signup-submit" value="CREATE ACCOUNT">
-                    <p id='signup-signin'><a href="{{ route('login') }}"" class="" ><span id="login-span1">Have an account?</span> 
-                        <span id="login-span">Sign In</span></a></p>
+                    <p id='signup-signin'>
+                    
+                        <span id="login-span1">Have an account?</span> 
+                            <a href="{{ route('login') }}" class="" >
+                                <span id="login-span">Sign In</span>
+                            </a>
+                    </p>
                     </form>
                 </div>               
 
             </div>
         </section>
 
-        <section>
-
-        </section>
         <script src="{{asset('js/togglepassword.js')}}">       
-        </script>
-
-    </body>
+ 
     @endsection

@@ -1,22 +1,10 @@
-{{-- <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-            <link rel="stylesheet" href="css/main.css">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <title> PayBills | HumanATM</title>
-        </head> --}}
-         @extends('layouts.app')
+@extends('layouts.app')
 
-       @section('title')
+    @section('title')
         <title> PayBills | HumanATM</title>
-      
+    @endsection
 
-       @section('content')
-       
-        <body>
+    @section('content')
                 <div class="container-fluid daily-margin">
                         <!-- header -->
                         @include('header')
@@ -52,7 +40,6 @@
                 </div>
     
             </div>
-               
-        </body>
+@endsection
      
         

@@ -1,23 +1,12 @@
-{{-- <!DOCTYPE html>
-<html>
-<head>
-	<title>OTP Page</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<link rel="stylesheet"  href="css/main.css">
 
-</head> --}}
- @extends('layouts.app')
+@extends('layouts.app')
 
-       @section('title')
-        <title> OTP Page | HumanATM</title>
-       @endsection
+    @section('title')
+        <title> OTP | HumanATM</title>
+    @endsection
 
-       @section('content')
-<body>
+    @section('content')
         <div class="container-fluid daily-margin">
-                <!-- header -->
-                @include('header')
         <div class="row">
             <div class="col-sm-offset-3 col-sm-6 otp-rectangle-box" >
                 <div class="otp-text">
@@ -39,13 +28,9 @@
                     <button type="button" class="btn btn-default btn-lg">RESEND</button>
                 </div>
 
-
-
-
+                </div>
             </div>
         </div>
-    </div>
-</body>
 @endsection
 
 
