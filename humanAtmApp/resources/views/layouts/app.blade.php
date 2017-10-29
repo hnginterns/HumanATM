@@ -33,15 +33,16 @@
                 <div class="collapse navbar-collapse" id="HumanATMNavbar">
                     <ul class="nav navbar-nav navbar-right" id="header-color" >
                         <li class="active"><a href="#">WALLET</a></li>
-                        <li><a href="dailytransaction.php">TRANSACTIONS</a></li>
+                        <li><a href="dailytransaction">TRANSACTIONS</a></li>
                         <li><a href="#">PAY BILLS</a></li>
                         <li><a href="#" >INVITE FRIENDS</a></li>
-                        <li><a href="#" >USER PAGE</a></li>
+                        <li><a href="userpage" >USER PAGE</a></li>
                     </ul>
                 </div>
             </div>
         </nav><!-- Navbar Ends -->
 
+        <div class="margin"></div>
    @yield('content')
 
        <script>

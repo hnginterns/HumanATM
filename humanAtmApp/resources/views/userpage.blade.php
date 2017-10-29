@@ -1,16 +1,11 @@
+@extends('layouts.app')
 
-     @extends('layouts.app')
-
-       @section('title')
+    @section('title')
         <title> User Profile | HumanATM</title>
-       @endsection
+    @endsection
 
-       @section('content')
-    <body>
-       <div class="container-fluid">
-                    <!-- header -->
-                    @include('header')
-            <div class="row profile-rower">
+    @section('content')
+
                     <div class="col-md-8 col-md-offset-2 userpage-shadow">
                         <div class="row userpage-margin">
                             <div class="col-md-7 col-md-offset-1 text-center">

@@ -16,15 +16,15 @@
                     </div>
                     <div class="row paybills-margin2">
                         <div class="col-md-2 col-md-offset-2 text-center daily-active">
-                            <h4><a href="dailytransaction.php"><span style="color:white;"><strong>Today</strong></span></a></h4>
+                            <h4><a href="dailytransaction"><span style="color:white;"><strong>Today</strong></span></a></h4>
                                 
                         </div>
                         <div class="col-md-2 col-md-offset-1 text-center daily-inactive">
-                            <h4><a href="weeklytransaction.php"><span style="color:#0F3B75;"><strong>Week</strong></span></a></h4>
+                            <h4><a href="weeklytransaction"><span style="color:#0F3B75;"><strong>Week</strong></span></a></h4>
                                 
                         </div>
                         <div class="col-md-2 col-md-offset-1 text-center daily-inactive">
-                            <h4><a href="monthlytransaction.php"><span style="color:#0F3B75;"><strong>Month</strong></span></a></h4>
+                            <h4><a href="monthlytransaction"><span style="color:#0F3B75;"><strong>Month</strong></span></a></h4>
                                 
                         </div>
                         

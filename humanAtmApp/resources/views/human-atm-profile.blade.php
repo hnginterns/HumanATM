@@ -1,15 +1,10 @@
-
 @extends('layouts.app')
 
-@section('title')
-<title> Human ATM Profile | HumanATM</title>
-@endsection
+    @section('title')
+        <title> Human ATM Profile | HumanATM</title>
+    @endsection
 
-@section('content')
-<body class="signup-body">
-    <section>
-        @include('header')
-    </section>
+    @section('content')
     <section class="container">
         <div class="profile-container">
             <div class="profile-content">

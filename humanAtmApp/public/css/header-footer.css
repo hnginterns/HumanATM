@@ -1,6 +1,9 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
     body{ padding-top : 30px ;}
 }
+.margin{
+    margin-top: 30px;
+}
 #header-color > li > a{
     color:#0F3B75;
     font-weight: bold;
