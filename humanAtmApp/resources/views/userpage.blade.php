@@ -26,7 +26,6 @@
                                 <h3><span style="color:#828282"> Name: </span></h3>
                             </div>
                             <div class="col-xs-6 col-md-4 col-md-offset-1">
-                                <h3><b>{{$user->name}}</b></h3>
                             </div>
                         </div>
                         <div class="row userpage-mar">
@@ -42,7 +41,6 @@
                                 <h3><span style="color:#828282"> Wallet ID: </span></h3>
                             </div>
                             <div class="col-xs-6 col-md-4 col-md-offset-1">
-                                <h3><b>{{$user->walletId}}</b></h3>
                             </div>
                         </div>
                         <div class="row userpage-mar">
@@ -50,7 +48,6 @@
                                 <h3><span style="color:#828282"> Email Address: </span></h3>
                             </div>
                             <div class="col-xs-4 col-md-4 col-md-offset-1">
-                                <h3><b>{{$user->email}}</b></h3>
                             </div>
                         </div>
                         <div class="row userpage-mar">

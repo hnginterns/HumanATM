@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/human-atm', function () {
     return view('human-atm-profile');
 });
@@ -29,6 +30,10 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/paybills', function () {
     return view('paybills');
+});
+
+Route::get('/{name}', function ($name) {
+    return view($name);
 });
 
 
