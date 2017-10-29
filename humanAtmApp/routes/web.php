@@ -18,8 +18,8 @@ Route::get('/human-atm', function () {
     return view('human-atm-profile');
 });
 Route::get('/location', function () {
-    return view('locationlisting');
-});
+    return view('location-listing');
+})->name('location');
 
 Auth::routes();
 
