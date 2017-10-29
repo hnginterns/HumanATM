@@ -1,89 +1,139 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home | humanATM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <title>Laravel</title>
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+<!-- Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #0F3B75;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#HumanATMNavbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a id="header-color" class="navbar-brand" href="#">
+                <img style="width:45px;height:45px;padding:5px;" src="{{asset('logo.png')}}" alt="">
+                Human ATM</a>
+        </div>
+        <div class="collapse navbar-collapse" id="HumanATMNavbar">
+            <ul class="nav navbar-nav navbar-right" id="header-color" >
+                <li><a href="/wallet">WALLET</a></li>
+                <li><a href="#">TRANSACTIONS</a></li>
+                <li><a href="/paybills">PAY BILLS</a></li>
+                <li><a href="/invite" >INVITE FRIENDS</a></li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- Navbar Ends -->
 
-            .position-ref {
-                position: relative;
-            }
+<!-- Put the body content here -->
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+<body>
+        <div class="container-fluid red">
+            <div class="row header">
+                <div class="col-md-12">
+                        <img src="{{asset('images/head.png')}}" class="img-responsive" alt="ladyheader">
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                   HumanATM
+            </div>
+            <div class="row">
+                    <div class="col-xs-6 col-xs-offset-1 col-md-4 col-md-offset-1">
+                        <a href="/invite" class="btn btn-block btn-primary header-mar"> INVITE FRIENDS</a>
+                    </div>
+            </div>
+            <div class="row daily-margin">
+                <!-- the right segment of second block starts here-->
+                <div class="col-sm-5">
+                    <div class="row text-center index-color">
+                        <div class="col-sm-12">
+                            <h1><b> Search. Locate.</b></h1>
+                            <h4><b>Human ATM's Around You</b></h4>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <img src="{{asset('images/side.png')}}" class="img-responsive text-right" alt="your clique">
+                        </div>
+                    </div>
                 </div>
+        <!-- the right segment of second block ends here -->
+        <!-- the left segment of second block starts here -->
+                <div class="col-sm-7">
+                    <img src="{{asset('images/location.png')}}" class="img-responsive text-right" alt="your location">
+                </div>
+                     <!-- the left segment of second block ends here -->
+            </div>
 
+            <div class="row daily-margin">
+                <div class="col-sm-7">
+                    <div class="index-hr">
+                        <hr>  
+                        <h2 class="text-center index-margin"><b>NO ATM IN YOUR ENVIRONMENT?</b><h2> <br>
+                            <h3 class="index-shift text-center">No Problem, We got you covered</h3>
+
+                        <h4 class="text-justify index-text"> Human ATM is a platform that aids you to have flexibility over <b>HOW, WHERE </b> and <b> WHEN </b>you want your money
+                         also you have a choice of getting your money delivered to you at the comfort of your home.</h4>
+
+                        <h4 class="text-justify index-text">HumanATM minimizes the hazzle of standing long queues to withdraw money or beating traffic and standing hours to
+                         pay in money.</h4>
+
+                         <h4 class="text-justify index-text"> You are clicks away to the most cozy money transaction you have ever done
+                        </h4>
+                            <div class="col-sm-4 header-getStated">
+                                    <a href="{{route('location')}}" class="btn btn-block btn-primary "> GET STARTED</a>
+                            </div><br><br>
+                        <hr> 
+
+                    </div>
+                </div>
                 
+                <div class="col-sm-5">
+                        <img src="{{asset('images/laptop.png')}}" class="img-responsive text-right" alt="laptop">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <img src="{{asset('images/contact.png')}}" class="img-responsive" alt="background">
+                </div>
+                <div class="col-sm-8 col-sm-offset-2 text-center indexContactDetails">
+                    <h2><b>Contact Us</b></h2>
+                    <div class="row text-center index-bottom" >
+                        <div class="col-sm-4">
+                            <h4><b>Contact Address</b></h4><br>
+                            <h4>Head Office: <br>Plot 34, Unit 23 e-Library Estate<br> Akwa Ibom State</h4>
+                            
+                        </div>
+                        <div class="col-sm-4">
+                            <h4><b>Contact Email</b></h4><br>
+                            <h4>contactus@humanatm.com</h4>
+                            <h4>headoffice@humanatm.com</h4>
+                            
+                        </div>
+                        <div class="col-sm-4">
+                            <h4><b>Contact Phone</b></h4><br>
+                            <h4>+234-HumanATM <small>(+234(0)8987767877)</small></h4>
+                            <h4>+234(0)8035502146</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
-</html>
+<!-- Footer -->
+ @include('homefooter')
+<!-- End footer>

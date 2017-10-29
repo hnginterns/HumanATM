@@ -1,14 +1,18 @@
-
-@extends('layouts.app')
-
-@section('title')
-<title> Location | HumanATM</title>
-@endsection
-
-@section('content')
-    
-       <div class="container-fluid daily-margin">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title> Location | HumanATM</title>
+    </head>
+   
+    <body>
+        <div class="container-fluid daily-margin">
             <!-- header -->
+           @include('header')
             <div class="row profile-rower">
                     <div class="col-md-8 col-md-offset-2 profile-borderColor">
                         <div class="row">
@@ -29,7 +33,7 @@
                                 </div>
 
                                 <div class="col-md-2 col-md-offset-1 text-center ">
-                                    <button type="button" class="btn btn-primary btn-block profile-box3"> REQUEST </button>
+                                    <a href="/human-atm" class="btn btn-primary btn-block profile-box3"> REQUEST </a>
                             </div>
                             </div>
 
@@ -113,4 +117,5 @@
                 </div>
             </div>
         </div>
-@endsection
+    </body>
+    </html>

@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 /* These rules are universal stops here*/
-/*--------------------------------------------------------------------------
---------------------------------------------------------------------------*/
+/* These are rules for Homepage*/
+
 /* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
 .signup-body{
     font-size: 100%;}
@@ -337,6 +337,50 @@
   border:3px solid #0F3B75;
   margin-top: 100px;
   text-align: center;
+}
+.header{
+    position:relative;
+}
+.header-mar{
+    position: absolute;
+    color:white;
+    top:-40px;
+}
+.index-color{
+    color:#0F3B75;
+}
+.index-hr hr{
+    width:60%;
+    border:1px solid #0F3B75;
+}
+.index-shift{
+    margin-top: -7%;
+    margin-bottom: 5%;
+}
+.index-text{
+    line-height: 1.6em;
+    width:70%;
+    margin-left:15%;
+}
+.index-margin{
+    margin-top:5%;
+}
+.index-contact{
+    color:blue;
+    height:100px;
+}
+.header-getStated{
+    margin-left:13%;
+}
+.indexContactDetails{
+    margin-top:-25%;
+    border-radius: 10px;
+    background: white;
+    color: #0F3B75;
+}
+.index-bottom{
+    
+    margin-bottom:4%;
 }
 /*
 -----------------------------------------------------------------------------------------------------------------------
@@ -752,3 +796,243 @@ input.withdraw-data:focus, input.withdraw-data:hover{
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/
+/* rules for home page header and footer*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+    body{ padding-top : 30px ;}
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+#header-color{
+    color:#ffffff;
+}
+#header-color > li > a{
+    color:#ffffff;
+}
+#header-color > li > a:hover{
+    color:#ffffff;
+    background-color:#ffffff;
+    color: #0F3B75;
+    font-weight: bold;
+    border-radius: 15px;
+}
+.nav{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/*##################################################*/
+/* Footer CSS begins here*/
+.footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #0F3B75;
+    color: #ffffff;
+    text-align: center;
+}
+.footer nav{
+    margin-top: 50px;
+}
+.footer .navbar-header{
+    margin-left: -40px;
+    padding-left: 0px;
+}
+#footer-nav #invite-friends-button a{
+    color:#0F3B75;
+}
+
+#footer-nav{
+    margin-top: 15px;
+}
+#footer-nav a {
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar-header a {
+    text-decoration: none;
+}
+.socials {
+    float: right;
+    clear: both;
+}
+.socials  img {
+    margin: 5px;
+}
+.foot-note,.foot-note a{
+    margin-top:150px;
+    color: inherit;
+}
+.foot-note a:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color:#ffffff;
+}
+/* rules for other pages header and footer*/
+
+#header-color2 > li > a{
+    color:#0F3B75;
+    font-weight: bold;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,.navbar-nav > li > a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    border-radius:0px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: #0F3B75;
+    color: #0F3B75;
+    background-color: transparent !important;
+}
+.navbar-nav > li > a{
+    border-radius:0px;
+}
+.navbar-header .hamburger {
+    background-color: #ffffff;
+}
+.navbar-header .hamburger > span {
+    background-color: #0F3B75;
+}
+.navbar-header{
+    background-color: #0F3B75;
+}
+
+/* admin section rules */
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #0F3B75;
+  }
+  
+  .skin-blue .main-header .logo {
+    background-color: #316BB8;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+  }
+  
+  .skin-blue .main-header li.user-header {
+    background-color: #0F3B75;
+  }
+  
+  .skin-blue .main-header .navbar {
+    background-color: #0F3B75;
+  }
+  
+  .skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a, .skin-blue .sidebar-menu>li.menu-open>a {
+    color: #fff;
+    background: #316BB8;
+  }
+  
+  .skin-blue .sidebar-form input[type="text"], .skin-blue .sidebar-form .btn {
+    box-shadow: none;
+    background-color: #fff;
+    border: 1px solid transparent;
+    height: 35px;
+  }
+  
+  .user-panel>.image>img {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+  }
+  
+  .user-panel>.info>p {
+    font-weight: 600;
+    margin-bottom: 9px;
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+  
+  .pull-left {
+    float: left!important;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  
+  table{
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+  
+  hr.style-one{
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  }
+  .user-rectangle, .user-rectangle2 {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+  
+  
+   .lineup{
+    border: 2px solid #316BB8;
+  }
+  
+  
+  
+  .user-rectangle .user-rectangle-text,.user-rectangle2 .user-rectangle-text{
+    display: block;
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    padding-left: 20px;
+  }
+  .user-rectangle .user-rectangle-subtext,.user-rectangle2 .user-rectangle-subtext{
+    font-size: 14px;
+    color: #000000;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    padding-left: 20px;
+  }
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+    .user-rectangle .user-rectangle-text,.user-rectangle .user-rectangle-subtext,
+    .user-rectangle2 .user-rectangle-text,.user-rectangle2 .user-rectangle-subtext{
+      padding-left: 30px;
+    }
+    .user-rectangle, .user-rectangle2{
+      margin-top: 20px;
+    }
+  }
+  .user-table{
+    margin-top: 50px;
+   }
+  .user-table .user-table-content{
+    margin: 10px;
+    margin-right: 70px;
+  }
+  .user-table .user-table-content .user-name{
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 10px;
+  }
+  .user-table .user-table-content .user-name .user-name-text{
+    padding-left: 20px;
+    font-size: 18px;
+    color: #0F3B75;
+    font-weight: bold;
+  }
+  .user-table .user-table-content .user-view-button,.user-table .user-delete-button{
+    padding: 10px;
+  }
+  .user-modal-body{
+    margin: 0px 50px 50px 50px;
+  }
+  .user-modal-body > div > h4 {
+    text-align: center;
+    word-spacing: 10px;
+  }
+  .user-modal-body .user-modal-input{
+    border:none;
+    border-bottom:1px solid #000000;
+  }
+  

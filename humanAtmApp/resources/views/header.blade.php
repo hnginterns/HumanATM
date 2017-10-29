@@ -1,0 +1,33 @@
+    <script>
+        $(document).ready(function () {
+            $('ul.nav > li').click(function (e) {
+                e.preventDefault();
+                $('ul.nav > li').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-fixed-top" style="background-color: #ffffff; color:#0F3B75">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle hamburger" data-toggle="collapse" data-target="#HumanATMNavbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar" ></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="HumanATMNavbar">
+                <ul class="nav navbar-nav navbar-right" id="header-color2" >
+                    <li class="active"><a href="/wallet">WALLET</a></li>
+                    <li><a href="dailytransaction.php">TRANSACTIONS</a></li>
+                    <li><a href="/paybills">PAY BILLS</a></li>
+                    <li><a href="/invite" >INVITE FRIENDS</a></li>
+                    <li><a href="/userpage" >USER PAGE</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><!-- Navbar Ends -->

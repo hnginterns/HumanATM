@@ -7,17 +7,17 @@
   <title>Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/ionicons.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/AdminLTE.min.css')}}">
   <!-- Sidebar css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/skin-blue.min.css">
+  <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/skin-blue.min.css')}}">
 <!-- Custom css-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{asset('css/main.css')}}">
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
@@ -29,7 +29,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="admin.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -60,7 +60,7 @@
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="bower_components/bootstrap/img/personel.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('bower_components/bootstrap/img/personel.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -109,14 +109,14 @@
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="bower_components/bootstrap/img/personel.jpg" class="user-image" alt="User Image">
+              <img src="{{asset('bower_components/bootstrap/img/personel.jpg')}}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Somto Promise</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="bower_components/bootstrap/img/personel.jpg" class="img-circle" alt="User Image">
+                <img src="{{asset('bower_components/bootstrap/img/personel.jpg')}}" class="img-circle" alt="User Image">
 
                 <p>
                   Somto Promise - Web Developer
@@ -162,7 +162,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="bower_components/bootstrap/img/personel.jpg" class="img-circle" alt="User Image">
+          <img src="{{asset('bower_components/bootstrap/img/personel.jpg')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p> Hello, Somto</p>
@@ -183,7 +183,7 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-		    <li><a href="index.html"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+		    <li><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
         <li><a href="HumanAtm.html"><i class="fa fa-link"></i> <span>Others/HumanATM</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
@@ -202,7 +202,7 @@
       <!-- Info boxes -->
       <div class="row">
 
-        <a href="total.html">
+        <a href="/total">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
@@ -214,7 +214,7 @@
           </div>
         </a>
 
-        <a href="pending.html">
+        <a href="/pending">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
@@ -229,7 +229,7 @@
         <!-- For small devices only -->
         <div class="clearfix visible-sm-block"></div>
 
-        <a href="completed.html">
+        <a href="/completed">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
@@ -299,11 +299,11 @@
 
 
 <!-- jQuery 3 -->
-<script src="bower_components/bootstrap/dist/js/jquery.min.js"></script>
+<script src="{{asset('bower_components/bootstrap/dist/js/jquery.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="bower_components/bootstrap/dist/js/adminlte.min.js"></script>
+<script src="{{asset('bower_components/bootstrap/dist/js/adminlte.min.js')}}"></script>
 
 </body>
 </html>

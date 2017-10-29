@@ -29,9 +29,9 @@
                             </div>
                         <div class="profile-supermenu">
                             <div class ="profile-menu" id="">
-                                <button type="button">PROFILE</button>
-                                <button type="button" class="active">WITHDRAW</button>
-                                <button type="button">PAYMENT</button>
+                                <a href="/profile">PROFILE</a>
+                                <a href="/withdraw" class="active">WITHDRAW</a>
+                                <a href="/payment" >PAYMENT</a>
                             </div>
                         </div>
                             
