@@ -31,8 +31,8 @@
                             <div class="profile-supermenu">
                                 <div class ="profile-menu" id="">
                                     <button type="button">PROFILE</button>
-                                    <button type="button" class="active">WITHDRAW</button>
-                                    <button type="button">PAYMENT</button>
+                                    <button type="button" >WITHDRAW</button>
+                                    <button type="button" class="active">PAYMENT</button>
                                 </div>
                             </div>
                                 

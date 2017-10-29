@@ -25,11 +25,11 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="otp-button btn">SEND</button>
+                    <button type="submit" class="otp-button ">SEND</button>
                 </form>
                 <div class="otp-resend">
                     <P class="">OTP not sent?</P>
-                    <button type="button" class="btn btn-default btn-lg">RESEND</button>
+                    <button type="button" class="btn btn-default ">RESEND</button>
                 </div>
 
 
