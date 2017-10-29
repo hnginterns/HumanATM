@@ -15,7 +15,7 @@
                 </div>
                 <div class="row edituserpage-margin"> 
                     <div class="col-md-3 col-md-push-8">
-                        <img src="img/3.png" class="edituser-image" alt="userPicture">
+                        <img src="https://github.com/matilbella/edituser/blob/master/img/3.png?raw=true" class="edituser-image" alt="userPicture">
                     </div>                                      
                     <div class="col-md-7 col-md-pull-3 col-md-offset-1">
                         <form action="" class="form-inline">
