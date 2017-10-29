@@ -1,40 +1,49 @@
 /* These rules are universal*/
 .body{
     font-family: Lato, sans-serif;
-    box-sizing: border-box;
 }
 /* These rules are universal stops here*/
 /*--------------------------------------------------------------------------
 --------------------------------------------------------------------------*/
 /* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
 .signup-body{
-    font-size: 100%;}
-
-    .signup-container, .forgotpassword-container{
-    display:block;
-    max-width: 760px;
-    min-height: auto;    
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: Lato, sans-serif;
+    }
+    .signup-container, .forgotpassword-container, .login-container{
+    display:-webkit-flex;
+    display:flex;
+    max-width: 760px;    
     margin: auto;
-    margin-bottom: 30px;
-    margin-top: 70px;
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    left:0;
+    right:0;
     background-color:#0F3B75;
     color: #fff;
     }
+    .login-container{
+        min-height: 550px;
+    }
+    .signup-container{
+        min-height: 700px;
+    }
+    .forgotpassword-container{
+        min-height: 500px; 
+    }
     .signup-content{
-        width: 90%;
-        margin:auto;
-        padding-top: 60px;
-        padding-bottom: 50px;
+    position: absolute;
+    top: 50px;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    width:90%;
+    margin:0 auto;
     }
     .signup-header{
     text-align: center;
-    }
-    .signup-logo{
-        margin-bottom: 20px;
-    }
-    .signup-logo img{
-        width: 120px;
-        height: 120px;
     }
     .signup-h1{
     max-width: 157px;
@@ -54,18 +63,26 @@
     padding-left: 0.2em;            
     }
     .signup-form{
-    margin-top: 40px;
+    margin-top: 20px;
+    }
+    .forgotpassword-form{
+    margin-top: 30px;
+    }
+    .signup-innerform, .forgotpassword-innerform{
+    display: flex;
+    flex-direction: column;
+    }
+    .signup-data, .newpassword-data{
+    font-size: 1.5em;
+    padding: 10px;
+    padding-left: 20px;
+    color:#0F3B75;
     }
     .signup-data{
-        display: block;
-        width: 100%;
-        font-size: 1.5em;
-        margin: 20px 0;
-        padding: 10px;
-        padding-left: 20px;
-        color:#0F3B75;
+        margin: 10px 0;
     }
     #signup-password1{
+        margin-top: -20px;
         margin-bottom: 30px;
     }
 
@@ -80,52 +97,64 @@
     -webkit-transition: background-color 1s; /* Safari */
     transition: background-color 1s;
     }
-    #forgotpassword-submit, #newpassword-submit{
-    width: 25%;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    #signup-submit{
+    width: 60%;
     }
-    #login-submit, #signup-submit{
+    #forgotpassword-submit{
+    width: 20%;
+    margin-top: 20px;
+    }
+    #login-submit{
     width: 50%;
     }
-    #signup-signin{
+    #newpassword-submit{
+        width: 20%;
+        margin-top: 30px;
+    }
+    #signup-signin, #login-signin {
     color: white;  
     font-size: 1.2em;
     text-align:right;
     margin-top: 10px;
     margin-right: 130px;
+    }
+    #signup-signin{
+    max-width: 80%;
+    }
+    #login-signin{
     max-width:75%;
     }
     #signup-forgot{
     color: white;  
     font-size: 1.2em;
     text-align:right;
-    margin-top: -10px;
-    margin-bottom: 30px;
+    position: relative;
+    top: -30px;
     }
-    #signup-signin a, #signup-forgot a{
+    #signup-signin a, #login-signin a, #signup-forgot a{
     color: white;  
     }
-    .signup-data:focus, .signup-data:hover{
+    .signup-data:focus, .signup-data:hover, .newpassword-data:focus, .newpassword-data:hover{
     border: 2px solid #0F3B75;
     box-shadow: 0 0 5px #fff;
     }
-    #signup-submit:focus, #forgotpassword-submit:focus, #login-submit:focus, #newpassword-submit:focus{
+    #signup-submit:focus, #forgotpassword-submit:focus, #login-submit:focus{
     border: none;
     box-shadow: none;
     }
-    #signup-submit:hover, #newpassword-submit:hover, #forgotpassword-submit:hover, #login-submit:hover{
+    #signup-submit:hover, #newpassword-submit:hover, #newpassword-submit:focus, #forgotpassword-submit:hover, #login-submit:hover{
     background-color: #0F3B75;
     color: #fff;
     }
     .signup-eye{
-        color: #0f3b75;
-        font-size: 1.6em;
-        margin-top: -53px;
-        width: 5%;
-        float: right;
-        text-align: right;
-        margin-right: 30px;            
+    position: relative;
+    text-align:right;
+    margin-right: 30px;
+    top: -40px;
+    width:10%;
+    color: #0F3B75;
+    font-size:1.6em;
+    align-self: flex-end;            
     }
     #newpassword-eye{
         top: -30px;
@@ -157,17 +186,12 @@
         font-size: 2em;
         color: greenyellow;
     }
-    .email-text{
-        font-size: 1.5em;
-        text-align: center;
-        margin-bottom: 100px;
-    }
     .forgotpassword-text {
     font-size: 1.5em;
     text-align: center;
 }
 
-/* These rules are for the location listing, transaction pages, user profile, payment successful, 404 and paybills pages by drumzminister*/
+/* These rules are for the location listing and paybills pages by drumzminister*/
 
 .profile-borderColor{
     border: 2px  solid #0F3B75;
@@ -209,381 +233,78 @@
     margin-top: 7%;
     margin-bottom: 10%;
 }
-.daily-active{
-    border: 2px #0F3B75 solid;
-    background:#0F3B75;
-    border-radius: 20px;
-    color:white;
+
+-----------------------------------------------------------------------------------------------------------------------
+
+/*Next user should start on the next line*/
+.container.DailyTransaction{
+	border: solid 2px #0F3B75 ;
 }
-.daily-inactive{
-    border: 2px #0F3B75 solid;
-    border-radius: 20px;
+.row.DailyTransaction{
+	margin-left: 8%;
+	margin-right: 10%;
+	border-radius: 30px;
+	padding-right: -10px;
 }
-.daily-margin{
-    margin-top:3%;
+.DailyTransaction-trans{
+	color: #fff;
+	background-color: #0F3B75;
 }
-.daily-borderColor{
-    border: 2px  solid #0F3B75;
-    box-shadow: 1px 3px 10px #08111D;
-    color: #0F3B75;
-    margin-bottom: 5%;
+.transaction.DailyTransaction1{
+	text-align: right;
+	color: #fff;
+	background-color: #0F3B75;
+	margin-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px ;
+	font-size: 20px;
+
 }
-.userpage-shadow{
-    box-shadow: 0 1px 15px #0F3B75;
-    border-radius: 10px;
-    margin-top:5%;
+button{background-color: #fff;
+		border-width:  2px ;
 }
-.userpage-inactive{
-    border: 2px #0F3B75 solid;
-    border-radius: 20px;
+.btn.btn-lg.active{
+	background-color: #0F3B75;
+	color: #fff;
 }
-.userpage-margin{
-    margin-top: 7%;
-}
-.userpage-image{
-    width: 15em;
-    height: 15em;
-    border-radius: 50%;
-    border: 2px #0F3B75 solid;
-}
-.userpage-mar h3{
-    font-size: 1.6em;
-}
-.userpage-bottom{
-    margin-bottom: 5%;
-}
-.payment-margin{
-    margin-top: 15%;
-}
-.payment-margin2{
-    margin-top: 15%;
-    margin-bottom: 10%;
-}
-.invite-form input{
-    width:100%;
-    height: 7%
-}
-.invite-input{
-    border: 1.5px solid #0F3B75;
-    border-radius: 10px;
-    padding: 4%;
-}
-.invite-submit{
-    color: white;
-    background: #0F3B75;
-    font-size: 1.5em;
-    margin-bottom:5em;
-    border-radius: 10px;
-}
-.invite-submit:hover{
-    background: #5D95DE;
-}
-.invite-margin{
-    margin-top: 7%;
-    color: #0F3B75;
-}
-.invite-color{
-    color: #0F3B75;
+.btn.btn-lg{
+	border: solid 2px #0F3B75 ;
+	border-radius: 21px;
+	color: #0F3B75;
 }
 
-.page404-main{
-    bottom: 0;
-    width: 90%;
-          text-align: center;
-     margin-top:50px;
-     margin-left: 30px;
-      }
-.page404-header{
-  margin-top: 0;
-  color: #0F3B75;
-  padding-bottom : 30px;
+.DailyTransaction2{
+	border: solid 1px #0F3B75;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-right: 5%;
 }
-  .page404-image404{
-    margin-top: 20px;
-     margin-right: 20px;
-  }
-    .page404-paragraph{
-        color: #0F3B75;
-    padding: 20px 40px;
-    margin-top:30px;
-            }
-
-   .page404-bg-blue{
-    background-color: #0F3B75;
-     border-radius: 2px;
-    font-size: 18px;
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 20px;
-    margin-top:20px;
-    margin-bottom:20%;
-    box-shadow: 0 5px 5px 2px rgba(0,0,0,0.14);
-  }	 
-
- 
-
-  .page404-main .page404-navigate{  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center; 
-  }
-  .page404-main .page404-navigate a:hover{
-    opacity: 0.9;
-  }
-
- .page404-rectangle-box{
-  height:600px;
-  border:3px solid #0F3B75;
-  margin-top: 100px;
-  text-align: center;
+.paid.DailyTransaction3{
+	text-align: right;
+	font-size: 20px;
+	color: #0F3B75;
+}
+.amount.DailyTransaction3{
+	color: #0F3B75;
+	font-size: 20px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.amount.DailyTransaction4{
+	color: #0F3B75;
+	font-size: 20px;
+}
+.end.DailyTransaction3{
+	text-align: right;
+	color: #0F3B75;
+}
+#month{
+	padding-right: -5px;
 }
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/
-.otp-rectangle-box{
-	height:550px;
-	border:3px solid #0F3B75;
-    margin-top: 100px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.otp-text{
-    font-family: Lato;
-    font-weight: bold;
-    color: #0F3B75;
-    margin-top:100px;
-}
-.otp-p{
-    font-size: 13px;
-    padding-bottom: 20px; 
-}
-.otp-textbox{
-    border:1.5px solid #0F3B75;
-    height: 40px;
-}
-
-.otp-button{
-    background-color: #0F3B75;
-    color:white;
-    border-radius:20px;
-    font-family: Lato;
-    font-size: medium;
-    font-weight: bold;
-    width: 250px;
-    height: 50px;
-    text-align: center;
-    margin-top:20px;
-}
-.otp-button:hover{
-    background-color: #104790;
-    color:white;
-}
-.otp-resend{
-    margin: 60px;
-}
-.otp-resend p {
-    color:#0F3B75;
-    font-weight: bold;
-}
-.otp-resend button {
-    border: 1.5px solid #0F3B75;
-    color: #0F3B75;
-    font-weight: bold;
-    font-size: medium;
-    width: 250px;
-    height: 50px;
-}
-/*This css rules are for the profile, withdraw and payment pages by jeni*/
-.profile-container{
-    display:block;
-    max-width: 720px;
-    min-height:auto;
-    margin: auto;
-    margin-bottom: 30px;    
-    border: 3px solid #0F3B75;
-    margin-top: 70px;
-    color: #0F3B75;
-}
-.profile-content{
-    margin-bottom: 100px;
-}
-.withdraw-content{
-    margin-bottom: 50px;
-}
-.profile-request p{
-    background-color: #0F3B75;
-    color: white;
-    text-align: right;
-    margin: 0;
-    padding: 15px;
-    padding-right: 20px;
-    font-size: 1.4em;
-}
-.profile-menu {
-    margin: 40px auto;
-    text-align: center;
-    display:inline;
-}
-.profile-menu button {
-    display: inline-block;
-    border: 2px solid #0F3B75;
-    padding: 10px;
-    font-size: 1.4em;
-    width: 170px;
-    height: 40px;
-    margin: 15px;
-    text-align: center;
-    background-color: white;
-}
-.profile-menu button.active {
-    background-color: #0F3B75;
-    color: white;            
-}
-.profile-image{
-    height: 140px;
-    width: 140px;
-    border-radius: 50%;
-    text-align: center;
-    background-color:#0F3B75;
-    margin: 50px auto;
-}
-.profile-info{
-    width: 80%;
-    margin: 30px auto;
-    font-size: 1.4em;
-    font-weight: 600;
-}
-.withdraw-info{
-    width: 80%;
-    margin-top: 70px;
-    margin: 30px auto;
-    font-size: 1.25em;
-}
-.profile-2 {
-    border-bottom: 2px solid #0F3B75;
-    padding: 3px 0;
-}
-.profile-data{
-    margin-top: 50px;
-}
-.profile-data p{
-    margin: 3px 0;
-    text-decoration: none;
-}
-.profile-supermenu{
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-}
-.profile-innerform{
-    margin-top: 50px;
-}
-.withdraw-data{
-    display:block;
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid #0f3b75;
-    font-size: 1.1em;
-    color:#0F3B75; 
-    border-radius: 0;
-    margin-bottom: 0;
-    box-shadow: none;
-}
-.withdraw-submit{
-    display: block;
-    font-size: 1.3em;
-    font-weight:bold;
-    width: 50%;
-    margin: 20px auto;       
-    padding:8px 3px;
-    padding-right:3px;
-    border: 2px solid #0f3b75;
-    text-align:center;
-    -webkit-transition: background-color 1s; /* Safari */
-    transition: background-color 1s;
-}
-#payment-submit{
-    margin-top: 0;
-    color: white;
-    background-color:#0F3B75;
-}
-#withdraw-submit{
-    margin-top: 50px;
-    color: white;
-    background-color:#0F3B75;
-}
-#withdraw-submit1{
-    margin-bottom: 0;
-    background-color: white;
-    color:#0F3B75;
-}
-#withdraw-delivery, #payment-delivery {
-    color: #0f3b75;  
-    font-size: 1em;
-    margin: auto;
-    margin-top: 0;
-    width:50%;
-    font-weight: bold;
-    word-spacing: 80px;            
-    padding: 10px;
-    padding-top: 0;
-}
-#payment-delivery{
-    margin-top: 50px;    
-    text-align: center;
-}
-input.withdraw-data:focus, input.withdraw-data:hover{
-    box-shadow: none !important;
-    border-color: #0F3B75 !important;
-    outline: none !important;
-}
-#withdraw-submit:focus, #payment-submit:focus, #withdraw-submit1:focus{
-    border: none;
-    box-shadow: none;
-}
-#withdraw-submit:hover, #payment-submit:hover{
-    background-color: #fff;
-    color: #0F3B75;
-    border: 2px solid #0F3B75
-}
-#withdraw-submit1:hover{
-    background-color: #0F3B75;
-    color: #fff;
-}
-@media screen and (max-width:500px){
-    #withdraw-submit, #withdraw-submit1, #payment-submit{
-        font-size:1.3em;
-        width: 90%;
-    }
-    #withdraw-span, #withdraw-span1{
-        display: inline;
-        text-align:center;          
-    }
-    #payment-span1{
-        display: block;
-        text-align:center;
-        width: 100%;    
-    }
-    #withdraw-delivery{
-        width: 100%;
-        word-spacing: 0;
-        text-align: center;
-    }
-    #payment-delivery{
-    max-width:100%;
-    }
-}
-.withdraw-label{
-    text-align: right;
-    font-size: 0.8em;
-    font-weight: bold;
-    padding-right: 15px;
-}
 
 
-/*
------------------------------------------------------------------------------------------------------------------------
-Next user should start on the next line*/
+
 

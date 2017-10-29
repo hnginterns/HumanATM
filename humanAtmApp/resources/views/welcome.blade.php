@@ -79,6 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
+<<<<<<< HEAD
                     Laravel
                 </div>
 
@@ -89,6 +90,12 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+=======
+                   HumanATM
+                </div>
+
+                
+>>>>>>> c85e4a1b69e188d56e22902d18fe21d35762e596
             </div>
         </div>
     </body>
