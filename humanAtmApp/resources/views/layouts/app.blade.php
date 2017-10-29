@@ -34,7 +34,7 @@
                     <ul class="nav navbar-nav navbar-right" id="header-color" >
                         <li class="active"><a href="#">WALLET</a></li>
                         <li><a href="dailytransaction">TRANSACTIONS</a></li>
-                        <li><a href="#">PAY BILLS</a></li>
+                        <li><a href="paybills">PAY BILLS</a></li>
                         <li><a href="#" >INVITE FRIENDS</a></li>
                         <li><a href="userpage" >USER PAGE</a></li>
                     </ul>
