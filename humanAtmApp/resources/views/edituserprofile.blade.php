@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
     @section('title')
-        <title> Edit Users Profile | HumanATM</title>
+        <title> Edit User Profile | HumanATM</title>
     @endsection
 
     @section('content')
