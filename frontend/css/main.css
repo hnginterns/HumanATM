@@ -795,9 +795,6 @@ input.withdraw-data:focus, input.withdraw-data:hover{
 }
 /*
 -----------------------------------------------------------------------------------------------------------------------
-<<<<<<< HEAD
-Next user should start on the next line*/
-=======
 Next user should start on the next line*/
 /* rules for home page header and footer*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
@@ -1039,4 +1036,3 @@ Next user should start on the next line*/
     border-bottom:1px solid #000000;
   }
   
->>>>>>> c03a711271ffbbeae5596436cd6d7b77be52b38e
