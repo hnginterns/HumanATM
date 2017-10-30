@@ -7,6 +7,10 @@
 <div class='signup-body'>
 
  @section('content')
+ <body class='signup-body'>
+        <section>
+                @include('header')
+        </section>
 
     <section id='' class='login-container'>
         

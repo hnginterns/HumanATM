@@ -202,7 +202,7 @@
       <!-- Info boxes -->
       <div class="row">
 
-        <a href="/total">
+        <a href="/admin/total">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
@@ -214,7 +214,7 @@
           </div>
         </a>
 
-        <a href="/pending">
+        <a href="/admin/pending">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
@@ -229,7 +229,7 @@
         <!-- For small devices only -->
         <div class="clearfix visible-sm-block"></div>
 
-        <a href="/completed">
+        <a href="/admin/completed">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>

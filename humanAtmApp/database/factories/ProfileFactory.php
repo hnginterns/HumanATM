@@ -10,7 +10,8 @@ $factory->define(App\Profile::class, function (Faker $faker) {
     return [
     	'user_id'=>$faker->randomElement($id),
          'bank_id'=>$faker->randomElement($bank_id), 
-         'acount_number'=>$faker->unique()->randomNumber(10),
+         'account_name'=>$faker->name,
+         'account_number'=>$faker->unique()->randomNumber(6),
          'location'=>$faker->address,
          'image_url'=>$faker->imageUrl,
     ];

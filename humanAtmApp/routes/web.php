@@ -26,14 +26,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
 
-Route::get('/paybills', function () {
-    return view('paybills');
+Route::get('/403', function () {
+    return view('errors.403');
 });
-
+ Route::get('/admin', 'AdminDashboardController@index')->name('admin');
+ Route::get('/admin/pending', 'AdminDashboardController@pending')->name('admin/pending');
+  Route::get('/admin/total', 'AdminDashboardController@total')->name('admin/total');
 Route::get('/{name}', function ($name) {
     return view($name);
-});
+})->middleware('auth');
 
 

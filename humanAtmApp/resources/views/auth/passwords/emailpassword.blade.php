@@ -6,9 +6,9 @@
 
 @section('content')
 <body class='signup-body'>
-    <section>
-        
-    </section>
+        <section>
+                @include('header')
+        </section>
     <section id='' class='forgotpassword-container'>
         <div class = "container signup-content">
             <div class="signup-header">

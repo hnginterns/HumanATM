@@ -5,6 +5,10 @@
     @endsection
 
     @section('content')
+    <body class="signup-body">
+    <section>
+        @include('header')
+    </section>
     <section class="container">
         <div class="profile-container">
             <div class="profile-content">
@@ -13,11 +17,11 @@
                 </div>
                 <div class="profile-supermenu">
                     <div class ="profile-menu" id="">
-                        <button type="button" class="active">PROFILE</button>
+                        <button type="button" class="active"><a href="/userpage">PROFILE</a></button>
                     </div>
                     <div class = "profile-menu" id="profile-menu1">
-                        <button type="button">WITHDRAW</button>
-                        <button type="button" >PAYMENT</button>
+                        <button type="button"><a href="/withdraw">WITHDRAW</a></button>
+                        <button type="button" ><a href="/payment">PAYMENT</a></button>
                     </div>
                 </div>
                 <div class="profile-image">

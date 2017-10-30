@@ -5,7 +5,10 @@
 @endsection
 
 @section('content')
-
+<body class='signup-body'>
+        <section>
+                @include('header')
+        </section>
     <section id='' class='signup-container'>
         <div class = "container signup-content">
             <div class="signup-header">
@@ -102,10 +105,10 @@
                     </span>
                     @endif
 
-                    <input type="text" name="walletId" class="signup-data {{ $errors->has('walletId') ? ' has-error' : '' }}" value="{{ old('walletId') }}" placeholder="Wallet ID">
-                    @if ($errors->has('walletId'))
+                    <input type="text" name="wallet_id" class="signup-data {{ $errors->has('wallet_id') ? ' has-error' : '' }}" value="{{ old('wallet_id') }}" placeholder="Wallet ID">
+                    @if ($errors->has('wallet_id'))
                     <span class="help-block">
-                        <strong>{{ $errors->first('walletId') }}</strong>
+                        <strong>{{ $errors->first('wallet_id') }}</strong>
                     </span>
                     @endif
 
@@ -120,7 +123,7 @@
 
 
                    
-                        <input type="password" name="password"  class="signup-data" placeholder="Password">
+                        <input type="password" name="password"  class="signup-data signup-password" placeholder="Password">
                         @if ($errors->has('password'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
