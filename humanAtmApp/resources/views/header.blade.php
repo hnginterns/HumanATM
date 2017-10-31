@@ -26,10 +26,10 @@
                     <li><a href="dailytransaction.php" class="" data-toggle="dropdown">TRANSACTIONS</a></li>
                     <li><a href="/paybills">PAY BILLS</a></li>
                     <li><a href="/invite" >INVITE FRIENDS</a></li>
-<<<<<<< HEAD
+
                     <li><a href="/userpage" >USER PAGE</a></li>
-                    <li><a href="#" >LOGIN </a></li>
-=======
+                    
+
                     {{-- <li><a href="/userpage" >USER PAGE</a></li> --}}
                     @if (Auth::user())
 
@@ -52,8 +52,10 @@
                                     </li>
                                 </ul>
                             </li>
+                            @else
+                            <li><a href="/login" >LOGIN </a></li>
                     @endif
->>>>>>> 0c2b4bf791f0374aeb980c1e61a4cee702929a5a
+
                 </ul>
             </div>
 
