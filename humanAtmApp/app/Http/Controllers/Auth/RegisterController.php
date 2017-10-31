@@ -51,7 +51,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'walletId'=> 'required',
+            'wallet_id'=> 'required',
         ]);
     }
 
@@ -66,7 +66,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-             'wallet_id'=>$data['walletId'],
+             'wallet_id'=>$data['wallet_id'],
             'password' => bcrypt($data['password']),
         ]);
     }

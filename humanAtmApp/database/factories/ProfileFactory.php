@@ -9,8 +9,9 @@ $factory->define(App\Profile::class, function (Faker $faker) {
 	      $bank_id = App\Bank::pluck('id')->all();
     return [
     	'user_id'=>$faker->randomElement($id),
-         'bank_id'=>$faker->randomElement($bank_id), 
-         'acount_number'=>$faker->unique()->randomNumber(5),
+         'bank_id'=>$faker->randomElement($bank_id),
+         'account_name'=>$faker->name, 
+         'acount_number'=>$faker->unique()->randomNumber(5).$faker->unique()->randomNumber(5),
          'location'=>$faker->address,
          'image_url'=>$faker->imageUrl,
     ];
