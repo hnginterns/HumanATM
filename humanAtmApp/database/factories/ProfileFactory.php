@@ -11,7 +11,8 @@ $factory->define(App\Profile::class, function (Faker $faker) {
     	'user_id'=>$faker->randomElement($id),
          'bank_id'=>$faker->randomElement($bank_id),
          'account_name'=>$faker->name, 
-         'account_number'=>$faker->unique()->randomNumber(5).$faker->unique()->randomNumber(5),
+         'account_number'=>$faker->unique()->randomNumber(5).$faker->unique()->randomNumber(),
+         'phone_number'=> $faker->phoneNumber,
          'location'=>$faker->address,
          'image_url'=>$faker->imageUrl,
     ];

@@ -22,6 +22,7 @@ class CreateProfilesTable extends Migration
             $table->string('account_name');
 
              $table->bigInteger('account_number');
+             $table->string('phone_number');
 
             $table->string('location');
             $table->string('image_url')->nullable();
