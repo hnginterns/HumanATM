@@ -23,9 +23,13 @@
             <div class="collapse navbar-collapse" id="HumanATMNavbar">
                 <ul class="nav navbar-nav navbar-right" id="header-color2" >
                     <li class="active"><a href="/wallet">WALLET</a></li>
-                    <li><a href="dailytransaction.php">TRANSACTIONS</a></li>
+                    <li><a href="dailytransaction.php" class="" data-toggle="dropdown">TRANSACTIONS</a></li>
                     <li><a href="/paybills">PAY BILLS</a></li>
                     <li><a href="/invite" >INVITE FRIENDS</a></li>
+<<<<<<< HEAD
+                    <li><a href="/userpage" >USER PAGE</a></li>
+                    <li><a href="#" >LOGIN </a></li>
+=======
                     {{-- <li><a href="/userpage" >USER PAGE</a></li> --}}
                     @if (Auth::user())
 
@@ -49,6 +53,7 @@
                                 </ul>
                             </li>
                     @endif
+>>>>>>> 0c2b4bf791f0374aeb980c1e61a4cee702929a5a
                 </ul>
             </div>
 
