@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
-    @section('title')
-        <title> Human ATM Profile | HumanATM</title>
-    @endsection
+@section('title')
+<title> Human ATM Profile | HumanATM</title>
+@endsection
 
-    @section('content')
-</body>
+@section('content')
+
+<body class="signup-body">
+    
     <section class="container">
         
         <!-- header -->
-      @include('header')
+        @include('header')
         <div class="profile-container">
             <div class="profile-content">
                 <div class="profile-request">
@@ -17,11 +19,13 @@
                 </div>
                 <div class="profile-supermenu">
                     <div class ="profile-menu" id="">
-                        <button type="button" class="active"><a href="#">PROFILE</a></button>
+
+                        <button type="button" class="active"><a href="/dashboard">PROFILE</a></button>
                     </div>
                     <div class = "profile-menu" id="profile-menu1">
-                        <button type="button" class="inactive"><a href="#">WITHDRAW</a></button>
-                        <button type="button" class="inactive"><a href="#">PAYMENT</a></button>
+                        <button type="button" class="inactive"><a href="/withdraw">WITHDRAW</a></button>
+                        <button type="button" class="inactive"><a href="/payment">PAYMENT</a></button>
+
                     </div>
                 </div>
                 <div class="profile-image">
