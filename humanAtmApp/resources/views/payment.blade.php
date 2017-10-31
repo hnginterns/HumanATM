@@ -6,7 +6,7 @@
 
 @section('content')
 
-<body class="signup-body">
+<body>
     <section>
        @include('header')
    </section>
@@ -17,10 +17,10 @@
                 <p>MAKE A REQUEST</p>
             </div>
             <div class="profile-supermenu">
-                <div class ="profile-menu" id="">
-                    <button type="button">PROFILE</button>
-                    <button type="button" >WITHDRAW</button>
-                    <button type="button" class="active">PAYMENT</button>
+                <div class ="profile-menu">
+                    <button type="button" class="inactive"><a href="#">PROFILE<a></button>
+                    <button type="button" class="inactive"><a href="#">WITHDRAW<a></button>
+                    <button type="button" class="active"><a href="#">PAYMENT</a></button>
                 </div>
             </div>
 
