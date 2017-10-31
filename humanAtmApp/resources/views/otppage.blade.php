@@ -7,6 +7,7 @@
 
     @section('content')
         <div class="container-fluid daily-margin">
+        @include('header')
         <div class="row">
             <div class="col-sm-offset-3 col-sm-6 otp-rectangle-box" >
                 <div class="otp-text">

@@ -7,8 +7,6 @@
 /* These are rules for Homepage*/
 
 /* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
-.signup-body{
-    font-size: 100%;}
 
     .signup-container, .forgotpassword-container{
     display:block;
@@ -500,7 +498,7 @@ Next user should start on the next line*/
     margin: auto;
     margin-bottom: 30px;    
     border: 3px solid #0F3B75;
-    margin-top: 70px;
+    margin-top: 80px;
     color: #0F3B75;
 }
 .profile-content{
@@ -527,7 +525,7 @@ Next user should start on the next line*/
     display: inline-block;
     border: 2px solid #0F3B75;
     padding: 10px;
-    font-size: 1.4em;
+    font-size: 1.2em;
     width: 170px;
     height: 40px;
     margin: 15px;
@@ -537,6 +535,16 @@ Next user should start on the next line*/
 .profile-menu button.active {
     background-color: #0F3B75;
     color: white;            
+}
+.profile-menu button.active a{
+    color: white;            
+}
+.profile-menu button.inactive {
+    background-color: white;
+    color: #0F3B75;         
+}
+.profile-menu button.inactive a{
+    color: #0F3B75;            
 }
 .profile-image{
     height: 140px;
@@ -556,7 +564,7 @@ Next user should start on the next line*/
     width: 80%;
     margin-top: 70px;
     margin: 30px auto;
-    font-size: 1.25em;
+    font-size: 1.1em;
 }
 .profile-2 {
     border-bottom: 2px solid #0F3B75;
@@ -574,6 +582,7 @@ Next user should start on the next line*/
     margin: 20px auto;
     text-align: center;
 }
+
 .profile-innerform{
     margin-top: 50px;
 }
@@ -694,6 +703,8 @@ Next user should start on the next line*/
 }
 #header-color{
     color:#ffffff;
+    
+    font-family: Lato, sans-serif;
 }
 #header-color > li > a{
     color:#ffffff;
@@ -701,9 +712,8 @@ Next user should start on the next line*/
 #header-color > li > a:hover{
     color:#ffffff;
     background-color:#ffffff;
-    color: #0F3B75;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 15px; 
 }
 .nav{
     padding-left: 30px;

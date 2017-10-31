@@ -9,7 +9,7 @@ class Profile extends Model
     //
     protected $fillable = [
     	'bank_id', 'user_id',
-    	'account_number', 'location',
+    	'account_number', 'account_name','location',
     ];
 
     public function user()

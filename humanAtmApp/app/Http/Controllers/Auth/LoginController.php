@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+
 class LoginController extends Controller
 {
     /*
@@ -40,10 +41,12 @@ class LoginController extends Controller
 
     protected function authenticated(){
 
+
         if ((Auth::user()->role)==1)
         {
-            return redirect('/admin');
+            return redirect('admin');
         }
         return redirect('dashboard');
+
     }
 }

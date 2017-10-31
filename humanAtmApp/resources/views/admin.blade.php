@@ -29,7 +29,7 @@
     <header class="main-header">
 
       <!-- Logo -->
-      <a href="admin.html" class="logo">
+      <a href="/admin" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -144,6 +144,7 @@
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
+
                     <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" class="btn btn-default btn-flat">
@@ -192,7 +193,9 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li><a href="/HumanAtm"><i class="fa fa-link"></i> <span>Others/HumanATM</span></a></li>
+
+        <li><a href="/admin/humanAtm"><i class="fa fa-link"></i> <span>Others/HumanATM</span></a></li>
+
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -210,7 +213,7 @@
       <!-- Info boxes -->
       <div class="row">
 
-        <a href="/total">
+        <a href="/admin/total">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
@@ -222,7 +225,7 @@
           </div>
         </a>
 
-        <a href="/pending">
+        <a href="/admin/pending">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
@@ -237,7 +240,7 @@
         <!-- For small devices only -->
         <div class="clearfix visible-sm-block"></div>
 
-        <a href="/completed">
+        <a href="/admin/completed">
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box">
               <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>

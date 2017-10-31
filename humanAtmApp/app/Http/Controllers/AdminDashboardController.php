@@ -28,4 +28,8 @@ class AdminDashboardController extends Controller
     {
     	return view('completed');
     }
+     public function humanAtm()
+    {
+        return view('humanAtm');
+    }
 }

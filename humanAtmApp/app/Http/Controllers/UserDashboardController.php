@@ -21,7 +21,7 @@ class UserDashboardController extends Controller
     public function index()
     {
         $user = User::find(Auth::id())->profile();
-            dd($user);
+
         return view('userpage', compact('user'));
     }
 
