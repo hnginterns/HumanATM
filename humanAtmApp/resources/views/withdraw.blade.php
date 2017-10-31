@@ -17,9 +17,9 @@
                             </div>
                         <div class="profile-supermenu">
                             <div class ="profile-menu" id="">
-                                <button type="button">PROFILE</button>
-                                <button type="button" class="active">WITHDRAW</button>
-                                <button type="button">PAYMENT</button>
+                                <button type="button inactive"> <a href="">PROFILE</a></button>
+                                <button type="button" class="active"> <a href="">WITHDRAW </a></button>
+                                <button type="button inactive"> <a href="">PAYMENT </a></button>
                             </div>
                         </div>
                             
