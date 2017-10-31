@@ -45,6 +45,10 @@ Route::get('/404', function () {
  Route::get('/invite', function(){
  	return view('invite');
  });
+  Route::get('/human-atm', function(){
+ 	return view('human-atm-profile');
+ });
+
 
 Route::get('/{name}', function ($name) {
     return view($name);
