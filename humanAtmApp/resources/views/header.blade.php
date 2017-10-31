@@ -23,10 +23,11 @@
             <div class="collapse navbar-collapse" id="HumanATMNavbar">
                 <ul class="nav navbar-nav navbar-right" id="header-color2" >
                     <li class="active"><a href="/wallet">WALLET</a></li>
-                    <li><a href="dailytransaction.php">TRANSACTIONS</a></li>
+                    <li><a href="dailytransaction.php" class="" data-toggle="dropdown">TRANSACTIONS</a></li>
                     <li><a href="/paybills">PAY BILLS</a></li>
                     <li><a href="/invite" >INVITE FRIENDS</a></li>
                     <li><a href="/userpage" >USER PAGE</a></li>
+                    <li><a href="#" >LOGIN </a></li>
                 </ul>
             </div>
         </div>
