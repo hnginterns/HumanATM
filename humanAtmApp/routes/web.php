@@ -16,9 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/location', function () {
-    return view('location-listing');
-})->name('location');
+Route::get('/location','TransactionController@index')->name('location');
 
 Auth::routes();
 
@@ -45,13 +43,16 @@ Route::get('/404', function () {
  Route::get('/invite', function(){
  	return view('invite');
  });
-  Route::get('/human-atm', function(){
- 	return view('human-atm-profile');
- });
+  
 
 
 Route::get('/{name}', function ($name) {
     return view($name);
-})->middleware('auth');
+});
+
+/*  Transaction */
+Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
+Route::get('/withdraw/humanAtm/{id}', 'TransactionController@showWithdrawalForm');
+Route::post('/withdraw/{id}', 'TransactionController@withdraw')->middleware('auth');
 
 

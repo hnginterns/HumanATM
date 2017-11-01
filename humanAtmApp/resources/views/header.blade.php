@@ -26,10 +26,18 @@
                     <li><a href="dailytransaction.php" class="" data-toggle="dropdown">TRANSACTIONS</a></li>
                     <li><a href="/paybills">PAY BILLS</a></li>
                     <li><a href="/invite" >INVITE FRIENDS</a></li>
+<<<<<<< HEAD
                     <li><a href="/userpage" >USER PAGE</a></li>
                     <li><a href="#" >LOGIN </a></li>
+=======
+
+                    <li><a href="/userpage" >USER PAGE</a></li>
+                    
+
+>>>>>>> 34230bc1d32e6f1573d72dff428b18b569544064
                     {{-- <li><a href="/userpage" >USER PAGE</a></li> --}}
                     @if (Auth::user())
+                    <li><a href="/location" >View Human ATMs</a></li>
 
                         <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -50,7 +58,13 @@
                                     </li>
                                 </ul>
                             </li>
+                            @else
+                            <li><a href="/login" >LOGIN </a></li>
                     @endif
+<<<<<<< HEAD
+=======
+
+>>>>>>> 34230bc1d32e6f1573d72dff428b18b569544064
                 </ul>
             </div>
 

@@ -4,11 +4,6 @@
 <title> PayBills | HumanATM</title>
 @endsection
 
-<div class='signup-body'>
-
-
- @section('content')
-
    @section('content')
    <body class="signup-body">
     <section>

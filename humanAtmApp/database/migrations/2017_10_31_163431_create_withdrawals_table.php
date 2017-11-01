@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfilesTable extends Migration
+class CreateWithdrawalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,20 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('withdrawals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->index();
-            $table->integer('bank_id')->index();
+             $table->integer('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+           
+            $table->string('phone_number');
+            $table->integer('amount');
+            $table->integer('bank_id');
             $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
-            $table->string('account_name');
-
-             $table->bigInteger('account_number');
-             $table->string('phone_number');
-
+            $table->bigInteger('account_number');
             $table->string('location');
-            $table->string('image_url')->nullable();
-            $table->timestamps();
+            $table->integer('status')->default(0);
+             $table->timestamps();
+
         });
     }
 
@@ -37,6 +37,6 @@ class CreateProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('withdrawals');
     }
 }
