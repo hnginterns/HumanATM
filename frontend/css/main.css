@@ -709,6 +709,18 @@ Next user should start on the next line*/
     padding-left: 30px;
     padding-right: 30px;
 }
+
+.dropdown-menu>li>a{
+        font-weight: bold;
+    color: #0F3B75 !important;
+}
+@media screen and (max-width: 768px) {
+    .dropdown-menu>li>a{
+        color: #ffffff !important;
+    }
+
+}
+
 /*##################################################*/
 /* Footer CSS begins here*/
 .footer {
@@ -766,8 +778,18 @@ Next user should start on the next line*/
     color:#0F3B75;
     font-weight: bold;
 }
+#header-dropdown{
+    left: 0;
+}
+#header-dropdown li a{
+    color: #0f3b75;
+    padding-bottom: 5px;
+}
+
 .navbar-nav > .active > a,
-.navbar-nav > .active > a:hover,.navbar-nav > li > a:hover {
+.navbar-nav > .active > a:hover,.navbar-nav > li > a:hover,
+#header-dropdown > .active > a,#header-dropdown > .active > a:hover,
+#header-dropdown > li > a:hover {
     text-decoration: none;
     font-weight: bold;
     border-radius:0px;
