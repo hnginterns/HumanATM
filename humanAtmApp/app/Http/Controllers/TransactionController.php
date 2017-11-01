@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\HumanAtm;
 use App\BankAtm;
 
@@ -37,9 +38,10 @@ class TransactionController extends Controller
 	}
 
 	public function withdraw(Request $request, $id)
-	{
+	{      
+	
 		
-		$validator = Validator::make($request->all(), [
+		$validation = Validator::make($request->all(), [
 			'phone_number' => 'required'|'min:11',
 			'amount' => 'required',
 			'bank_id' => 'required',
@@ -47,7 +49,7 @@ class TransactionController extends Controller
 			'location' => 'required',
 		]);
 
-		if ($validator->fails()){
+		if ($validation->fails()){
 			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
 		}
 
