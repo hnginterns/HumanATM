@@ -34,7 +34,10 @@
             <div class="collapse navbar-collapse" id="HumanATMNavbar">
                 <ul class="nav navbar-nav navbar-right" id="header-color2" >
                     <li class="active"><a href="#">WALLET</a></li>
-                    <li><a href="dailytransaction.php">TRANSACTIONS</a></li>
+                     <li>
+                        <a href="dailytransaction.php">TRANSACTIONS</a>
+    
+        </li>
                     <li><a href="#">PAY BILLS</a></li>
                     <li><a href="#" >INVITE FRIENDS</a></li>
                     <li><a href="#" >USER PAGE</a></li>

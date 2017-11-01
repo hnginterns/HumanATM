@@ -700,7 +700,7 @@ Next user should start on the next line*/
 }
 #header-color > li > a:hover{
     color:#ffffff;
-    background-color:#ffffff;
+    background-color:#ffffff !important;
     color: #0F3B75;
     font-weight: bold;
     border-radius: 15px;
