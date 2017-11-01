@@ -17,21 +17,21 @@
                             </div>
                             <div class="row paybills-margin">
                                 <div class="col-md-5 col-md-offset-1 text-center ">
-                                    <h4><button type="button" class="btn btn-primary btn-block profile-box3"> <span style="font-size:1.7em">  CABLE Tv Subscription </span></button></h4>
+                                    <h4><button type="button" class="btn btn-primary btn-block"> <span style="font-size:1.3em">  CABLE Tv Subscription </span></button></h4>
                                        
                                 </div>
                                 <div class="col-md-5 text-center">
-                                        <h4> <button type="button" class="btn btn-primary btn-block profile-box3"> <span style="font-size:1.7em">  Utility Bills </span></button></h4>
+                                        <h4> <button type="button" class="btn btn-primary btn-block "> <span style="font-size:1.3em">  Utility Bills </span></button></h4>
                                        
                                 </div>
                             </div>
                             <div class="row paybills-margin2">
                                 <div class="col-md-5 col-md-offset-1 text-center ">
-                                    <h4><button type="button" class="btn btn-primary btn-block profile-box3"> <span style="font-size:1.7em">  Data Bundle </span></button></h4>
+                                    <h4><button type="button" class="btn btn-primary btn-block"> <span style="font-size:1.3em">  Data Bundle </span></button></h4>
                                        
                                 </div>
                                 <div class="col-md-5 text-center">
-                                        <h4> <button type="button" class="btn btn-primary btn-block profile-box3"> <span style="font-size:1.7em"> Mobile Recharge </span></button></h4>
+                                        <h4> <button type="button" class="btn btn-primary btn-block"> <span style="font-size:1.3em"> Mobile Recharge </span></button></h4>
                                        
                                 </div>
                             </div>

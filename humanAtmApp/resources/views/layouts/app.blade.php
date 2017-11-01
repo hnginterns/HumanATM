@@ -16,7 +16,6 @@
     @yield('title')
 
     <!-- Styles -->
-    <link href="{{ asset('css/header-footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>

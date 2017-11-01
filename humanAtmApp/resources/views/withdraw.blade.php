@@ -6,6 +6,11 @@
 
     @section('content')
   
+
+    <body>
+        <section>
+        @include('header')
+        </section>
          <section class="container"> 
             <div class="profile-container">
                     <div class="withdraw-content">
@@ -14,9 +19,11 @@
                             </div>
                         <div class="profile-supermenu">
                             <div class ="profile-menu" id="">
-                                <button type="button">PROFILE</button>
-                                <button type="button" class="active">WITHDRAW</button>
-                                <button type="button">PAYMENT</button>
+
+                                <button type="button inactive"> <a href="/dashboard">PROFILE</a></button>
+                                <button type="button" class="active"> <a href="/withdraw">WITHDRAW </a></button>
+                                <button type="button inactive"> <a href="/payment">PAYMENT </a></button>
+
                             </div>
                         </div>
                             
@@ -60,5 +67,6 @@
             </div>       
             
         </section>
+    </body>
 
     @endsection

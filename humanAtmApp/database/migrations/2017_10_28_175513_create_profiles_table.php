@@ -19,7 +19,11 @@ class CreateProfilesTable extends Migration
             $table->integer('bank_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
-            $table->integer('account_name');
+            $table->string('account_name');
+
+             $table->bigInteger('account_number');
+             $table->string('phone_number');
+
             $table->string('location');
             $table->string('image_url')->nullable();
             $table->timestamps();

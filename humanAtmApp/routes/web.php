@@ -15,22 +15,37 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/human-atm', function () {
-    return view('human-atm-profile');
-});
-Route::get('/location', function () {
-    return view('location-listing');
-})->name('location');
+
+Route::get('/location','TransactionController@index')->name('location');
+Route::post('/fund','WalletsController@cardToWallet');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
 
-Route::get('/paybills', function () {
-    return view('paybills');
-});
+
+Route::get('/admin', 'AdminDashboardController@index')->name('admin');
+Route::get('/admin/pending', 
+	'AdminDashboardController@pending')->name('admin/pending');
+Route::get('/admin/humanAtm', 'AdminDashboardController@humanAtm')->name('admin/humanAtm');
+Route::get('/admin/total', 
+	'AdminDashboardController@total')->name('admin/total');
+Route::get('/admin/completed', 
+	'AdminDashboardController@completed')->name('admin/completed');
+
+Route::get('/403', function () {
+    return view('errors.403');
+})->name('403');
+Route::get('/404', function () {
+    return view('errors.404');
+})->name('404');
+ Route::get('/invite', function(){
+ 	return view('invite');
+ });
+  Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
+
 
 Route::get('/{name}', function ($name) {
     return view($name);
