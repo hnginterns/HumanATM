@@ -715,6 +715,27 @@ Next user should start on the next line*/
     font-weight: bold;
     border-radius: 15px; 
 }
+#header-dropdown{
+    left: 0;
+}
+#header-dropdown li a{
+    color: #0f3b75;
+    padding-bottom: 5px;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,.navbar-nav > li > a:hover,
+#header-dropdown > .active > a,#header-dropdown > .active > a:hover,
+#header-dropdown > li > a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    border-radius:0px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: #0F3B75;
+    color: #0F3B75;
+    background-color: transparent !important;
+}
 .nav{
     padding-left: 30px;
     padding-right: 30px;
@@ -932,6 +953,8 @@ Next user should start on the next line*/
     border:none;
     border-bottom:1px solid #000000;
   }
+
+  /* edit user profile rules*/
   .editusertext-blue{
     color: #0F3B75;
     font-weight: bold;
