@@ -5,11 +5,8 @@
     @endsection
 
     @section('content')
-    <body class="signup-body">
-        <section>
-           @include('header')
-        </section>
-        <section class="container">
+  
+         <section class="container"> 
             <div class="profile-container">
                     <div class="withdraw-content">
                             <div class="profile-request">
@@ -63,6 +60,5 @@
             </div>       
             
         </section>
-        
-    </body>
+
     @endsection
