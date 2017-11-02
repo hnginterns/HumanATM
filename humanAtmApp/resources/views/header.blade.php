@@ -1,4 +1,4 @@
-    <script>
+<script>
         $(document).ready(function () {
             $('ul.nav > li').click(function (e) {
                 e.preventDefault();
