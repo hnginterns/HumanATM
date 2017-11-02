@@ -1,4 +1,4 @@
-    <script>
+<script>
         $(document).ready(function () {
             $('ul.nav > li').click(function (e) {
                 e.preventDefault();
@@ -35,13 +35,7 @@
                     </li>
                     <li><a href="/paybills">PAY BILLS</a></li>
                     <li><a href="/invite" >INVITE FRIENDS</a></li>
-                    <li><a href="/userpage" >USER PAGE</a></li>
-                    <li><a href="#" >LOGIN </a></li>
 
-                    
-                    
-
-                    {{-- <li><a href="/userpage" >USER PAGE</a></li> --}}
                     @if (Auth::user())
                     <li><a href="/location" >View Human ATMs</a></li>
                      <li><a href="/dashboard" >Dashboard</a></li>

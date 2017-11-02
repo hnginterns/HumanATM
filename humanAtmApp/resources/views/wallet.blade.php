@@ -19,10 +19,10 @@
                 </div>
                 <div class="row daily-margin text-center">
                     <div class="col-md-4 col-md-offset-1 daily-active">
-                        <h4><a href="wallettoaccount.php"> <span style="color:white"><b> TRANSFER TO ACCOUNT</b><span></a></h4>
+                        <h4><a href="wallet"> <span style="color:white"><b> TRANSFER TO ACCOUNT</b><span></a></h4>
                         </div>
                         <div class="col-md-4 col-md-offset-2 daily-inactive">
-                            <h4><a href="wallettoaccount2.php"><span style="color:#0F3B75; "><b>FUND WALLET</b><span></a></h4>
+                            <h4><a href="fundwallet"><span style="color:#0F3B75; "><b>FUND WALLET</b><span></a></h4>
                             </div>
                         </div>
                         <div class="row daily-margin">
@@ -40,8 +40,17 @@
 
                                         
                                         <label for="Amount" class="walletColor">BANK</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="First Bank">
-
+                                        <select class="withdraw-expand">
+                                                <option value="" selected="selected">Select Your Bank</option>
+                                                <option value="first Bank of Nigeria" >First Bank of Nigeria</option>
+                                                <option value="union Bank of Nigeria">Union Bank of Nigeria</option>
+                                                <option value="united Bank for Africa">United Bank for Africa</option>
+                                                <option value="unity Bank plc">Unity Bank plc</option>
+                                                <option value="fidelity Bank Nigeria">Fidelity Bank Nigeria</option>
+                                                <option value="first City Monument Bank">First City Monument Bank</option>
+                                                <option value="guaranty Trust_Bank">Guaranty Trust Bank</option>
+                                                <option value="heritage Bank Plc">Heritage Bank plc</option>
+                                    </select>
                                         <p class="wallet-text text-center">
                                             Transaction-Fee N55					
                                         </p>			

@@ -19,7 +19,11 @@ class CreateWalletsTable extends Migration
             $table->string('balance');
             $table->timestamps();
 
+<<<<<<< HEAD
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+=======
+             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+>>>>>>> backend
         });
     }
 

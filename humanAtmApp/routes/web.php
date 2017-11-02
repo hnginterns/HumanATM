@@ -17,12 +17,13 @@ Route::get('/', function () {
 
 
 Route::get('/location','TransactionController@index')->name('location');
+Route::post('/fund','WalletsController@cardToWallet');
+Route::post('/otp','WalletsController@otp');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
 
 
 Route::get('/admin', 'AdminDashboardController@index')->name('admin');
@@ -45,11 +46,19 @@ Route::get('/404', function () {
  });
   
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> backend
 /*  Transaction */
+
+Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
 Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
 Route::get('/withdraw/humanAtm/{id}', 'TransactionController@showWithdrawalForm');
 Route::post('/withdraw/{id}', 'TransactionController@processWithdraw')->middleware('auth');
 
+Route::get('/{name}', function ($name) {
+    return view($name);
+});
 

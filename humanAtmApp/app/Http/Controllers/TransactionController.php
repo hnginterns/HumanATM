@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator;
 use App\HumanAtm;
 use App\BankAtm;
 use App\Withdrawal;
@@ -24,37 +25,43 @@ class TransactionController extends Controller
 
 	public function humanAtmProfile($id)
 	{
+		$human_atm_profile = HumanAtm::findOrFail($id)->load('user.profile');
 
-		$human_atm_profile = HumanAtm::findOrFail($id);
-		$human_atm_profile = $human_atm_profile->load('user.profile');
-        
 		return view('human-atm-profile', compact('human_atm_profile'));
 	}
 
 	public function showWithdrawalForm($id)
 	{   
-		$withdrawer_id = $id;
+		$payer_id = $id;
 
-		return view('withdraw', compact('withdrawer_id'));
+		return view('withdraw', compact('payer_id'));
 
 	}
 
 	public function processWithdraw(Request $request, $id)
 	{      
-		$this->validate($request, $this->withdrawFormRules());
-         $w = new Withdrawal;
-		$user_id = $id;
 
-		 $w->user_id = $user_id;
-		 $w->phone_number = $request->phone_number;
-		 $w->bank_name = $request->bank_name;
-		 $w->amount = (int) $request->amount + 150;
-		 $w->location = $request->location;
-         
-         if ($w->save()){
+		$payer_id = $id;
+		$validation = Validator::make($request->all(), $this->withdrawFormRules());
 
-         	return redirect()->back()->with('status', 'Your withdrawal request has been recieved, kindly wait for it to be processed');
-         }
+		if ($validation->fails()){
+			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
+		}
+
+		$createWithdrawalRequest = Withdrawal::create([
+			'withdrawer_id' => $request->id,
+			'payer_id'      => $payer_id,
+			'phone_number'  => $request->phone_number,
+			'bank_name'     => $request->bank_name,
+			'amount'        => (int)$request->amount + 150,
+			'account_number'=> $request->account_number,
+			'location'      => $request->location,
+		]);
+
+		if ($createWithdrawalRequest)
+		{
+			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
+		}
 
 	}
 

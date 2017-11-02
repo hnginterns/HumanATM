@@ -15,10 +15,12 @@
                     <P class="otp-p">A One Time Password has been sent to your bank mobile phone number</P>
                 </div>
 
-                <form action="" method="">
+                <form action="/otp" method="post">
+                    {{ csrf_field()}}
                     <div class="form-group row">
                         <div class="col-sm-offset-1 col-sm-10">
-                            <input type="text" class="form-control otp-textbox" id="">
+                            <input type="number" class="form-control otp-textbox" name="otp">
+                            <input type="hidden" class="form-control otp-textbox" name="ref" value="{{$transRef}}">
                         </div>
                     </div>
 
