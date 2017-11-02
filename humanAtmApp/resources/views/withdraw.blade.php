@@ -40,7 +40,7 @@
 
                 <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
                     <label for="amount">AMOUNT</label>
-                    <input type="text" name="amount" class="withdraw-data" id="" placeholder="N45000" value="{{ old('amount')}}">
+                    <input type="text" name="amount" class="withdraw-data" id="" placeholder="45000" value="{{ old('amount')}}">
                     <p class="withdraw-label">MAX. AMOUNT  N50,000</p>
                      @if ($errors->has('amount'))
                     <span class="help-block">
