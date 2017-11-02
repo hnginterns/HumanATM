@@ -44,11 +44,16 @@ Route::get('/404', function () {
  Route::get('/invite', function(){
  	return view('invite');
  });
-  Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
+  
 
 
 Route::get('/{name}', function ($name) {
     return view($name);
 });
+
+/*  Transaction */
+Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
+Route::get('/withdraw/humanAtm/{id}', 'TransactionController@showWithdrawalForm');
+Route::post('/withdraw/{id}', 'TransactionController@withdraw')->middleware('auth');
 
 
