@@ -77,7 +77,7 @@ class TransactionController extends Controller
 
 		if ($confirmed){
 
-			return redirect()->back()->with(['status' => 'You have confirmed that you have recieved the sum of '. ' NGN'. ((int)$withdrawal->amount -150). '  from '. $my_payer->name. ' Thanks for banking with us!']);
+			return redirect()->back()->with(['status' => 'You have confirmed that you have recieved the sum of '. ' NGN'. ((int)$withdrawal->amount -150). '  from '. $my_payer->name. ' Thanks for using our service!, Don\'t forget to hit the invite button to share your testimony with your friends']);
 		}
 	}
 
