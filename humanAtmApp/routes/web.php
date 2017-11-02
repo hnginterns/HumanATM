@@ -46,11 +46,6 @@ Route::get('/404', function () {
  });
   
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> backend
 /*  Transaction */
 
 Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
