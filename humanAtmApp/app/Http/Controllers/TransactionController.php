@@ -39,15 +39,9 @@ class TransactionController extends Controller
 
 	public function withdraw(Request $request, $id)
 	{      
-	
+	    
 		
-		$validation = Validator::make($request->all(), [
-			'phone_number' => 'required'|'min:11',
-			'amount' => 'required',
-			'bank_id' => 'required',
-			'account_number' => 'required'|'max:10|min:10',
-			'location' => 'required',
-		]);
+		$validation = Validator::make($request->all(), $this->withdrawFormRules());
 
 		if ($validation->fails()){
 			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
@@ -58,10 +52,10 @@ class TransactionController extends Controller
 	public function withdrawFormRules()
 	{
 		return [
-			'phone_number' => 'required'|'min:11',
+			'phone_number' => 'required|min:11',
 			'amount' => 'required',
-			'bank_id' => 'required',
-			'account_number' => 'required'|'max:10|min:10',
+			'bank_name' => 'required',
+			'account_number' => 'required|max:10|min:10',
 			'location' => 'required',
 		];
 	}

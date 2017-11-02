@@ -24,7 +24,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
 
 
 Route::get('/admin', 'AdminDashboardController@index')->name('admin');
@@ -47,14 +46,14 @@ Route::get('/404', function () {
  });
   
 
-
-Route::get('/{name}', function ($name) {
-    return view($name);
-});
-
 /*  Transaction */
+
+Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
 Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
 Route::get('/withdraw/humanAtm/{id}', 'TransactionController@showWithdrawalForm');
 Route::post('/withdraw/{id}', 'TransactionController@withdraw')->middleware('auth');
 
+Route::get('/{name}', function ($name) {
+    return view($name);
+});
 
