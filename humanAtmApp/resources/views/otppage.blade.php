@@ -24,7 +24,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="otp-button btn">SEND{{$transRef}}</button>
+                    <button type="submit" class="otp-button btn">SEND</button>
                 </form>
                 <div class="otp-resend">
                     <P class="">OTP not sent?</P>
