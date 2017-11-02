@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body class='signup-body'>
-        <?php include('header.php') ?>
+        <?php include ('header.php'); ?>
     <section class='container'>
         <div class="signup-container">
             <div class = "signup-content">

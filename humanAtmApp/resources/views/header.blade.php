@@ -23,9 +23,20 @@
             <div class="collapse navbar-collapse" id="HumanATMNavbar">
                 <ul class="nav navbar-nav navbar-right" id="header-color2" >
                     <li class="active"><a href="/wallet">WALLET</a></li>
-                    <li><a href="dailytransaction.php" class="" data-toggle="dropdown">TRANSACTIONS</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" 
+                        data-toggle="dropdown" href="">TRANSACTIONS</a>
+                        <ul class="dropdown-menu" id="header-dropdown">
+                            <li><a href=""> Daily</a></li>
+                            
+                            <li><a href="">Weekly</a></li>
+                           
+                            <li><a href="">Monthly</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/paybills">PAY BILLS</a></li>
                     <li><a href="/invite" >INVITE FRIENDS</a></li>
+                    <li><a href="/userpage" >USER PAGE</a></li>
+                    <li><a href="#" >LOGIN </a></li>
 
                     
                     

@@ -32,7 +32,14 @@
         <div class="collapse navbar-collapse" id="HumanATMNavbar">
             <ul class="nav navbar-nav navbar-right" id="header-color" >
                 <li><a href="#">WALLET</a></li>
-                <li><a href="#">TRANSACTIONS</a></li>
+                <li class="dropdown">
+                        <a href="dailytransaction.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TRANSACTIONS <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Daily</a></li>
+            <li><a href="#">Weekly</a></li>
+            <li><a href="#">Monthly</a></li>
+          </ul>
+        </li>
                 <li><a href="#">PAY BILLS</a></li>
                 <li><a href="#" >INVITE FRIENDS</a></li>
             </ul>
