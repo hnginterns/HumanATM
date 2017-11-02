@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 
 Route::get('/location','TransactionController@index')->name('location');
+Route::post('/fund','WalletsController@cardToWallet');
+Route::post('/otp','WalletsController@otp');
 
 Auth::routes();
 

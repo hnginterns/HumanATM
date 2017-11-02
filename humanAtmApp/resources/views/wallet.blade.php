@@ -19,10 +19,10 @@
                 </div>
                 <div class="row daily-margin text-center">
                     <div class="col-md-4 col-md-offset-1 daily-active">
-                        <h4><a href="wallettoaccount.php"> <span style="color:white"><b> TRANSFER TO ACCOUNT</b><span></a></h4>
+                        <h4><a href="wallet"> <span style="color:white"><b> TRANSFER TO ACCOUNT</b><span></a></h4>
                         </div>
                         <div class="col-md-4 col-md-offset-2 daily-inactive">
-                            <h4><a href="wallettoaccount2.php"><span style="color:#0F3B75; "><b>FUND WALLET</b><span></a></h4>
+                            <h4><a href="fundwallet"><span style="color:#0F3B75; "><b>FUND WALLET</b><span></a></h4>
                             </div>
                         </div>
                         <div class="row daily-margin">

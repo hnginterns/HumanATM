@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title')
-<title> Payment | HumanATM</title>
-@endsection
+    @section('title')
+        <title>Payment | HumanATM</title>
+    @endsection
 
 @section('content')
 
@@ -59,9 +59,7 @@
             </div>
         </div>
         
-    </div>       
-
-</section>
-
-</body>
+                </div>       
+                
+            </section>
 @endsection

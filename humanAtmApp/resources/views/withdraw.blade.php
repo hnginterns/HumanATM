@@ -108,9 +108,18 @@
         </div>
     </div>
     
+<<<<<<< HEAD
+            </div>       
+            
+        </section>
+    </body>
+
+    @endsection
+=======
 </div>       
 
 </section>
 
 </body>
 @endsection
+>>>>>>> 34230bc1d32e6f1573d72dff428b18b569544064
