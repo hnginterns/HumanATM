@@ -8,7 +8,7 @@ class Transaction extends Model
 {
     protected $fillable = [
     	'sender_id', 'reciever_id',
-    	'amount',
+    	'amount','status'
     ];
 
     public function user()

@@ -9,6 +9,7 @@ use App\HumanAtm;
 use App\BankAtm;
 use App\Withdrawal;
 use App\User;
+use App\Transaction;
 
 class TransactionController extends Controller
 {
@@ -76,6 +77,13 @@ class TransactionController extends Controller
 		$confirmed = $withdrawal->update(['status'=>'completed']);
 
 		if ($confirmed){
+
+			Transaction::create([
+				'sender_id'   => $withdrawal->payer_id,
+				'reciever_id' => $withdrawal->withdrawer_id,
+				'amount'      => ((int)$withdrawal->amount -150),
+				'status'      => 'completed',
+			]);
 
 			return redirect()->back()->with(['status' => 'You have confirmed that you have recieved the sum of '. ' NGN'. ((int)$withdrawal->amount -150). '  from '. $my_payer->name. ' Thanks for using our service!, Don\'t forget to hit the invite button to share your testimony with your friends']);
 		}
