@@ -904,12 +904,12 @@ Next user should start on the next line*/
 }
 #header-color > li > a{
     color:#2D9CDB;
+    font-size:1.2em;
 }
 #header-color > li > a:hover{
     color:#ffffff;
-    background-color:#ffffff;
     font-weight: bold;
-    border-radius: 15px; 
+    text-decoration:none;
 }
 #header-dropdown{
     left: 0;
@@ -981,7 +981,7 @@ Next user should start on the next line*/
 /* rules for general footer*/
 .all-footer{
     background-color: rgb(233, 232, 232);
-    padding-top: 2%;
+    padding-top: 6%;
 }
 .footer-p{
     line-height:1.8em;
