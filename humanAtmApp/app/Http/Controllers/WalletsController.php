@@ -34,22 +34,22 @@ class WalletsController extends Controller
         }
         $headers = array('content-type' => 'application/json', 'Authorization' => $token);
         $query = array(
-            "firstname" => $request->fname,
-            "lastname" => $request->lname,
-            "email" => $request->email,
-            "phonenumber" => $request->phone,
-            "recipient" => "wallet",
-            "card_no" => $request->card_no,
-            "cvv" => $request->cvv,
-            "expiry_year" => 07,
-            "expiry_month" => 20,
-            // "charge_with" => "account", //optional required where card is a local Mastercard
-            // "card_last4" => $request->cvv,
-            "apiKey" => env('APP_KEY'),
-            "amount" => $request->amount,
-            "fee" => 65,
-            "medium" => "web",
-            //"redirecturl" => "https://google.com"
+            "firstname"=> $request->fname,
+           "lastname"=> $request->lname,
+           "email"=> $request->email,
+           "phonenumber"=> $request->phone,
+           "recipient"=> "wallet",
+           "card_no"=> $request->card_no,
+           "cvv"=> $request->cvv,
+           "pin"=>"1111", //optional required when using VERVE card
+           "expiry_year"=>"2020",
+           "expiry_month"=>"07",
+           "charge_auth"=>"PIN", //optional required where card is a local Mastercard
+           "apiKey" => $this->api_key,
+           "amount" =>100,
+           "fee"=>65,
+           "medium"=> "web",
+            
         );
         $body = \Unirest\Request\Body::json($query);
 
@@ -58,12 +58,19 @@ class WalletsController extends Controller
         //var_dump($response);
         //die();
         if($response['status'] == 'success') {
-            $response = $response['data']['transfer'];
-            $meta = $response['meta'];
-            $meta = json_decode($meta, TRUE);
-            $transMsg = $meta['processor']['responsemessage'];
-            $transRef = $meta['processor']['transactionreference'];
-            
+            $transfer = $response['data']['transfer'];
+            $transRef = $transfer['flutterChargeReference'];
+            // $validation = array(
+            //     "ref" => $transRef, 
+            //     "action" => "otp"
+            // );
+
+            return view('otppage', compact('transRef'));
+            // $response = $response['data']['transfer'];
+            // $meta = $response['meta'];
+            // $meta = json_decode($meta, TRUE);
+            // $transMsg = $meta['processor']['responsemessage'];
+            // $transRef = $meta['processor']['transactionreference'];
             // $transaction = new CardWallet;
             // $transaction->firstName = $response['firstName'];
             // $transaction->lastName = $response['lastName'];
@@ -74,12 +81,8 @@ class WalletsController extends Controller
             // $transaction->save();
 
             // event(new FundWallet($cardWallet));
-            
-        Session::flash('status', $transMsg);
-            return back();
-
         }
-        Session::flash('status', $response['message']);
+        Session::flash('status', $transMsg);
             return back();
         
         $answer = array(
@@ -102,8 +105,13 @@ class WalletsController extends Controller
 
             $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer/charge/auth/card', $headers, $body);
             $response = json_decode($response->raw_body, true);
-            $response = $response['data']['flutterChargeResponseMessage'];
-            return redirect('admin')->with('status', $response);
+            if($response['status'] == 'success') {
+                $response = $response['data']['transfer']['flutterChargeResponseMessage'];
+                return $response;
+            }
+            
+            return $response;
+            // return redirect('admin')->with('status', $response);
     }
 
    
