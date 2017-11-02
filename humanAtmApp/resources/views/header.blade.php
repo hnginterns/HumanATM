@@ -36,10 +36,6 @@
                     <li><a href="/paybills">PAY BILLS</a></li>
                     <li><a href="/invite" >INVITE FRIENDS</a></li>
                     <li><a href="/userpage" >USER PAGE</a></li>
-                    <li><a href="#" >LOGIN </a></li>
-
-                    <li><a href="/userpage" >USER PAGE</a></li>
-                    
 
                     {{-- <li><a href="/userpage" >USER PAGE</a></li> --}}
                     @if (Auth::user())

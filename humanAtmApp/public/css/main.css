@@ -687,6 +687,14 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     font-weight: bold;
     padding-right: 15px;
 }
+ .withdraw-expand{
+    width: 250px;
+    font-size:1.2rem;
+    padding-left:10px;
+    color: #0F3B75;
+    border: 1px solid #0F3B75;
+    border-radius:5px;
+    }
 
 
 /*
