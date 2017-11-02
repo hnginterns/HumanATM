@@ -102,7 +102,7 @@
                         <span id="withdraw-span1">N150</span>
                     </p>
                     <input type="submit" class="withdraw-data withdraw-submit" id="withdraw-submit"value="WITHDRAW">
-                    {{--  <input type="" class="withdraw-data withdraw-submit" id="withdraw-submit1"value="FUND WALLET"> --}}
+                     <button class="withdraw-data withdraw-submit" id="withdraw-submit1"><a href="#">FUND WALLET<</a>/button>
                 </div>  
             </form>
         </div>

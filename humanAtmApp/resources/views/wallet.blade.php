@@ -40,8 +40,17 @@
 
                                         
                                         <label for="Amount" class="walletColor">BANK</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="First Bank">
-
+                                        <select class="withdraw-expand">
+                                                <option value="" selected="selected">Select Your Bank</option>
+                                                <option value="first Bank of Nigeria" >First Bank of Nigeria</option>
+                                                <option value="union Bank of Nigeria">Union Bank of Nigeria</option>
+                                                <option value="united Bank for Africa">United Bank for Africa</option>
+                                                <option value="unity Bank plc">Unity Bank plc</option>
+                                                <option value="fidelity Bank Nigeria">Fidelity Bank Nigeria</option>
+                                                <option value="first City Monument Bank">First City Monument Bank</option>
+                                                <option value="guaranty Trust_Bank">Guaranty Trust Bank</option>
+                                                <option value="heritage Bank Plc">Heritage Bank plc</option>
+                                    </select>
                                         <p class="wallet-text text-center">
                                             Transaction-Fee N55					
                                         </p>			
