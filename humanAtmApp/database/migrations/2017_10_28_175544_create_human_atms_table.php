@@ -15,11 +15,12 @@ class CreateHumanAtmsTable extends Migration
     {
         Schema::create('human_atms', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->index();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedInteger('user_id');
             $table->string('amount');
             $table->string('location');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

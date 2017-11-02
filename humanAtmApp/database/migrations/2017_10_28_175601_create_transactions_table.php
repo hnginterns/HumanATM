@@ -15,13 +15,14 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('sender_id')->index();
-            $table->integer('reciever_id')->index();
-            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
-             $table->foreign('reciever_id')->references('id')->on('users')->onDelete('cascade');
-             $table->string('amount');
-             $table->string('status')->default('pending');
+            $table->unsignedInteger('sender_id');
+            $table->unsignedInteger('reciever_id');
+            $table->string('amount');
+            $table->string('status')->default('pending');
             $table->timestamps();
+
+            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('reciever_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

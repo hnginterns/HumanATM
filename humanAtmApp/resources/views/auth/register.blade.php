@@ -95,7 +95,7 @@
             </div>                
         </div>
         <div class='signup-form'>
-            <form action="" class="signup-innerform" method="POST" action="{{ route('register') }}">
+            <form  class="signup-innerform" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
 
                 <input type="text" name="name" value="{{ old('name') }}" class="signup-data {{ $errors->has('name') ? ' has-error' : '' }}" id="" placeholder="Full Name">

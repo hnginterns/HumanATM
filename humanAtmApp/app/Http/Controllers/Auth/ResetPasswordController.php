@@ -36,4 +36,14 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    protected function redirectTo()
+    {
+
+        if ((Auth::user()->role)==1)
+        {
+            return '/admin';
+        }
+        return '/dashboard';
+    }
 }

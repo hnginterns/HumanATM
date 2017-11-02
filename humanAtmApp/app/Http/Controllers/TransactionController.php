@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+// use Illuminate\Support\Facades\Validator;
 use App\HumanAtm;
 use App\BankAtm;
+use App\Withdrawal;
 
 class TransactionController extends Controller
 {
@@ -24,8 +24,10 @@ class TransactionController extends Controller
 
 	public function humanAtmProfile($id)
 	{
-		$human_atm_profile = HumanAtm::findOrFail($id)->load('user.profile');
 
+		$human_atm_profile = HumanAtm::findOrFail($id);
+		$human_atm_profile = $human_atm_profile->load('user.profile');
+        
 		return view('human-atm-profile', compact('human_atm_profile'));
 	}
 
@@ -37,31 +39,32 @@ class TransactionController extends Controller
 
 	}
 
-	public function withdraw(Request $request, $id)
+	public function processWithdraw(Request $request, $id)
 	{      
-	
-		
-		$validation = Validator::make($request->all(), [
-			'phone_number' => 'required'|'min:11',
-			'amount' => 'required',
-			'bank_id' => 'required',
-			'account_number' => 'required'|'max:10|min:10',
-			'location' => 'required',
-		]);
+		$this->validate($request, $this->withdrawFormRules());
+         $w = new Withdrawal;
+		$user_id = $id;
 
-		if ($validation->fails()){
-			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
-		}
+		 $w->user_id = $user_id;
+		 $w->phone_number = $request->phone_number;
+		 $w->bank_name = $request->bank_name;
+		 $w->amount = (int) $request->amount + 150;
+		 $w->location = $request->location;
+         
+         if ($w->save()){
+
+         	return redirect()->back()->with('status', 'Your withdrawal request has been recieved, kindly wait for it to be processed');
+         }
 
 	}
 
 	public function withdrawFormRules()
 	{
 		return [
-			'phone_number' => 'required'|'min:11',
+			'phone_number' => 'required|min:11',
 			'amount' => 'required',
-			'bank_id' => 'required',
-			'account_number' => 'required'|'max:10|min:10',
+			'bank_name' => 'required',
+			'account_number' => 'required|max:10|min:10',
 			'location' => 'required',
 		];
 	}

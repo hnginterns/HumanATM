@@ -26,8 +26,9 @@
             </div>
 
             <div class="withdraw-info">
-                <form action="/withdraw/{{$withdrawer_id}}" class="profile-innerform" method="POST">
+                <form method="POST" action="/withdraw/{{$withdrawer_id}}" class="profile-innerform">
                    {{ csrf_field() }}
+
                    <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
                     <label for="phone number">PHONE NUMBER</label>
                     <input type="text" name="phone_number" class="withdraw-data" id="" placeholder="08022343254" value="{{old('phone_number')}}">
@@ -48,11 +49,21 @@
                     </span>
                     @endif
                 </div>
+                 <div class="form-group{{ $errors->has('bank_name') ? ' has-error' : '' }}">
+                    <label for="acct number">Bank Name</label>
+                    <input type="text" name="bank_name" class="withdraw-data" id="" placeholder="Access Bank" value="{{ old('bank_name')}}">
+                    <p class="withdraw-label"></p>
+                     @if ($errors->has('bank_name'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('bank_name') }}</strong>
+                    </span>
+                    @endif
+                </div>
 
                 <div class="form-group{{ $errors->has('account_number') ? ' has-error' : '' }}">
                     <label for="acct number">ACCOUNT NUMBER</label>
                     <input type="text" name="account_number" class="withdraw-data" id="" placeholder="6160883639" value="{{ old('account_number')}}">
-                    <p class="withdraw-label">OLIBIE CHIDERA</p>
+                    <p class="withdraw-label"></p>
                      @if ($errors->has('account_number'))
                     <span class="help-block">
                         <strong>{{ $errors->first('account_number') }}</strong>

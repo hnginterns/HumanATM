@@ -46,13 +46,10 @@ Route::get('/404', function () {
   
 
 
-Route::get('/{name}', function ($name) {
-    return view($name);
-});
 
 /*  Transaction */
 Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
 Route::get('/withdraw/humanAtm/{id}', 'TransactionController@showWithdrawalForm');
-Route::post('/withdraw/{id}', 'TransactionController@withdraw')->middleware('auth');
+Route::post('/withdraw/{id}', 'TransactionController@processWithdraw')->middleware('auth');
 
 

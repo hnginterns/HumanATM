@@ -20,4 +20,18 @@ class DashboardController extends Controller
        return view('userpage', compact('user'));
 
     }
+
+    public function processWithdraw(Request $request, $id)
+	{      
+		$this->validate($request, [
+			'phone_number' => 'required'|'min:11',
+			'amount' => 'required',
+			'bank_id' => 'required',
+			'account_number' => 'required'|'max:10|min:10',
+			'location' => 'required',
+		]);
+
+		
+
+	}
 }

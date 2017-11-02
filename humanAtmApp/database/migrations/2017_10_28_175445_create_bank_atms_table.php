@@ -15,11 +15,14 @@ class CreateBankAtmsTable extends Migration
     {
         Schema::create('bank_atms', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('bank_id')->index();
-            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
+            $table->unsignedInteger('bank_id');
             $table->string('location');
             $table->timestamps();
+
+            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
         });
+
+
     }
 
     /**

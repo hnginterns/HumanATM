@@ -98,7 +98,7 @@
                 </div>                
             </div>
             <div class='signup-form'>
-                <form action="" class="signup-innerform" method="POST" action="{{ route('login') }}">
+                <form  class="signup-innerform" method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
 
                     <input type="email" name="email" class="signup-data"id="" placeholder="email" value="{{ old('email') }}">
