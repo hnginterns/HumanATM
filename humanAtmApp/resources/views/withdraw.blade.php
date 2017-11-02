@@ -57,16 +57,7 @@
                     </span>
                     @endif
                 </div>
-                 <div class="form-group{{ $errors->has('bank_name') ? ' has-error' : '' }}">
-                    <label for="acct number">Bank Name</label>
-                    <input type="text" name="bank_name" class="withdraw-data" id="" placeholder="Access Bank" value="{{ old('bank_name')}}">
-                    <p class="withdraw-label"></p>
-                     @if ($errors->has('bank_name'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('bank_name') }}</strong>
-                    </span>
-                    @endif
-                </div>
+             
 
                 <div class="form-group{{ $errors->has('bank_name') ? ' has-error' : '' }}">
                     <label for="Amount" class="walletColor">BANK NAME</label>
