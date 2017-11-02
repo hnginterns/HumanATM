@@ -7,14 +7,21 @@
 @section('content')
 <body class="signup-body">
     <section>
-       @include('header')
-   </section>
-   <section class="container">
+     @include('header')
+ </section>
+ <section class="container">
+
     <div class="profile-container">
         <div class="withdraw-content">
             <div class="profile-request">
                 <p>MAKE A REQUEST</p>
             </div>
+            @if (session()->has('status'))
+            <div class="alert alert-info alert-info fade in">
+                <a href="/dashboard" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{ session('status')}}
+            </div>
+            @endif
             <div class="profile-supermenu">
                 <div class ="profile-menu" id="">
 
@@ -26,9 +33,9 @@
             </div>
 
             <div class="withdraw-info">
-                <form action="/withdraw/{{$withdrawer_id}}" class="profile-innerform" method="POST">
-                   {{ csrf_field() }}
-                   <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
+                <form action="/withdraw/{{$payer_id}}" class="profile-innerform" method="POST">
+                 {{ csrf_field() }}
+                 <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
                     <label for="phone number">PHONE NUMBER</label>
                     <input type="text" name="phone_number" class="withdraw-data" id="" placeholder="08022343254" value="{{old('phone_number')}}">
                     @if ($errors->has('phone_number'))
@@ -103,13 +110,13 @@
                     </p>
                     <input type="submit" class="withdraw-data withdraw-submit" id="withdraw-submit"value="WITHDRAW">
                     <button class="withdraw-data withdraw-submit" id="withdraw-submit1"><a href="fund">FUND WALLET</a></button>
-                    </div>  
-                </form>
-            </div>
+                </div>  
+            </form>
         </div>
+    </div>
 
 
-    </div>       
+</div>       
 
 </section>
 </body>

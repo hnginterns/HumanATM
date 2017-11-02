@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\HumanAtm;
 use App\BankAtm;
+use App\Withdrawal;
 
 class TransactionController extends Controller
 {
@@ -31,20 +32,35 @@ class TransactionController extends Controller
 
 	public function showWithdrawalForm($id)
 	{   
-		$withdrawer_id = $id;
+		$payer_id = $id;
 
-		return view('withdraw', compact('withdrawer_id'));
+		return view('withdraw', compact('payer_id'));
 
 	}
 
 	public function withdraw(Request $request, $id)
 	{      
-	    
-		
+
+		$payer_id = $id;
 		$validation = Validator::make($request->all(), $this->withdrawFormRules());
 
 		if ($validation->fails()){
 			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
+		}
+
+		$createWithdrawalRequest = Withdrawal::create([
+			'withdrawer_id' => $request->id,
+			'payer_id'      => $payer_id,
+			'phone_number'  => $request->phone_number,
+			'bank_name'     => $request->bank_name,
+			'amount'        => (int)$request->amount + 150,
+			'account_number'=> $request->account_number,
+			'location'      => $request->location,
+		]);
+
+		if ($createWithdrawalRequest)
+		{
+			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
 		}
 
 	}
