@@ -52,6 +52,7 @@ Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
 Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
 Route::get('/withdraw/humanAtm/{id}', 'TransactionController@showWithdrawalForm');
 Route::post('/withdraw/{id}', 'TransactionController@processWithdraw')->middleware('auth');
+Route::get('/withdraw/confirm/receipt/{withdrawal_id}', 'TransactionController@confirmWithdrawal');
 
 Route::get('/{name}', function ($name) {
     return view($name);

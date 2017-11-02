@@ -10,7 +10,7 @@
     <title> Dashboard | HumanATM</title>
 </head>
 <body>
- <div class="container-fluid">
+   <div class="container-fluid">
     <!-- header -->
     @include('header')
     <div class="row profile-rower">
@@ -23,7 +23,12 @@
                     <h5><a href="#"><b>Edit Profile</b></a></h5>
                 </div>
             </div>
-
+               @if (session()->has('status'))
+            <div class="alert alert-info alert-info fade in">
+                <a href="/dashboard" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{ session('status')}}
+            </div>
+            @endif
             <div class="row userpage-margin userpage-mar">
                 <div class="col-xs-6 col-md-3 col-md-offset-2 ">
                     <h3><span style="color:#828282"> Name: </span></h3>
@@ -66,8 +71,82 @@
                 </div>
             </div>
 
+            {{-- show pending withdrawal --}}
+            @if ($pendingWithdrawal)
+            <p class="col-xs-6 col-md-3 col-md-offset-2 "><h3  style="text-align: center"><span style="color:#828282; "> PENDING WITHDRAWAL </span></h3> 
+               <hr>
+           </p> 
+           <div class="row userpage-margin userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2 ">
+                <h3><span style="color:#828282"> Human ATM Name: </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1">
+                <h3><b>{{$my_payer->name}}</b></h3>
+            </div>
         </div>
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282"> Amount </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1">
+                <h3><b>NGN{{(int)$pendingWithdrawal->amount - 150}}</b></h3>
+            </div>
+
+        </div>
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282"> Human ATM Wallet ID: </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1">
+                <h3><b>{{$my_payer->wallet_id}}</b></h3>
+            </div>
+        </div>
+        @if ($my_payer->profile)
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282"> Human ATM Phone Number: </span></h3>
+            </div>
+            <div class="col-xs-4 col-md-4 col-md-offset-1">
+                <h3><b>{{$my_payer->profile->phone_number}}</b></h3>
+            </div>
+        </div>
+        @endif
+
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282">Human ATM Email Address </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1 userpage-bottom">
+                <h3><b>{{ $my_payer->email}}</b></h3>
+            </div>
+        </div>
+        @if ($my_payer->profile)
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282">Human ATM Location </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1 userpage-bottom">
+                <h3><b>{{ $my_payer->profile->location}}</b></h3>
+            </div>
+        </div>
+        @endif
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282">Status</span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1 userpage-bottom">
+                <h3><b>{{ $pendingWithdrawal->status}}</b></h3>
+            </div>
+        </div>
+
+         <div class="col-xs-6 col-md-4 col-md-offset-4">
+            <a href="/withdraw/confirm/receipt/{{$pendingWithdrawal->id}}" class="btn btn-primary"> I Have Recieved This</a>
+        </div>
+        @endif
+        {{-- End show pending withdrawal--}}
+        
     </div>
+</div>
 </div> 
 </body>
 </html>

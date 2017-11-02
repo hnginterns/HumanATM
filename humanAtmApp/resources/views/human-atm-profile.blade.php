@@ -29,12 +29,12 @@
                     </div>
                 </div>
                 <div class="profile-image" >
-                    <img src="{{is_null($human_atm_profile->user->profile->image_url)? '' : $human_atm_profile->user->profile->image_url }}" alt="" width="140px" height="140px" class="img-circle">
+                    <img src="{{is_null($human_atm_profile->user->profile)? '' : $human_atm_profile->user->profile->image_url }}" alt="" width="140px" height="140px" class="img-circle">
                 </div>
                 <div class="profile-info">
                     <div class="profile-data">
                         <p>{{ is_null($human_atm_profile->user->name) ? '': $human_atm_profile->user->name }}</p>
-                        <p class="profile-2">{{ is_null($human_atm_profile->user->profile->phone_number) ? '' : $human_atm_profile->user->profile->phone_number }}</p>
+                        <p class="profile-2">{{ is_null($human_atm_profile->user->profile) ? '' : $human_atm_profile->user->profile->phone_number }}</p>
                     </div>
                     <div class="profile-data">
                         <p>LOCATION</p>

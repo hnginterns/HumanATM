@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Withdrawal;
 
 class UserDashboardController extends Controller
 {
@@ -20,9 +21,26 @@ class UserDashboardController extends Controller
      */
     public function index()
     {
-        $user = User::find(Auth::id());
+       $id = Auth::id();
 
-        return view('userpage', compact('user'));
+       $user = User::find($id);
+
+
+        /**
+        * Check if user has pending withdrawal request 
+        */
+        $pendingWithdrawal = Withdrawal::where(['withdrawer_id'=> Auth::id(),
+            'status' => 'pending'])->first();
+
+        /**
+        * if user has pending withdrawal request
+        * Fetch the payer details and show on the user's dashboard 
+        */
+        if ($pendingWithdrawal){
+            $my_payer = User::findOrFail($pendingWithdrawal->payer_id)->load('profile');
+        }
+
+        return view('userpage', compact('user', 'pendingWithdrawal', 'my_payer' ));
     }
 
     /**

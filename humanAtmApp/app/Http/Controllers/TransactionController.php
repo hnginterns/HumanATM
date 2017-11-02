@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 use App\HumanAtm;
 use App\BankAtm;
 use App\Withdrawal;
+use App\User;
 
 class TransactionController extends Controller
 {
@@ -38,10 +40,10 @@ class TransactionController extends Controller
 
 	}
 
-	public function processWithdraw(Request $request, $id)
+	public function processWithdraw(Request $request, $human_atm)
 	{      
 
-		$payer_id = $id;
+		$human_atm_id = $human_atm;
 		$validation = Validator::make($request->all(), $this->withdrawFormRules());
 
 		if ($validation->fails()){
@@ -49,8 +51,8 @@ class TransactionController extends Controller
 		}
 
 		$createWithdrawalRequest = Withdrawal::create([
-			'withdrawer_id' => $request->id,
-			'payer_id'      => $payer_id,
+			'withdrawer_id' => Auth::id(),
+			'payer_id'      => $human_atm_id,
 			'phone_number'  => $request->phone_number,
 			'bank_name'     => $request->bank_name,
 			'amount'        => (int)$request->amount + 150,
@@ -63,6 +65,20 @@ class TransactionController extends Controller
 			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
 		}
 
+	}
+
+	public function confirmWithdrawal($withdrawal_id)
+	{   
+
+
+		$withdrawal = Withdrawal::find($withdrawal_id);
+		$my_payer =  User::find($withdrawal->payer_id);
+		$confirmed = $withdrawal->update(['status'=>'completed']);
+
+		if ($confirmed){
+
+			return redirect()->back()->with(['status' => 'You have confirmed that you have recieved the sum of '. ' NGN'. ((int)$withdrawal->amount -150). '  from '. $my_payer->name. ' Thanks for banking with us!']);
+		}
 	}
 
 	public function withdrawFormRules()

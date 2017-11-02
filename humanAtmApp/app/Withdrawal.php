@@ -10,6 +10,6 @@ class Withdrawal extends Model
     	'payer_id', 'withdrawer_id',
     	'amount', 'phone_number',
     	'account_number', 'bank_name',
-    	'location',
+    	'location', 'status',
     ];
 }
