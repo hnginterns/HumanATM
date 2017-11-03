@@ -1,10 +1,10 @@
 /* These rules are universal*/
 .body{
-    font-family: Lato, sans-serif;
+    font-family: 'Lato', sans-serif;
     box-sizing: border-box;
 }
 /* These rules are universal stops here*/
-/* These are rules for Homepage*/
+
 
 /* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
 
@@ -343,6 +343,80 @@
     position: absolute;
     color:white;
     top:-40px;
+}
+.homepage-color{
+    background:#0C2A52;
+    
+    color:white;
+}
+.homepage-color h1{
+    padding-top:17%;
+    margin: 0 auto;
+    font-size:3em;
+    font-family: 'Lato', sans-serif;
+}
+.homepage-color h1:hover{
+    font-size:3.1em;
+    color: #2D9CDB;
+    text-shadow: 0 0 9px black;
+}
+.homepage-color h4{
+    padding-top:3.5%;
+    font-size:1.7em;
+    font-family: 'Lato', sans-serif;
+    line-height:1.7em;
+}
+
+.home-btn{
+    width:10em;
+    height: 45px;
+    margin-bottom:5%;
+    font-size:1.4em;
+    margin-top:3%;
+    color:rgb(5, 27, 56);
+    font-weight:700;
+}
+.home-btn:hover{
+    box-shadow: 0px 0px 7px #2D9CDB;
+}
+.headSegment-margin{
+    margin-top:10%;
+    margin-bottom:5%;
+    color:#003767;
+}
+.segment-box {
+    min-height:20%;
+}
+.segment-box h4{
+    line-height: 1.6em;
+    color:grey;
+}
+.fa{
+    color:green;
+}
+.fa:hover{
+    text-shadow: 0 0 9px #0C2A52;
+}
+.head-segment3{
+    background:#0C2A52;
+    color:white;
+}
+.head-segment3 h1{
+    margin-top:7%;
+    font-size: 3em;
+
+}
+.color-fa .fa{
+    color:#2D9CDB;
+    margin-top:4%;
+    margin-bottom:3%;
+}
+.color-fa h4{
+   
+    margin-bottom:15%;
+}
+.color-fa .fa:hover{
+    text-shadow: 0 0 12px black;
 }
 .index-color{
     color:#0F3B75;
@@ -821,20 +895,21 @@ Next user should start on the next line*/
     display: flex;
     align-items: center;
     padding-left: 30px;
+    font-size:2.3em;
+    font-family: 'Lato', sans-serif;
 }
+
 #header-color{
-    color:#ffffff;
-    
-    font-family: Lato, sans-serif;
+    color:#2D9CDB;
 }
 #header-color > li > a{
-    color:#ffffff;
+    color:#2D9CDB;
+    font-size:1.2em;
 }
 #header-color > li > a:hover{
     color:#ffffff;
-    background-color:#ffffff;
     font-weight: bold;
-    border-radius: 15px; 
+    text-decoration:none;
 }
 #header-dropdown{
     left: 0;
@@ -863,55 +938,17 @@ Next user should start on the next line*/
 }
 /*##################################################*/
 /* Footer CSS begins here*/
-.footer {
-    position: relative;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #0F3B75;
-    color: #ffffff;
-    text-align: center;
-}
-.footer nav{
-    margin-top: 50px;
-}
-.footer .navbar-header{
+
+ .navbar-header{
     margin-left: -40px;
     padding-left: 0px;
 }
-#footer-nav #invite-friends-button a{
-    color:#0F3B75;
-}
 
-#footer-nav{
-    margin-top: 15px;
-}
-#footer-nav a {
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-}
 .navbar-header a {
     text-decoration: none;
 }
-.socials {
-    float: right;
-    clear: both;
-}
-.socials  img {
-    margin: 5px;
-}
-.foot-note,.foot-note a{
-    margin-top:150px;
-    color: inherit;
-}
-.foot-note a:hover{
-    text-decoration: none;
-    font-weight: bold;
-    color:#ffffff;
-}
+
+
 /* rules for other pages header and footer*/
 
 #header-color2 > li > a{
@@ -936,10 +973,34 @@ Next user should start on the next line*/
     background-color: #ffffff;
 }
 .navbar-header .hamburger > span {
-    background-color: #0F3B75;
+    background-color: #0C2A52;
 }
 .navbar-header{
-    background-color: #0F3B75;
+    background-color: #0C2A52;
+}
+/* rules for general footer*/
+.all-footer{
+    background-color: rgb(233, 232, 232);
+    padding-top: 6%;
+}
+.footer-p{
+    line-height:1.8em;
+    color: #2D9CDB;
+}
+.footer-head hr{
+    border: 1px rgb(136, 133, 133) solid;
+    border-radius: 10px;
+}
+.footer-head h5{
+    font-size:1.2em;
+    font-weight: 700;
+    color: rgb(94, 96, 99);
+}
+.footer-end{
+    background: #0F3B75;
+    margin-top:3%; 
+    padding:1%;
+    color:white;
 }
 
 /* admin section rules */
