@@ -91,4 +91,4 @@
     </body>
 <!-- Footer -->
  @include('footer')
-<!-- End footer>
+<!-- End footer-->

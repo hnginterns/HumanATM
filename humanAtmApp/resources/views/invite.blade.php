@@ -8,8 +8,7 @@
 @section('content')
 <body>
 	<div class="container-fluid daily-margin">
-		<!-- header -->
-		@include('header')
+		
 		<div class="row profile-rower">
 			<div class="col-md-8 col-md-offset-2 profile-borderColor">
 				<div class="row">

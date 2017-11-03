@@ -124,6 +124,9 @@
 </div>       
 
 </section>
+<!-- Footer -->
+@include('footer')
+<!-- End footer-->
 </body>
 @endsection
 

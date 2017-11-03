@@ -3,6 +3,43 @@
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
 }
+.blue-fall{
+    background: rgb(204, 205, 207);
+}
+.outerBox-margin{
+    margin-top:3%;
+}
+.box-margin{
+    margin:3%;
+}
+.box-border{
+    border-radius:15px;
+    box-shadow: 0 3px 60px rgb(78, 77, 77);
+}
+.box-active{
+    border-bottom: 4px #ffffff solid;
+    background:#0F3B75;
+    border-radius: 10px 10px 0 0;
+    color:white;
+    padding:4%;
+}
+.box-inactive{
+    border-bottom: 4px #0F3B75 solid;
+    background:white;
+    border-radius: 10px 10px 0 0;
+    color:#0F3B75;
+    padding:4%;
+}
+.box-color{
+    padding:3%;
+    border-radius:10px 10px 0 0;
+    background:#0F3B75;
+    color:white;
+    font-size:2.2em;
+}
+.box-color hr{
+    width:30rem;
+}
 /* These rules are universal stops here*/
 
 
@@ -200,6 +237,7 @@
 .profile-rower{
     margin:3%;
 }
+
 .paybills-margin{
     margin-top: 15%;
 }
@@ -207,24 +245,16 @@
     margin-top: 7%;
     margin-bottom: 10%;
 }
-.daily-active{
-    border: 2px #0F3B75 solid;
-    background:#0F3B75;
-    border-radius: 20px;
-    color:white;
-}
-.daily-inactive{
-    border: 2px #0F3B75 solid;
-    border-radius: 20px;
-}
+
 .daily-margin{
     margin-top:3%;
 }
 .daily-borderColor{
-    border: 2px  solid #0F3B75;
     box-shadow: 1px 3px 10px #08111D;
     color: #0F3B75;
     margin-bottom: 5%;
+    border-radius:10px;
+    background: rgb(238, 237, 237);
 }
 .userpage-shadow{
     box-shadow: 0 1px 15px #0F3B75;
@@ -520,6 +550,17 @@ Next user should start on the next line*/
     color: white;
     margin-bottom: 3%;
     padding:2% 10%;
+    border-radius:15px 15px 0 0;
+}
+.wallet-expand{
+    width: 30rem;
+    font-size:1.4rem;
+    padding-left:10px;
+    color: #0F3B75;
+    border-radius:5px;
+    }
+.wallet-formMargin{
+    margin-top:6%;
 }
 .walletLabel-below{
     margin-left: 80%;
@@ -529,14 +570,17 @@ Next user should start on the next line*/
     font-weight: bold;
 }
 .wallet-text{
-    color: #0F3B75;
-    padding: 10px;
-    word-spacing: 9em;
-    font-weight: bold;
+    width: 50%; 
+    margin-top: 5%;
+    padding: 5px;
+    font-size:1.3em;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #0F3B75;
+    color: #ffffff;
+    margin-left:25%;
 }
-.walletColor{
-    color: #0F3B75;
-}
+
 .wallet-button{
     width: 50%; 
     padding: 5px;
@@ -544,7 +588,7 @@ Next user should start on the next line*/
     text-align: center;
     font-size:1.3em;
     font-weight: 500;
-    border-radius: 0;
+    border-radius: 5px;
     background-color: #0F3B75;
     color: #ffffff;
     margin-left:25%;
@@ -554,14 +598,11 @@ Next user should start on the next line*/
 .wallet-button:hover{
     color: #0F3B75;
     background: white;
+    border: 1px solid white;
 }
 .wallet-input{
-    border: none;
-    padding-bottom: 0;
-    border-bottom: 2px solid #0F3B75;
-    border-radius: 0;
-    margin-bottom: 0;
-    box-shadow: none;
+    border-radius: 10px;;
+    height:40px;
 }
 
 /*This css rules are for the profile, withdraw and payment pages by jeni*/
@@ -762,11 +803,10 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     padding-right: 15px;
 }
  .withdraw-expand{
-    width: 250px;
-    font-size:1.2rem;
+    width: 400px;
+    font-size:1.4rem;
     padding-left:10px;
     color: #0F3B75;
-    border: 1px solid #0F3B75;
     border-radius:5px;
     }
 

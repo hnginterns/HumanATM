@@ -10,8 +10,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-fixed-top" style="background-color: #ffffff; color:#0F3B75">
-        <div class="container-fluid">
+    <nav class="navbar navbar-fixed-top" style="background-color: #0C2A52;">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle hamburger" data-toggle="collapse" data-target="#HumanATMNavbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -19,18 +18,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a id="header-color" class="navbar-brand" href="/" >
+                <img style="width:70px; height:70px;padding:10px;" src="{{asset('images/logo.png')}}" alt="">
+               <b> HUMAN ATM</b></a>
             </div>
             <div class="collapse navbar-collapse" id="HumanATMNavbar">
-                <ul class="nav navbar-nav navbar-right" id="header-color2" >
+                <ul class="nav navbar-nav navbar-right" id="header-color" >
                     <li class="active"><a href="/wallet">WALLET</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" 
                         data-toggle="dropdown" href="">TRANSACTIONS</a>
                         <ul class="dropdown-menu" id="header-dropdown">
-                            <li><a href=""> Daily</a></li>
+                            <li><a href="/dailytransaction" target="_blank"><h4><b> Daily</h4></b></a></li>
                             
-                            <li><a href="">Weekly</a></li>
+                            <li><a href="/weeklytransaction"><h4><b>Weekly</h4></b></a></li>
                            
-                            <li><a href="">Monthly</a></li>
+                            <li><a href="/monthlytransaction"><h4><b>Monthly</h4></b></a></li>
                         </ul>
                     </li>
                     <li><a href="/paybills">PAY BILLS</a></li>
