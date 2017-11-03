@@ -28,7 +28,7 @@
                     <li class="dropdown"><a class="dropdown-toggle" 
                         data-toggle="dropdown" href="">TRANSACTIONS</a>
                         <ul class="dropdown-menu" id="header-dropdown">
-                            <li><a href="/dailytransaction" ><h4><b> Daily</h4></b></a></li>
+                            <li><a href="/dailytransaction" target="_blank"><h4><b> Daily</h4></b></a></li>
                             
                             <li><a href="/weeklytransaction"><h4><b>Weekly</h4></b></a></li>
                            

@@ -11,8 +11,27 @@
 |
 */
 
+/**********************************************/
+// Auth Routes//
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+        // Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+        // Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+/*****************************************************/
+
+
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 
@@ -36,14 +55,14 @@ Route::get('/admin/completed',
 	'AdminDashboardController@completed')->name('admin/completed');
 
 Route::get('/403', function () {
-    return view('errors.403');
+	return view('errors.403');
 })->name('403');
 Route::get('/404', function () {
-    return view('errors.404');
+	return view('errors.404');
 })->name('404');
- Route::get('/invite', function(){
- 	return view('invite');
- });
+Route::get('/invite', function(){
+	return view('invite');
+});
 
 
 /* User Update */
@@ -68,6 +87,6 @@ Route::get('/payment', 'TransactionController@showPaymentForm');
 Route::post('/payment', 'TransactionController@storePayment')->middleware('auth');
 
 Route::get('/{name}', function ($name) {
-    return view($name);
+	return view($name);
 });
 
