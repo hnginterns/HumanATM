@@ -826,34 +826,28 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     border: 2px #0F3B75 solid;
 }
 
-.edituserpage-shadow{
-    box-shadow: 0 1px 15px #0F3B75;
-    border-radius: 10px;
-    margin-top:5%;
+.form-group .input {
+    width:300px;
 }
 
-.edituserpage-margin1{
-    margin-top: 3%;
+
+.edit-bottom{
+    margin-bottom:10%;
+}
+.ud input{
+    width: 240px;
 }
 
-.edituserpage-margin{
-    margin-top: 0 !important;
-    margin-bottom: 10%;
-}
 
-.edituserpage-form{
-    box-sizing: border-box;
-    margin-bottom: 5%;
-    padding: 10px;
-    border-radius: 0 !important;
-}
 
 .edituserpage-btn{
     box-sizing: border-box;
     padding:5px 45px;
     border-radius: 0 !important;   
-    font-size: 0.8em; 
+    font-size: 1.2em; 
     border: 0;
+    width: 170px;
+    margin-bottom:60px;
 }
 
 .edituserpage-btn.blue{
