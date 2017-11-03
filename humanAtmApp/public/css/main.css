@@ -230,11 +230,16 @@
 }
 
 .paybills-margin{
-    margin-top: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 .paybills-margin2{
     margin-top: 7%;
     margin-bottom: 10%;
+}
+.payshadow:hover {
+    box-shadow: 0 0 20px grey;
+    border-radius:25px;
 }
 
 .daily-margin{
@@ -273,6 +278,13 @@
     border: 2px #0F3B75 solid;
     margin-top:5%;
     background: #0F3B75
+}
+.bills-image{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-top:5%;
+    margin-bottom:5%;
 }
 .userpage-mar h3{
     font-size: 1.2em;
