@@ -17,20 +17,18 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('bank_id');
-         
             $table->string('account_name');
-
-             $table->bigInteger('account_number');
-             $table->string('phone_number');
-
+            $table->bigInteger('account_number');
+            $table->string('phone_number');
             $table->string('location');
+            $table->string('sex');
             $table->string('image_url')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
         });
-           
+
     }
 
     /**
