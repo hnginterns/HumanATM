@@ -5,9 +5,10 @@
     @endsection
 
     @section('content')
+    @include('header')
     <body>
         <div class="container-fluid blue-fall outerBox-margin">
-        @include('header')
+       
         <div class="row box-margin">
                 <div class="col-md-8 col-md-offset-2 box-border">
                     <div class="row">

@@ -213,17 +213,10 @@
     margin-bottom: 3%;
     padding:1%;
 }
-.profile-box2{
-    box-shadow: 1px 2px 3px #676A6D;
-    border-radius:5px;
-    margin: 0 auto;
-    font-weight:bold;
-    padding: .3%;
-}
+
 .profile-box3{
     box-shadow: 1px 2px 3px #676A6D;
     border-radius:5px;
-    margin: 0 auto;
     font-weight:bold;
     padding: .3%;
 }
@@ -231,9 +224,7 @@
 .profile-margin{
     margin-bottom: 2%;
 }
-.profile-static{
-    margin-top: 5%;
-}
+
 .profile-rower{
     margin:3%;
 }
@@ -347,8 +338,37 @@
     margin-bottom:20%;
     box-shadow: 0 5px 5px 2px rgba(0,0,0,0.14);
   }	 
-
- 
+  .location-text{
+    width: 30%; 
+    margin-top: 5%;
+    padding: 5px;
+    font-size:1.3em;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #0F3B75;
+    color: #ffffff;
+    /* margin-left:30%; */
+    margin-bottom:4%;
+}
+.location-margin{
+    margin-bottom: 4%;
+}
+.location-box{
+    box-shadow: 1px 2px 3px #676A6D;
+    border-radius:5px;
+    font-weight:bold;
+    padding: .3%;
+}
+.listing-borderColor{
+    box-shadow: 1px 3px 10px #08111D;
+    color: #0F3B75;
+    border-radius:10px;
+    background: rgb(238, 237, 237);
+} 
+.listing-request{
+    height:40px;
+    margin-top:12%;
+}
 
   .page404-main .page404-navigate{  
     display: flex;
@@ -366,14 +386,7 @@
   margin-top: 100px;
   text-align: center;
 }
-.header{
-    position:relative;
-}
-.header-mar{
-    position: absolute;
-    color:white;
-    top:-40px;
-}
+
 .homepage-color{
     background:#0C2A52;
     
