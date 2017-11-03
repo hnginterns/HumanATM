@@ -6,6 +6,8 @@
 <title> Invite Friends | HumanATM</title>
 @endsection
 @section('content')
+<!-- header -->
+@include('header')
 <body>
 	<div class="container-fluid daily-margin">
 		
