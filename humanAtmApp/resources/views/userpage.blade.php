@@ -20,7 +20,7 @@
                     <img src="{{asset('images/3.png')}}" class="userpage-image" alt="userPicture">
                 </div>
                 <div class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-1 text-center  daily-inactive">
-                    <h5><a href="#"><b>Edit Profile</b></a></h5>
+                    <h5><a href="/updateuser/{{$user->id}}"><b>Update Profile</b></a></h5>
                 </div>
             </div>
                @if (session()->has('status'))
@@ -81,7 +81,7 @@
                 <h3><span style="color:#828282"> Human ATM Name: </span></h3>
             </div>
             <div class="col-xs-6 col-md-4 col-md-offset-1">
-                <h3><b>{{$my_payer->name}}</b></h3>
+                <h3><b>{{$reciever->name}}</b></h3>
             </div>
         </div>
         <div class="row userpage-mar">
@@ -89,7 +89,7 @@
                 <h3><span style="color:#828282"> Amount </span></h3>
             </div>
             <div class="col-xs-6 col-md-4 col-md-offset-1">
-                <h3><b>NGN{{(int)$pendingWithdrawal->amount - 150}}</b></h3>
+                <h3><b>NGN{{(int)$pendingWithdrawal->amount}}</b></h3>
             </div>
 
         </div>
@@ -98,16 +98,16 @@
                 <h3><span style="color:#828282"> Human ATM Wallet ID: </span></h3>
             </div>
             <div class="col-xs-6 col-md-4 col-md-offset-1">
-                <h3><b>{{$my_payer->wallet_id}}</b></h3>
+                <h3><b>{{$reciever->wallet_id}}</b></h3>
             </div>
         </div>
-        @if ($my_payer->profile)
+        @if ($reciever->profile)
         <div class="row userpage-mar">
             <div class="col-xs-6 col-md-3 col-md-offset-2">
                 <h3><span style="color:#828282"> Human ATM Phone Number: </span></h3>
             </div>
             <div class="col-xs-4 col-md-4 col-md-offset-1">
-                <h3><b>{{$my_payer->profile->phone_number}}</b></h3>
+                <h3><b>{{$reciever->profile->phone_number}}</b></h3>
             </div>
         </div>
         @endif
@@ -144,6 +144,81 @@
         </div>
         @endif
         {{-- End show pending withdrawal--}}
+
+
+         {{-- show pending payment --}}
+            @if ($pendingPayment)
+            <p class="col-xs-6 col-md-3 col-md-offset-2 "><h3  style="text-align: center; margin-top: 100px"><span style="color:#828282; "> PENDING PAYMENT </span></h3> 
+               <hr>
+           </p> 
+           <div class="row userpage-margin userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2 ">
+                <h3><span style="color:#828282"> Reciever Name: </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1">
+                <h3><b>{{$reciever->name}}</b></h3>
+            </div>
+        </div>
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282"> Amount </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1">
+                <h3><b>NGN{{(int)$pendingPayment->amount}}</b></h3>
+            </div>
+
+        </div>
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282"> Reciever Wallet ID: </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1">
+                <h3><b>{{$reciever->wallet_id}}</b></h3>
+            </div>
+        </div>
+        @if ($reciever->profile)
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282"> Reciever Phone Number: </span></h3>
+            </div>
+            <div class="col-xs-4 col-md-4 col-md-offset-1">
+                <h3><b>{{$reciever->profile->phone_number}}</b></h3>
+            </div>
+        </div>
+        @endif
+
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282">Reciever Email Address </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1 userpage-bottom">
+                <h3><b>{{ $reciever->email}}</b></h3>
+            </div>
+        </div>
+        @if ($reciever->profile)
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282">Reciever Location </span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1 userpage-bottom">
+                <h3><b>{{ $reciever->profile->location}}</b></h3>
+            </div>
+        </div>
+        @endif
+        <div class="row userpage-mar">
+            <div class="col-xs-6 col-md-3 col-md-offset-2">
+                <h3><span style="color:#828282">Status</span></h3>
+            </div>
+            <div class="col-xs-6 col-md-4 col-md-offset-1 userpage-bottom">
+                <h3><b>{{ $pendingPayment->status}}</b></h3>
+            </div>
+        </div>
+
+         <div class="col-xs-6 col-md-4 col-md-offset-4" style="margin-bottom: 50px">
+            <a href="/reject/payment/{{$pendingPayment->id}}" class="btn btn-primary"> I Can't pay this</a>
+        </div>
+        @endif
+        {{-- End show pending payment--}}
         
     </div>
 </div>

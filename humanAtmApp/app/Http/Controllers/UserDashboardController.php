@@ -39,8 +39,24 @@ class UserDashboardController extends Controller
         if ($pendingWithdrawal){
             $my_payer = User::findOrFail($pendingWithdrawal->payer_id)->load('profile');
         }
+        /**
+        * Check if user has pending payment to make request 
+        */
 
-        return view('userpage', compact('user', 'pendingWithdrawal', 'my_payer' ));
+        $pendingPayment = Withdrawal::where(['payer_id' =>Auth::id(),
+            'status' => 'pending'])->first();
+
+         /**
+        * if user has pending payment to make
+        * Fetch the reciever details and show on the user's dashboard 
+        */
+         if ($pendingPayment)
+         {
+            $reciever = User::findOrFail($pendingPayment->withdrawer_id)->load('profile');
+         }
+
+        return view('userpage', compact('user', 'pendingWithdrawal', 
+            'my_payer' , 'pendingPayment', 'reciever'));
     }
 
     /**
@@ -50,7 +66,42 @@ class UserDashboardController extends Controller
      */
     public function create()
     {
-        //
+        $id = Auth::id();
+
+       $user = User::find($id);
+
+
+        /**
+        * Check if user has pending withdrawal request 
+        */
+        $pendingWithdrawal = Withdrawal::where(['withdrawer_id'=> Auth::id(),
+            'status' => 'pending'])->first();
+
+        /**
+        * if user has pending withdrawal request
+        * Fetch the payer details and show on the user's dashboard 
+        */
+        if ($pendingWithdrawal){
+            $my_payer = User::findOrFail($pendingWithdrawal->payer_id)->load('profile');
+        }
+        /**
+        * Check if user has pending payment to make request 
+        */
+
+        $pendingPayment = Withdrawal::where(['payer_id' =>Auth::id(),
+            'status' => 'pending'])->first();
+
+         /**
+        * if user has pending payment to make
+        * Fetch the reciever details and show on the user's dashboard 
+        */
+         if ($pendingPayment)
+         {
+            $reciever = User::findOrFail($pendingPayment->withdrawer_id)->load('profile');
+         }
+
+        return view('userpage', compact('user', 'pendingWithdrawal', 
+            'my_payer' , 'pendingPayment', 'reciever'));
     }
 
     /**
