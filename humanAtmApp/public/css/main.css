@@ -665,14 +665,12 @@ Next user should start on the next line*/
     border-radius: 50%;
     text-align: center;
     background-color:#0F3B75;
-    margin: 50px auto;
+    margin: 50px  auto 0 auto;
     border: 6px solid rgb(182, 179, 179);
 }
 .profile-info{
-    width: 80%;
-    margin: 30px auto;
-    font-size: 1.4em;
-    font-weight: 600;
+    width: 75%;
+    font-size: 1.2em;
 }
 .withdraw-info{
     width: 80%;
@@ -680,12 +678,16 @@ Next user should start on the next line*/
     margin: 30px auto;
     font-size: 1.1em;
 }
-.profile-2 {
-    border-bottom: 2px solid #0F3B75;
-    padding: 3px 0;
-}
+
 .profile-data{
     margin-top: 50px;
+    line-height:3em;
+    
+}
+.profile-button{
+    font-size: 1.4em;
+    margin-top:3%;
+    margin-bottom:6%;
 }
 .profile-data p{
     margin: 3px 0;

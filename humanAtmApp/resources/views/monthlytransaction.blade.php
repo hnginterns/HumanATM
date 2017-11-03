@@ -14,9 +14,10 @@
                     <div class="row">
                         <div class="col-md-12 text-center box-color">
                             <h3>TRANSACTIONS</h3><hr>
+                            <h4>Monthly Transactions</h4>
                         </div>
                     </div>
-                    <div class="row paybills-margin2">
+                    <!-- <div class="row paybills-margin2">
                         <div class="col-md-2 col-md-offset-3 text-center ">
                         <a href="dailytransaction"><h4 class="box-inactive">Today</h4></a>
                                 
@@ -29,7 +30,7 @@
                             <a href="monthlytransaction"><h4 class="box-active">Month</h4></a>                                
                         </div>
                         
-                    </div>
+                    </div> -->
                     
                     <div class="row paybills-margin2">
                         <div class="col-md-8 col-md-offset-2 daily-borderColor">
