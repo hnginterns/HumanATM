@@ -5,14 +5,15 @@
     @endsection
 
     @section('content')
+    @include('header')
     <body>
         <div class="container-fluid blue-fall outerBox-margin">
-        @include('header')
+   
         <div class="row box-margin">
                 <div class="col-md-8 col-md-offset-2 box-border">
                     <div class="row">
                         <div class="col-md-12 text-center box-color">
-                            <h3>TRANSACTION</h3><hr>
+                            <h3>TRANSACTIONS</h3><hr>
                         </div>
                     </div>
                     <div class="row paybills-margin2">

@@ -43,7 +43,7 @@
                                         
                                         
                                         <select class="wallet-expand form-control" style="margin:0 auto">
-                                                <option value="" selected="selected">Select Your Bank</option>
+                                                <option value="" selected="selected">Select Bank</option>
                                                 <option value="first Bank of Nigeria" >First Bank of Nigeria</option>
                                                 <option value="union Bank of Nigeria">Union Bank of Nigeria</option>
                                                 <option value="united Bank for Africa">United Bank for Africa</option>
