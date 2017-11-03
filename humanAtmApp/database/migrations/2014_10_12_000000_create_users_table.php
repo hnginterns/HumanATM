@@ -21,6 +21,14 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insert([
+             'email' => "oriebizline@gmail.com",
+             'wallet_id' => "nedsoft",
+             'name' => "Orie Chinedu",
+             'password' => bcrypt('123456'),
+             'role' => 1,
+        ]);
     }
     /**
      * Reverse the migrations.

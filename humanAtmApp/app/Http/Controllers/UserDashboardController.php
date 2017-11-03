@@ -39,12 +39,15 @@ class UserDashboardController extends Controller
         if ($pendingWithdrawal){
             $my_payer = User::findOrFail($pendingWithdrawal->payer_id)->load('profile');
         }
+
         /**
         * Check if user has pending payment to make request 
         */
 
         $pendingPayment = Withdrawal::where(['payer_id' =>Auth::id(),
             'status' => 'pending'])->first();
+
+
 
          /**
         * if user has pending payment to make

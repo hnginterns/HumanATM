@@ -6,10 +6,11 @@ use Faker\Generator as Faker;
 
 $factory->define(App\HumanAtm::class, function (Faker $faker) {
      $id = App\User::pluck('id')->all();
+     $bank_id = App\Bank::pluck('id')->all();
     return [
          'user_id'=> $faker->randomElement($id),
          'phone_number'=> $faker->phoneNumber,
-         'bank_name' => $faker->company,
+         'bank_id' => $faker->randomElement($bank_id),
          'account_number' => $faker->unique()->randomNumber(5).$faker->unique()->randomNumber(5),
          'surcharge' =>55,
          'amount'=>$faker->unique()->randomNumber(4),
