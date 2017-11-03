@@ -259,14 +259,23 @@
 .userpage-margin{
     margin-top: 7%;
 }
+.userUpdate-button{
+    margin:5%;
+}
+.userUpdate-button .btn{
+  padding:7%;
+  margin-bottom: 4%;
+}
 .userpage-image{
-    width: 15em;
-    height: 15em;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 2px #0F3B75 solid;
+    margin-top:5%;
+    background: #0F3B75
 }
 .userpage-mar h3{
-    font-size: 1.6em;
+    font-size: 1.2em;
 }
 .userpage-bottom{
     margin-bottom: 5%;
@@ -707,7 +716,7 @@ Next user should start on the next line*/
     margin: 20px auto;       
     padding:8px 3px;
     padding-right:3px;
-    border: 2px solid #0f3b75;
+    
     text-align:center;
     -webkit-transition: background-color 1s; /* Safari */
     transition: background-color 1s;
@@ -715,17 +724,18 @@ Next user should start on the next line*/
 #payment-submit{
     margin-top: 0;
     color: white;
-    background-color:#0F3B75;
 }
 #withdraw-submit{
     margin-top: 50px;
     color: white;
-    background-color:#0F3B75;
 }
 #withdraw-submit1{
     margin-bottom: 0;
     background-color: white;
-    color:#0F3B75;
+    color:green;
+}
+.tweet a{
+    text-decoration:none;
 }
 #withdraw-delivery, #payment-delivery {
     color: #0f3b75;  
@@ -744,20 +754,18 @@ Next user should start on the next line*/
 }
 input.withdraw-data:focus, input.withdraw-data:hover{
     box-shadow: none !important;
-    border-color: #0F3B75 !important;
     outline: none !important;
 }
 #withdraw-submit:focus, #payment-submit:focus, #withdraw-submit1:focus{
     border: none;
     box-shadow: none;
 }
-#withdraw-submit:hover, #payment-submit:hover{
-    background-color: #fff;
-    color: #0F3B75;
-    border: 2px solid #0F3B75
-}
+
 #withdraw-submit1:hover{
-    background-color: #0F3B75;
+    background-color: green;
+    color: #fff;
+}
+#withdraw-submit1 a:hover{
     color: #fff;
 }
 @media screen and (max-width:500px){
@@ -766,19 +774,16 @@ input.withdraw-data:focus, input.withdraw-data:hover{
         width: 90%;
     }
     #withdraw-span, #withdraw-span1{
-        display: inline;
-        text-align:center;          
+        display: inline;          
     }
     #payment-span1{
         display: block;
         text-align:center;
         width: 100%;    
     }
-    #withdraw-delivery{
+    /* #withdraw-delivery{
         width: 100%;
-        word-spacing: 0;
-        text-align: center;
-    }
+    } */
     #payment-delivery{
     max-width:100%;
     }
@@ -789,8 +794,11 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     padding-right: 15px;
     padding-top:2%;
 }
+.withdraw-radio{
+    padding-left:95%;
+}
 .withdraw-expand{
-    width: 30rem;
+    width: 25rem;
     font-size:1.4rem;
     padding-left:10px;
     color: #0F3B75;
@@ -800,6 +808,10 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     color:rgb(62, 65, 65);
 }
 /* Edit user  */
+.user-image{
+    margin-top:4%;
+    padding-left:10em;
+}
 .editusertext-blue{
     color: #0F3B75;
     font-weight: bold;

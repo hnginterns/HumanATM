@@ -1,34 +1,40 @@
+@extends('layouts.app')
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+@section('title')
     <title> Dashboard | HumanATM</title>
-</head>
+    @endsection
+
+    @section('content')
+@include('header')
 <body>
-   <div class="container-fluid">
-    <!-- header -->
-    @include('header')
-    <div class="row profile-rower">
-        <div class="col-md-8 col-md-offset-2 userpage-shadow">
+   <div class="container-fluid blue-fall outerBox-margin">
+    <div class="row box-margin">
+        
+   <div class="col-md-8 col-md-offset-2 box-border">
+    
+                <div class="row">
+                     <div class="col-md-12 text-center box-color">
+                         <h3>VIEW YOUR PROFILE</h3><hr>
+                         <h4> View & Update Profile</h4>
+                     </div>
+                 </div>
+
             <div class="row userpage-margin">
-                <div class="col-md-7 col-md-offset-1 text-center">
+                <div class="col-md-10 col-md-offset-1 text-center">
                     <img src="{{asset('images/3.png')}}" class="userpage-image" alt="userPicture">
                 </div>
-                <div class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-1 text-center  daily-inactive">
-                    <h5><a href="/updateuser/{{$user->id}}"><b>Update Profile</b></a></h5>
-                </div>
             </div>
+
+            
+
                @if (session()->has('status'))
             <div class="alert alert-info alert-info fade in">
                 <a href="/dashboard" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 {{ session('status')}}
             </div>
             @endif
+
+
             <div class="row userpage-margin userpage-mar">
                 <div class="col-xs-6 col-md-3 col-md-offset-2 ">
                     <h3><span style="color:#828282"> Name: </span></h3>
@@ -68,6 +74,12 @@
                 </div>
                 <div class="col-xs-6 col-md-4 col-md-offset-1 userpage-bottom">
                     <h3><b>+234 811 234 5678</b></h3>
+                </div>
+            </div>
+
+                <div class="row userUpdate-button">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                    <a href="/updateuser/{{$user->id}}"><h4 class="btn btn-success btn-block"><b>Update Profile</b></h4></a>
                 </div>
             </div>
 
@@ -228,5 +240,7 @@
     </div>
 </div>
 </div> 
+
+@include('footer')
 </body>
-</html>
+@endsection
