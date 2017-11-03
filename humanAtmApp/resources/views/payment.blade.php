@@ -70,7 +70,7 @@
 
                         <div class="form-group {{ $errors->has('bank_id') ? ' has-error' : '' }}">
                          
-                        <select class="withdraw-expand form-control" style="margin:0 auto" name="bank_id">
+                        <select class="withdraw-expand form-control" name="bank_id">
                                 <option value="" selected="selected">Select Bank</option>
                                 @foreach ($banks as $bank)
                                 <option value="{{ $bank->id }}">{{ $bank->name }}</option>
