@@ -104,13 +104,11 @@
                     <p class="text-center">DELIVERY TIME</p>                                    
                     <p class="text-center">15 minutes</p>
                 </div>
-                <div class="">              
-                    <p id='withdraw-delivery'>
-                        <input type="checkbox" name="delivery" id="withdraw-span">HOME-DELIVERY
-                        <span id="withdraw-span1">N150</span>
-                    </p>
-                    <input type="submit" class="withdraw-data withdraw-submit" id="withdraw-submit"value="WITHDRAW">
-                    <button class="withdraw-data withdraw-submit" id="withdraw-submit1"><a href="fund">FUND WALLET</a></button>
+                <div class="tweet">   
+                <input type="checkbox" name="delivery" >           
+                    <p > <b>HOME-DELIVERY N150 </b> </p>
+                    <input type="submit" class="btn btn-success withdraw-submit" id="withdraw-submit"value="WITHDRAW">
+                   
                 </div>  
             </form>
         </div>
