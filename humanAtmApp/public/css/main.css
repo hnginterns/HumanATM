@@ -259,14 +259,23 @@
 .userpage-margin{
     margin-top: 7%;
 }
+.userUpdate-button{
+    margin:5%;
+}
+.userUpdate-button .btn{
+  padding:7%;
+  margin-bottom: 4%;
+}
 .userpage-image{
-    width: 15em;
-    height: 15em;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 2px #0F3B75 solid;
+    margin-top:5%;
+    background: #0F3B75
 }
 .userpage-mar h3{
-    font-size: 1.6em;
+    font-size: 1.2em;
 }
 .userpage-bottom{
     margin-bottom: 5%;
@@ -799,6 +808,10 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     color:rgb(62, 65, 65);
 }
 /* Edit user  */
+.user-image{
+    margin-top:4%;
+    padding-left:10em;
+}
 .editusertext-blue{
     color: #0F3B75;
     font-weight: bold;
