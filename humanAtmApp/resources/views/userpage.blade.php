@@ -20,7 +20,7 @@
                     <img src="{{asset('images/3.png')}}" class="userpage-image" alt="userPicture">
                 </div>
                 <div class="col-xs-8 col-xs-offset-2 col-md-2 col-md-offset-1 text-center  daily-inactive">
-                    <h5><a href="#"><b>Edit Profile</b></a></h5>
+                    <h5><a href="/updateuser/{{$user->id}}"><b>Update Profile</b></a></h5>
                 </div>
             </div>
                @if (session()->has('status'))
