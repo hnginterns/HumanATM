@@ -628,36 +628,25 @@ Next user should start on the next line*/
     padding-left:10%;
 }
 
-.profile-menu {
-    margin: 40px auto;
-    text-align: center;
-    display:inline;
-}
+
 .profile-menu button {
     display: inline-block;
-    border: 2px solid #0F3B75;
     padding: 10px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     width: 170px;
     height: 40px;
-    margin: 15px;
+    margin: 25px;
+    margin-left:17%;
     text-align: center;
-    background-color: white;
+   
 }
-.profile-menu button.active {
-    background-color: #0F3B75;
-    color: white;            
+
+.profile-menu button a{
+    color: white;  
+    text-decoration:none;          
 }
-.profile-menu button.active a{
-    color: white;            
-}
-.profile-menu button.inactive {
-    background-color: white;
-    color: #0F3B75;         
-}
-.profile-menu button.inactive a{
-    color: #0F3B75;            
-}
+
+
 
 .profile-image{
     height: 160px;
@@ -693,11 +682,7 @@ Next user should start on the next line*/
     margin: 3px 0;
     text-decoration: none;
 }
-.profile-supermenu{
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-}
+
 
 .profile-innerform{
     margin-top: 50px;
@@ -705,11 +690,12 @@ Next user should start on the next line*/
 .withdraw-data{
     display:block;
     width: 100%;
+    height:40px;
+    padding:20px;
     border: 0;
-    border-bottom: 2px solid #0f3b75;
-    font-size: 1.1em;
+    font-size: 1em;
     color:#0F3B75; 
-    border-radius: 0;
+    border-radius: 10px;
     margin-bottom: 0;
     box-shadow: none;
 }
@@ -800,17 +786,19 @@ input.withdraw-data:focus, input.withdraw-data:hover{
 .withdraw-label{
     text-align: right;
     font-size: 0.8em;
-    font-weight: bold;
     padding-right: 15px;
+    padding-top:2%;
 }
- .withdraw-expand{
-    width: 400px;
+.withdraw-expand{
+    width: 30rem;
     font-size:1.4rem;
     padding-left:10px;
     color: #0F3B75;
     border-radius:5px;
     }
-
+.withdraw p{
+    color:rgb(62, 65, 65);
+}
 /* Edit user  */
 .editusertext-blue{
     color: #0F3B75;

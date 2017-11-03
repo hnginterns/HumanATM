@@ -1,12 +1,3 @@
-<!-- <script>
-        $(document).ready(function () {
-            $('ul.nav > li').click(function (e) {
-                e.preventDefault();
-                $('ul.nav > li').removeClass('active');
-                $(this).addClass('active');
-            });
-        });
-    </script> -->
 
 <body>
     <!-- Navbar -->
@@ -27,12 +18,14 @@
                     <li class="active"><a href="/wallet">WALLET</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" 
                         data-toggle="dropdown" href="">TRANSACTIONS</a>
-                        <ul class="dropdown-menu" id="header-dropdown">
-                            <li><a href="/dailytransaction" target="_blank"><h4><b> Daily</h4></b></a></li>
+
+                        <ul class="dropdown-menu" >
+                            <li><a href="/dailytransaction" ><b> Daily</b></a></li>
+
                             
-                            <li><a href="/weeklytransaction"><h4><b>Weekly</h4></b></a></li>
+                            <li><a href="/weeklytransaction"><b>Weekly</b></a></li>
                            
-                            <li><a href="/monthlytransaction"><h4><b>Monthly</h4></b></a></li>
+                            <li><a href="/monthlytransaction"><b>Monthly</b></a></li>
                         </ul>
                     </li>
                     <li><a href="/paybills">PAY BILLS</a></li>
@@ -42,18 +35,18 @@
                     
                                <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
-                                </a></li>
+                                </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                <li><a href="/location" >Human ATMs</a></li>
-                                 <li><a href="/dashboard" >Dashboard</a></li>
-                                 <li><a href="/payment" >Become HumanATM</a></li>
-                                    <li class="dropdown">
+                                <li><a href="/location" ><b>Human ATMs</b></a></li>
+                                 <li><a href="/dashboard" ><b>Dashboard</b></a></li>
+                                 <li><a href="/payment" ><b>Become HumanATM</b></a></li>
+                                  
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            <b>Logout</b>
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -69,6 +62,6 @@
                 </ul>
             </div>
 
-        </div>
+       
 
     </nav><!-- Navbar Ends -->
