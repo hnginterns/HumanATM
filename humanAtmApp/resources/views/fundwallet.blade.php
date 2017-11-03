@@ -5,24 +5,27 @@
     @endsection
 
     @section('content')
-            <div class="container-fluid daily-margin">
-                <div class="row profile-rower">
-                        <div class="col-md-8 col-md-offset-2 profile-borderColor">
+     <!-- header -->
+  @include('header')
+            <div class="container-fluid blue-fall outerBox-margin">
+                <div class="row box-margin">
+                        <div class="col-md-8 col-md-offset-2 box-border">
                             <div class="row">
-                                <div class="col-md-12 wallet-boxColour">
-                                    <b><p>Wallet Balance</p></b>
-                                    <h1><b>N140,000</b></h1>
+                                <div class="col-md-12 text-center wallet-boxColour">
+                                <h4>Wallet Balance</h4> <hr>
+                                <h1><b>N140,000</b></h1>
                                 </div>
                             </div>
                             
-                        <div class="row daily-margin text-center">
-                            <div class="col-md-4 col-md-offset-1 daily-inactive">
-                                <h4><a href="wallet"> <span style="color:#0F3B75"><b> TRANSFER TO ACCOUNT</b><span></a></h4>
-                            </div>
-                            <div class="col-md-4 col-md-offset-2 daily-active">
-                                <h4><a href="fundwallet"><span style="color:white "><b>FUND WALLET</b><span></a></h4>
-                            </div>
-                        </div><br>
+                            <div class="row daily-margin text-center">
+                            <div class="col-sm-4 col-sm-offset-1">
+                                 <a href="wallet"> <h4 class=" box-inactive">  TRANSFER TO ACCOUNT</h4></a>
+                                </div>
+        
+                                <div class="col-sm-4 col-sm-offset-2 ">
+                                    <a href="fundwallet"><h4 class="box-active">FUND WALLET</h4></a>
+                                    </div>
+                                </div>
                         <div class="row text-center daily-margin">
                                 <div class="col-md-12">
                                     <img src="img/4.png" alt="">
@@ -37,38 +40,36 @@
                                     <form action="{{ action('WalletsController@cardToWallet') }}" class="form" method="post">
                                         {{csrf_field()}}
                                             <div class="form-group ">
-                                                 <label for="Amount" class="walletColor">Firstname</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="dikethelmak" name="fname">
+                                                
+                                        <input type="text" class="form-control wallet-input" placeholder="First Name" name="fname">
                                         <p class="walletLabel-below">MAX. AMOUNT  N50,000</p>
 
-                                        <label for="Amount" class="walletColor">Last Name</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="" name="lname">
+                                        
+                                        <input type="text" class="form-control wallet-input" placeholder="Last Name" name="lname">
                                         <p class="walletLabel-below">DIKE THELMA KELECHI</p>
 
-                                        <label for="Amount" class="walletColor">Email</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="First Bank" name="email">
+                                        
+                                        <input type="text" class="form-control wallet-input" placeholder="Email" name="email">
                                         <br>
 
-                                        <label for="Amount" class="walletColor">Phone Number</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="First Bank" name="phone">
+                                        <input type="text" class="form-control wallet-input" placeholder="Phone Number" name="phone">
                                         <br>
 
-                                        <label for="Amount" class="walletColor">Card No</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="First Bank" name="card_no">
+                                       
+                                        <input type="text" class="form-control wallet-input" placeholder="Card Number" name="card_no">
                                         <br>
 
-                                        <label for="Amount" class="walletColor">CVV</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="First Bank" name="cvv">
+                                       
+                                        <input type="text" class="form-control wallet-input" placeholder="CVV" name="cvv">
                                         <br>
 
-                                        <label for="Amount" class="walletColor">Amount</label>
-                                        <input type="text" class="form-control wallet-input" placeholder="First Bank" name="amount">
+                                       
+                                        <input type="text" class="form-control wallet-input" placeholder="Amount" name="amount">
                                         <br>
 
                                         <p class="wallet-text text-center">
                                             Transaction-Fee N55					
                                         </p>
-                                           			<br><br>
                                                 <button type="submit" class=" wallet-button">PAY N301,000</button>
                                             </div>
                                         </form>
@@ -77,4 +78,8 @@
                         </div>
                 </div>
             </div>
+            <!-- Footer -->
+ @include('footer')
+<!-- End footer-->
+</body>
 @endsection
