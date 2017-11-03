@@ -81,14 +81,61 @@ class TransactionController extends Controller
 			Transaction::create([
 				'sender_id'   => $withdrawal->payer_id,
 				'reciever_id' => $withdrawal->withdrawer_id,
-				'amount'      => ((int)$withdrawal->amount -150),
+				'amount'      => $withdrawal->amount,
 				'status'      => 'completed',
 			]);
 
-			return redirect()->back()->with(['status' => 'You have confirmed that you have recieved the sum of '. ' NGN'. ((int)$withdrawal->amount -150). '  from '. $my_payer->name. ' Thanks for using our service!, Don\'t forget to hit the invite button to share your testimony with your friends']);
+			return redirect()->back()->with(['status' => 'You have confirmed that you have recieved the sum of '. ' NGN'. $withdrawal->amount. '  from '. $my_payer->name. ' Thanks for using our service!, Don\'t forget to hit the invite button to share your testimony with your friends']);
 		}
 	}
 
+	public function rejectPayment($payment_id)
+	{
+		$deleted = Withdrawal::findOrFail($payment_id)->delete();
+
+		if($deleted)
+		{
+			return redirect()->back()->with(['status' => 'You\'ve successfully deleted your request to render human ATM service, do check back next time']);
+		}
+	}  
+
+	/**
+	*Show the payment form to the user
+	* who requests to be a human ATM
+	*/
+
+	public function showPaymentForm()
+	{
+		return view('payment');
+	}
+
+     /**
+	*Store the payment request to the humanATM Model
+	* @param Http Request $request
+	*@return boolean 
+	*/
+	public function storePayment(Request $request)
+	{
+		$validation = Validator::make($request->all(), $this->withdrawFormRules());
+
+		if ($validation->fails()){
+			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
+		}
+
+		$saved = HumanAtm::create([
+			'user_id'       => Auth::id(),
+			'phone_number'  => $request->phone_number,
+			'amount'        => $request->amount,
+			'bank_name'     => $request->bank_name,
+			'account_number'=> $request->account_number,
+			'location'      => $request->location,
+		]);
+
+		if ($saved)
+		{
+			return redirect()->back()->with(['status' => 'Your request has been recieved, wait as we get the person who needs the service']);
+		}
+	}
 	public function withdrawFormRules()
 	{
 		return [

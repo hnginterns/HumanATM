@@ -50,9 +50,17 @@ Route::get('/404', function () {
 
 Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
 Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
+Route::get('/withdraw', function (){
+
+	return redirect('location');
+});
 Route::get('/withdraw/humanAtm/{id}', 'TransactionController@showWithdrawalForm');
 Route::post('/withdraw/{id}', 'TransactionController@processWithdraw')->middleware('auth');
 Route::get('/withdraw/confirm/receipt/{withdrawal_id}', 'TransactionController@confirmWithdrawal');
+
+Route::get('/reject/payment/{payment_id}', 'TransactionController@rejectPayment');
+Route::get('/payment', 'TransactionController@showPaymentForm');
+Route::post('/payment', 'TransactionController@storePayment')->middleware('auth');
 
 Route::get('/{name}', function ($name) {
     return view($name);
