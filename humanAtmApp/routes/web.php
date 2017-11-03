@@ -44,7 +44,12 @@ Route::get('/404', function () {
  Route::get('/invite', function(){
  	return view('invite');
  });
-  
+
+
+/* User Update */
+Route::get('/updateuser/{id}', [ 'uses'=> 'UserController@edit' ] );
+Route::put('/updateuser', [ 'uses'=> 'UserController@update']);
+
 
 /*  Transaction */
 
