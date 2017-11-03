@@ -31,7 +31,7 @@
                         <h4 class="text-center"> Human ATM Helps to Make Your Money Transactions <br>
                         Easy, Fast and Reliable at the comfort of <br> your Home or Office
                          </h4>
-                         <a href="/invite" class="btn col-xs-offset-5 home-btn btn-success"> GET STARTED </a>
+                         <a href="/location" class="btn col-xs-offset-5 home-btn btn-success"> GET STARTED </a>
                         
                         </div>
             </div>
