@@ -60,7 +60,7 @@
                                         <br>
 
                                        
-                                        <input type="text" class="form-control wallet-input" placeholder="CVV" name="cvv">
+                                        <input type="text" class="form-control wallet-input" placeholder="CVV- 3 Digits" name="cvv">
                                         <br>
 
                                        

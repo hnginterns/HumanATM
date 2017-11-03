@@ -1,28 +1,25 @@
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <link rel="stylesheet" href="{{asset('css/main.css')}}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <title> Location | HumanATM</title>
-    </head>
-   
+@extends('layouts.app')
+
+@section('title')
+<title> Wallet | HumanATM</title>
+@endsection
+
+@section('content')
+  <!-- header -->
+  @include('header')
     <body>
-        <div class="container-fluid daily-margin">
-            <!-- header -->
-           @include('header')
-            <div class="row profile-rower">
-                    <div class="col-md-8 col-md-offset-2 profile-borderColor">
+        <div class="container-fluid blue-fall outerBox-margin">
+            
+            <div class="row box-margin">
+                    <div class="col-md-8 col-md-offset-2 box-border">
                         <div class="row">
-                            <div class="col-md-12 text-right profile-boxColour">
-                                <h4>Make a request</h4>
+                            <div class="col-md-12 text-center wallet-boxColour">
+                                <h3>Make a Request</h3><hr>
                             </div>
                         <div>
 
                             <div class="row">
-                                <div class="col-md-4 col-md-offset-3 profile-boxColour text-center">
+                                <div class="col-md-4 col-md-offset-3  wallet-text text-center">
                                     <h4> HUMAN ATM</h4>
                                 </div>
                             </div>
@@ -66,5 +63,8 @@
                 </div>
             </div>
         </div>
+         <!-- Footer -->
+ @include('footer')
+<!-- End footer-->
     </body>
-    </html>
+    @endsection
