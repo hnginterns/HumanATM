@@ -79,7 +79,7 @@
 
                 <div class="row userUpdate-button">
             <div class="col-md-4 col-md-offset-4 text-center">
-                    <a href="/updateuser/{{$user->id}}"><h4 class="btn btn-success btn-block"><b>Update Profile</b></h4></a>
+                    <a href="/edituser/{{$user->id}}"><h4 class="btn btn-success btn-block"><b>Update Profile</b></h4></a>
                 </div>
             </div>
 

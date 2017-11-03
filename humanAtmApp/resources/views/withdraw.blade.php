@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-<body class="signup-body">
     <section>
      @include('header')
- </section>
+    </section>
+<body >
  <div class="container-fluid blue-fall outerBox-margin">
  
       <div class="row box-margin">
@@ -16,7 +16,7 @@
                   <div class="row">
                       <div class="col-md-12 text-center box-color">
                           <h3>REQUEST</h3><hr>
-                          <h4> Withdraw & Pay-in</h4>
+                          <h4> Withdraw</h4>
                       </div>
                   </div>
                     @if (session()->has('status'))

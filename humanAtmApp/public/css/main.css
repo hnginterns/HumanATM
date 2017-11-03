@@ -738,18 +738,18 @@ Next user should start on the next line*/
     text-decoration:none;
 }
 #withdraw-delivery, #payment-delivery {
-    color: #0f3b75;  
+    color: #3333;  
     font-size: 1em;
     margin: auto;
     margin-top: 0;
     width:50%;
     font-weight: bold;
-    word-spacing: 80px;            
+    word-spacing: 20px;            
     padding: 10px;
     padding-top: 0;
 }
 #payment-delivery{
-    margin-top: 50px;    
+    margin-top: 30px;    
     text-align: center;
 }
 input.withdraw-data:focus, input.withdraw-data:hover{
@@ -776,11 +776,7 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     #withdraw-span, #withdraw-span1{
         display: inline;          
     }
-    #payment-span1{
-        display: block;
-        text-align:center;
-        width: 100%;    
-    }
+   
     /* #withdraw-delivery{
         width: 100%;
     } */
@@ -801,7 +797,7 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     width: 25rem;
     font-size:1.4rem;
     padding-left:10px;
-    color: #0F3B75;
+    color:rgb(62, 65, 65);
     border-radius:5px;
     }
 .withdraw p{
@@ -847,7 +843,7 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     font-size: 1.2em; 
     border: 0;
     width: 170px;
-    margin-bottom:60px;
+    margin-left:230px;
 }
 
 .edituserpage-btn.blue{
