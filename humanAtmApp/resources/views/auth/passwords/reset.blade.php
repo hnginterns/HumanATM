@@ -5,23 +5,7 @@
 
 
  @section('content')
-<<<<<<< HEAD
- <body class='signup-body'>
-        <section>
-                @include('header')
-        </section>
-    <section id='' class='forgotpassword-container'>
-        <div class = "container signup-content">
-            <div class="signup-header">
-                <div class="">
-                    <svg width="100" height="100" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <title>Group 2</title>
-                        <desc>Created using Figma</desc>
-                        <g id="Canvas" transform="translate(-18512 18081)">
-                            <g id="Group 2">
-                                <g id="Ellipse">
-                                    <use xlink:href="#path0_fill" transform="translate(18512 -18081)" fill="#FFFFFF"/>
-=======
+
  <body class="signup-body">
     <section>
      @include('header')
@@ -41,7 +25,7 @@
                             <g id="Vector">
                                 <g id="Vector">
                                     <use xlink:href="#path1_fill" transform="matrix(-0.735886 -0.676771 0.675685 -0.737441 18548.8 -17998.4)" fill="#9258BE"/>
->>>>>>> backend
+
                                 </g>
                             </g>
                             <g id="Vector">
