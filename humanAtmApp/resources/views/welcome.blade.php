@@ -18,36 +18,8 @@
 
 
 <!-- Navbar -->
-<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #0C2A52;">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#HumanATMNavbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a id="header-color" class="navbar-brand" href="#">
-                <img style="width:45px; height:45px;padding:10px;" src="{{asset('img/logo.png')}}" alt="">
-               <b> HUMAN ATM</b></a>
-        </div>
-        <div class="collapse navbar-collapse" id="HumanATMNavbar">
-            <ul class="nav navbar-nav navbar-right" id="header-color" >
-                <li><a href="/wallet">WALLET</a></li>
-                <li class="dropdown">
-                        <a href="dailytransaction.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TRANSACTIONS <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Daily</a></li>
-            <li><a href="#">Weekly</a></li>
-            <li><a href="#">Monthly</a></li>
-          </ul>
-        </li>
-                <li><a href="/paybills">PAY BILLS</a></li>
-                <li><a href="/invite" >INVITE FRIENDS</a></li>
-            </ul>
-        </div>
-    </div>
-</nav><!-- Navbar Ends -->
+@include('homeheader')
+<!-- Navbar Ends -->
 
 <!-- Put the body content here -->
 
@@ -59,7 +31,7 @@
                         <h4 class="text-center"> Human ATM Helps to Make Your Money Transactions <br>
                         Easy, Fast and Reliable at the comfort of <br> your Home or Office
                          </h4>
-                         <a href="/invite" class="btn col-xs-offset-5 home-btn btn-success"> GET STARTED </a>
+                         <a href="/location" class="btn col-xs-offset-5 home-btn btn-success"> GET STARTED </a>
                         
                         </div>
             </div>
