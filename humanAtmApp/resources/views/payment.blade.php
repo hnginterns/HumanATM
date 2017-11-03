@@ -6,10 +6,9 @@
 
 @section('content')
 
+@include('header')
 <body>
-    <section>
-     @include('header')
- </section>
+
  <section class="container">
     <div class="profile-container">
         <div class="withdraw-content">
