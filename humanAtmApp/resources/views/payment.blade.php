@@ -8,9 +8,9 @@
 
 <body>
     <section>
-       @include('header')
-   </section>
-   <section class="container">
+     @include('header')
+ </section>
+ <section class="container">
     <div class="profile-container">
         <div class="withdraw-content">
             <div class="profile-request">
@@ -68,22 +68,17 @@
                             @endif
                         </div>
 
-                        <div class="form-group {{ $errors->has('bank_name') ? ' has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('bank_id') ? ' has-error' : '' }}">
                             <label for="location">BANK</label>
-                            <select class="withdraw-expand" name="bank_name">
+                            <select class="withdraw-expand" name="bank_id">
                                 <option value="" selected="selected">Select Your Bank</option>
-                                <option value="First Bank of Nigeria" >First Bank of Nigeria</option>
-                                <option value="Union Bank of Nigeria">Union Bank of Nigeria</option>
-                                <option value="United Bank for Africa">United Bank for Africa</option>
-                                <option value="Unity Bank plc">Unity Bank plc</option>
-                                <option value="fidelity Bank Nigeria">Fidelity Bank Nigeria</option>
-                                <option value="First City Monument Bank">First City Monument Bank</option>
-                                <option value="Guaranty Trust_Bank">Guaranty Trust Bank</option>
-                                <option value="Heritage Bank Plc">Heritage Bank plc</option>
+                                @foreach ($banks as $bank)
+                                <option value="{{ $bank->id }}">{{ $bank->name }}</option>
+                                @endforeach
                             </select>
-                            @if($errors->has('bank_name'))
+                            @if($errors->has('bank_id'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('bank_name')}}</strong>
+                                <strong>{{ $errors->first('bank_id')}}</strong>
                             </span>
                             @endif
                         </div>

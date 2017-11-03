@@ -9,6 +9,7 @@ use App\HumanAtm;
 use App\BankAtm;
 use App\Withdrawal;
 use App\User;
+use App\Bank;
 use App\Transaction;
 
 class TransactionController extends Controller
@@ -36,8 +37,9 @@ class TransactionController extends Controller
 	public function showWithdrawalForm($id)
 	{   
 		$payer_id = $id;
+		$banks = Bank::all();
 
-		return view('withdraw', compact('payer_id'));
+		return view('withdraw', compact('payer_id', 'banks'));
 
 	}
 
@@ -55,7 +57,7 @@ class TransactionController extends Controller
 			'withdrawer_id' => Auth::id(),
 			'payer_id'      => $human_atm_id,
 			'phone_number'  => $request->phone_number,
-			'bank_name'     => $request->bank_name,
+			'bank_id'     => $request->bank_id,
 			'amount'        => (int)$request->amount + 150,
 			'account_number'=> $request->account_number,
 			'location'      => $request->location,
@@ -105,8 +107,9 @@ class TransactionController extends Controller
 	*/
 
 	public function showPaymentForm()
-	{
-		return view('payment');
+	{   
+		$banks = Bank::all();
+		return view('payment', compact('banks'));
 	}
 
      /**
@@ -126,7 +129,7 @@ class TransactionController extends Controller
 			'user_id'       => Auth::id(),
 			'phone_number'  => $request->phone_number,
 			'amount'        => $request->amount,
-			'bank_name'     => $request->bank_name,
+			'bank_id'     => $request->bank_id,
 			'account_number'=> $request->account_number,
 			'location'      => $request->location,
 		]);
@@ -141,7 +144,7 @@ class TransactionController extends Controller
 		return [
 			'phone_number' => 'required|min:11',
 			'amount' => 'required',
-			'bank_name' => 'required',
+			'bank_id' => 'required',
 			'account_number' => 'required|max:10|min:10',
 			'location' => 'required',
 		];

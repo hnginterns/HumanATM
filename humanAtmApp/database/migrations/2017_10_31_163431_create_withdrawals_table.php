@@ -18,13 +18,15 @@ class CreateWithdrawalsTable extends Migration
             $table->string('phone_number');
             $table->integer('amount');
             $table->unsignedInteger('surcharge')->default(150);
-            $table->string('bank_name');
+            $table->unsignedInteger('bank_id');
             $table->bigInteger('account_number');
             $table->string('location');
             $table->string('status')->default('pending');
             $table->timestamps();
+
             $table->foreign('withdrawer_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('payer_id')->references('id')->on('human_atms')->onDelete('cascade');
+            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
         });
     }
     /**
