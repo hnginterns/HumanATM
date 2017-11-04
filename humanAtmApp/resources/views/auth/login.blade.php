@@ -24,7 +24,7 @@
                     <div class="col-sm-12 text-center">
                             <img src="{{asset('images/logo.png')}}" class="bills-image" alt="userPicture">
                             <h1 class="auth-head">HUMAN ATM</h1>
-                            <p>FOR THE NEXT BILLION USERS</p>
+                            <p class="auth-color">FOR THE NEXT BILLION USERS</p>
                     </div>
                 </div>
                 <!--  -->

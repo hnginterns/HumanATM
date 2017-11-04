@@ -81,7 +81,7 @@
                 
                     <input type="text" name="account_number" class="withdraw-data" id="" placeholder="Account Number" value="{{ old('account_number')}}">
 
-                    <p class="withdraw-label">OLIBIE CHIDERA</p>
+                    <p class="withdraw-label">YOUR NAME</p>
                     @if ($errors->has('account_number'))
 
                     <span class="help-block">
