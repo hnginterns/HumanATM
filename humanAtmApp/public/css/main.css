@@ -236,10 +236,9 @@ margin-bottom:10%;
     text-decoration: none;
 }
 .userpage-image{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 2px #0F3B75 solid;
     margin-top:5%;
     background: #0F3B75
 }

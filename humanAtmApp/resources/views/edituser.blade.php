@@ -40,7 +40,7 @@
 
 
                     <div class="col-md-10  col-md-offset-1">
-                        <form action="">
+                        <form action="" id="update-details-form">
                             <fieldset>
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 form-group">

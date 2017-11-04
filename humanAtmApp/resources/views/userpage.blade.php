@@ -21,7 +21,7 @@
 
             <div class="row userpage-margin">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <img src="{{asset('images/3.png')}}" class="userpage-image" alt="userPicture">
+                    <img src="{{asset('images/3.svg')}}" class="userpage-image" alt="userPicture">
                 </div>
             </div>
 
