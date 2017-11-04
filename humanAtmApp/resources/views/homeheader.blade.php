@@ -26,6 +26,7 @@
         </li>
                 <li><a href="/paybills">PAY BILLS</a></li>
                 <li><a href="/invite" >INVITE FRIENDS</a></li>
+                <li><a href="/login" >LOGIN </a></li>
             </ul>
         </div>
     </div>

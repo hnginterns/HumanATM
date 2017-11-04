@@ -69,7 +69,6 @@
                     @endif
 
 
-                    <p class='signup-eye'><i class="glyphicon glyphicon-eye-close"></i></p>
                     <input type="password" name="password_confirmation"  id="signup-password1" class="signup-data signup-password" placeholder="Confirm password">
 
 
