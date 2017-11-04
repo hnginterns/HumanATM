@@ -45,12 +45,12 @@
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label class="control-label text-muted" for="firstname">First Name*</label>
-                                        <input type="text" name="firstname" placeholder="First Name" class="form-control edituserpage-form " required>
+                                        <input type="text" name="firstname" placeholder="First Name" class="form-control edituserpage-form " >
                                     </div>
 
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label class="control-label text-muted" for="lastname">Last Name*</label>
-                                        <input type="text" name="lastname" placeholder="Last Name" class="form-control edituserpage-form" required>
+                                        <input type="text" name="lastname" placeholder="Last Name" class="form-control edituserpage-form">
                                     </div>  
                                 &nbsp;
 
@@ -66,12 +66,12 @@
                                     <br>
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label class="control-label text-muted" for="accountname">Account Name*</label>
-                                        <input type="text" name="accout_name" placeholder="Account Name" class="form-control edituserpage-form" required>
+                                        <input type="text" name="accout_name" placeholder="Account Name" class="form-control edituserpage-form" >
                                     </div>  
                         
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label class="control-label text-muted" for="lastname">Account Number*</label>
-                                        <input type="number" name="account_number" placeholder="Account Name" class="form-control edituserpage-form" required>
+                                        <input type="number" name="account_number" placeholder="Account Name" class="form-control edituserpage-form" >
                                    
                                         <select class="withdraw-expand form-control"  name="bank_id">
                                         <option value="" selected="selected">Select Bank</option>
@@ -85,12 +85,12 @@
 
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label for="MobileNumber" class="text-muted control-label">Mobile Number*</label><br/>
-                                        <input type="tel" name="phone_number" placeholder="+2348112345678" class="form-control edituserpage-form" required>
+                                        <input type="tel" name="phone_number" placeholder="+2348112345678" class="form-control edituserpage-form" >
                                     </div>
                                     
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label for="EmailAddress" class="text-muted control-label">Email Address*</label><br/>
-                                        <input type="email" name="email" placeholder="user@humanatm.com" class="form-control edituserpage-form" required>
+                                        <input type="email" name="email" placeholder="user@humanatm.com" class="form-control edituserpage-form" >
                                     </div>
 
                                     <div class="col-md-8 col-md-offset-2 form-group">
@@ -101,16 +101,16 @@
                                     
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label for="Password" class="text-muted control-label"> OldPassword*</label><br/>
-                                        <input type="password" name="password" placeholder="***********" class="form-control edituserpage-form" required>
+                                        <input type="password" name="password" placeholder="***********" class="form-control edituserpage-form" >
                                     </div>  
 
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label for="Password" class="text-muted control-label">Password*</label><br/>
-                                        <input type="password" name="password" placeholder="***********" class="form-control edituserpage-form" required>
+                                        <input type="password" name="password" placeholder="***********" class="form-control edituserpage-form" >
                                     </div>                                         
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label for="Password" class="text-muted control-label">Re-enter Password*</label><br/>
-                                        <input type="password" name="password" placeholder="***********" class="form-control edituserpage-form" required>
+                                        <input type="password" name="password" placeholder="***********" class="form-control edituserpage-form" >
                                     </div>  
                                     <br>
                                     &nbsp;
