@@ -31,11 +31,11 @@
                 </div>
                 <div class="collapse navbar-collapse" id="HumanATMNavbar">
                     <ul class="nav navbar-nav navbar-right" id="header-color" >
-                        <li class="active"><a href="#">WALLET</a></li>
-                        <li><a href="dailytransaction">TRANSACTIONS</a></li>
-                        <li><a href="paybills">PAY BILLS</a></li>
-                        <li><a href="#" >INVITE FRIENDS</a></li>
-                        <li><a href="userpage" >USER PAGE</a></li>
+                        <li class="active"><a href="/fundwallet">WALLET</a></li>
+                        <li><a href="/dailytransaction">TRANSACTIONS</a></li>
+                        <li><a href="/paybills">PAY BILLS</a></li>
+                        <li><a href="/invite" >INVITE FRIENDS</a></li>
+                        <li><a href="/dashboard" >USER PAGE</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,11 +46,11 @@
 
        <script>
         $(document).ready(function () {
-            $('ul.nav > li').click(function (e) {
-                e.preventDefault();
-                $('ul.nav > li').removeClass('active');
-                $(this).addClass('active');
-            });
+            // $('ul.nav > li').click(function (e) {
+            //     e.preventDefault();
+            //     $('ul.nav > li').removeClass('active');
+            //     $(this).addClass('active');
+            // });
         });
     </script>
 </body>

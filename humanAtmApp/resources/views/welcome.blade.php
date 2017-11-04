@@ -31,7 +31,7 @@
                         <h4 class="text-center"> Human ATM Helps to Make Your Money Transactions <br>
                         Easy, Fast and Reliable at the comfort of <br> your Home or Office
                          </h4>
-                         <a href="/invite" class="btn col-xs-offset-5 home-btn btn-success"> GET STARTED </a>
+                         <a href="/location" class="btn col-xs-offset-5 home-btn btn-success"> GET STARTED </a>
                         
                         </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="col-sm-2 col-sm-offset-1   segment-box text-center">
                     <h1><i class="fa fa-map-marker fa-2x"></i></h1>
                     <h3>Locate ATM</h3>
-                    <h4>Connects with to thousands of Human ATM across the <br>Country
+                    <h4>Connect with thousands of Human ATM across the Country
 
                 </div>
                 <div class="col-sm-2 col-sm-offset-1 segment-box text-center">
@@ -72,15 +72,15 @@
                     <h3>No Problem, We got you covered!</h3>
                 </div>
                 <div class="col-sm-3 color-fa col-sm-offset-1 text-center">
-                <h1><i class="fa fa-search fa-2x" ></i></h1>
+                <h1><i class="fa fa-search fa-1x" ></i></h1>
                 <h4>Search for HumanATM</h4>
                 </div>
                 <div class="col-sm-3 color-fa col-sm-offset-1 text-center">
-                <h1><i class="fa fa-user fa-2x" ></i></h1>
+                <h1><i class="fa fa-user fa-1x" ></i></h1>
                 <h4>Place Withdrawal Order</h4>
                 </div>
                 <div class="col-sm-3 color-fa col-sm-offset-1 text-center">
-                <h1><i class="fa fa-truck fa-2x" ></i></h1>
+                <h1><i class="fa fa-truck fa-1x" ></i></h1>
                 <h4>Order Arrives your Location</h4>
                 </div>
                 
@@ -91,4 +91,4 @@
     </body>
 <!-- Footer -->
  @include('footer')
-<!-- End footer>
+<!-- End footer-->
