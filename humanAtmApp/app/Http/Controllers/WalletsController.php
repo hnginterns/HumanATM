@@ -66,30 +66,11 @@ class WalletsController extends Controller
             // );
 
             return view('otppage', compact('transRef'));
-            // $response = $response['data']['transfer'];
-            // $meta = $response['meta'];
-            // $meta = json_decode($meta, TRUE);
-            // $transMsg = $meta['processor']['responsemessage'];
-            // $transRef = $meta['processor']['transactionreference'];
-            // $transaction = new CardWallet;
-            // $transaction->firstName = $response['firstName'];
-            // $transaction->lastName = $response['lastName'];
-            // $transaction->phoneNumber = $response['phoneNumber'];
-            // $transaction->amount = $response['amountToSend'];
-            // $transaction->ref = $transRef;
-
-            // $transaction->save();
-
-            // event(new FundWallet($cardWallet));
+            
         }
-        Session::flash('status', $transMsg);
-            return back();
+        Session::flash('status', $response['status']);
+        return back();
         
-        $answer = array(
-            'response' => $response,
-            'request' => $request
-        );
-        return $answer;
     }
 
     public function otp(Request $request)
