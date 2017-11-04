@@ -91,14 +91,13 @@ margin-bottom:10%;
         padding: 10px;
         padding-left: 20px;
         margin-bottom:5%;
-        color:rgb(78, 77, 77);
         border-radius:10px;
     }
     #signup-password1{
         margin-bottom: 30px;
     }
 
-    #signup-submit, #newpassword-submit, #forgotpassword-submit, #login-submit{
+     #newpassword-submit, #forgotpassword-submit, #login-submit{
     font-size: 1.2em;
     font-weight:bold;    
     margin: 0 auto;
@@ -113,16 +112,13 @@ margin-bottom:10%;
     margin-top: 40px;
     margin-bottom: 30px;
     }
-    #login-submit, #signup-submit{
+    #login-submit {
     width: 50%;
     }
     #signup-signin{
-    color: white;  
-    font-size: 1.2em;
-    text-align:right;
-    margin-top: 10px;
-    margin-right: 130px;
-    max-width:75%;
+    margin-top:3%;
+    margin-bottom:3%;
+    color:#0f3b75;
     }
     .signup-forgot{ 
     font-size: 1.1em;
@@ -130,15 +126,13 @@ margin-bottom:10%;
     margin-top: -10px;
     margin-bottom: 30px;
     }
-    #signup-signin a{
-    color: white;  
-    }
+    
    
-    #signup-submit:focus, #forgotpassword-submit:focus, #login-submit:focus, #newpassword-submit:focus{
+     #forgotpassword-submit:focus, #login-submit:focus, #newpassword-submit:focus{
     border: none;
     box-shadow: none;
     }
-    #signup-submit:hover, #newpassword-submit:hover, #forgotpassword-submit:hover{
+     #newpassword-submit:hover, #forgotpassword-submit:hover{
     background-color: #0F3B75;
     color: #fff;
     }
@@ -154,10 +148,7 @@ margin-bottom:10%;
     #newpassword-eye{
         top: -30px;
     }
-    @media screen and (max-width:500px){
-    #signup-submit{
-        font-size:1.3em;
-    }
+   
     
    
     #forgotpassword-submit, #newpassword-submit{

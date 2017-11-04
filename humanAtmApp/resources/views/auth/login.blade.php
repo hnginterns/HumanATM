@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-<title> PayBills | HumanATM</title>
+<title> Log-in | HumanATM</title>
 @endsection
 
    @section('content')
