@@ -1,4 +1,4 @@
-  
+
 @extends('layouts.app')
 
 @section('title')
@@ -47,7 +47,7 @@
               <img id="preview-img" class="text-center" src="noimage" width="150px" height="150px">
             </div>
             <div class="form-group {{ $errors->has('phote')? ' has-error' : ''}}">
-              <input type="file" class="text-center" name="photo" id="file" required>
+              <input type="file" class="text-center" name="photo" id="file">
               @if ($errors->has('photo'))
               <span class="help-block">
                 <strong>{{ $errors->first('photo') }}</strong>

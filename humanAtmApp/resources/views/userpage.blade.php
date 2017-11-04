@@ -79,15 +79,7 @@
     </div>
 </div>
 
-<div class="row userUpdate-button">
 
-    <div class="col-md-4 col-md-offset-4 text-center">
-
-        <a href="/profile/{{$user->id}}/update"><h4 class="btn btn-success btn-block"><b>Update Profile</b></h4></a>
-
-    </div>
-
-</div>
 
 {{-- show pending withdrawal --}}
 @if ($pendingWithdrawal)

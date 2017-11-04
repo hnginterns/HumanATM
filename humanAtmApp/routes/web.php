@@ -48,12 +48,9 @@ Route::get('/404', function () {
 })->name('404');
 Route::get('/invite', function(){
 	return view('invite');
-});
+})->middleware('auth');
 
 
-/* User Update */
-Route::get('/updateuser/{id}', [ 'uses'=> 'UserController@edit' ] );
-Route::put('/updateuser', [ 'uses'=> 'UserController@update']);
 
 
 /*  Transaction */
@@ -80,7 +77,5 @@ Route::get('/reject/payment/{payment_id}', 'TransactionController@rejectPayment'
 Route::get('/payment', 'TransactionController@showPaymentForm');
 Route::post('/payment', 'TransactionController@storePayment')->middleware('auth');
 
-Route::get('/{name}', function ($name) {
-	return view($name);
-});
+
 

@@ -15,7 +15,7 @@ class CreateInvitesTable extends Migration
     {
         Schema::create('invites', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->unique();
+            $table->string('email', 100)->unique();
             $table->unsignedInteger('referral_id');
             $table->rememberToken();
             $table->timestamps();
