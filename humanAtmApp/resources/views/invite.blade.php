@@ -29,13 +29,10 @@
 				</div>
 				
 				<div class="row userpage-margin">
-					<div class="col-md-8 col-md-offset-2  text-right">
-						<p><b>Referral Code</b></p>
-
-					</div>
+					
 					<div class="col-md-8 col-md-offset-2 text-center invite-form">
 						<form action="#" method="post">
-							<input type="text" name="referralcode" class="invite-input" id="referral" placeholder="Enter Referal Code"><br><br><br>
+							<input type="text" name="referralcode" class="invite-input" id="referral" placeholder="Enter Invitee's E-mail"><br><br><br>
 							<input type="submit" value="SUBMIT" class="btn btn-success invite-submit">
 						</form>
 					</div>
