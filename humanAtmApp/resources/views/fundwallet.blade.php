@@ -34,7 +34,7 @@
                         <div class="row daily-margin">
                             <div class="col-md-10 col-md-offset-1">
                                     @if (Session::has('status'))
-                                        <div class="alert-default">{{Session::get('status')}}</div>
+                                        <div class="alert-danger">{{Session::get('status')}}</div>
                                     
                                     @endif
                                     <form action="{{ action('WalletsController@cardToWallet') }}" class="form" method="post">
@@ -61,6 +61,12 @@
 
                                        
                                         <input type="text" class="form-control wallet-input" placeholder="CVV- 3 Digits" name="cvv">
+                                        <br>
+
+                                        <input type="text" class="form-control wallet-input" placeholder="Expiry Month" size="2" name="expiry_month">
+                                        <br>
+
+                                        <input type="text" class="form-control wallet-input" placeholder="Expiry Year" size="2" name="expiry_year">
                                         <br>
 
                                        

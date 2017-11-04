@@ -42,11 +42,11 @@ class WalletsController extends Controller
            "card_no"=> $request->card_no,
            "cvv"=> $request->cvv,
            "pin"=>"1111", //optional required when using VERVE card
-           "expiry_year"=>"2020",
-           "expiry_month"=>"07",
+           "expiry_year"=>"20".$request->expiry_year,
+           "expiry_month"=> $request->expiry_month,
            "charge_auth"=>"PIN", //optional required where card is a local Mastercard
            "apiKey" => $this->api_key,
-           "amount" =>100,
+           "amount" => $request->amount,
            "fee"=>65,
            "medium"=> "web",
             
