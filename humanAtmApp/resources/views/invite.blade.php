@@ -33,7 +33,7 @@
 					<div class="col-md-8 col-md-offset-2 text-center invite-form">
 						<form action="{{url('/invite/send')}}" method="post">
 						{{csrf_field()}}
-							<input type="text" name="referralcode" class="invite-input" id="referral" placeholder="Enter Referal Code">
+							<input type="text" name="referralcode" class="invite-input" id="referral" placeholder="Enter Invitee's Email">
 							@if(isset($error))
 							{{$error}}
 							@endif
