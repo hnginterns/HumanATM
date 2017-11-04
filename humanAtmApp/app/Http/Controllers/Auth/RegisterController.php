@@ -63,11 +63,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
+         $referral_id = ('HA_'. 
+                substr(md5(uniqid(rand(1, 1000))) , 0,6));
         return User::create([
             'name' => $data['name'],
             'wallet_id'=>$data['wallet_id'],
             'email' => $data['email'],
+            'referral_id' => $referral_id,
             'password' => bcrypt($data['password']),
         ]);
     }

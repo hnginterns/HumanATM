@@ -16,6 +16,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('wallet_id');
             $table->string('email', 100)->unique();
+            $table->string('referral_id')->nullable();
+             $table->string('sponsor_id')->nullable();
             $table->tinyInteger('role')->default(0);
             $table->string('password', 200);
             $table->rememberToken();

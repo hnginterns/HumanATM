@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 
@@ -41,14 +41,14 @@ Route::post('/invite/send','InviteController@sendinvite');
 
 
 Route::get('/403', function () {
-    return view('errors.403');
+	return view('errors.403');
 })->name('403');
 Route::get('/404', function () {
-    return view('errors.404');
+	return view('errors.404');
 })->name('404');
- Route::get('/invite', function(){
- 	return view('invite');
- });
+Route::get('/invite', function(){
+	return view('invite');
+});
 
 
 /* User Update */
@@ -59,13 +59,21 @@ Route::put('/updateuser', [ 'uses'=> 'UserController@update']);
 /*  Transaction */
 
 Route::get('/dashboard', 'UserDashboardController@index')->name('dashboard');
-Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
+Route::get('/profile/{id}/update', 'ProfileController@create')->middleware('auth');
+
+Route::post('/profile/update/{id}', 'ProfileController@store');
+Route::get('/profile/image/{user_id}', 'ProfileController@showImageForm')->middleware('auth');
+Route::post('/profile/image/{user_id}', 'ProfileController@showImageForm')->middleware('auth');
+
+
 Route::get('/withdraw', function (){
 
 	return redirect('location');
 });
-Route::get('/withdraw/humanAtm/{id}', 'TransactionController@showWithdrawalForm');
-Route::post('/withdraw/{id}', 'TransactionController@processWithdraw')->middleware('auth');
+Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
+Route::get('/withdraw/humanAtm/{id}', 
+	'TransactionController@showWithdrawalForm')->middleware('auth');
+Route::post('/withdraw/{id}', 'TransactionController@processWithdraw');
 Route::get('/withdraw/confirm/receipt/{withdrawal_id}', 'TransactionController@confirmWithdrawal');
 
 Route::get('/reject/payment/{payment_id}', 'TransactionController@rejectPayment');
@@ -73,6 +81,6 @@ Route::get('/payment', 'TransactionController@showPaymentForm');
 Route::post('/payment', 'TransactionController@storePayment')->middleware('auth');
 
 Route::get('/{name}', function ($name) {
-    return view($name);
+	return view($name);
 });
 

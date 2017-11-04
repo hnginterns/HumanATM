@@ -15,4 +15,13 @@ class Bank extends Model
     {
     	return $this->hasMany(BankAtm::class);
     } 
+    public function profile()
+    {
+    	return $this->hasMany(Profile::class);
+    }
+
+    public function humanAtm()
+    {
+    	return $this->hasMany(HumanAtm::class);
+    }
 }

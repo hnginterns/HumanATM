@@ -18,8 +18,10 @@
                     <li class="active"><a href="/wallet">WALLET</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" 
                         data-toggle="dropdown" href="">TRANSACTIONS</a>
+
                         <ul class="dropdown-menu" >
                             <li><a href="/dailytransaction" ><b> Daily</b></a></li>
+
                             
                             <li><a href="/weeklytransaction"><b>Weekly</b></a></li>
                            
@@ -60,6 +62,6 @@
                 </ul>
             </div>
 
-        </div>
+       
 
     </nav><!-- Navbar Ends -->
