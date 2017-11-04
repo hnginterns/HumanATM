@@ -59,6 +59,7 @@
                                 <label><input type="radio" name="sports"> Male</label>
                                 <label><input type="radio" name="sports"> Female</label>
                             </div>
+
                             <br>
                             &nbsp;
                             &nbsp;
@@ -67,6 +68,7 @@
                             <div class="col-md-8 col-md-offset-2 form-group">
                                 <label for="MobileNumber" class="text-muted control-label">Mobile Number*</label><br/>
                                 <input type="tel" name="phoneno" placeholder="+2348112345678" class="form-control edituserpage-form" required>
+
                             </div>
 
                             <div class="col-md-8 col-md-offset-2 form-group">
@@ -97,6 +99,7 @@
                             <div class="col-xs-4 col-xs-offset-4 text-center">
                                 <button type="submit" class="btn btn-primary edituserpage-btn blue">SAVE</button>
                             </div>
+
 
                         </div>                                    
                     </fieldset>                            
