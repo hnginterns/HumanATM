@@ -29,10 +29,7 @@
 				</div>
 				
 				<div class="row userpage-margin">
-					<div class="col-md-8 col-md-offset-2  text-right">
-						<p><b>Referral Code</b></p>
-
-					</div>
+					
 					<div class="col-md-8 col-md-offset-2 text-center invite-form">
 						<form action="{{url('/invite/send')}}" method="post">
 						{{csrf_field()}}

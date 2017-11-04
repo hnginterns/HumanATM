@@ -21,7 +21,7 @@
 
             <div class="row userpage-margin">
                 <div class="col-md-10 col-md-offset-1 text-center">
-                    <img src="{{asset('images/3.png')}}" class="userpage-image" alt="userPicture">
+                    <img src="{{asset('images/3.svg')}}" class="userpage-image" alt="userPicture">
                 </div>
             </div>
 
@@ -78,9 +78,9 @@
             </div>
 
                 <div class="row userUpdate-button">
-            <div class="col-md-4 col-md-offset-4 text-center">
-                    <a href="/edituser/{{$user->id}}"><h4 class="btn btn-success btn-block"><b>Update Profile</b></h4></a>
-                </div>
+                    <div class="col-md-4 col-md-offset-4 text-center user-a">
+                        <a href="/edituser/{{$user->id}}"><h4 class="btn btn-success btn-block"><b>Update Profile</b></h4></a>
+                    </div>
             </div>
 
             {{-- show pending withdrawal --}}

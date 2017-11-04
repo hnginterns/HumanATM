@@ -62,17 +62,12 @@ margin-bottom:10%;
     font-size:2.5em;
     font-weight:bold;
     margin-top:-3%;
+    color: #0F3B75;
 }
-    .forgotpassword-container{
-    display:block;
-    max-width: 760px;
-    min-height: auto;    
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: 70px;
-    background-color:#0F3B75;
-    color: #fff;
-    }
+.auth-color{
+    color:#0F3B75;
+}
+ 
   
   
    
@@ -87,14 +82,13 @@ margin-bottom:10%;
         padding: 10px;
         padding-left: 20px;
         margin-bottom:5%;
-        color:rgb(78, 77, 77);
         border-radius:10px;
     }
     #signup-password1{
         margin-bottom: 30px;
     }
 
-    #signup-submit, #newpassword-submit, #forgotpassword-submit, #login-submit{
+     #newpassword-submit, #login-submit{
     font-size: 1.2em;
     font-weight:bold;    
     margin: 0 auto;
@@ -104,21 +98,18 @@ margin-bottom:10%;
     text-align:center;
     border-radius:10px;
     }
-    #forgotpassword-submit, #newpassword-submit{
+    #newpassword-submit{
     width: 25%;
     margin-top: 40px;
     margin-bottom: 30px;
     }
-    #login-submit, #signup-submit{
+    #login-submit {
     width: 50%;
     }
     #signup-signin{
-    color: white;  
-    font-size: 1.2em;
-    text-align:right;
-    margin-top: 10px;
-    margin-right: 130px;
-    max-width:75%;
+    margin-top:3%;
+    margin-bottom:3%;
+    color:#0f3b75;
     }
     .signup-forgot{ 
     font-size: 1.1em;
@@ -126,15 +117,13 @@ margin-bottom:10%;
     margin-top: -10px;
     margin-bottom: 30px;
     }
-    #signup-signin a{
-    color: white;  
-    }
+    
    
-    #signup-submit:focus, #forgotpassword-submit:focus, #login-submit:focus, #newpassword-submit:focus{
+     #login-submit:focus, #newpassword-submit:focus{
     border: none;
     box-shadow: none;
     }
-    #signup-submit:hover, #newpassword-submit:hover, #forgotpassword-submit:hover{
+     #newpassword-submit:hover,{
     background-color: #0F3B75;
     color: #fff;
     }
@@ -150,13 +139,10 @@ margin-bottom:10%;
     #newpassword-eye{
         top: -30px;
     }
-    @media screen and (max-width:500px){
-    #signup-submit{
-        font-size:1.3em;
-    }
+   
     
    
-    #forgotpassword-submit, #newpassword-submit{
+    #newpassword-submit{
     display: block;
     text-align:center;
     width: 35%;    
@@ -175,10 +161,7 @@ margin-bottom:10%;
         text-align: center;
         margin-bottom: 100px;
     }
-    .forgotpassword-text {
-    font-size: 1.5em;
-    text-align: center;
-}
+    
 
 /* These rules are for the location listing, transaction pages, user profile, payment successful, 404 and paybills pages by drumzminister*/
 
@@ -249,11 +232,13 @@ margin-bottom:10%;
   padding:7%;
   margin-bottom: 4%;
 }
+.user-a a{
+    text-decoration: none;
+}
 .userpage-image{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 2px #0F3B75 solid;
     margin-top:5%;
     background: #0F3B75
 }
@@ -294,13 +279,11 @@ margin-bottom:10%;
 
 
 
-.page404-main{
-    bottom: 0;
-    width: 90%;
-          text-align: center;
-     margin-top:50px;
-     margin-left: 30px;
-      }
+.image404{
+    height:250px;
+    width:250px;
+    margin:0 auto;
+}
 .page404-header{
   margin-top: 0;
   color: #0F3B75;
@@ -311,10 +294,8 @@ margin-bottom:10%;
      margin-right: 20px;
   }
     .page404-paragraph{
-        color: #0F3B75;
-    padding: 20px 40px;
     margin-top:30px;
-            }
+ }
 
    .page404-bg-blue{
     background-color: #0F3B75;
@@ -369,11 +350,8 @@ margin-bottom:10%;
     opacity: 0.9;
   }
 
- .page404-rectangle-box{
-  height:600px;
-  border:3px solid #0F3B75;
+ .page404-margin{
   margin-top: 100px;
-  text-align: center;
 }
 
 .homepage-color{
@@ -821,87 +799,17 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     width: 240px;
 }
 
-
-
-.edituserpage-btn{
-    box-sizing: border-box;
-    padding:5px 45px;
-    border-radius: 0 !important;   
-    font-size: 1.2em; 
-    border: 0;
-    width: 170px;
-    margin-left:230px;
+.edit-btn{
+    width:200px;
+    margin-bottom:15%;
 }
 
-.edituserpage-btn.blue{
-    box-sizing: border-box;
-    padding:5px 45px;
-    border-radius: 0 !important;  
-    background-color: #0F3B75;
-    color: #ffffff;  
-}
 
-.edituserpage-btn.white{
-    box-sizing: border-box;
-    padding:5px 45px;
-    border-radius: 0 !important;  
-    background-color: #E1E1E1;
-    color: #ffffff;  
-}
 
-@media(min-width : 760px){
-    .edituserpage-btn{
-        box-sizing: border-box;
-        padding:10px 35px;
-        border-radius: 0 !important;   
-        font-size: 0.8em; 
-        border: 0;
-    }
-    
-    .edituserpage-btn.blue{
-        box-sizing: border-box;
-        padding:10px 35px;
-        border-radius: 0 !important;  
-        background-color: #0F3B75;
-        color: #ffffff;  
-    }
-    
-    .edituserpage-btn.white{
-        box-sizing: border-box;
-        padding:10px 35px;
-        border-radius: 0 !important;  
-        background-color: #E1E1E1;
-        color: #ffffff;  
-    }
-}
 
-@media (max-width : 760px) {    
-.edituserpage-btn{
-    box-sizing: border-box;
-    padding:5px 15px;
-    border-radius: 0 !important;   
-    font-size: 0.7em; 
-    border: 0;
-    margin-right: 10px;
-}
-.edituserpage-btn.white{
-    box-sizing: border-box;
-    padding:5px 10px;
-    border-radius: 0 !important;  
-    background-color: #E1E1E1;
-    color: #ffffff; 
-    
-} 
 
-.edituserpage-btn.blue{
-    box-sizing: border-box;
-    padding:5px 10px;
-    border-radius: 0 !important;  
-    background-color: #0F3B75;
-    color: #ffffff;  
-    margin-left: 30px;    
-}
-}
+
+
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/

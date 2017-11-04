@@ -31,7 +31,7 @@
                               <img id="preview-img" class="text-center" src="noimage" width="150px" height="150px">
                             </div>
                             <div class="form-group">
-                              <input type="file" class="text-center" name="file" id="file" required>
+                              <input type="file" class="text-center" name="image_url" id="file" required>
                             </div>
                             <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>Upload image</button>
                         </form>  
@@ -40,7 +40,7 @@
 
 
                     <div class="col-md-10  col-md-offset-1">
-                        <form action="">
+                        <form action="" id="update-details-form">
                             <fieldset>
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 form-group">
@@ -65,14 +65,38 @@
                                     &nbsp;
                                     <br>
                                     <div class="col-md-8 col-md-offset-2 form-group">
+                                        <label class="control-label text-muted" for="accountname">Account Name*</label>
+                                        <input type="text" name="accout_name" placeholder="Account Name" class="form-control edituserpage-form" required>
+                                    </div>  
+                        
+                                    <div class="col-md-8 col-md-offset-2 form-group">
+                                        <label class="control-label text-muted" for="lastname">Account Number*</label>
+                                        <input type="number" name="account_number" placeholder="Account Name" class="form-control edituserpage-form" required>
+                                   
+                                        <select class="withdraw-expand form-control"  name="bank_id">
+                                        <option value="" selected="selected">Select Bank</option>
+                                        
+                                        <option value=""></option>
+                                        
+                                    </select>
+                                    </div>  
+
+                                   
+
+                                    <div class="col-md-8 col-md-offset-2 form-group">
                                         <label for="MobileNumber" class="text-muted control-label">Mobile Number*</label><br/>
-                                        <input type="tel" name="phoneno" placeholder="+2348112345678" class="form-control edituserpage-form" required>
+                                        <input type="tel" name="phone_number" placeholder="+2348112345678" class="form-control edituserpage-form" required>
                                     </div>
                                     
                                     <div class="col-md-8 col-md-offset-2 form-group">
                                         <label for="EmailAddress" class="text-muted control-label">Email Address*</label><br/>
-                                        <input type="email" name="email" placeholder="dikethelmak@gmail.com" class="form-control edituserpage-form" required>
+                                        <input type="email" name="email" placeholder="user@humanatm.com" class="form-control edituserpage-form" required>
                                     </div>
+
+                                    <div class="col-md-8 col-md-offset-2 form-group">
+                                        <label class="control-label text-muted" for="location">Location</label>
+                                        <input type="text" name="location" placeholder="Location" class="form-control edituserpage-form" >
+                                    </div>  
                                     <br/>
                                     
                                     <div class="col-md-8 col-md-offset-2 form-group">
@@ -95,7 +119,7 @@
                                     <br>  
                                   
                                     <div class="col-xs-4 col-xs-offset-4 text-center">
-                                        <button type="submit" class="btn btn-primary edituserpage-btn blue">SAVE</button>
+                                        <button type="submit" class="btn btn-success edit-btn">SAVE</button>
                                     </div>
                                     
                                 </div>                                    
@@ -106,7 +130,7 @@
             </div>
         </div>
     </div>
-
+@include('footer')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="{{asset('js/upload-image.js')}}"></script>

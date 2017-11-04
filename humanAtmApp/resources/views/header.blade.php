@@ -38,7 +38,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                 <li><a href="/location" ><b>Human ATMs</b></a></li>
                                  <li><a href="/dashboard" ><b>Dashboard</b></a></li>
-                                 <li><a href="/payment" ><b>Become HumanATM</b></a></li>
+                                 <li><a href="#" ><b>Become HumanATM</b></a></li>
                                   
                                     <li>
                                         <a href="{{ route('logout') }}"
