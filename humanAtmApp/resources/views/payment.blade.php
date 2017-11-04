@@ -9,22 +9,23 @@
 @include('header')
 <body>
 
- <section class="container">
-    <div class="profile-container">
-        <div class="withdraw-content">
-            <div class="profile-request">
-                <p>MAKE A REQUEST</p>
+ <section class="container-fluid blue-fall outerBox-margin">
+ <div class="row box-margin">
+ <div class="col-md-8 col-md-offset-2 box-border">
+     <div class="row">
+         <div class="col-md-12 text-center box-color">
+             <h3>REQUEST</h3><hr>
+             <h4> Pay-in</h4>
+         </div>
+     </div>
+
+
+           
+             <div class ="profile-menu" >
+                    <button type="button" class="btn btn-success "> <a href="/withdraw">WITHDRAW </a></button>
+                    <button type="button" class="btn btn-success "> <a href="/payment">PAYMENT </a></button>
+         
             </div>
-            <div class="profile-supermenu">
-
-                <div class ="profile-menu">
-                    <button type="button" class="inactive"><a href="/dashboard">PROFILE<a></button>
-                        <button type="button" class="inactive"><a href="/withdraw">WITHDRAW<a></button>
-                            <button type="button" class="active"><a href="/payment">PAYMENT</a></button>
-
-
-                        </div>
-                    </div>
                     @if (session()->has('status'))
                     <div class="alert alert-info alert-info fade in">
                         <a href="/dashboard" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -36,8 +37,8 @@
                         <form action="/payment" method="POST" class="profile-innerform">
                           {{ csrf_field()}}
                           <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
-                            <label for="phone_number">PHONE NUMBER</label>
-                            <input type="text" name="phone_number" class="withdraw-data" id="" placeholder="08022343254" value="{{ old('phone_number')}}">
+                          
+                            <input type="text" name="phone_number" class="withdraw-data" id="" placeholder="Phone Number" value="{{ old('phone_number')}}">
                             @if($errors->has('phone_number'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('phone_number')}}</strong>
@@ -46,8 +47,8 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
-                            <label for="amount">AMOUNT</label>
-                            <input type="text" name="amount" class="withdraw-data" value="{{ old('amount')}}" placeholder="45000">
+                           
+                            <input type="text" name="amount" class="withdraw-data" value="{{ old('amount')}}" placeholder="Amount">
                             <p class="withdraw-label">MAX. AMOUNT  N50,000</p>
                             @if($errors->has('amount'))
                             <span class="help-block">
@@ -57,8 +58,8 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('account_number') ? ' has-error' : '' }}">
-                            <label for="acct_number">ACCOUNT NUMBER</label>
-                            <input type="text" name="account_number" class="withdraw-data" id="acct_number" value="{{ old('account_number')}}" placeholder="6160883639">
+                        
+                            <input type="text" name="account_number" class="withdraw-data" id="acct_number" value="{{ old('account_number')}}" placeholder="Account Number">
                             <p class="withdraw-label"></p>
                             @if($errors->has('account_number'))
                             <span class="help-block">
@@ -68,9 +69,9 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('bank_id') ? ' has-error' : '' }}">
-                            <label for="location">BANK</label>
-                            <select class="withdraw-expand" name="bank_id">
-                                <option value="" selected="selected">Select Your Bank</option>
+                         
+                        <select class="withdraw-expand form-control" name="bank_id">
+                                <option value="" selected="selected">Select Bank</option>
                                 @foreach ($banks as $bank)
                                 <option value="{{ $bank->id }}">{{ $bank->name }}</option>
                                 @endforeach
@@ -83,8 +84,8 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
-                            <label for="location">LOCATION</label>
-                            <input type="text" name="location" id="" class="withdraw-data" placeholder="9 Etuk Obong Crescent, Tropicana, Uyo" value="{{ old('location')}}">
+               
+                            <input type="text" name="location" id="" class="withdraw-data" placeholder="Location" value="{{ old('location')}}">
                             <small><i>Please ensure you include your location landmark to enable us reach you better</i></small>
                             @if ($errors->has('location'))
                             <span class="help-block" >
@@ -94,17 +95,17 @@
                         </div>
                         <div class="">              
                             <p id='payment-delivery'>
-                                <span>Transaction-fee</span>
-                                <span id="payment-span1">N55</span>
+                                Transaction-fee N55
                             </p>
-                            <input type="submit" class="withdraw-data withdraw-submit" id="payment-submit"value="SEND">
-                            {{-- <input type="submit" class="withdraw-data withdraw-submit" id="withdraw-submit1"value="FUND WALLET"> --}}
+                            <input type="submit" class=" btn btn-success withdraw-data withdraw-submit" id="payment-submit"value="SEND">
+                           
                         </div>  
                     </form>
                 </div>
-            </div>
+           
 
-        </div>       
-
-    </section>
+        </div>   
+        </section>       
+     @include('footer')
+   
     @endsection

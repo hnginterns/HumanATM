@@ -45,7 +45,25 @@
 
 /* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
 
-    .signup-container, .forgotpassword-container{
+.authbox{
+    background:rgb(177, 176, 176);
+    margin-bottom:5%;
+    border-radius:15px;
+    box-shadow: 0 0 12px rgb(58, 57, 57);
+}
+.auth-margin{
+margin-top:10%;
+}
+.auther-margin{
+margin-top:5%;
+margin-bottom:10%;
+}
+.auth-head{
+    font-size:2.5em;
+    font-weight:bold;
+    margin-top:-3%;
+}
+    .forgotpassword-container{
     display:block;
     max-width: 760px;
     min-height: auto;    
@@ -55,65 +73,36 @@
     background-color:#0F3B75;
     color: #fff;
     }
-    .signup-content{
-        width: 90%;
-        margin:auto;
-        padding-top: 60px;
-        padding-bottom: 50px;
-    }
-    .signup-header{
-    text-align: center;
-    }
-    .signup-logo{
-        margin-bottom: 20px;
-    }
-    .signup-logo img{
-        width: 120px;
-        height: 120px;
-    }
-    .signup-h1{
-    max-width: 157px;
-    margin: auto;
-    text-align: left;
-    height: auto;
-    }
-    #signup-head{
-    margin-top: 15px;
-    margin-bottom:0;
-    font-size: 3em;
-    height: 33px;
-    }
-    #signup-p{
-    font-variant: small-caps;
-    font-size: 0.8em;
-    padding-left: 0.2em;            
-    }
-    .signup-form{
-    margin-top: 40px;
+  
+  
+   
+    .signup-formMargin{
+    margin-top: 20px;
     }
     .signup-data{
         display: block;
-        width: 100%;
-        font-size: 1.5em;
-        margin: 20px 0;
+        width: 80%;
+        font-size: 1em;
+        margin: 0 auto;
         padding: 10px;
         padding-left: 20px;
-        color:#0F3B75;
+        margin-bottom:5%;
+        color:rgb(78, 77, 77);
+        border-radius:10px;
     }
     #signup-password1{
         margin-bottom: 30px;
     }
 
     #signup-submit, #newpassword-submit, #forgotpassword-submit, #login-submit{
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight:bold;    
     margin: 0 auto;
-    color:#0F3B75;
+    color:white;
     padding:8px 3px;
     padding-right:3px;
     text-align:center;
-    -webkit-transition: background-color 1s; /* Safari */
-    transition: background-color 1s;
+    border-radius:10px;
     }
     #forgotpassword-submit, #newpassword-submit{
     width: 25%;
@@ -131,36 +120,32 @@
     margin-right: 130px;
     max-width:75%;
     }
-    #signup-forgot{
-    color: white;  
-    font-size: 1.2em;
+    .signup-forgot{ 
+    font-size: 1.1em;
     text-align:right;
     margin-top: -10px;
     margin-bottom: 30px;
     }
-    #signup-signin a, #signup-forgot a{
+    #signup-signin a{
     color: white;  
     }
-    .signup-data:focus, .signup-data:hover{
-    border: 2px solid #0F3B75;
-    box-shadow: 0 0 5px #fff;
-    }
+   
     #signup-submit:focus, #forgotpassword-submit:focus, #login-submit:focus, #newpassword-submit:focus{
     border: none;
     box-shadow: none;
     }
-    #signup-submit:hover, #newpassword-submit:hover, #forgotpassword-submit:hover, #login-submit:hover{
+    #signup-submit:hover, #newpassword-submit:hover, #forgotpassword-submit:hover{
     background-color: #0F3B75;
     color: #fff;
     }
     .signup-eye{
         color: #0f3b75;
-        font-size: 1.6em;
+        font-size: 1.1em;
         margin-top: -53px;
         width: 5%;
         float: right;
         text-align: right;
-        margin-right: 30px;            
+        margin-right: 50px;            
     }
     #newpassword-eye{
         top: -30px;
@@ -169,15 +154,8 @@
     #signup-submit{
         font-size:1.3em;
     }
-    #login-span, #login-span1{
-        display: block;
-        text-align:center;
-        width: 100%;    
-    }
-    #signup-signin{
-    margin-right: 0;
-    max-width:100%;
-    }
+    
+   
     #forgotpassword-submit, #newpassword-submit{
     display: block;
     text-align:center;
@@ -230,15 +208,20 @@
 }
 
 .paybills-margin{
-    margin-top: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 .paybills-margin2{
     margin-top: 7%;
     margin-bottom: 10%;
 }
+.payshadow:hover {
+    box-shadow: 0 0 20px grey;
+    border-radius:25px;
+}
 
 .daily-margin{
-    margin-top:3%;
+    margin-top:2%;
 }
 .daily-borderColor{
     box-shadow: 1px 3px 10px #08111D;
@@ -274,6 +257,13 @@
     margin-top:5%;
     background: #0F3B75
 }
+.bills-image{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-top:5%;
+    margin-bottom:5%;
+}
 .userpage-mar h3{
     font-size: 1.2em;
 }
@@ -292,27 +282,17 @@
     height: 7%
 }
 .invite-input{
-    border: 1.5px solid #0F3B75;
     border-radius: 10px;
     padding: 4%;
 }
 .invite-submit{
-    color: white;
-    background: #0F3B75;
     font-size: 1.5em;
     margin-bottom:5em;
     border-radius: 10px;
 }
-.invite-submit:hover{
-    background: #5D95DE;
-}
-.invite-margin{
-    margin-top: 7%;
-    color: #0F3B75;
-}
-.invite-color{
-    color: #0F3B75;
-}
+
+
+
 
 .page404-main{
     bottom: 0;
@@ -574,11 +554,26 @@ Next user should start on the next line*/
     padding:2% 10%;
     border-radius:15px 15px 0 0;
 }
+.wallet-menu button {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.3em;
+    width: 190px;
+    height: 40px;
+    margin: 25px;
+    margin-left:17%;
+    text-align: center;
+   
+}
+.wallet-menu button a{
+    text-decoration:none;
+    color:white;
+}
 .wallet-expand{
     width: 30rem;
     font-size:1.4rem;
     padding-left:10px;
-    color: #0F3B75;
+    color: rgb(94, 96, 99);
     border-radius:5px;
     }
 .wallet-formMargin{
@@ -586,42 +581,34 @@ Next user should start on the next line*/
 }
 .walletLabel-below{
     margin-left: 80%;
-    color: #0F3B75;
+    color: rgb(94, 96, 99);
     padding: 0;
-    font-size: .8em;;
-    font-weight: bold;
+    font-size: .8em;
 }
 .wallet-text{
     width: 50%; 
     margin-top: 5%;
-    padding: 5px;
-    font-size:1.3em;
+    font-size:1em;
     font-weight: 500;
     border-radius: 5px;
-    background-color: #0F3B75;
-    color: #ffffff;
+  
+    color: rgb(94, 96, 99);
     margin-left:25%;
 }
 
 .wallet-button{
     width: 50%; 
     padding: 5px;
-    border: 1px solid #0F3B75;
     text-align: center;
     font-size:1.3em;
     font-weight: 500;
     border-radius: 5px;
-    background-color: #0F3B75;
     color: #ffffff;
     margin-left:25%;
     margin-bottom: 10%;
 }
 
-.wallet-button:hover{
-    color: #0F3B75;
-    background: white;
-    border: 1px solid white;
-}
+
 .wallet-input{
     border-radius: 10px;;
     height:40px;
@@ -738,18 +725,18 @@ Next user should start on the next line*/
     text-decoration:none;
 }
 #withdraw-delivery, #payment-delivery {
-    color: #0f3b75;  
+    color: #3333;  
     font-size: 1em;
     margin: auto;
     margin-top: 0;
     width:50%;
     font-weight: bold;
-    word-spacing: 80px;            
+    word-spacing: 20px;            
     padding: 10px;
     padding-top: 0;
 }
 #payment-delivery{
-    margin-top: 50px;    
+    margin-top: 30px;    
     text-align: center;
 }
 input.withdraw-data:focus, input.withdraw-data:hover{
@@ -776,11 +763,7 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     #withdraw-span, #withdraw-span1{
         display: inline;          
     }
-    #payment-span1{
-        display: block;
-        text-align:center;
-        width: 100%;    
-    }
+   
     /* #withdraw-delivery{
         width: 100%;
     } */
@@ -801,7 +784,7 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     width: 25rem;
     font-size:1.4rem;
     padding-left:10px;
-    color: #0F3B75;
+    color:rgb(62, 65, 65);
     border-radius:5px;
     }
 .withdraw p{
@@ -847,7 +830,7 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     font-size: 1.2em; 
     border: 0;
     width: 170px;
-    margin-bottom:60px;
+    margin-left:230px;
 }
 
 .edituserpage-btn.blue{

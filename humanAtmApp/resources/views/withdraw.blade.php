@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-<body class="signup-body">
     <section>
      @include('header')
- </section>
+    </section>
+<body >
  <div class="container-fluid blue-fall outerBox-margin">
  
       <div class="row box-margin">
@@ -16,7 +16,7 @@
                   <div class="row">
                       <div class="col-md-12 text-center box-color">
                           <h3>REQUEST</h3><hr>
-                          <h4> Withdraw & Pay-in</h4>
+                          <h4> Withdraw</h4>
                       </div>
                   </div>
                     @if (session()->has('status'))
@@ -62,7 +62,7 @@
 
                 <div class="form-group{{ $errors->has('bank_id') ? ' has-error' : '' }}">
                     
-                    <select class="withdraw-expand form-control" style="margin:0 auto" name="bank_id">
+                    <select class="withdraw-expand form-control"  name="bank_id">
                         <option value="" selected="selected">Select Bank</option>
                         @foreach ($banks as $bank)
                         <option value="{{ $bank->id }}">{{ $bank->name }}</option>
