@@ -34,6 +34,11 @@ Route::get('/admin/total',
 	'AdminDashboardController@total')->name('admin/total');
 Route::get('/admin/completed', 
 	'AdminDashboardController@completed')->name('admin/completed');
+	//--------------------------------------------
+	//INVITE
+	//---------------------------------------------
+Route::post('/invite/send','InviteController@sendinvite');
+
 
 Route::get('/403', function () {
     return view('errors.403');
