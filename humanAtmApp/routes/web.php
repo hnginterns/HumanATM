@@ -60,7 +60,7 @@ Route::get('/profile/{id}/update', 'ProfileController@create')->middleware('auth
 
 Route::post('/profile/update/{id}', 'ProfileController@store');
 Route::get('/profile/image/{user_id}', 'ProfileController@showImageForm')->middleware('auth');
-Route::post('/profile/image/{user_id}', 'ProfileController@showImageForm')->middleware('auth');
+Route::post('/profile/image/{user_id}', 'ProfileController@updateImage');
 
 
 Route::get('/withdraw', function (){

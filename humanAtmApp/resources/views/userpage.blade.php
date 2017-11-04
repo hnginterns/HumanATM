@@ -22,7 +22,7 @@
        <div class="row userpage-margin">
         <div class="col-md-10 col-md-offset-1 text-center">
             <a href="/profile/image/{{$user->id}}">
-            <img src="{{asset('images/3.svg')}}" class="userpage-image" alt="userPicture">
+            <img src="{{ isset($user->profile->image_url) ? $user->profile->image_url : asset('images/3.svg')}}" class="userpage-image" alt="userPicture">
         </a>
     </div>
 </div>
