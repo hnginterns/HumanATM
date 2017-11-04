@@ -67,16 +67,7 @@ margin-bottom:10%;
 .auth-color{
     color:#0F3B75;
 }
-    .forgotpassword-container{
-    display:block;
-    max-width: 760px;
-    min-height: auto;    
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: 70px;
-    background-color:#0F3B75;
-    color: #fff;
-    }
+ 
   
   
    
@@ -97,7 +88,7 @@ margin-bottom:10%;
         margin-bottom: 30px;
     }
 
-     #newpassword-submit, #forgotpassword-submit, #login-submit{
+     #newpassword-submit, #login-submit{
     font-size: 1.2em;
     font-weight:bold;    
     margin: 0 auto;
@@ -107,7 +98,7 @@ margin-bottom:10%;
     text-align:center;
     border-radius:10px;
     }
-    #forgotpassword-submit, #newpassword-submit{
+    #newpassword-submit{
     width: 25%;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -128,11 +119,11 @@ margin-bottom:10%;
     }
     
    
-     #forgotpassword-submit:focus, #login-submit:focus, #newpassword-submit:focus{
+     #login-submit:focus, #newpassword-submit:focus{
     border: none;
     box-shadow: none;
     }
-     #newpassword-submit:hover, #forgotpassword-submit:hover{
+     #newpassword-submit:hover,{
     background-color: #0F3B75;
     color: #fff;
     }
@@ -151,7 +142,7 @@ margin-bottom:10%;
    
     
    
-    #forgotpassword-submit, #newpassword-submit{
+    #newpassword-submit{
     display: block;
     text-align:center;
     width: 35%;    
@@ -170,10 +161,7 @@ margin-bottom:10%;
         text-align: center;
         margin-bottom: 100px;
     }
-    .forgotpassword-text {
-    font-size: 1.5em;
-    text-align: center;
-}
+    
 
 /* These rules are for the location listing, transaction pages, user profile, payment successful, 404 and paybills pages by drumzminister*/
 
@@ -248,10 +236,9 @@ margin-bottom:10%;
     text-decoration: none;
 }
 .userpage-image{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 2px #0F3B75 solid;
     margin-top:5%;
     background: #0F3B75
 }
@@ -292,13 +279,11 @@ margin-bottom:10%;
 
 
 
-.page404-main{
-    bottom: 0;
-    width: 90%;
-          text-align: center;
-     margin-top:50px;
-     margin-left: 30px;
-      }
+.image404{
+    height:250px;
+    width:250px;
+    margin:0 auto;
+}
 .page404-header{
   margin-top: 0;
   color: #0F3B75;
@@ -309,10 +294,8 @@ margin-bottom:10%;
      margin-right: 20px;
   }
     .page404-paragraph{
-        color: #0F3B75;
-    padding: 20px 40px;
     margin-top:30px;
-            }
+ }
 
    .page404-bg-blue{
     background-color: #0F3B75;
@@ -367,11 +350,8 @@ margin-bottom:10%;
     opacity: 0.9;
   }
 
- .page404-rectangle-box{
-  height:600px;
-  border:3px solid #0F3B75;
+ .page404-margin{
   margin-top: 100px;
-  text-align: center;
 }
 
 .homepage-color{

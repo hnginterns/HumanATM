@@ -5,17 +5,18 @@
 @endsection
 
 @section('content')
+<!-- header -->
+@include('header')
 <body>
-	<div class="container-fluid">
-		<!-- header -->
-		@include('header')
+	<div class="container-fluid blue-fall">
+		
 		<div class="row">
-			<div class="col-sm-offset-3 col-sm-6  page404-rectangle-box" >
+			<div class="col-sm-offset-3 col-sm-6  page404-margin" >
 				<div class="page404-main text-center">
-					<h2 class="page404-header"><b>ERROR</b></h2>
-					<img src="{{asset('images/Group.png')}}" class="img-responsive " height="150px">
-					<p class="page404-paragraph"> Oops!! i think you're on the wrong track to meeting the Human Atm 
-						<br>of your choice, you can go to the homepage to restart your journey. </p>
+				
+					<img src="{{asset('images/Group.png')}}" class="img-responsive image404 " height="150px">
+					<h4 class="page404-paragraph"> Oops!! <br>i think you're on the wrong track to meeting the Human Atm 
+						<br>of your choice, you can go to the homepage to restart your journey. </h4>
 
 						<div class="page404-navigate">
 							<a class="page404-bg-blue" href="#">Go back to Homepage</a><br><br>
@@ -24,5 +25,7 @@
 				</div>
 			</div>
 		</div>
+
+		@include('footer')
 	</body>
 	@endsection
