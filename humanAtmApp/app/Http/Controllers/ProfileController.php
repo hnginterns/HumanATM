@@ -126,38 +126,34 @@ class ProfileController extends Controller
     }
 
     public function updateImage(Request $request, $user_id)
-    {
-        $this->validate([
+    {   
+
+
+        $this->validate($request,[
             'photo' => 'required|image|max:200000',
         ]);
-        if ($request->hasFile('photo'))    
-        {
-            $file = $request->file('photo');
+      
+        \Cloudder::upload($request->file('photo'));
+        $c=  \Cloudder::getResult();             
+        if($c){
+          $updateImage = Profile::where('user_id', $user_id)->update([
+            'image_url' => $c['url'],
+        ]);
 
-            $destinationPath = public_path(). '/images/profile';
-            $fileName = $this->getImageName();
+      }
+      if($updateImage){
 
-            $file->move($destinationPath, $fileName);
-            
-        }
-
-        $updateImage = Profile::find($user_id)->update([
-            'image_url' => $fileName]);
-
-        if($updateImage){
-
-            return redirect()->back()->with([
-                'status' => 'Profile Image updated successfully']);
-        }
-        else{
-            return redirect()->back()->with([
-                'failed' => 'Opps! failed to update Profile Image, an unknown error occured']);
-        }
-
-
+        return redirect()->back()->with([
+            'status' => 'Profile Image updated successfully']);
     }
-    public function getImageName()
-    {
-        return  md5(uniqid(rand(0, 1000)))."-".date('d-m-Y-H-i-s', time()).'.jpg';
-    } 
+    else{
+        return redirect()->back()->with([
+            'failed' => 'Opps! failed to update Profile Image, an unknown error occured']);
+    }
+}
+
+public function getImageName()
+{
+    return  md5(uniqid(rand(0, 1000)))."-".date('d-m-Y-H-i-s', time()).'.jpg';
+} 
 }

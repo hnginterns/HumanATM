@@ -24,10 +24,6 @@
 
         <div class="row">
           <div class="col-md-4 col-md-push-4  text-center ">
-
-            <form id="upload-image-form" action="/profile/image/{{$user_id}}" method="post" enctype="multipart/form-data">
-             {{csrf_field()}}
-
              @if (session()->has('status'))
              <div class="alert alert-info alert-info fade in">
               <a href="/dashboard" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -41,11 +37,15 @@
               {{ session('failed')}}
             </div>
             @endif
-            <div id="image-preview-div" style="display: none">
+            <form id="upload-image-form" action="/profile/image/{{$user_id}}" method="post" enctype="multipart/form-data">
+             {{csrf_field()}}
+
+             
+           {{--  <div id="image-preview-div" style="display: none">
               <label for="exampleInputFile">Selected image:</label>
               <br>
               <img id="preview-img" class="text-center" src="noimage" width="150px" height="150px">
-            </div>
+            </div> --}}
             <div class="form-group {{ $errors->has('phote')? ' has-error' : ''}}">
               <input type="file" class="text-center" name="photo" id="file">
               @if ($errors->has('photo'))
@@ -71,8 +71,8 @@
 </div>
 </div>
 @include('footer')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="{{asset('js/upload-image.js')}}"></script>
+<script src="{{asset('js/upload-image.js')}}"></script> --}}
 </body>
 @endsection
