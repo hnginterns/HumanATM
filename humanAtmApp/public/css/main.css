@@ -45,140 +45,104 @@
 
 /* These rules are for the login, signup, forgotpassword amd newpassword pages by jeni*/
 
-    .signup-container, .forgotpassword-container{
-    display:block;
-    max-width: 760px;
-    min-height: auto;    
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: 70px;
-    background-color:#0F3B75;
-    color: #fff;
-    }
-    .signup-content{
-        width: 90%;
-        margin:auto;
-        padding-top: 60px;
-        padding-bottom: 50px;
-    }
-    .signup-header{
-    text-align: center;
-    }
-    .signup-logo{
-        margin-bottom: 20px;
-    }
-    .signup-logo img{
-        width: 120px;
-        height: 120px;
-    }
-    .signup-h1{
-    max-width: 157px;
-    margin: auto;
-    text-align: left;
-    height: auto;
-    }
-    #signup-head{
-    margin-top: 15px;
-    margin-bottom:0;
-    font-size: 3em;
-    height: 33px;
-    }
-    #signup-p{
-    font-variant: small-caps;
-    font-size: 0.8em;
-    padding-left: 0.2em;            
-    }
-    .signup-form{
-    margin-top: 40px;
+.authbox{
+    background:rgb(177, 176, 176);
+    margin-bottom:5%;
+    border-radius:15px;
+    box-shadow: 0 0 12px rgb(58, 57, 57);
+}
+.auth-margin{
+margin-top:10%;
+}
+.auther-margin{
+margin-top:5%;
+margin-bottom:10%;
+}
+.auth-head{
+    font-size:2.5em;
+    font-weight:bold;
+    margin-top:-3%;
+    color: #0F3B75;
+}
+.auth-color{
+    color:#0F3B75;
+}
+ 
+  
+  
+   
+    .signup-formMargin{
+    margin-top: 20px;
     }
     .signup-data{
         display: block;
-        width: 100%;
-        font-size: 1.5em;
-        margin: 20px 0;
+        width: 80%;
+        font-size: 1em;
+        margin: 0 auto;
         padding: 10px;
         padding-left: 20px;
-        color:#0F3B75;
+        margin-bottom:5%;
+        border-radius:10px;
     }
     #signup-password1{
         margin-bottom: 30px;
     }
 
-    #signup-submit, #newpassword-submit, #forgotpassword-submit, #login-submit{
-    font-size: 1.5em;
+     #newpassword-submit, #login-submit{
+    font-size: 1.2em;
     font-weight:bold;    
     margin: 0 auto;
-    color:#0F3B75;
+    color:white;
     padding:8px 3px;
     padding-right:3px;
     text-align:center;
-    -webkit-transition: background-color 1s; /* Safari */
-    transition: background-color 1s;
+    border-radius:10px;
     }
-    #forgotpassword-submit, #newpassword-submit{
+    #newpassword-submit{
     width: 25%;
     margin-top: 40px;
     margin-bottom: 30px;
     }
-    #login-submit, #signup-submit{
+    #login-submit {
     width: 50%;
     }
     #signup-signin{
-    color: white;  
-    font-size: 1.2em;
-    text-align:right;
-    margin-top: 10px;
-    margin-right: 130px;
-    max-width:75%;
+    margin-top:3%;
+    margin-bottom:3%;
+    color:#0f3b75;
     }
-    #signup-forgot{
-    color: white;  
-    font-size: 1.2em;
+    .signup-forgot{ 
+    font-size: 1.1em;
     text-align:right;
     margin-top: -10px;
     margin-bottom: 30px;
     }
-    #signup-signin a, #signup-forgot a{
-    color: white;  
-    }
-    .signup-data:focus, .signup-data:hover{
-    border: 2px solid #0F3B75;
-    box-shadow: 0 0 5px #fff;
-    }
-    #signup-submit:focus, #forgotpassword-submit:focus, #login-submit:focus, #newpassword-submit:focus{
+    
+   
+     #login-submit:focus, #newpassword-submit:focus{
     border: none;
     box-shadow: none;
     }
-    #signup-submit:hover, #newpassword-submit:hover, #forgotpassword-submit:hover, #login-submit:hover{
+     #newpassword-submit:hover,{
     background-color: #0F3B75;
     color: #fff;
     }
     .signup-eye{
         color: #0f3b75;
-        font-size: 1.6em;
+        font-size: 1.1em;
         margin-top: -53px;
         width: 5%;
         float: right;
         text-align: right;
-        margin-right: 30px;            
+        margin-right: 50px;            
     }
     #newpassword-eye{
         top: -30px;
     }
-    @media screen and (max-width:500px){
-    #signup-submit{
-        font-size:1.3em;
-    }
-    #login-span, #login-span1{
-        display: block;
-        text-align:center;
-        width: 100%;    
-    }
-    #signup-signin{
-    margin-right: 0;
-    max-width:100%;
-    }
-    #forgotpassword-submit, #newpassword-submit{
+   
+    
+   
+    #newpassword-submit{
     display: block;
     text-align:center;
     width: 35%;    
@@ -197,10 +161,7 @@
         text-align: center;
         margin-bottom: 100px;
     }
-    .forgotpassword-text {
-    font-size: 1.5em;
-    text-align: center;
-}
+    
 
 /* These rules are for the location listing, transaction pages, user profile, payment successful, 404 and paybills pages by drumzminister*/
 
@@ -230,15 +191,20 @@
 }
 
 .paybills-margin{
-    margin-top: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 .paybills-margin2{
     margin-top: 7%;
     margin-bottom: 10%;
 }
+.payshadow:hover {
+    box-shadow: 0 0 20px grey;
+    border-radius:25px;
+}
 
 .daily-margin{
-    margin-top:3%;
+    margin-top:2%;
 }
 .daily-borderColor{
     box-shadow: 1px 3px 10px #08111D;
@@ -259,14 +225,32 @@
 .userpage-margin{
     margin-top: 7%;
 }
+.userUpdate-button{
+    margin:5%;
+}
+.userUpdate-button .btn{
+  padding:7%;
+  margin-bottom: 4%;
+}
+.user-a a{
+    text-decoration: none;
+}
 .userpage-image{
-    width: 15em;
-    height: 15em;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 2px #0F3B75 solid;
+    margin-top:5%;
+    background: #0F3B75
+}
+.bills-image{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-top:5%;
+    margin-bottom:5%;
 }
 .userpage-mar h3{
-    font-size: 1.6em;
+    font-size: 1.2em;
 }
 .userpage-bottom{
     margin-bottom: 5%;
@@ -283,35 +267,23 @@
     height: 7%
 }
 .invite-input{
-    border: 1.5px solid #0F3B75;
     border-radius: 10px;
     padding: 4%;
 }
 .invite-submit{
-    color: white;
-    background: #0F3B75;
     font-size: 1.5em;
     margin-bottom:5em;
     border-radius: 10px;
 }
-.invite-submit:hover{
-    background: #5D95DE;
-}
-.invite-margin{
-    margin-top: 7%;
-    color: #0F3B75;
-}
-.invite-color{
-    color: #0F3B75;
-}
 
-.page404-main{
-    bottom: 0;
-    width: 90%;
-          text-align: center;
-     margin-top:50px;
-     margin-left: 30px;
-      }
+
+
+
+.image404{
+    height:200px;
+    width:200px;
+    margin:0 auto;
+}
 .page404-header{
   margin-top: 0;
   color: #0F3B75;
@@ -322,13 +294,10 @@
      margin-right: 20px;
   }
     .page404-paragraph{
-        color: #0F3B75;
-    padding: 20px 40px;
     margin-top:30px;
-            }
+ }
 
    .page404-bg-blue{
-    background-color: #0F3B75;
      border-radius: 2px;
     font-size: 18px;
     text-decoration: none;
@@ -370,21 +339,8 @@
     margin-top:12%;
 }
 
-  .page404-main .page404-navigate{  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center; 
-  }
-  .page404-main .page404-navigate a:hover{
-    opacity: 0.9;
-  }
-
- .page404-rectangle-box{
-  height:600px;
-  border:3px solid #0F3B75;
+ .page404-margin{
   margin-top: 100px;
-  text-align: center;
 }
 
 .homepage-color{
@@ -565,11 +521,26 @@ Next user should start on the next line*/
     padding:2% 10%;
     border-radius:15px 15px 0 0;
 }
+.wallet-menu button {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.3em;
+    width: 190px;
+    height: 40px;
+    margin: 25px;
+    margin-left:17%;
+    text-align: center;
+   
+}
+.wallet-menu button a{
+    text-decoration:none;
+    color:white;
+}
 .wallet-expand{
     width: 30rem;
     font-size:1.4rem;
     padding-left:10px;
-    color: #0F3B75;
+    color: rgb(94, 96, 99);
     border-radius:5px;
     }
 .wallet-formMargin{
@@ -577,116 +548,81 @@ Next user should start on the next line*/
 }
 .walletLabel-below{
     margin-left: 80%;
-    color: #0F3B75;
+    color: rgb(94, 96, 99);
     padding: 0;
-    font-size: .8em;;
-    font-weight: bold;
+    font-size: .8em;
 }
 .wallet-text{
     width: 50%; 
     margin-top: 5%;
-    padding: 5px;
-    font-size:1.3em;
+    font-size:1em;
     font-weight: 500;
     border-radius: 5px;
-    background-color: #0F3B75;
-    color: #ffffff;
+  
+    color: rgb(94, 96, 99);
     margin-left:25%;
 }
 
 .wallet-button{
     width: 50%; 
     padding: 5px;
-    border: 1px solid #0F3B75;
     text-align: center;
     font-size:1.3em;
     font-weight: 500;
     border-radius: 5px;
-    background-color: #0F3B75;
     color: #ffffff;
     margin-left:25%;
     margin-bottom: 10%;
 }
 
-.wallet-button:hover{
-    color: #0F3B75;
-    background: white;
-    border: 1px solid white;
-}
+
 .wallet-input{
     border-radius: 10px;;
     height:40px;
 }
 
 /*This css rules are for the profile, withdraw and payment pages by jeni*/
-.profile-container{
-    display:block;
-    max-width: 720px;
-    min-height:auto;
-    margin: auto;
-    margin-bottom: 30px;    
-    border: 3px solid #0F3B75;
-    margin-top: 80px;
-    color: #0F3B75;
-}
-.profile-content{
-    margin-bottom: 100px;
-}
+
+
 .withdraw-content{
     margin-bottom: 50px;
 }
-.profile-request p{
-    background-color: #0F3B75;
-    color: white;
-    text-align: right;
-    margin: 0;
-    padding: 15px;
-    padding-right: 20px;
-    font-size: 1.4em;
+.human-padding{
+    padding-left:10%;
 }
-.profile-menu {
-    margin: 40px auto;
-    text-align: center;
-    display:inline;
-}
+
+
 .profile-menu button {
     display: inline-block;
-    border: 2px solid #0F3B75;
     padding: 10px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     width: 170px;
     height: 40px;
-    margin: 15px;
+    margin: 25px;
+    margin-left:17%;
     text-align: center;
-    background-color: white;
+   
 }
-.profile-menu button.active {
-    background-color: #0F3B75;
-    color: white;            
+
+.profile-menu button a{
+    color: white;  
+    text-decoration:none;          
 }
-.profile-menu button.active a{
-    color: white;            
-}
-.profile-menu button.inactive {
-    background-color: white;
-    color: #0F3B75;         
-}
-.profile-menu button.inactive a{
-    color: #0F3B75;            
-}
+
+
+
 .profile-image{
-    height: 140px;
-    width: 140px;
+    height: 160px;
+    width: 160px;
     border-radius: 50%;
     text-align: center;
     background-color:#0F3B75;
-    margin: 50px auto;
+    margin: 50px  auto 0 auto;
+    border: 6px solid rgb(182, 179, 179);
 }
 .profile-info{
-    width: 80%;
-    margin: 30px auto;
-    font-size: 1.4em;
-    font-weight: 600;
+    width: 75%;
+    font-size: 1.2em;
 }
 .withdraw-info{
     width: 80%;
@@ -694,22 +630,22 @@ Next user should start on the next line*/
     margin: 30px auto;
     font-size: 1.1em;
 }
-.profile-2 {
-    border-bottom: 2px solid #0F3B75;
-    padding: 3px 0;
-}
+
 .profile-data{
     margin-top: 50px;
+    line-height:3em;
+    
+}
+.profile-button{
+    font-size: 1.4em;
+    margin-top:3%;
+    margin-bottom:6%;
 }
 .profile-data p{
     margin: 3px 0;
     text-decoration: none;
 }
-.profile-supermenu{
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-}
+
 
 .profile-innerform{
     margin-top: 50px;
@@ -717,11 +653,12 @@ Next user should start on the next line*/
 .withdraw-data{
     display:block;
     width: 100%;
+    height:40px;
+    padding:20px;
     border: 0;
-    border-bottom: 2px solid #0f3b75;
-    font-size: 1.1em;
+    font-size: 1em;
     color:#0F3B75; 
-    border-radius: 0;
+    border-radius: 10px;
     margin-bottom: 0;
     box-shadow: none;
 }
@@ -733,7 +670,7 @@ Next user should start on the next line*/
     margin: 20px auto;       
     padding:8px 3px;
     padding-right:3px;
-    border: 2px solid #0f3b75;
+    
     text-align:center;
     -webkit-transition: background-color 1s; /* Safari */
     transition: background-color 1s;
@@ -741,49 +678,48 @@ Next user should start on the next line*/
 #payment-submit{
     margin-top: 0;
     color: white;
-    background-color:#0F3B75;
 }
 #withdraw-submit{
     margin-top: 50px;
     color: white;
-    background-color:#0F3B75;
 }
 #withdraw-submit1{
     margin-bottom: 0;
     background-color: white;
-    color:#0F3B75;
+    color:green;
+}
+.tweet a{
+    text-decoration:none;
 }
 #withdraw-delivery, #payment-delivery {
-    color: #0f3b75;  
+    color: #3333;  
     font-size: 1em;
     margin: auto;
     margin-top: 0;
     width:50%;
     font-weight: bold;
-    word-spacing: 80px;            
+    word-spacing: 20px;            
     padding: 10px;
     padding-top: 0;
 }
 #payment-delivery{
-    margin-top: 50px;    
+    margin-top: 30px;    
     text-align: center;
 }
 input.withdraw-data:focus, input.withdraw-data:hover{
     box-shadow: none !important;
-    border-color: #0F3B75 !important;
     outline: none !important;
 }
 #withdraw-submit:focus, #payment-submit:focus, #withdraw-submit1:focus{
     border: none;
     box-shadow: none;
 }
-#withdraw-submit:hover, #payment-submit:hover{
-    background-color: #fff;
-    color: #0F3B75;
-    border: 2px solid #0F3B75
-}
+
 #withdraw-submit1:hover{
-    background-color: #0F3B75;
+    background-color: green;
+    color: #fff;
+}
+#withdraw-submit1 a:hover{
     color: #fff;
 }
 @media screen and (max-width:500px){
@@ -792,19 +728,12 @@ input.withdraw-data:focus, input.withdraw-data:hover{
         width: 90%;
     }
     #withdraw-span, #withdraw-span1{
-        display: inline;
-        text-align:center;          
+        display: inline;          
     }
-    #payment-span1{
-        display: block;
-        text-align:center;
-        width: 100%;    
-    }
-    #withdraw-delivery{
+   
+    /* #withdraw-delivery{
         width: 100%;
-        word-spacing: 0;
-        text-align: center;
-    }
+    } */
     #payment-delivery{
     max-width:100%;
     }
@@ -812,18 +741,27 @@ input.withdraw-data:focus, input.withdraw-data:hover{
 .withdraw-label{
     text-align: right;
     font-size: 0.8em;
-    font-weight: bold;
     padding-right: 15px;
+    padding-top:2%;
 }
- .withdraw-expand{
-    width: 400px;
+.withdraw-radio{
+    padding-left:95%;
+}
+.withdraw-expand{
+    width: 25rem;
     font-size:1.4rem;
     padding-left:10px;
-    color: #0F3B75;
+    color:rgb(62, 65, 65);
     border-radius:5px;
     }
-
+.withdraw p{
+    color:rgb(62, 65, 65);
+}
 /* Edit user  */
+.user-image{
+    margin-top:4%;
+    padding-left:10em;
+}
 .editusertext-blue{
     color: #0F3B75;
     font-weight: bold;
@@ -838,105 +776,29 @@ input.withdraw-data:focus, input.withdraw-data:hover{
     border: 2px #0F3B75 solid;
 }
 
-.edituserpage-shadow{
-    box-shadow: 0 1px 15px #0F3B75;
-    border-radius: 10px;
-    margin-top:5%;
+.form-group .input {
+    width:300px;
 }
 
-.edituserpage-margin1{
-    margin-top: 3%;
+
+.edit-bottom{
+    margin-bottom:10%;
+}
+.ud input{
+    width: 240px;
 }
 
-.edituserpage-margin{
-    margin-top: 0 !important;
-    margin-bottom: 10%;
+.edit-btn{
+    width:200px;
+    margin-bottom:15%;
 }
 
-.edituserpage-form{
-    box-sizing: border-box;
-    margin-bottom: 5%;
-    padding: 10px;
-    border-radius: 0 !important;
-}
 
-.edituserpage-btn{
-    box-sizing: border-box;
-    padding:5px 45px;
-    border-radius: 0 !important;   
-    font-size: 0.8em; 
-    border: 0;
-}
 
-.edituserpage-btn.blue{
-    box-sizing: border-box;
-    padding:5px 45px;
-    border-radius: 0 !important;  
-    background-color: #0F3B75;
-    color: #ffffff;  
-}
 
-.edituserpage-btn.white{
-    box-sizing: border-box;
-    padding:5px 45px;
-    border-radius: 0 !important;  
-    background-color: #E1E1E1;
-    color: #ffffff;  
-}
 
-@media(min-width : 760px){
-    .edituserpage-btn{
-        box-sizing: border-box;
-        padding:10px 35px;
-        border-radius: 0 !important;   
-        font-size: 0.8em; 
-        border: 0;
-    }
-    
-    .edituserpage-btn.blue{
-        box-sizing: border-box;
-        padding:10px 35px;
-        border-radius: 0 !important;  
-        background-color: #0F3B75;
-        color: #ffffff;  
-    }
-    
-    .edituserpage-btn.white{
-        box-sizing: border-box;
-        padding:10px 35px;
-        border-radius: 0 !important;  
-        background-color: #E1E1E1;
-        color: #ffffff;  
-    }
-}
 
-@media (max-width : 760px) {    
-.edituserpage-btn{
-    box-sizing: border-box;
-    padding:5px 15px;
-    border-radius: 0 !important;   
-    font-size: 0.7em; 
-    border: 0;
-    margin-right: 10px;
-}
-.edituserpage-btn.white{
-    box-sizing: border-box;
-    padding:5px 10px;
-    border-radius: 0 !important;  
-    background-color: #E1E1E1;
-    color: #ffffff; 
-    
-} 
 
-.edituserpage-btn.blue{
-    box-sizing: border-box;
-    padding:5px 10px;
-    border-radius: 0 !important;  
-    background-color: #0F3B75;
-    color: #ffffff;  
-    margin-left: 30px;    
-}
-}
 /*
 -----------------------------------------------------------------------------------------------------------------------
 Next user should start on the next line*/

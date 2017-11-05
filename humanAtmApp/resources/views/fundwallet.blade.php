@@ -18,13 +18,13 @@
                             </div>
                             
                             <div class="row daily-margin text-center">
-                            <div class="col-sm-4 col-sm-offset-1">
-                                 <a href="wallet"> <h4 class=" box-inactive">  TRANSFER TO ACCOUNT</h4></a>
-                                </div>
-        
-                                <div class="col-sm-4 col-sm-offset-2 ">
-                                    <a href="fundwallet"><h4 class="box-active">FUND WALLET</h4></a>
-                                    </div>
+                            <div class="col-sm-4 col-sm-offset-1 wallet-menu">
+                            <button type="button" class="btn btn-success "> <a href="/wallet">Transfer To Account </a></button>
+                         </div>
+ 
+                         <div class="col-sm-4 col-sm-offset-1 wallet-menu">
+                         <button type="button" class="btn btn-success "> <a href="/fundwallet">Fund Wallet </a></button>
+                             </div>
                                 </div>
                         <div class="row text-center daily-margin">
                                 <div class="col-md-12">
@@ -91,7 +91,7 @@
                                         <p class="wallet-text text-center">
                                             Transaction-Fee N55					
                                         </p>
-                                                <button type="submit" class=" wallet-button">PAY N301,000</button>
+                                                <button type="submit" class="  btn btn-success wallet-button">FUND WALLET</button>
                                             </div>
                                         </form>
                             </div>

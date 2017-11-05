@@ -5,41 +5,42 @@
 @endsection
 
 @section('content')
-<body class="signup-body">
     <section>
      @include('header')
- </section>
- <section class="container">
-
-    <div class="profile-container">
-        <div class="withdraw-content">
-            <div class="profile-request">
-                <p>MAKE A REQUEST</p>
-            </div>
-            @if (session()->has('status'))
-            <div class="alert alert-info alert-info fade in">
-                <a href="/dashboard" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session('status')}}
-            </div>
-            @endif
-            <div class="profile-supermenu">
-                <div class ="profile-menu" id="">
-
-                    <button type="button inactive"> <a href="/dashboard">PROFILE</a></button>
-                    <button type="button" class="active"> <a href="/withdraw">WITHDRAW </a></button>
-                    <button type="button inactive"> <a href="/payment">PAYMENT </a></button>
-
-                </div>
-            </div>
+    </section>
+<body >
+ <div class="container-fluid blue-fall outerBox-margin">
+ 
+      <div class="row box-margin">
+              <div class="col-md-8 col-md-offset-2 box-border">
+                  <div class="row">
+                      <div class="col-md-12 text-center box-color">
+                          <h3>REQUEST</h3><hr>
+                          <h4> Withdraw</h4>
+                      </div>
+                  </div>
+                    @if (session()->has('status'))
+                    <div class="alert alert-info alert-info fade in">
+                        <a href="/dashboard" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{ session('status')}}
+                    </div>
+                    @endif
+           
+                    <div class ="profile-menu" >
+                        <button type="button" class="btn btn-success "> <a href="/withdraw">WITHDRAW </a></button>
+                        <button type="button" class="btn btn-success "> <a href="/payment">PAYMENT </a></button>
+                            
+                    </div>
+           
 
             <div class="withdraw-info">
 
-                <form action="/withdraw/{{$payer_id}}" class="profile-innerform" method="POST">
+                <form action="/withdraw/{{$payer_id}}" class="profile-innerform " method="POST">
                  {{ csrf_field() }}
                  <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
 
-                    <label for="phone number">PHONE NUMBER</label>
-                    <input type="text" name="phone_number" class="withdraw-data" id="" placeholder="08022343254" value="{{old('phone_number')}}">
+                   
+                    <input type="text" name="phone_number" class="withdraw-data" id="" placeholder="Phone Number" value="{{old('phone_number')}}">
                     @if ($errors->has('phone_number'))
                     <span class="help-block">
                         <strong>{{ $errors->first('phone_number') }}</strong>
@@ -48,8 +49,8 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
-                    <label for="amount">AMOUNT</label>
-                    <input type="text" name="amount" class="withdraw-data" id="" placeholder="45000" value="{{ old('amount')}}">
+                   
+                    <input type="text" name="amount" class="withdraw-data" id="" placeholder="Amount" value="{{ old('amount')}}">
                     <p class="withdraw-label">MAX. AMOUNT  N50,000</p>
                     @if ($errors->has('amount'))
                     <span class="help-block">
@@ -60,9 +61,9 @@
 
 
                 <div class="form-group{{ $errors->has('bank_id') ? ' has-error' : '' }}">
-                    <label for="Amount" class="walletColor">BANK NAME</label>
-                    <select class="withdraw-expand" name="bank_id">
-                        <option value="" selected="selected">Select Your Bank</option>
+                    
+                    <select class="withdraw-expand form-control"  name="bank_id">
+                        <option value="" selected="selected">Select Bank</option>
                         @foreach ($banks as $bank)
                         <option value="{{ $bank->id }}">{{ $bank->name }}</option>
                         @endforeach
@@ -77,10 +78,10 @@
 
 
                 <div class="form-group{{ $errors->has('account_number') ? ' has-error' : '' }}">
-                    <label for="account_number">ACCOUNT NUMBER</label>
-                    <input type="text" name="account_number" class="withdraw-data" id="" placeholder="6160883639" value="{{ old('account_number')}}">
+                
+                    <input type="text" name="account_number" class="withdraw-data" id="" placeholder="Account Number" value="{{ old('account_number')}}">
 
-                    <p class="withdraw-label">OLIBIE CHIDERA</p>
+                    <p class="withdraw-label">YOUR NAME</p>
                     @if ($errors->has('account_number'))
 
                     <span class="help-block">
@@ -90,8 +91,8 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
-                    <label for="location">LOCATION</label>
-                    <input type="text" name="location" id="" class="withdraw-data" placeholder="NO 3 BARREL STRT YABA" value="{{ old('location')}}">
+                
+                    <input type="text" name="location" id="" class="withdraw-data" placeholder="Location" value="{{ old('location')}}">
                     @if ($errors->has('location'))
                     <span class="help-block" >
                         <strong>{{ $errors->first('location') }}</strong>
@@ -99,17 +100,15 @@
                     @endif
                 </div>
 
-                <div class="form-group" style="font-weight:bold">
-                    <p>DELIVERY TIME</p>                                    
-                    <p class="withdraw-data" id="">15 minutes</p>
+                <div class="withdraw col-sm-6" style="font-weight:bold">
+                    <p class="text-center">DELIVERY TIME</p>                                    
+                    <p class="text-center">15 minutes</p>
                 </div>
-                <div class="">              
-                    <p id='withdraw-delivery'>
-                        <input type="checkbox" name="delivery" id="withdraw-span">HOME-DELIVERY
-                        <span id="withdraw-span1">N150</span>
-                    </p>
-                    <input type="submit" class="withdraw-data withdraw-submit" id="withdraw-submit"value="WITHDRAW">
-                    <button class="withdraw-data withdraw-submit" id="withdraw-submit1"><a href="fund">FUND WALLET</a></button>
+                <div class="tweet">   
+                <input type="checkbox" name="delivery" >           
+                    <p > <b>HOME-DELIVERY N150 </b> </p>
+                    <input type="submit" class="btn btn-success withdraw-submit" id="withdraw-submit"value="WITHDRAW">
+                   
                 </div>  
             </form>
         </div>

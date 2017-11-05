@@ -19,14 +19,15 @@
                     </div>
                 </div>
                 <div class="row daily-margin text-center">
-                    <div class="col-sm-4 col-sm-offset-1">
-                         <a href="wallet"> <h4 class=" box-active">  TRANSFER TO ACCOUNT</h4></a>
+                    <div class="col-sm-4 col-sm-offset-1 wallet-menu">
+                           <button type="button" class="btn btn-success "> <a href="/wallet">Transfer To Account </a></button>
                         </div>
 
-                        <div class="col-sm-4 col-sm-offset-2 ">
-                            <a href="fundwallet"><h4 class="box-inactive">FUND WALLET</h4></a>
+                        <div class="col-sm-4 col-sm-offset-1 wallet-menu">
+                        <button type="button" class="btn btn-success "> <a href="/fundwallet">Fund Wallet </a></button>
                             </div>
                         </div>
+                       
                         <div class="row daily-margin">
                             <div class="col-md-10 col-md-offset-1">
 
@@ -34,16 +35,16 @@
                                     <div class="form-group ">
                                 
                                         <input type="text" class="form-control wallet-input col-sm-6" placeholder="Amount  (Max=50,000)">
-                                        <p class="walletLabel-below">MAX. AMOUNT  N50,000</p>
+                                        <p class="walletLabel-below">Max. Amount  N50,000</p>
 
                                        
                                         <input type="text" class="form-control wallet-input col-sm-6" placeholder="Account Number">
-                                        <p class="walletLabel-below">DIKE THELMA KELECHI</p>
+                                        <p class="walletLabel-below text-right">Account Name</p>
 
                                         
                                         
-                                        <select class="wallet-expand form-control" style="margin:0 auto">
-                                                <option value="" selected="selected">Select Your Bank</option>
+                                        <select class="wallet-expand form-control" >
+                                                <option value="" selected="selected">Select Bank</option>
                                                 <option value="first Bank of Nigeria" >First Bank of Nigeria</option>
                                                 <option value="union Bank of Nigeria">Union Bank of Nigeria</option>
                                                 <option value="united Bank for Africa">United Bank for Africa</option>
@@ -59,7 +60,7 @@
                                         </p>
                                   
                                         			
-                                        <button type="submit" class=" wallet-button">SEND</button>
+                                        <button type="submit" class=" btn btn-success wallet-button">SEND</button>
                                     </div>
                                 </form>
                             </div>
