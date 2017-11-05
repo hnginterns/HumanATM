@@ -111,10 +111,6 @@
                             &nbsp;
                             &nbsp;                                     
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 3b96883d2c267dc81898de92b858a6cc3192eadd
                             <div class="col-xs-4 col-xs-offset-4 text-center">
                                 <button type="submit" class="btn btn-success edit-btn">SAVE</button>
                             </div>

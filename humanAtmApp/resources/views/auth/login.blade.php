@@ -43,7 +43,7 @@
                             @endif
 
                             <input type="password" name="password" id="signup-password" class="signup-data signup-password" placeholder="Password">
-                            <p class='signup-eye'><i class="glyphicon glyphicon-eye-close"></i></p>
+                           
                             @if ($errors->has('password'))
                             <span class="help-block">
                                 <span style="color:red">{{ $errors->first('password') }}</span>
