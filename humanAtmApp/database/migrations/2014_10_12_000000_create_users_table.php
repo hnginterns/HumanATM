@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
 
         DB::table('users')->insert([
              'email' => "oriebizline@gmail.com",
-             'wallet_id' => "nedsoft",
+             'wallet_id' => substr(md5(uniqid(rand(1, 1000))) , 0, 7),
              'name' => "Orie Chinedu",
              'password' => bcrypt('123456'),
              'role' => 1,
