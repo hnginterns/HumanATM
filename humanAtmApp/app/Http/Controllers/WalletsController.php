@@ -41,9 +41,9 @@ class WalletsController extends Controller
            "recipient"=> "wallet",
            "card_no"=> $request->card_no,
            "cvv"=> $request->cvv,
-           "pin"=>"1111", //optional required when using VERVE card
-           "expiry_year"=>"20".$request->expiry_year,
-           "expiry_month"=> $request->expiry_month,
+           "pin"=> $request->pin, //optional required when using VERVE card
+           "expiry_year"=> $request->expiry_month,
+           "expiry_month"=>  $request->expiry_year,
            "charge_auth"=>"PIN", //optional required where card is a local Mastercard
            "apiKey" => $this->api_key,
            "amount" => $request->amount,
@@ -68,6 +68,11 @@ class WalletsController extends Controller
             return view('otppage', compact('transRef'));
             
         }
+        if(isset($response['data'])) {
+            Session::flash('status', $response['status'].": ".$response['data']);
+            return back();
+        }
+
         Session::flash('status', $response['status']);
         return back();
         

@@ -34,44 +34,59 @@
                         <div class="row daily-margin">
                             <div class="col-md-10 col-md-offset-1">
                                     @if (Session::has('status'))
-                                        <div class="alert-danger">{{Session::get('status')}}</div>
+                                        <h4 class="alert alert-danger">{{Session::get('status')}}</h4>
                                     
                                     @endif
-                                    <form action="{{ action('WalletsController@cardToWallet') }}" class="form" method="post">
+                                    <form action="{{ action('WalletsController@cardToWallet') }}" class="form" method="post" requires>
                                         {{csrf_field()}}
                                             <div class="form-group ">
                                                 
-                                        <input type="text" class="form-control wallet-input" placeholder="First Name" name="fname">
+                                        <input type="text" class="form-control wallet-input" placeholder="First Name" name="fname" required>
                                         <p class="walletLabel-below">MAX. AMOUNT  N50,000</p>
 
                                         
-                                        <input type="text" class="form-control wallet-input" placeholder="Last Name" name="lname">
+                                        <input type="text" class="form-control wallet-input" placeholder="Last Name" name="lname" required>
                                         <p class="walletLabel-below">DIKE THELMA KELECHI</p>
 
                                         
-                                        <input type="text" class="form-control wallet-input" placeholder="Email" name="email">
+                                        <input type="text" class="form-control wallet-input" placeholder="Email" name="email" required>
                                         <br>
 
-                                        <input type="text" class="form-control wallet-input" placeholder="Phone Number" name="phone">
+                                        <input type="text" class="form-control wallet-input" placeholder="Phone Number" name="phone" required>
                                         <br>
-
                                        
-                                        <input type="text" class="form-control wallet-input" placeholder="Card Number" name="card_no">
+                                        <input type="text" class="form-control wallet-input" placeholder="Card Number" name="card_no" required>
                                         <br>
 
+                                       <div class="row">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control wallet-input" placeholder="CVV- 3 Digits" name="cvv" required>
+                                                <br>
+                                            </div>
+
+                                            <div class="col-sm-6 row">
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control wallet-input" placeholder="Expiry Month" name="expiry_month" required>
+                                                    <br>
+                                                </div>                                   
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control wallet-input" placeholder="Expiry Year" name="expiry_year" required>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                 <input type="text" class="form-control wallet-input" placeholder="PIN(Verve cards Only)" name="pin" required>
+                                                <br>
+                                            </div>
                                        
-                                        <input type="text" class="form-control wallet-input" placeholder="CVV- 3 Digits" name="cvv">
-                                        <br>
-
-                                        <input type="text" class="form-control wallet-input" placeholder="Expiry Month" size="2" name="expiry_month">
-                                        <br>
-
-                                        <input type="text" class="form-control wallet-input" placeholder="Expiry Year" size="2" name="expiry_year">
-                                        <br>
-
-                                       
-                                        <input type="text" class="form-control wallet-input" placeholder="Amount" name="amount">
-                                        <br>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control wallet-input" placeholder="Amount" name="amount" required>
+                                                <br>
+                                            </div>
+                                        </div>  
 
                                         <p class="wallet-text text-center">
                                             Transaction-Fee N55					
