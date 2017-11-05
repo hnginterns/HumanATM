@@ -4,31 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use Wallet;
 
 class WalletsController extends Controller
 {
-    public $api_key = "ts_JQDHY3O8G5QWXBOR9XHF";
-    public $secret = "ts_73137GS9V58MVJDEWP9EXDHKW3VIL9";
-    public function getToken()
+    
+    
+   
+    protected function cardToWallet(Request $request)
     {
-        \Unirest\Request::verifyPeer(false);
-        $headers = array('content-type' => 'application/json');
-        $query = array('apiKey' => $this->api_key, 'secret' => $this->secret);
-        $body = \Unirest\Request\Body::json($query);
-        $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/merchant/verify', $headers, $body);
-        $response = json_decode($response->raw_body, true);
-        $status = $response['status'];
-        if (!$status == 'success') {
-            return false;
-        } else {
-            $token = $response['token'];
-            return $token;
-        }
-    }
-
-    public function cardToWallet(Request $request)
-    {
-        $token = $this->getToken();
+        $token = Wallet::getToken();
         if (!$token){
             return 'INVALID TOKEN'; 
         }
@@ -135,7 +120,7 @@ class WalletsController extends Controller
                 if ($wallet_transactions < $rules[0]['max_transactions_per_day'] && $total_amount < $rules[0]['max_amount_transfer_per_day']) {
 
                     if ($amount >= $rules[0]['min_amount'] && $amount <= $rules[0]['max_amount']) {
-                        $token = $this->getToken();
+                        $token = Wallet::getToken();
                         $headers = array('content-type' => 'application/json', 'Authorization' => $token);
 
                         $query = array(

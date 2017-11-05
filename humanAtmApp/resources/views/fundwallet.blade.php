@@ -78,7 +78,7 @@
 
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                 <input type="text" class="form-control wallet-input" placeholder="PIN(Verve cards Only)" name="pin" required>
+                                                 <input type="password" class="form-control wallet-input" placeholder="PIN(Verve cards Only)" name="pin" required>
                                                 <br>
                                             </div>
                                        
