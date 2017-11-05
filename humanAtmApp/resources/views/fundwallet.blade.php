@@ -19,12 +19,12 @@
                             
                             <div class="row daily-margin text-center">
                             <div class="col-sm-4 col-sm-offset-1 wallet-menu">
-                            <button type="button" class="btn btn-success "> <a href="/wallet">Transfer To Account </a></button>
-                         </div>
+                                <a class="btn btn-success" href="/wallet"><h4>Transfer To Account</h4></a>
+                            </div>
  
                          <div class="col-sm-4 col-sm-offset-1 wallet-menu">
-                         <button type="button" class="btn btn-success "> <a href="/fundwallet">Fund Wallet </a></button>
-                             </div>
+                            <a class="btn btn-success" href="/fundwallet"><h4 class="text-right">Fund Wallet</h4></a>
+                        </div>
                                 </div>
                         <div class="row text-center daily-margin">
                                 <div class="col-md-12">
