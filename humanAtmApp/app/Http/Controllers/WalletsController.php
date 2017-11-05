@@ -4,19 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
-use Wallet;
+use App\Wallet;
+use App\User;
+use Auth;
 
 class WalletsController extends Controller
 {
     
     
    
-    protected function cardToWallet(Request $request)
+    public function cardToWallet(Request $request)
     {
         $token = Wallet::getToken();
         if (!$token){
             return 'INVALID TOKEN'; 
         }
+        $user = User::find(Auth::id());
+        $wallet_id = $user->wallet_id;
         $headers = array('content-type' => 'application/json', 'Authorization' => $token);
         $query = array(
             "firstname"=> $request->fname,
@@ -24,15 +28,16 @@ class WalletsController extends Controller
            "email"=> $request->email,
            "phonenumber"=> $request->phone,
            "recipient"=> "wallet",
+           "recipient_id" => $wallet_id,
            "card_no"=> $request->card_no,
            "cvv"=> $request->cvv,
            "pin"=> $request->pin, //optional required when using VERVE card
            "expiry_year"=> $request->expiry_month,
            "expiry_month"=>  $request->expiry_year,
            "charge_auth"=>"PIN", //optional required where card is a local Mastercard
-           "apiKey" => $this->api_key,
+           "apiKey" =>  env('API_KEY'),
            "amount" => $request->amount,
-           "fee"=>65,
+           "fee"=>55,
            "medium"=> "web",
             
         );

@@ -49,7 +49,7 @@
                                         <p class="walletLabel-below">DIKE THELMA KELECHI</p>
 
                                         
-                                        <input type="text" class="form-control wallet-input" placeholder="Email" name="email" required>
+                                        <input type="email" class="form-control wallet-input" placeholder="Email" name="email" required>
                                         <br>
 
                                         <input type="text" class="form-control wallet-input" placeholder="Phone Number" name="phone" required>
