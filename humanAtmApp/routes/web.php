@@ -70,12 +70,14 @@ Route::get('/withdraw', function (){
 Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
 Route::get('/withdraw/humanAtm/{id}', 
 	'TransactionController@showWithdrawalForm')->middleware('auth');
-Route::post('/withdraw/{id}', 'TransactionController@processWithdraw');
+Route::post('/withdraw/', 'WalletsController@walletToAccount');
 Route::get('/withdraw/confirm/receipt/{withdrawal_id}', 'TransactionController@confirmWithdrawal');
 
 Route::get('/reject/payment/{payment_id}', 'TransactionController@rejectPayment');
 Route::get('/payment', 'TransactionController@showPaymentForm');
 Route::post('/payment', 'TransactionController@storePayment')->middleware('auth');
+
+Route::get('fundwallet', 'WalletsController@showFundWallet');
 
 Route::get('/{name}', function($name){
 

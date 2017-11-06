@@ -21,6 +21,7 @@ return array(
     'App\\Http\\Controllers\\InviteController' => $baseDir . '/app/Http/Controllers/InviteController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
     'App\\Http\\Controllers\\TransactionController' => $baseDir . '/app/Http/Controllers/TransactionController.php',
+    'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Controllers\\UserDashboardController' => $baseDir . '/app/Http/Controllers/UserDashboardController.php',
     'App\\Http\\Controllers\\WalletsController' => $baseDir . '/app/Http/Controllers/WalletsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

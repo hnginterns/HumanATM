@@ -327,6 +327,7 @@ class ComposerStaticInit0f9c5de095c28d1dced31444ef4a8755
         'App\\Http\\Controllers\\InviteController' => __DIR__ . '/../..' . '/app/Http/Controllers/InviteController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\TransactionController' => __DIR__ . '/../..' . '/app/Http/Controllers/TransactionController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\UserDashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserDashboardController.php',
         'App\\Http\\Controllers\\WalletsController' => __DIR__ . '/../..' . '/app/Http/Controllers/WalletsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
