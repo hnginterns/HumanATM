@@ -58,6 +58,7 @@
                     
                         <p ><b>Location: </b> <span class="col-sm-offset-2">{{$human_atm_profile->location}}</p>
                         <p> <b>Gender:</b> <span class="col-sm-offset-2">{{ !isset($human_atm_profile->user->profile) ? '' : $human_atm_profile->user->profile->sex }}</p>
+                             <p ><b>Amount </b> <span class="col-sm-offset-2">{{$human_atm_profile->amount}}</p>
                     
                     </div>           
                 </div>
