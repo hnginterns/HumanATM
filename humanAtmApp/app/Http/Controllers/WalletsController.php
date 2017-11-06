@@ -4,34 +4,47 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use App\Wallet;
+use App\User;
+use Auth;
 
 class WalletsController extends Controller
 {
-    public $api_key = "ts_JQDHY3O8G5QWXBOR9XHF";
-    public $secret = "ts_73137GS9V58MVJDEWP9EXDHKW3VIL9";
-    public function getToken()
-    {
-        \Unirest\Request::verifyPeer(false);
-        $headers = array('content-type' => 'application/json');
-        $query = array('apiKey' => $this->api_key, 'secret' => $this->secret);
-        $body = \Unirest\Request\Body::json($query);
-        $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/merchant/verify', $headers, $body);
-        $response = json_decode($response->raw_body, true);
-        $status = $response['status'];
-        if (!$status == 'success') {
-            return false;
-        } else {
-            $token = $response['token'];
-            return $token;
+    
+    
+   
+    public function showFundWallet(){
+        $balance = $this->getBalance();
+        return view('fundwallet', compact('balance'));
+    }
+
+    public function getBalance(){
+        $token = Wallet::getToken();
+        if (!$token){
+            return 'INVALID TOKEN'; 
         }
+        $user = User::find(Auth::id());
+        $headers = array('content-type' => 'application/json', 'Authorization' => $token);
+        $response = \Unirest\Request::get('https://moneywave.herokuapp.com/v1/wallet/', $headers);
+        $response = json_decode($response->raw_body, true);
+        
+        foreach($response['data'] as $wallet){
+            if($wallet['uref'] == $user->wallet_id){
+                $balance = $wallet['balance'];
+            }
+        }
+        
+        return $balance;
     }
 
     public function cardToWallet(Request $request)
     {
-        $token = $this->getToken();
+        $token = Wallet::getToken();
         if (!$token){
             return 'INVALID TOKEN'; 
         }
+        $user = User::find(Auth::id());
+        $wallet_id = $user->wallet_id;
         $headers = array('content-type' => 'application/json', 'Authorization' => $token);
         $query = array(
             "firstname"=> $request->fname,
@@ -39,18 +52,20 @@ class WalletsController extends Controller
            "email"=> $request->email,
            "phonenumber"=> $request->phone,
            "recipient"=> "wallet",
+           "recipient_id" => $wallet_id,
            "card_no"=> $request->card_no,
            "cvv"=> $request->cvv,
-           "pin"=>"1111", //optional required when using VERVE card
-           "expiry_year"=>"2020",
-           "expiry_month"=>"07",
+           "pin"=> $request->pin, //optional required when using VERVE card
+           "expiry_month"=> $request->expiry_month,
+           "expiry_year"=>  $request->expiry_year,
            "charge_auth"=>"PIN", //optional required where card is a local Mastercard
-           "apiKey" => $this->api_key,
-           "amount" =>100,
-           "fee"=>65,
+           "apiKey" =>  env('API_KEY'),
+           "amount" => $request->amount,
+           "fee"=>55,
            "medium"=> "web",
             
         );
+     
         $body = \Unirest\Request\Body::json($query);
 
         $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer', $headers, $body);
@@ -66,32 +81,19 @@ class WalletsController extends Controller
             // );
 
             return view('otppage', compact('transRef'));
-            // $response = $response['data']['transfer'];
-            // $meta = $response['meta'];
-            // $meta = json_decode($meta, TRUE);
-            // $transMsg = $meta['processor']['responsemessage'];
-            // $transRef = $meta['processor']['transactionreference'];
-            // $transaction = new CardWallet;
-            // $transaction->firstName = $response['firstName'];
-            // $transaction->lastName = $response['lastName'];
-            // $transaction->phoneNumber = $response['phoneNumber'];
-            // $transaction->amount = $response['amountToSend'];
-            // $transaction->ref = $transRef;
-
-            // $transaction->save();
-
-            // event(new FundWallet($cardWallet));
+            
         }
-        Session::flash('status', $transMsg);
+        if(isset($response['data'])) {
+            Session::flash('status', $response['status'].": ".$response['data']);
             return back();
+        }
+
+        Session::flash('status', $response['status']);
+        return back();
         
-        $answer = array(
-            'response' => $response,
-            'request' => $request
-        );
-        return $answer;
     }
 
+    
     public function otp(Request $request)
     {
         \Unirest\Request::verifyPeer(false);
@@ -110,11 +112,90 @@ class WalletsController extends Controller
                 return $response;
             }
             
-            return $response;
+            if(isset($response['data'])) {
+                Session::flash('status', $response['status'].": ".$response['data']);
+                return redirect('/fundwallet');
+            }
+            Session::flash('status', $response['status']);
+            return redirect('/fundwallet');
             // return redirect('admin')->with('status', $response);
     }
 
-   
+    public function processWithdraw(Request $request, $human_atm)
+	{      
+
+		$human_atm_id = $human_atm;
+		$validation = Validator::make($request->all(), $this->withdrawFormRules());
+
+		if ($validation->fails()){
+			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
+		}
+
+		$createWithdrawalRequest = Withdrawal::create([
+			'withdrawer_id' => Auth::id(),
+			'payer_id'      => $human_atm_id,
+			'phone_number'  => $request->phone_number,
+			'bank_id'     => $request->bank_id,
+			'amount'        => (int)$request->amount + 150,
+			'account_number'=> $request->account_number,
+			'location'      => $request->location,
+		]);
+
+		if ($createWithdrawalRequest)
+		{
+			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
+		}
+
+	}
+
+    public function walletToAccount(Request $request){
+         $token = Wallet::getToken();
+        if (!$token){
+            return 'INVALID TOKEN'; 
+        }
+        $user = User::find(Auth::id());
+        $wallet_id = $user->wallet_id;
+        $headers = array('content-type' => 'application/json', 'Authorization' => $token);
+        // $query = array(
+        //     "lock"=> $user->wallet_id,
+        //     "walletUref" => $user->wallet_id,
+        //     "amount"=> $request->amount,
+        //     "bankcode"=> "044",
+        //     "accountNumber"=> $request->recipient_account,
+        //     "currency"=>"NGN",
+        //     "senderName"=> $user->name,
+        //     "ref"=>"KFKJ09090"
+        // ); 
+         $query = array(
+            "lock"=> $user->wallet_id,
+            "walletUref" => $user->wallet_id,
+            "amount"=>100,
+            "bankcode"=>"044",
+            "accountNumber"=>"0690000005",
+            "currency"=>"NGN",
+            "senderName"=>"Prime Inc",
+            "narration"=>"Gucchi shirt payment", //Optional
+            "ref"=>"KFKJ09090"
+        ); 
+        $body = \Unirest\Request\Body::json($query);
+
+        $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/disburse', $headers, $body);
+        $response = json_decode($response->raw_body, TRUE);
+        //var_dump($response);
+        //die();
+        if($response['status'] == 'success') {
+          return view('paymentsuccessful');
+        }
+
+        if(isset($response['data'])) {
+            Session::flash('status', $response['status'].": ".$response['data']);
+            return back();
+        }
+
+        Session::flash('status', $response['status']);
+        return back();
+
+    }
     //transfer from wallet to wallet
     public function transfer(Request $request, WalletTransaction $transaction) {
         $input = $request->all();
@@ -149,7 +230,7 @@ class WalletsController extends Controller
                 if ($wallet_transactions < $rules[0]['max_transactions_per_day'] && $total_amount < $rules[0]['max_amount_transfer_per_day']) {
 
                     if ($amount >= $rules[0]['min_amount'] && $amount <= $rules[0]['max_amount']) {
-                        $token = $this->getToken();
+                        $token = Wallet::getToken();
                         $headers = array('content-type' => 'application/json', 'Authorization' => $token);
 
                         $query = array(

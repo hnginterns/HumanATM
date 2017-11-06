@@ -280,8 +280,8 @@ margin-bottom:10%;
 
 
 .image404{
-    height:250px;
-    width:250px;
+    height:200px;
+    width:200px;
     margin:0 auto;
 }
 .page404-header{
@@ -298,7 +298,6 @@ margin-bottom:10%;
  }
 
    .page404-bg-blue{
-    background-color: #0F3B75;
      border-radius: 2px;
     font-size: 18px;
     text-decoration: none;
@@ -339,16 +338,6 @@ margin-bottom:10%;
     height:40px;
     margin-top:12%;
 }
-
-  .page404-main .page404-navigate{  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center; 
-  }
-  .page404-main .page404-navigate a:hover{
-    opacity: 0.9;
-  }
 
  .page404-margin{
   margin-top: 100px;

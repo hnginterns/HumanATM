@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Wallet;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -51,7 +52,6 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'wallet_id'=> 'required',
         ]);
     }
 
@@ -61,14 +61,46 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    public function create(array $data)
     {
+        $referral_id = ('HA_'. 
+        substr(md5(uniqid(rand(1, 1000))) , 0,6));
+        $wallet_id = substr(md5(uniqid(rand(1, 1000))) , 0, 7);  
+        $createWallet = $this->createWallet($data['name'], $wallet_id);
+        if ($createWallet){
+            return User::create([
+                'name' => $data['name'],
+                'wallet_id'=>$wallet_id,
+                'email' => $data['email'],
+                // 'referral_id' => $referral_id,
+                'password' => bcrypt($data['password']),
+            ]);
+        }
+        return false;
+    }
 
-        return User::create([
-            'name' => $data['name'],
-            'wallet_id'=>$data['wallet_id'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+    public function createWallet($name, $wallet_id){
+        $token = Wallet::getToken();
+        if (!$token){
+            return 'INVALID TOKEN'; 
+        }
+        $headers = array('content-type' => 'application/json', 'Authorization' => $token);
+        $query = array(
+            "name"=> $name,
+            "lock_code"=> $wallet_id,
+            "user_ref"=> $wallet_id,
+            "currency"=> "NGN"
+        ); 
+
+        $body = \Unirest\Request\Body::json($query);
+
+        $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/wallet', $headers, $body);
+        $response = json_decode($response->raw_body, TRUE);
+
+        if($response['status'] == 'success'){
+            return true;
+        }
+
+        return false;
     }
 }

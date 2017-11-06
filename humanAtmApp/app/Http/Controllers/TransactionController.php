@@ -34,41 +34,19 @@ class TransactionController extends Controller
 		return view('human-atm-profile', compact('human_atm_profile'));
 	}
 
-	public function showWithdrawalForm($id)
+	public function showWithdrawalForm(User $id)
 	{   
-		$payer_id = $id;
+		$user = User::find(Auth::id());
+		$recipient =  $id->load('humanAtm');
 		$banks = Bank::all();
 
-		return view('withdraw', compact('payer_id', 'banks'));
+
+		// return $recipient->humanAtm;
+		return view('withdraw', compact('user', 'recipient', 'banks'));
 
 	}
 
-	public function processWithdraw(Request $request, $human_atm)
-	{      
-
-		$human_atm_id = $human_atm;
-		$validation = Validator::make($request->all(), $this->withdrawFormRules());
-
-		if ($validation->fails()){
-			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
-		}
-
-		$createWithdrawalRequest = Withdrawal::create([
-			'withdrawer_id' => Auth::id(),
-			'payer_id'      => $human_atm_id,
-			'phone_number'  => $request->phone_number,
-			'bank_id'     => $request->bank_id,
-			'amount'        => (int)$request->amount + 150,
-			'account_number'=> $request->account_number,
-			'location'      => $request->location,
-		]);
-
-		if ($createWithdrawalRequest)
-		{
-			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
-		}
-
-	}
+	
 
 	public function confirmWithdrawal($withdrawal_id)
 	{   

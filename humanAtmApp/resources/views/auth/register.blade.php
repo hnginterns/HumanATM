@@ -43,14 +43,6 @@
                     </span>
                     @endif
 
-                    <input type="text" name="wallet_id" class="signup-data {{ $errors->has('wallet_id') ? ' has-error' : '' }}" value="{{ old('wallet_id') }}" placeholder="Wallet ID">
-                    @if ($errors->has('wallet_id'))
-                    <span class="help-block">
-                    <span style="color:red">{{ $errors->first('wallet_id') }}</span>
-                    </span>
-                    @endif
-
-
 
                     <input type="email" name="email"  class="signup-data {{ $errors->has('email') ? ' has-error' : '' }}" value="{{ old('email')}}" placeholder="Email Address">
                     @if ($errors->has('email'))
@@ -69,7 +61,6 @@
                     @endif
 
 
-                    <p class='signup-eye'><i class="glyphicon glyphicon-eye-close"></i></p>
                     <input type="password" name="password_confirmation"  id="signup-password1" class="signup-data signup-password" placeholder="Confirm password">
 
 

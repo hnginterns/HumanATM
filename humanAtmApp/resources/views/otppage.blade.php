@@ -19,7 +19,7 @@
                     {{ csrf_field()}}
                     <div class="form-group row">
                         <div class="col-sm-offset-1 col-sm-10">
-                            <input type="number" class="form-control otp-textbox" name="otp">
+                            <input type="text" class="form-control otp-textbox" name="otp">
                             <input type="hidden" class="form-control otp-textbox" name="ref" value="{{$transRef}}">
                         </div>
                     </div>

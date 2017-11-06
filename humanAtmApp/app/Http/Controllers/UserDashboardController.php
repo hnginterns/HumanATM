@@ -137,7 +137,7 @@ class UserDashboardController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd("hi");
     }
 
     /**
@@ -149,7 +149,7 @@ class UserDashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
