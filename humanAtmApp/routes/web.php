@@ -37,7 +37,7 @@ Route::get('/admin/completed',
 	//--------------------------------------------
 	//INVITE
 	//---------------------------------------------
-Route::post('/invite/send','InviteController@sendinvite');
+Route::post('/invite/send','InviteController@process');
 
 
 Route::get('/403', function () {
@@ -46,9 +46,7 @@ Route::get('/403', function () {
 Route::get('/404', function () {
     return view('errors.404');
 })->name('404');
- Route::get('/invite', function(){
- 	return view('invite');
- });
+ Route::get('/invite', 'InviteController@index');
 
 
 /* User Update */
