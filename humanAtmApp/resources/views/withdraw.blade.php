@@ -19,34 +19,34 @@
                           <h4>Withdraw</h4>
                       </div>
                   </div>
-                    @if (session()->has('status'))
-                    <div class="alert alert-info alert-info fade in">
-                        <a href="/dashboard" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        {{ session('status')}}
-                    </div>
-                    @endif
            
                     <div class ="profile-menu" >
                         <button type="button" class="btn btn-success "> <a href="/withdraw">WITHDRAW </a></button>
                         <button type="button" class="btn btn-success "> <a href="/payment">PAYMENT </a></button>
-                            
+
+                           
                     </div>
-           
+                
 
             <div class="withdraw-info">
-
-                <form action="/withdraw/" class="profile-innerform " method="POST">
+                @if (session()->has('status'))
+                    <div class="alert alert-danger fade in">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{ session('status')}}
+                    </div>
+                @endif
+                <form action="/withdraw" class="profile-innerform " method="POST">
                  {{ csrf_field() }}
                  <div class="form-group">
                     <input type="text" name="recipient_name" class="form-control" readonly="readonly" value="{{$recipient->name}}">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" name="recipient_name" class="form-control" readonly="readonly" value="{{$recipient->humanAtm->bank_name}}">
+                    <input type="text" name="bank" class="form-control" readonly="readonly" value="{{$recipient->humanAtm->bank_name}}">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" name="amount" class="form-control" readonly="readonly" value="{{ $recipient->humanAtm->account_number}}">
+                    <input type="text" name="recipient_account" class="form-control" readonly="readonly" value="{{ $recipient->humanAtm->account_number}}">
                 </div>
 
                 <div class="form-group">

@@ -68,6 +68,7 @@ class WalletsController extends Controller
         
     }
 
+    
     public function otp(Request $request)
     {
         \Unirest\Request::verifyPeer(false);
@@ -90,7 +91,70 @@ class WalletsController extends Controller
             // return redirect('admin')->with('status', $response);
     }
 
-   
+    public function processWithdraw(Request $request, $human_atm)
+	{      
+
+		$human_atm_id = $human_atm;
+		$validation = Validator::make($request->all(), $this->withdrawFormRules());
+
+		if ($validation->fails()){
+			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
+		}
+
+		$createWithdrawalRequest = Withdrawal::create([
+			'withdrawer_id' => Auth::id(),
+			'payer_id'      => $human_atm_id,
+			'phone_number'  => $request->phone_number,
+			'bank_id'     => $request->bank_id,
+			'amount'        => (int)$request->amount + 150,
+			'account_number'=> $request->account_number,
+			'location'      => $request->location,
+		]);
+
+		if ($createWithdrawalRequest)
+		{
+			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
+		}
+
+	}
+
+    public function walletToAccount(Request $request){
+         $token = Wallet::getToken();
+        if (!$token){
+            return 'INVALID TOKEN'; 
+        }
+        $user = User::find(Auth::id());
+        $wallet_id = $user->wallet_id;
+        $headers = array('content-type' => 'application/json', 'Authorization' => $token);
+        $query = array(
+            "lock"=> $user->wallet_id,
+            "walletUref" => $user->wallet_id,
+            "amount"=> $request->amount,
+            "bankcode"=> "044",
+            "accountNumber"=> $request->recipient_account,
+            "currency"=>"NGN",
+            "senderName"=> $user->name,
+            "ref"=>"KFKJ09090"
+        ); 
+        $body = \Unirest\Request\Body::json($query);
+
+        $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/disburse', $headers, $body);
+        $response = json_decode($response->raw_body, TRUE);
+        //var_dump($response);
+        //die();
+        if($response['status'] == 'success') {
+          return view('paymentsuccessful');
+        }
+
+        if(isset($response['data'])) {
+            Session::flash('status', $response['status'].": ".$response['data']);
+            return back();
+        }
+
+        Session::flash('status', $response['status']);
+        return back();
+
+    }
     //transfer from wallet to wallet
     public function transfer(Request $request, WalletTransaction $transaction) {
         $input = $request->all();
