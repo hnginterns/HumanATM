@@ -49,15 +49,16 @@
 
                     <!--  -->
                 <div class="col-sm-offset-4" >
-                    <img src="{{is_null($human_atm_profile->user->profile)? '' : $human_atm_profile->user->profile->image_url }}" alt="" width="140px" height="140px" class="img-circle profile-image ">
+                    <img src="{{ !isset($human_atm_profile->user->profile)? '' : $human_atm_profile->user->profile->image_url }}" alt="" width="140px" height="140px" class="img-circle profile-image ">
                 </div>
                 <div class="profile-info col-sm-offset-2">
                     <div class="profile-data">
-                        <p><b>Name:  &nbsp &nbsp</b> <span class="col-sm-offset-2"> {{ is_null($human_atm_profile->user->name) ? '': $human_atm_profile->user->name }}</span></p>
-                        <p> <b>Contact:</b> <span class="col-sm-offset-2">{{ is_null($human_atm_profile->user->profile) ? '' : $human_atm_profile->user->profile->phone_number }}</p>
+                        <p><b>Name:  &nbsp &nbsp</b> <span class="col-sm-offset-2"> {{ !isset($human_atm_profile->user->name) ? '': $human_atm_profile->user->name }}</span></p>
+                        <p> <b>Contact:</b> <span class="col-sm-offset-2">{{ !isset($human_atm_profile->user->profile) ? '' : $human_atm_profile->user->profile->phone_number }}</p>
                     
                         <p ><b>Location: </b> <span class="col-sm-offset-2">{{$human_atm_profile->location}}</p>
-                        <p> <b>Gender:</b> <span class="col-sm-offset-2">{{ is_null($human_atm_profile->user->profile) ? '' : $human_atm_profile->user->profile->phone_number }}</p>
+                        <p> <b>Gender:</b> <span class="col-sm-offset-2">{{ !isset($human_atm_profile->user->profile) ? '' : $human_atm_profile->user->profile->sex }}</p>
+                             <p ><b>Amount </b> <span class="col-sm-offset-2">{{$human_atm_profile->amount}}</p>
                     
                     </div>           
                 </div>
