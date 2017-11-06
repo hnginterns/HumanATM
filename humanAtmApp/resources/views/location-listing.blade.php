@@ -29,6 +29,7 @@
                             <div class="row  location-margin">
                                 <div class="col-md-7 col-md-offset-1 text-center location-box listing-borderColor">
                                     <h4>{{$human_atm->user->name. "  ,". $human_atm->location}} </h4>
+                                    <h6>AMOUNT: NGN{{$human_atm->amount}} </h6>
                                 </div>
 
                                 <div class="col-md-2 col-md-offset-1 text-center ">

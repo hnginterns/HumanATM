@@ -135,7 +135,7 @@ class WalletsController extends Controller
 			'withdrawer_id' => Auth::id(),
 			'payer_id'      => $human_atm_id,
 			'phone_number'  => $request->phone_number,
-			'bank_id'     => $request->bank_id,
+			'bank_id'       => $request->bank_id,
 			'amount'        => (int)$request->amount + 150,
 			'account_number'=> $request->account_number,
 			'location'      => $request->location,

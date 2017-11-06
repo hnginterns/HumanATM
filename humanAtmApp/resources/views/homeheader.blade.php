@@ -26,7 +26,34 @@
         </li>
                 <li><a href="/paybills">PAY BILLS</a></li>
                 <li><a href="/invite" >INVITE FRIENDS</a></li>
-                <li><a href="/login" >LOGIN </a></li>
+                 @if (Auth::user())
+                    
+                    <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/location" ><b>Human ATMs</b></a></li>
+                        <li><a href="/dashboard" ><b>Dashboard</b></a></li>
+                        <li><a href="/payment" ><b>Become HumanATM</b></a></li>
+                         <li><a href="/profile/{{Auth::id()}}/update" ><b>Update Profile</b></a></li>
+
+                        <li>
+                            <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <b>Logout</b>
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            @else
+            <li><a href="/login" >LOGIN </a></li>
+            @endif
             </ul>
         </div>
     </div>
