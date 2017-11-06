@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="col-md-12 text-center wallet-boxColour">
                                 <h4>Wallet Balance</h4> <hr>
-                                <h1><b>N140,000</b></h1>
+                                <h1><b>N {{$balance}}</b></h1>
                                 </div>
                             </div>
                             

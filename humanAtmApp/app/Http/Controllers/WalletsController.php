@@ -13,6 +13,30 @@ class WalletsController extends Controller
     
     
    
+    public function showFundWallet(){
+        $balance = $this->getBalance();
+        return view('fundwallet', compact('balance'));
+    }
+
+    public function getBalance(){
+        $token = Wallet::getToken();
+        if (!$token){
+            return 'INVALID TOKEN'; 
+        }
+        $user = User::find(Auth::id());
+        $headers = array('content-type' => 'application/json', 'Authorization' => $token);
+        $response = \Unirest\Request::get('https://moneywave.herokuapp.com/v1/wallet/', $headers);
+        $response = json_decode($response->raw_body, true);
+        
+        foreach($response['data'] as $wallet){
+            if($wallet['uref'] == $user->wallet_id){
+                $balance = $wallet['balance'];
+            }
+        }
+        
+        return $balance;
+    }
+
     public function cardToWallet(Request $request)
     {
         $token = Wallet::getToken();
@@ -41,6 +65,7 @@ class WalletsController extends Controller
            "medium"=> "web",
             
         );
+     
         $body = \Unirest\Request\Body::json($query);
 
         $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer', $headers, $body);
@@ -86,8 +111,13 @@ class WalletsController extends Controller
                 $response = $response['data']['transfer']['flutterChargeResponseMessage'];
                 return $response;
             }
-            
-            return $response;
+            if(isset($response['data'])) {
+                Session::flash('status', $response['status'].": ".$response['data']);
+                return back();
+            }
+
+            Session::flash('status', $response['status']);
+            return back();
             // return redirect('admin')->with('status', $response);
     }
 
@@ -126,14 +156,24 @@ class WalletsController extends Controller
         $user = User::find(Auth::id());
         $wallet_id = $user->wallet_id;
         $headers = array('content-type' => 'application/json', 'Authorization' => $token);
-        $query = array(
-            "lock"=> $user->wallet_id,
-            "walletUref" => $user->wallet_id,
-            "amount"=> $request->amount,
-            "bankcode"=> "044",
-            "accountNumber"=> $request->recipient_account,
+        // $query = array(
+        //     "lock"=> $user->wallet_id,
+        //     "walletUref" => $user->wallet_id,
+        //     "amount"=> $request->amount,
+        //     "bankcode"=> "044",
+        //     "accountNumber"=> $request->recipient_account,
+        //     "currency"=>"NGN",
+        //     "senderName"=> $user->name,
+        //     "ref"=>"KFKJ09090"
+        // ); 
+         $query = array(
+            "lock"=>"888909",
+            "amount"=>100,
+            "bankcode"=>"044",
+            "accountNumber"=>"0690000005",
             "currency"=>"NGN",
-            "senderName"=> $user->name,
+            "senderName"=>"Prime Inc",
+            "narration"=>"Gucchi shirt payment", //Optional
             "ref"=>"KFKJ09090"
         ); 
         $body = \Unirest\Request\Body::json($query);
