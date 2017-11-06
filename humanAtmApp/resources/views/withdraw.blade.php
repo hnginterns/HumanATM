@@ -16,7 +16,7 @@
                   <div class="row">
                       <div class="col-md-12 text-center box-color">
                           <h3>REQUEST</h3><hr>
-                          <h4> Withdraw</h4>
+                          <h4>Withdraw</h4>
                       </div>
                   </div>
                     @if (session()->has('status'))
@@ -35,70 +35,26 @@
 
             <div class="withdraw-info">
 
-                <form action="/withdraw/{{$payer_id}}" class="profile-innerform " method="POST">
+                <form action="/withdraw/" class="profile-innerform " method="POST">
                  {{ csrf_field() }}
-                 <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
-
-                   
-                    <input type="text" name="phone_number" class="withdraw-data" id="" placeholder="Phone Number" value="{{old('phone_number')}}">
-                    @if ($errors->has('phone_number'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('phone_number') }}</strong>
-                    </span>
-                    @endif
+                 <div class="form-group">
+                    <input type="text" name="recipient_name" class="form-control" readonly="readonly" value="{{$recipient->name}}">
                 </div>
 
-                <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
-                   
-                    <input type="text" name="amount" class="withdraw-data" id="" placeholder="Amount" value="{{ old('amount')}}">
-                    <p class="withdraw-label">MAX. AMOUNT  N50,000</p>
-                    @if ($errors->has('amount'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('amount') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group">
+                    <input type="text" name="recipient_name" class="form-control" readonly="readonly" value="{{$recipient->humanAtm->bank_name}}">
                 </div>
 
-
-                <div class="form-group{{ $errors->has('bank_id') ? ' has-error' : '' }}">
-                    
-                    <select class="withdraw-expand form-control"  name="bank_id">
-                        <option value="" selected="selected">Select Bank</option>
-                        @foreach ($banks as $bank)
-                        <option value="{{ $bank->id }}">{{ $bank->name }}</option>
-                        @endforeach
-                    </select>
-                    @if ($errors->has('bank_id'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('bank_id') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group">
+                    <input type="text" name="amount" class="form-control" readonly="readonly" value="{{ $recipient->humanAtm->account_number}}">
                 </div>
 
-
-
-                <div class="form-group{{ $errors->has('account_number') ? ' has-error' : '' }}">
-                
-                    <input type="text" name="account_number" class="withdraw-data" id="" placeholder="Account Number" value="{{ old('account_number')}}">
-
-                    <p class="withdraw-label">YOUR NAME</p>
-                    @if ($errors->has('account_number'))
-
-                    <span class="help-block">
-                        <strong>{{ $errors->first('account_number') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group">
+                    <input type="text" name="amount" class="form-control" readonly="readonly" value="300">
                 </div>
 
-                <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
-                
-                    <input type="text" name="location" id="" class="withdraw-data" placeholder="Location" value="{{ old('location')}}">
-                    @if ($errors->has('location'))
-                    <span class="help-block" >
-                        <strong>{{ $errors->first('location') }}</strong>
-                    </span>
-                    @endif
-                </div>
+  
+               
 
                 <div class="withdraw col-sm-6" style="font-weight:bold">
                     <p class="text-center">DELIVERY TIME</p>                                    

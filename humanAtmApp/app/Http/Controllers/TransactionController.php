@@ -34,12 +34,15 @@ class TransactionController extends Controller
 		return view('human-atm-profile', compact('human_atm_profile'));
 	}
 
-	public function showWithdrawalForm($id)
+	public function showWithdrawalForm(User $id)
 	{   
-		$payer_id = $id;
+		$user = User::find(Auth::id());
+		$recipient =  $id->load('humanAtm');
 		$banks = Bank::all();
 
-		return view('withdraw', compact('payer_id', 'banks'));
+
+		// return $recipient->humanAtm;
+		return view('withdraw', compact('user', 'recipient', 'banks'));
 
 	}
 
