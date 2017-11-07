@@ -15,12 +15,12 @@ class CreateInvitesTable extends Migration
     {
         Schema::create('invites', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email', 100)->unique();
+            $table->string('email');
+            $table->string('token', 16)->unique();
             $table->unsignedInteger('referral_id');
-            $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('referral_id')->references('id')->on('profiles')->onDelete('cascade');
+            $table->foreign('referral_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -7,7 +7,11 @@
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
+<<<<<<< HEAD
+        "guzzlehttp/guzzle": "^6.3",
+=======
         "jrm2k6/cloudder": "0.4.*",
+>>>>>>> 86f6205157b9d90208aca3a299a1ef35b834fabc
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "mashape/unirest-php": "3.*"

@@ -72,7 +72,7 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'wallet_id'=>$wallet_id,
                 'email' => $data['email'],
-                // 'referral_id' => $referral_id,
+                'referral_id' => $referral_id,
                 'password' => bcrypt($data['password']),
             ]);
         }
