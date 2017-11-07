@@ -28,6 +28,7 @@ class WalletsController extends Controller
         $response = \Unirest\Request::get('https://moneywave.herokuapp.com/v1/wallet/', $headers);
         $response = json_decode($response->raw_body, true);
         
+        
         foreach($response['data'] as $wallet){
             if($wallet['uref'] == $user->wallet_id){
                 $balance = $wallet['balance'];
@@ -59,7 +60,7 @@ class WalletsController extends Controller
            "expiry_month"=> $request->expiry_month,
            "expiry_year"=>  $request->expiry_year,
            "charge_auth"=>"PIN", //optional required where card is a local Mastercard
-           "apiKey" =>  env('API_KEY'),
+           "apiKey" =>  "ts_JQDHY3O8G5QWXBOR9XHF", //env('API_KEY'),
            "amount" => $request->amount,
            "fee"=>55,
            "medium"=> "web",
@@ -70,8 +71,9 @@ class WalletsController extends Controller
 
         $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer', $headers, $body);
         $response = json_decode($response->raw_body, TRUE);
-        //var_dump($response);
-        //die();
+         
+        //dd($response);
+
         if($response['status'] == 'success') {
             $transfer = $response['data']['transfer'];
             $transRef = $transfer['flutterChargeReference'];
@@ -95,7 +97,10 @@ class WalletsController extends Controller
 
     
     public function otp(Request $request)
-    {
+    {   
+
+        // validate and ensure the user enetered the otp please
+        //before proceeding
         \Unirest\Request::verifyPeer(false);
 
             $headers = array('content-type' => 'application/json');
@@ -107,6 +112,8 @@ class WalletsController extends Controller
 
             $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer/charge/auth/card', $headers, $body);
             $response = json_decode($response->raw_body, true);
+
+            //dd($response);
             if($response['status'] == 'success') {
                 $response = $response['data']['transfer']['flutterChargeResponseMessage'];
                 return $response;

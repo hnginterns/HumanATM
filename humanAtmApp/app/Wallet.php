@@ -18,8 +18,10 @@ class Wallet extends Model
     
 
     public static function getToken(){
-        $api_key = env('API_KEY');
-        $secret = env('SECRET');
+
+        $api_key = "ts_JQDHY3O8G5QWXBOR9XHF";//env('API_KEY');
+        $secret = "ts_73137GS9V58MVJDEWP9EXDHKW3VIL9";//env('SECRET');
+        
         \Unirest\Request::verifyPeer(false);
         $headers = array('content-type' => 'application/json');
         $query = array('apiKey' => $api_key, 'secret' => $secret);
@@ -31,6 +33,8 @@ class Wallet extends Model
             return false;
         } 
         $token = $response['token'];
+
+      
         return $token;
         
     }
