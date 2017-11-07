@@ -71,15 +71,15 @@
                  <h1> <b>NO ATM IN YOUR ENVIRONMENT?</b></h1>
                     <h3>No Problem, We got you covered!</h3>
                 </div>
-                <div class="col-sm-3 color-fa col-sm-offset-1 text-center">
+                <div class="col-sm-4 color-fa text-center">
                 <h1><i class="fa fa-search fa-1x" ></i></h1>
                 <h4>Search for HumanATM</h4>
                 </div>
-                <div class="col-sm-3 color-fa col-sm-offset-1 text-center">
+                <div class="col-sm-4 color-fa  text-center">
                 <h1><i class="fa fa-user fa-1x" ></i></h1>
                 <h4>Place Withdrawal Order</h4>
                 </div>
-                <div class="col-sm-3 color-fa col-sm-offset-1 text-center">
+                <div class="col-sm-4 color-fa  text-center">
                 <h1><i class="fa fa-truck fa-1x" ></i></h1>
                 <h4>Order Arrives your Location</h4>
                 </div>

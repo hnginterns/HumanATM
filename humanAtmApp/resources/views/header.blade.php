@@ -2,7 +2,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-fixed-top" style="background-color: #0C2A52;">
-        <div class="navbar-header">
+        <div class="navbar-header ">
             <button type="button" class="navbar-toggle hamburger" data-toggle="collapse" data-target="#HumanATMNavbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar" ></span>
@@ -10,15 +10,14 @@
                 <span class="icon-bar"></span>
             </button>
             <a id="header-color" class="navbar-brand" href="/" >
-                <img style="width:70px; height:70px;padding:10px;" src="{{asset('images/logo.png')}}" alt="">
+                <img class="nav-shift" style="width:50px; height:50px; padding:10px;" src="{{asset('images/logo.png')}}" alt="">
                 <b> HUMAN ATM</b></a>
             </div>
             <div class="collapse navbar-collapse" id="HumanATMNavbar">
                 <ul class="nav navbar-nav navbar-right" id="header-color" >
                     <li class="active"><a href="/wallet">WALLET</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle" 
-                        data-toggle="dropdown" href="">TRANSACTIONS</a>
-
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TRANSACTIONS <span class="caret"></span></a>
+                
                         <ul class="dropdown-menu" >
                             <li><a href="/dailytransaction" ><b> Daily</b></a></li>
 
