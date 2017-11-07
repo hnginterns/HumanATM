@@ -23,7 +23,6 @@
                     <div class ="profile-menu" >
                         <button type="button" class="btn btn-success "> <a href="/withdraw">WITHDRAW </a></button>
                         <button type="button" class="btn btn-success "> <a href="/payment">PAYMENT </a></button>
-
                            
                     </div>
                 
@@ -46,19 +45,16 @@
                 <div class="form-group">
                     <label for="bank" style="padding-left: 5px">Bank</label>
                     <input type="text" name="bank" class="form-control wallet-input" readonly="readonly" value="{{$recipient->humanAtm->bank_name}}">
-                    
                 </div>
 
                 <div class="form-group">
                     <label for="recipient_account" style="padding-left: 5px">Account Number</label>
                     <input type="text" name="recipient_account" class="form-control wallet-input" readonly="readonly" value="{{ $recipient->humanAtm->account_number}}">
-                    
                 </div>
 
                 <div class="form-group">
                     <label for="amount" style="padding-left: 5px">Amount (NGN)</label>
                     <input type="text" name="amount" class="form-control wallet-input" readonly="readonly" value="{{$recipient->humanAtm->amount}}">
-                    
                 </div>
 
   
