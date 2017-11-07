@@ -79,6 +79,7 @@ Route::get('/fundwallet', 'WalletsController@showFundWallet');
 Route::post('/fund','WalletsController@cardToWallet');
 Route::post('/otp','WalletsController@otp');
 Route::get('wallet', 'WalletsController@walletBalance')->middleware('auth');
+Route::get('/fakewallet', 'WalletsController@fakewallet')->middleware('auth');
 
 Route::get('/{name}', function($name){
 
@@ -89,5 +90,7 @@ Route::get('/register/ref={code}', function($code){
 	
 		 return view('auth.register',compact('code'));
 	});
+
+
 	
 

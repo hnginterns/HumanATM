@@ -121,32 +121,6 @@ class WalletsController extends Controller
             // return redirect('admin')->with('status', $response);
     }
 
-    public function processWithdraw(Request $request, $human_atm)
-	{      
-
-		$human_atm_id = $human_atm;
-		$validation = Validator::make($request->all(), $this->withdrawFormRules());
-
-		if ($validation->fails()){
-			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
-		}
-
-		$createWithdrawalRequest = Withdrawal::create([
-			'withdrawer_id' => Auth::id(),
-			'payer_id'      => $human_atm_id,
-			'phone_number'  => $request->phone_number,
-			'bank_id'       => $request->bank_id,
-			'amount'        => (int)$request->amount + 150,
-			'account_number'=> $request->account_number,
-			'location'      => $request->location,
-		]);
-
-		if ($createWithdrawalRequest)
-		{
-			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
-		}
-
-	}
 
     public function walletToAccount(Request $request){
          $token = Wallet::getToken();
@@ -277,6 +251,30 @@ class WalletsController extends Controller
     }
     $balance = 0;
     return view('wallet', compact('balance'));
+    }
+
+
+    public function fakeWallet(){
+
+        $id = Auth::id();
+
+        $wallet = Wallet::where('user_id', $id)->first();
+
+        if($wallet)
+        {
+            return back();
+        }
+
+        $fund_wallet  = Wallet::create([
+
+          'user_id' => $id,
+          'balance' => '20000',
+        ]);
+
+        if($fund_wallet){
+
+            echo "wallet funded";
+        }
     }
 
 }
