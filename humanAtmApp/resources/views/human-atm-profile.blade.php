@@ -63,7 +63,7 @@
                     </div>           
                 </div>
 
-                <input type="button" value="PROCEED" class="btn btn-success profile-button col-sm-3 col-sm-offset-4" onClick="window.location.href='/withdraw/humanAtm/{{$human_atm_profile->id}}'">
+                <input type="button" value="WITHDRAW &nbsp N{{$human_atm_profile->amount}}" class="btn btn-success profile-button col-sm-3 col-sm-offset-4" onClick="window.location.href='/withdraw/humanAtm/{{$human_atm_profile->id}}'">
             </div>
 
         </div>       
