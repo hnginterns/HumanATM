@@ -5,14 +5,16 @@
 @endsection
 
 @section('content')
+@include('header')
+<body>
 
-<div class="container-fluid daily-margin">
-    @include('header')
-    <div class="row profile-rower">
-       <div class="col-md-8 col-md-offset-2 profile-borderColor daily-margin">
+<div class="container-fluid blue-fall outerBox-margin">
+   
+    <div class="row box-margin">
+       <div class="col-md-8 col-md-offset-2 box-border">
           <div class="row">
-            <div class="col-md-12 text-center payment-margin" style="margin-bottom: 50px;">
-                <img src="{{asset('images/question-mark.jpg')}}" alt="success logo">
+            <div class="col-md-12 text-center proceed-margin" style="margin-bottom: 50px;">
+                <img src="{{asset('images/5.png')}}" alt="success logo" width="100px" height="150px">
             </div>
         </div>
         @if (session()->has('status'))
@@ -21,9 +23,9 @@
             {{ session('status')}}
         </div>
         @endif
-        <p class="text-center"> By clicking <strong>PROCEED</strong> below, You confirm that you want to withdraw the sum of <strong>NGN{{$human_atm->amount}}</strong>  from <strong>{{$human_atm->user->name}}</strong>, at a service charge of <strong>NGN{{$human_atm->surcharge}}</strong> and hence a total of <strong>NGN{{(int)$human_atm->amount + (int) $human_atm->surcharge}}</strong> will be deducted from your wallet</p>
-        <div class="col-md-8 col-md-offset-5" style="margin-bottom: 50px; margin-top: 50px;">
-            <a href="/process/withdraw/{{$human_atm_id}}" class="btn btn-primary">Procced</a>
+        <h4 class="text-center proceed-text"> By clicking <strong>PROCEED</strong> below, <br>You confirm that you want to withdraw <br>the sum of <strong>NGN{{$human_atm->amount}}</strong>  from <strong>{{$human_atm->user->name}}</strong>, <br>at a service charge of <strong>NGN{{$human_atm->surcharge}}</strong> and hence a total of <strong>NGN{{(int)$human_atm->amount + (int) $human_atm->surcharge}}</strong><br> will be deducted from your wallet</h4>
+        <div class="col-md-8 col-md-offset-5 ">
+            <a href="/process/withdraw/{{$human_atm_id}}" class="btn btn-success proceed-text2"><h4>Proceed</h4></a>
         </div>
 
     </div>
@@ -32,7 +34,9 @@
 
 
 </div>
-
+    
+</body>
+@include('footer')
 @endsection
 
 

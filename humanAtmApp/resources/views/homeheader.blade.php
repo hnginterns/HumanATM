@@ -19,9 +19,9 @@
                 <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TRANSACTIONS <span class="caret"></span></a>
           <ul class="dropdown-menu" id="header-color2">
-            <li><a href="/dailytransaction"><h4><b>Daily</b></h4></a></li>
-            <li><a href="/weeklytransaction"><h4><b>Weekly</b></h4></a></li>
-            <li><a href="/monthlytransaction"><h4><b>Monthly</b></h4></a></li>
+            <li><a href="/dailytransaction"><b>Daily</b></a></li>
+            <li><a href="/weeklytransaction"><b>Weekly</b></a></li>
+            <li><a href="/monthlytransaction"><b>Monthly</b></a></li>
           </ul>
         </li>
                 <li><a href="/paybills">PAY BILLS</a></li>

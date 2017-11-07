@@ -17,20 +17,7 @@
                             <h4>Daily Transactions</h4>
                         </div>
                     </div>
-                    <!-- <div class="row paybills-margin2">
-                        <div class="col-md-2 col-md-offset-3 text-center ">
-                        <a href="dailytransaction"><h4 class="box-active">Today</h4></a>
-                                
-                        </div>
-                        <div class="col-md-2 col-md-offset-0 text-center">
-                        <a href="weeklytransaction"><h4 class="box-inactive">Week</h4></a>
-                                
-                        </div>
-                        <div class="col-md-2 col-md-offset-0 text-center">
-                            <a href="monthlytransaction"><h4 class="box-inactive">Month</h4></a>                                
-                        </div>
-                        
-                    </div> -->
+                
                     
                     <div class="row paybills-margin2">
                         <div class="col-md-8 col-md-offset-2 daily-borderColor">
