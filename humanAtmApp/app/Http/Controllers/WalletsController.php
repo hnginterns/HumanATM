@@ -261,5 +261,22 @@ class WalletsController extends Controller
             }
         }
     }
+   
+   /**
+   * this function does nothing serious
+   * it only makes the wallet.blade.php dynamic
+   */
+    public function walletBalance()
+    {
+
+    $wallet = Wallet::where('user_id', Auth::id())->first();
+    if ($wallet){
+       $balance = $wallet->balance ;
+
+       return view('wallet', compact('balance'));
+    }
+    $balance = 0;
+    return view('wallet', compact('balance'));
+    }
 
 }

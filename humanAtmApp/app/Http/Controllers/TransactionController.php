@@ -10,6 +10,7 @@ use App\BankAtm;
 use App\Withdrawal;
 use App\User;
 use App\Bank;
+use App\Wallet;
 use App\Transaction;
 
 class TransactionController extends Controller
@@ -30,6 +31,25 @@ class TransactionController extends Controller
 	public function humanAtmProfile($id)
 	{
 		$human_atm_profile = HumanAtm::findOrFail($id)->load('user.profile');
+
+		$human_atm_amount = (int)$human_atm_profile->amount; 
+
+		$wallet =  Wallet::where('user_id', Auth::id())->first();
+		
+
+		if( $wallet){
+			$balance = $wallet->balance;
+
+			if($balance < $human_atm_amount){
+
+				return redirect()->back()->with(['status' => "Sorry, Your wallet balance is less than the amount you want to withdraw kindly fund your wallet and try again"]);
+			}
+
+		}
+
+		else{
+			return redirect()->back()->with(['status' => "Sorry, Your wallet balance is empty,  kindly fund your wallet and try again"]);
+		}
 
 		return view('human-atm-profile', compact('human_atm_profile'));
 	}

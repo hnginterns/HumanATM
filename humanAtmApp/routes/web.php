@@ -17,8 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/location','TransactionController@index')->name('location');
-Route::post('/fund','WalletsController@cardToWallet');
-Route::post('/otp','WalletsController@otp');
+
 
 Auth::routes();
 
@@ -75,7 +74,10 @@ Route::get('/reject/payment/{payment_id}', 'TransactionController@rejectPayment'
 Route::get('/payment', 'TransactionController@showPaymentForm');
 Route::post('/payment', 'TransactionController@storePayment')->middleware('auth');
 
-Route::get('fundwallet', 'WalletsController@showFundWallet');
+Route::get('/fundwallet', 'WalletsController@showFundWallet');
+Route::post('/fund','WalletsController@cardToWallet');
+Route::post('/otp','WalletsController@otp');
+Route::get('wallet', 'WalletsController@walletBalance')->middleware('auth');
 
 Route::get('/{name}', function($name){
 
