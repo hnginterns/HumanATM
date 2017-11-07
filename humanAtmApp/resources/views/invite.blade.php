@@ -34,16 +34,16 @@
 						<form action="{{url('/invite/send')}}" method="post">
 						{{csrf_field()}}
 						<input type="hidden" name="referral" class="invite-input" value="{{$user_id}}">
+						@if (Session::has('message'))
 							
-							<input type="email" name="email" class="invite-input" id="referral" placeholder="Enter an email to invite">
-							@if (Session::has('message'))
-							<br><br>
 							<div class="alert alert-info">{{ Session::get('message') }}</div>
 						 	@endif
+							<input type="email" name="email" class="invite-input" id="referral" placeholder="Enter an email to invite">
 							
 							
 							<br><br>
 							<input type="submit" value="SUBMIT" class="btn btn-success invite-submit">
+							
 						</form>
 					</div>
 				</div>
