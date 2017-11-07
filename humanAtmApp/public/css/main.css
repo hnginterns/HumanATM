@@ -810,16 +810,18 @@ Next user should start on the next line*/
     display: flex;
     align-items: center;
     padding-left: 30px;
-    font-size:2.3em;
+    font-size:1.5em;
     font-family: 'Lato', sans-serif;
 }
-
+.nav-shift{
+    margin-left:40px;
+}
 #header-color{
-    color:#2D9CDB;
+    color:white;
 }
 #header-color > li > a{
-    color:#2D9CDB;
-    font-size:1.2em;
+    color:white;
+    font-size:1em;
 }
 #header-color > li > a:hover{
     color:#ffffff;
@@ -839,11 +841,11 @@ Next user should start on the next line*/
 #header-dropdown > .active > a,#header-dropdown > .active > a:hover,
 #header-dropdown > li > a:hover {
     text-decoration: none;
-    font-weight: bold;
+    /* font-weight: bold; */
     border-radius:0px;
-    border-bottom-width: 4px;
-    border-bottom-style: solid;
-    border-bottom-color: #0F3B75;
+    /* border-bottom-width: 4px; */
+    /* border-bottom-style: solid; */
+    /* border-bottom-color: #0F3B75; */
     color: #0F3B75;
     background-color: transparent !important;
 }
@@ -873,11 +875,11 @@ Next user should start on the next line*/
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,.navbar-nav > li > a:hover {
     text-decoration: none;
-    font-weight: bold;
+    /* font-weight: bold;
     border-radius:0px;
     border-bottom-width: 4px;
     border-bottom-style: solid;
-    border-bottom-color: #0F3B75;
+    border-bottom-color: #0F3B75; */
     color: #0F3B75;
     background-color: transparent !important;
 }

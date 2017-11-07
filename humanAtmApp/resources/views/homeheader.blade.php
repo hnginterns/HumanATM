@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a id="header-color" class="navbar-brand" href="#">
-                <img style="width:70px; height:70px;padding:10px;" src="{{asset('images/logo.png')}}" alt="">
+                <img style="width:50px; height:50px;padding:10px;" src="{{asset('images/logo.png')}}" alt="">
                <b> HUMAN ATM</b></a>
         </div>
         <div class="collapse navbar-collapse" id="HumanATMNavbar">
