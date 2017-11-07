@@ -8,6 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Auth;
 use App\invite;
+use App\User;
 class InviteCreated extends Mailable
 {
     use Queueable, SerializesModels;

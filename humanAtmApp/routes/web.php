@@ -17,8 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/location','TransactionController@index')->name('location');
-Route::post('/fund','WalletsController@cardToWallet');
-Route::post('/otp','WalletsController@otp');
+
 
 Auth::routes();
 
@@ -66,8 +65,9 @@ Route::get('/withdraw', function (){
 	return redirect('location');
 });
 Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
-Route::get('/withdraw/humanAtm/{id}', 
-	'TransactionController@showWithdrawalForm')->middleware('auth');
+Route::get('/withdraw/proceed/{human_atm_id}', 
+	'TransactionController@confirmProceed')->middleware('auth');
+Route::get('/process/withdraw/{human_atm_id}', 'TransactionController@processWithdraw');
 Route::post('/withdraw/', 'WalletsController@walletToAccount');
 Route::get('/withdraw/confirm/receipt/{withdrawal_id}', 'TransactionController@confirmWithdrawal');
 
@@ -75,7 +75,16 @@ Route::get('/reject/payment/{payment_id}', 'TransactionController@rejectPayment'
 Route::get('/payment', 'TransactionController@showPaymentForm');
 Route::post('/payment', 'TransactionController@storePayment')->middleware('auth');
 
-Route::get('fundwallet', 'WalletsController@showFundWallet');
+Route::get('/fundwallet', 'WalletsController@showFundWallet');
+Route::post('/fund','WalletsController@cardToWallet');
+Route::post('/otp','WalletsController@otp');
+Route::get('wallet', 'WalletsController@walletBalance')->middleware('auth');
+Route::get('/fakewallet', 'WalletsController@fakewallet')->middleware('auth');
+
+Route::get('/link', function(){
+       
+        dd(url('/register'));
+});
 
 Route::get('/{name}', function($name){
 
@@ -83,4 +92,13 @@ Route::get('/{name}', function($name){
 });
 
 
+Route::get('/register/ref={code}', function($code){
+	
+		 return view('auth.register',compact('code'));
+	});
+
+
+
+
+	
 

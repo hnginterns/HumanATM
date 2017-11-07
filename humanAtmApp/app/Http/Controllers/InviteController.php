@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Invite;
 use App\Mail\InviteCreated;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\User
+use App\Mail\User;
+use Illuminate\Support\Facades\Session;
 class InviteController extends Controller
 {
     public function __construct()
@@ -38,7 +39,7 @@ class InviteController extends Controller
         Mail::to($email)->send(new InviteCreated($invite));
     
         // redirect back where we came from
-        return redirect()->back()->with('message','Invite Successfully sent');
-        dd($email);
+       Session::flash('message','Invite Successfully sent to '.$email);
+       return back();
     }
 }

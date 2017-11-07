@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2017-11-03 16:01:52] development.ERROR: No application encryption key has been specified. {"exception":"[object] (RuntimeException(code: 0): No application encryption key has been specified. at /var/www/HumanATM/humanAtmApp/vendor/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php:42)
 [stacktrace]
 #0 /var/www/HumanATM/humanAtmApp/vendor/laravel/framework/src/Illuminate/Support/helpers.php(1035): Illuminate\\Encryption\\EncryptionServiceProvider->Illuminate\\Encryption\\{closure}(NULL)
@@ -6394,3 +6395,5 @@ Did you mean one of these?
 #4 C:\\xampp\\htdocs\\HumanATM\\humanAtmApp\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #5 {main}
 "} 
+=======
+>>>>>>> 8ed821e30ecea4064f709ef63effed07070470e1

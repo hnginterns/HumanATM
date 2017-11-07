@@ -43,7 +43,6 @@
                     </span>
                     @endif
 
-
                     <input type="email" name="email"  class="signup-data {{ $errors->has('email') ? ' has-error' : '' }}" value="{{ old('email')}}" placeholder="Email Address">
                     @if ($errors->has('email'))
                     <span class="help-block">
@@ -62,8 +61,9 @@
 
 
                     <input type="password" name="password_confirmation"  id="signup-password1" class="signup-data signup-password" placeholder="Confirm password">
-
-
+                    @if(isset($code))
+                    <input type="hidden" name="referral_code"   value="{{$code}}">
+                    @endif
                     <input type="submit" class="btn btn-success signup-data" value="CREATE ACCOUNT">
                     <p id='signup-signin'>
 

@@ -1,8 +1,39 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('title')
 <title> Withdraw | HumanATM</title>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @section('content')
     <section>
@@ -23,7 +54,6 @@
                     <div class ="profile-menu" >
                         <button type="button" class="btn btn-success "> <a href="/withdraw">WITHDRAW </a></button>
                         <button type="button" class="btn btn-success "> <a href="/payment">PAYMENT </a></button>
-
                            
                     </div>
                 
@@ -38,19 +68,24 @@
                 <form action="/withdraw" class="profile-innerform " method="POST">
                  {{ csrf_field() }}
                  <div class="form-group">
+                    <label for="recipient_name" style="padding-left: 5px">Name</label>
                     <input type="text" name="recipient_name" class="form-control wallet-input" readonly="readonly" value="{{$recipient->name}}">
+                    
                 </div>
 
                 <div class="form-group">
+                    <label for="bank" style="padding-left: 5px">Bank</label>
                     <input type="text" name="bank" class="form-control wallet-input" readonly="readonly" value="{{$recipient->humanAtm->bank_name}}">
                 </div>
 
                 <div class="form-group">
+                    <label for="recipient_account" style="padding-left: 5px">Account Number</label>
                     <input type="text" name="recipient_account" class="form-control wallet-input" readonly="readonly" value="{{ $recipient->humanAtm->account_number}}">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" name="amount" class="form-control wallet-input" readonly="readonly" value="300">
+                    <label for="amount" style="padding-left: 5px">Amount (NGN)</label>
+                    <input type="text" name="amount" class="form-control wallet-input" readonly="readonly" value="{{$recipient->humanAtm->amount}}">
                 </div>
 
   
@@ -80,3 +115,4 @@
 </body>
 @endsection
 
+ --}}

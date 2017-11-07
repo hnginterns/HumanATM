@@ -16,11 +16,8 @@
         <div class="row edit-bottom">
           <div class="col-md-12 text-center box-color">
             <h3>UPDATE YOUR PROFILE IMAGE</h3><hr>
-
           </div>
         </div>
-
-
 
         <div class="row">
           <div class="col-md-4 col-md-push-4  text-center ">
