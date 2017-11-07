@@ -65,8 +65,9 @@ Route::get('/withdraw', function (){
 	return redirect('location');
 });
 Route::get('/human-atm/{id}', 'TransactionController@humanAtmProfile');
-Route::get('/withdraw/humanAtm/{id}', 
-	'TransactionController@showWithdrawalForm')->middleware('auth');
+Route::get('/withdraw/proceed/{human_atm_id}', 
+	'TransactionController@confirmProceed')->middleware('auth');
+Route::get('/process/withdraw/{human_atm_id}', 'TransactionController@processWithdraw');
 Route::post('/withdraw/', 'WalletsController@walletToAccount');
 Route::get('/withdraw/confirm/receipt/{withdrawal_id}', 'TransactionController@confirmWithdrawal');
 

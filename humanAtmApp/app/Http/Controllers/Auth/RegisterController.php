@@ -67,51 +67,53 @@ class RegisterController extends Controller
        /***************************************************
         * check if a referral code is include in the array
         ***************************************************/
-        $sponsor_id ='';
+       $sponsor_id ='';
+       if (isset($data['referral_code'])){
         if($data['referral_code']!=''){
             $user = User::where('referral_id',$data['referral_code'])->get()->first();
             $sponsor_id =$user->id;
         }
+    }
 
-        $referral_id = ('HA_'. 
+    $referral_id = ('HA_'. 
         substr(md5(uniqid(rand(1, 1000))) , 0,6));
-        $wallet_id = substr(md5(uniqid(rand(1, 1000))) , 0, 7);  
-        $createWallet = $this->createWallet($data['name'], $wallet_id);
-        if ($createWallet){
-            return User::create([
-                'name' => $data['name'],
-                'wallet_id'=>$wallet_id,
-                'email' => $data['email'],
-                'referral_id' => $referral_id,
-                'sponsor_id' => $sponsor_id,
-                'password' => bcrypt($data['password']),
-            ]);
-        }
-        return false;
+    $wallet_id = substr(md5(uniqid(rand(1, 1000))) , 0, 7);  
+    $createWallet = $this->createWallet($data['name'], $wallet_id);
+    if ($createWallet){
+        return User::create([
+            'name' => $data['name'],
+            'wallet_id'=>$wallet_id,
+            'email' => $data['email'],
+            'referral_id' => $referral_id,
+            'sponsor_id' => $sponsor_id,
+            'password' => bcrypt($data['password']),
+        ]);
+    }
+    return false;
+}
+
+public function createWallet($name, $wallet_id){
+    $token = Wallet::getToken();
+    if (!$token){
+        return 'INVALID TOKEN'; 
+    }
+    $headers = array('content-type' => 'application/json', 'Authorization' => $token);
+    $query = array(
+        "name"=> $name,
+        "lock_code"=> $wallet_id,
+        "user_ref"=> $wallet_id,
+        "currency"=> "NGN"
+    ); 
+
+    $body = \Unirest\Request\Body::json($query);
+
+    $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/wallet', $headers, $body);
+    $response = json_decode($response->raw_body, TRUE);
+
+    if($response['status'] == 'success'){
+        return true;
     }
 
-    public function createWallet($name, $wallet_id){
-        $token = Wallet::getToken();
-        if (!$token){
-            return 'INVALID TOKEN'; 
-        }
-        $headers = array('content-type' => 'application/json', 'Authorization' => $token);
-        $query = array(
-            "name"=> $name,
-            "lock_code"=> $wallet_id,
-            "user_ref"=> $wallet_id,
-            "currency"=> "NGN"
-        ); 
-
-        $body = \Unirest\Request\Body::json($query);
-
-        $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/wallet', $headers, $body);
-        $response = json_decode($response->raw_body, TRUE);
-
-        if($response['status'] == 'success'){
-            return true;
-        }
-
-        return false;
-    }
+    return false;
+}
 }

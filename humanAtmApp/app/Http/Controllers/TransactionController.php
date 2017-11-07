@@ -54,15 +54,37 @@ class TransactionController extends Controller
 		return view('human-atm-profile', compact('human_atm_profile'));
 	}
 
-	public function showWithdrawalForm(User $id)
+	public function confirmProceed($human_atm_id)
 	{   
-		$user = User::find(Auth::id());
-		$recipient =  $id->load('humanAtm');
-		$banks = Bank::all();
+		
+        $human_atm = HumanAtm::findOrFail($human_atm_id);
 
+		return view('proceed-withdraw', compact('human_atm_id', 'human_atm' ));
 
-		// return $recipient->humanAtm;
-		return view('withdraw', compact('user', 'recipient', 'banks'));
+	}
+
+	  public function processWithdraw($human_atm_id)
+	{      
+		
+		$human_atm = HumanAtm::findOrFail($human_atm_id);
+
+		if($human_atm){
+
+			$amount = $human_atm->amount;
+		}
+
+		$createWithdrawalRequest = Withdrawal::create([
+			'withdrawer_id' => Auth::id(),
+			'payer_id'      => $human_atm_id,
+			'amount'       => $amount,
+		]);
+
+		if ($createWithdrawalRequest)
+		{   
+            
+
+			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
+		}
 
 	}
 
@@ -75,6 +97,10 @@ class TransactionController extends Controller
 		$withdrawal = Withdrawal::find($withdrawal_id);
 		$my_payer =  User::find($withdrawal->payer_id);
 		$confirmed = $withdrawal->update(['status'=>'completed']);
+
+		 //****************************//
+            // call payment engine here to pay the human atm
+			//****************************/
 
 		if ($confirmed){
 
@@ -91,7 +117,12 @@ class TransactionController extends Controller
 
 	public function rejectPayment($payment_id)
 	{
-		$deleted = Withdrawal::findOrFail($payment_id)->delete();
+		// $deleted = Withdrawal::findOrFail($payment_id)->delete();
+		$w = Withdrawal::findOrFail($payment_id);
+
+		$payer_id = $w->payer_id;
+
+		$deleted = HumanAtm::findOrFail($payer_id)->delete();
 
 		if($deleted)
 		{
