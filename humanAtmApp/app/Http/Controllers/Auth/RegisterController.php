@@ -47,7 +47,8 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    {   
+
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -63,6 +64,15 @@ class RegisterController extends Controller
      */
     public function create(array $data)
     {
+       /***************************************************
+        * check if a referral code is include in the array
+        ***************************************************/
+        $sponsor_id ='';
+        if($data['referral_code']!=''){
+            $user = User::where('referral_id',$data['referral_code'])->get()->first();
+            $sponsor_id =$user->id;
+        }
+
         $referral_id = ('HA_'. 
         substr(md5(uniqid(rand(1, 1000))) , 0,6));
         $wallet_id = substr(md5(uniqid(rand(1, 1000))) , 0, 7);  
@@ -72,7 +82,8 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'wallet_id'=>$wallet_id,
                 'email' => $data['email'],
-                // 'referral_id' => $referral_id,
+                'referral_id' => $referral_id,
+                'sponsor_id' => $sponsor_id,
                 'password' => bcrypt($data['password']),
             ]);
         }

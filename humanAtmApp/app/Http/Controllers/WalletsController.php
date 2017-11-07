@@ -169,13 +169,13 @@ class WalletsController extends Controller
          $query = array(
             "lock"=> $user->wallet_id,
             "walletUref" => $user->wallet_id,
-            "amount"=>100,
+            "amount"=> $request->amount,
             "bankcode"=>"044",
             "accountNumber"=>"0690000005",
             "currency"=>"NGN",
-            "senderName"=>"Prime Inc",
-            "narration"=>"Gucchi shirt payment", //Optional
-            "ref"=>"KFKJ09090"
+            "senderName"=>$user->name,
+            "narration"=>"Human ATM App", //Optional
+            "ref"=>"humanatm-02"
         ); 
         $body = \Unirest\Request\Body::json($query);
 

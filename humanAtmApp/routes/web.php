@@ -84,5 +84,9 @@ Route::get('/{name}', function($name){
      return view($name);
 });
 
-
+Route::get('/register/ref={code}', function($code){
+	
+		 return view('auth.register',compact('code'));
+	});
+	
 
