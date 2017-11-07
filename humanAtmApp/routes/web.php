@@ -81,15 +81,23 @@ Route::post('/otp','WalletsController@otp');
 Route::get('wallet', 'WalletsController@walletBalance')->middleware('auth');
 Route::get('/fakewallet', 'WalletsController@fakewallet')->middleware('auth');
 
+Route::get('/link', function(){
+       
+        dd(url('/register'));
+});
+
 Route::get('/{name}', function($name){
 
      return view($name);
 });
 
+
 Route::get('/register/ref={code}', function($code){
 	
 		 return view('auth.register',compact('code'));
 	});
+
+
 
 
 	

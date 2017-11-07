@@ -67,7 +67,7 @@ class RegisterController extends Controller
        /***************************************************
         * check if a referral code is include in the array
         ***************************************************/
-       $sponsor_id ='';
+       $sponsor_id =null; //if no sponsor, let this field revert to default, NULL
        if (isset($data['referral_code'])){
         if($data['referral_code']!=''){
             $user = User::where('referral_id',$data['referral_code'])->get()->first();
