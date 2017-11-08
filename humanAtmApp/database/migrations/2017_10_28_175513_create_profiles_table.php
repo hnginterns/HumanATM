@@ -16,7 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('bank_id');
+            $table->string('bank_code');
             $table->string('account_name');
             $table->bigInteger('account_number');
             $table->string('phone_number');
@@ -26,7 +26,7 @@ class CreateProfilesTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
+            
         });
 
     }

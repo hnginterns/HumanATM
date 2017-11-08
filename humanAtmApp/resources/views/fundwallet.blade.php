@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="col-md-12 text-center wallet-boxColour">
                                 <h4>Wallet Balance</h4> <hr>
-                                <h1><b>N {{$balance}}</b></h1>
+                                <h1><b>NGN {{$balance}}</b></h1>
                                 </div>
                             </div>
                             
@@ -42,17 +42,22 @@
                                             <div class="form-group ">
                                                 
                                         <input type="text" class="form-control wallet-input" placeholder="First Name" name="fname" required>
-                                        <p class="walletLabel-below">MAX. AMOUNT  N50,000</p>
+                                        <p class="walletLabel-below">John</p>
+
+                                        
 
                                         
                                         <input type="text" class="form-control wallet-input" placeholder="Last Name" name="lname" required>
-                                        <p class="walletLabel-below">DIKE THELMA KELECHI</p>
+                                        <p class="walletLabel-below">Doe</p>
 
                                         
-                                        <input type="email" class="form-control wallet-input" placeholder="Email" name="email" required>
+                                        <input type="email" class="form-control wallet-input" placeholder="Email" name="email" autocomplete="none" required>
+                                        <p class="walletLabel-below">google@gmail.com</p>
                                         <br>
 
                                         <input type="text" class="form-control wallet-input" placeholder="Phone Number" name="phone" required>
+                                           <p class="walletLabel-below">+2348020099002</p>
+
                                         <br>
                                        
                                         <input type="text" class="form-control wallet-input" placeholder="Card Number" name="card_no" required>
@@ -84,8 +89,10 @@
                                        
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control wallet-input" placeholder="Amount" name="amount" required>
+                                                <small class="walletLabel-below">MAX N50,000</small>
                                                 <br>
                                             </div>
+
                                         </div>  
 
                                         <p class="wallet-text text-center">

@@ -9,7 +9,7 @@ $factory->define(App\Profile::class, function (Faker $faker) {
 	      $bank_id = App\Bank::pluck('id')->all();
     return [
     	'user_id'=>$faker->randomElement($id),
-         'bank_id'=>$faker->randomElement($bank_id),
+         'bank_code'=>$faker->company,
          'account_name'=>$faker->name, 
          'account_number'=>$faker->unique()->randomNumber(5).$faker->unique()->randomNumber(),
          'sex' => $faker->randomElement(['Male', 'Female']),
