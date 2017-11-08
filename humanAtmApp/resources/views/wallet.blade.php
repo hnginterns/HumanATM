@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-sm-12 text-center wallet-boxColour">
                         <h4>Wallet Balance</h4> <hr>
-                        <h1><b>NGN{{$balance}}</b></h1>
+                        <h1><b>NGN {{$balance}}</b></h1>
                     </div>
                 </div>
                 <div class="row daily-margin text-center">
@@ -37,7 +37,7 @@
                                         <p class="walletLabel-below">Max. Amount  N50,000</p>
 
                                        
-                                        <input type="text" class="form-control wallet-input col-sm-6" placeholder="Account Number">
+                                        <input type="text" class="form-control wallet-input  col-sm-3" placeholder="Account Number">
                                         <p class="walletLabel-below text-right">Account Name</p>
 
                                         

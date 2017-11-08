@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\WalletsController;
 use App\Bank;
 use App\Profile;
 
@@ -26,7 +27,7 @@ class ProfileController extends Controller
      */
     public function create( $id)
     {
-       $banks = Bank::all();
+       $banks = WalletsController::getBanks();
        $profile = Profile::where('user_id', $id);
 
        return view('edituser', compact('id', 'banks', 'profile'));
@@ -45,7 +46,7 @@ class ProfileController extends Controller
 
         $create_profile = Profile::create([
             'user_id'       =>$id,
-            'bank_id'       =>$request->bank_id,
+            'bank_code'       =>$request->bank_id,
             'phone_number'  =>$request->phone_number,
             'account_number'=>$request->account_number,
             'account_name'  =>$request->account_name,

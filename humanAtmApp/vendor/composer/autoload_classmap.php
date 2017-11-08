@@ -19,12 +19,8 @@ return array(
     'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\InviteController' => $baseDir . '/app/Http/Controllers/InviteController.php',
-<<<<<<< HEAD
-=======
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
->>>>>>> 86f6205157b9d90208aca3a299a1ef35b834fabc
     'App\\Http\\Controllers\\TransactionController' => $baseDir . '/app/Http/Controllers/TransactionController.php',
-    'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Controllers\\UserDashboardController' => $baseDir . '/app/Http/Controllers/UserDashboardController.php',
     'App\\Http\\Controllers\\WalletsController' => $baseDir . '/app/Http/Controllers/WalletsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -37,10 +33,7 @@ return array(
     'App\\Http\\Requests\\UserUpdateRequest' => $baseDir . '/app/Http/Requests/UserUpdateRequest.php',
     'App\\HumanAtm' => $baseDir . '/app/HumanAtm.php',
     'App\\Invite' => $baseDir . '/app/Invite.php',
-<<<<<<< HEAD
     'App\\Mail\\InviteCreated' => $baseDir . '/app/Mail/InviteCreated.php',
-=======
->>>>>>> 86f6205157b9d90208aca3a299a1ef35b834fabc
     'App\\Profile' => $baseDir . '/app/Profile.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
@@ -1177,6 +1170,7 @@ return array(
     'Illuminate\\Foundation\\Testing\\Concerns\\InteractsWithContainer' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithContainer.php',
     'Illuminate\\Foundation\\Testing\\Concerns\\InteractsWithDatabase' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithDatabase.php',
     'Illuminate\\Foundation\\Testing\\Concerns\\InteractsWithExceptionHandling' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithExceptionHandling.php',
+    'Illuminate\\Foundation\\Testing\\Concerns\\InteractsWithRedis' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithRedis.php',
     'Illuminate\\Foundation\\Testing\\Concerns\\InteractsWithSession' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithSession.php',
     'Illuminate\\Foundation\\Testing\\Concerns\\MakesHttpRequests' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php',
     'Illuminate\\Foundation\\Testing\\Concerns\\MocksApplicationServices' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MocksApplicationServices.php',

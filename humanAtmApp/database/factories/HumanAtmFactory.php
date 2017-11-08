@@ -10,10 +10,10 @@ $factory->define(App\HumanAtm::class, function (Faker $faker) {
     return [
          'user_id'=> $faker->randomElement($id),
          'phone_number'=> $faker->phoneNumber,
-         'bank_id' => $faker->randomElement($bank_id),
+         'bank_code' =>$faker->company,
          'account_number' => $faker->unique()->randomNumber(5).$faker->unique()->randomNumber(5),
          'surcharge' =>55,
-         'amount'=>$faker->unique()->randomNumber(4),
+         'amount'=>( $faker->unique()->randomNumber(4))/4,
          'location'=>$faker->address,
     ];
 });

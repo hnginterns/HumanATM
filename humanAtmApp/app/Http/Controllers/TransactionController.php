@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\WalletsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -34,22 +35,23 @@ class TransactionController extends Controller
 
 		$human_atm_amount = (int)$human_atm_profile->amount; 
 
-		$wallet =  Wallet::where('user_id', Auth::id())->first();
-		
+		// $wallet =  Wallet::where('user_id', Auth::id())->first();
 
-		if( $wallet){
-			$balance = $wallet->balance;
+		$wallet = new WalletsController;
+ 
+		$balance = $wallet->getBalance(); //get the wallet balance of the withdrawer
+
+		
+             if ($balance == 0){
+
+             	return redirect()->back()->with(['status' => "Sorry, Your wallet balance is empty,  kindly fund your wallet and try again"]);
+             }
 
 			if($balance < $human_atm_amount){
 
 				return redirect()->back()->with(['status' => "Sorry, Your wallet balance is less than the amount you want to withdraw kindly fund your wallet and try again"]);
 			}
 
-		}
-
-		else{
-			return redirect()->back()->with(['status' => "Sorry, Your wallet balance is empty,  kindly fund your wallet and try again"]);
-		}
 
 		return view('human-atm-profile', compact('human_atm_profile'));
 	}
@@ -137,7 +139,8 @@ class TransactionController extends Controller
 
 	public function showPaymentForm()
 	{   
-		$banks = Bank::all();
+		//$banks = Bank::all();
+		$banks = WalletsController::getBanks();
 		return view('payment', compact('banks'));
 	}
 
@@ -158,7 +161,7 @@ class TransactionController extends Controller
 			'user_id'       => Auth::id(),
 			'phone_number'  => $request->phone_number,
 			'amount'        => $request->amount,
-			'bank_id'     => $request->bank_id,
+			'bank_code'     => $request->bank_id,
 			'account_number'=> $request->account_number,
 			'location'      => $request->location,
 		]);
@@ -178,5 +181,7 @@ class TransactionController extends Controller
 			'location' => 'required',
 		];
 	}
+
+	
 
 }

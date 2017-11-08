@@ -72,8 +72,8 @@
                          
                         <select class="withdraw-expand form-control" name="bank_id">
                                 <option value="" selected="selected">Select Bank</option>
-                                @foreach ($banks as $bank)
-                                <option value="{{ $bank->id }}">{{ $bank->name }}</option>
+                                @foreach ($banks as $code => $bank)
+                                <option value="{{ $code }}">{{ $bank}}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('bank_id'))
