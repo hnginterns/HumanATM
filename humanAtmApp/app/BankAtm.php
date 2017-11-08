@@ -9,7 +9,7 @@ class BankAtm extends Model
     //
 
     protected $fillable = [
-    	'bank_id', 'name', 
+    	'bank_code', 'name', 
     	'location',
     ];
 

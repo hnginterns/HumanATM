@@ -10,7 +10,7 @@ class HumanAtm extends Model
     protected $fillable = [
     	'user_id', 'amount', 'location',
     	'phone_number', 'account_number',
-    	'bank_id',
+    	'bank_code',
     ];
 
     public function user()
