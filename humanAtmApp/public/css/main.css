@@ -380,6 +380,7 @@ margin-bottom:10%;
 }
 .headSegment-margin{
     margin-top:10%;
+    margin-walletinput%;
     margin-bottom:5%;
     color:#003767;
 }
@@ -564,14 +565,14 @@ Next user should start on the next line*/
 }
 
 .wallet-button{
-    width: 50%; 
+    width: 30%; 
     padding: 5px;
     text-align: center;
     font-size:1.3em;
     font-weight: 500;
     border-radius: 5px;
     color: #ffffff;
-    margin-left:25%;
+    /* margin-left:25%; */
     margin-bottom: 10%;
 }
 
@@ -580,7 +581,9 @@ Next user should start on the next line*/
     border-radius: 10px;;
     height:40px;
 }
-
+wallet-input2{
+    width:50%;
+}
 /*This css rules are for the profile, withdraw and payment pages by jeni*/
 
 

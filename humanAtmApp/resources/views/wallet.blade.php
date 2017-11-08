@@ -37,7 +37,7 @@
                                         <p class="walletLabel-below">Max. Amount  N50,000</p>
 
                                        
-                                        <input type="text" class="form-control wallet-input col-sm-6" placeholder="Account Number">
+                                        <input type="text" class="form-control wallet-input  col-sm-3" placeholder="Account Number">
                                         <p class="walletLabel-below text-right">Account Name</p>
 
                                         
