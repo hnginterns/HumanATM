@@ -28,6 +28,7 @@ class WalletsController extends Controller
         $response = \Unirest\Request::get('https://moneywave.herokuapp.com/v1/wallet/', $headers);
         $response = json_decode($response->raw_body, true);
         
+        
         foreach($response['data'] as $wallet){
             if($wallet['uref'] == $user->wallet_id){
                 $balance = $wallet['balance'];
@@ -59,7 +60,7 @@ class WalletsController extends Controller
            "expiry_month"=> $request->expiry_month,
            "expiry_year"=>  $request->expiry_year,
            "charge_auth"=>"PIN", //optional required where card is a local Mastercard
-           "apiKey" =>  env('API_KEY'),
+           "apiKey" =>  "ts_JQDHY3O8G5QWXBOR9XHF", //env('API_KEY'),
            "amount" => $request->amount,
            "fee"=>55,
            "medium"=> "web",
@@ -70,8 +71,9 @@ class WalletsController extends Controller
 
         $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer', $headers, $body);
         $response = json_decode($response->raw_body, TRUE);
-        //var_dump($response);
-        //die();
+         
+        //dd($response);
+
         if($response['status'] == 'success') {
             $transfer = $response['data']['transfer'];
             $transRef = $transfer['flutterChargeReference'];
@@ -95,7 +97,10 @@ class WalletsController extends Controller
 
     
     public function otp(Request $request)
-    {
+    {   
+
+        // validate and ensure the user enetered the otp please
+        //before proceeding
         \Unirest\Request::verifyPeer(false);
 
             $headers = array('content-type' => 'application/json');
@@ -107,6 +112,8 @@ class WalletsController extends Controller
 
             $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer/charge/auth/card', $headers, $body);
             $response = json_decode($response->raw_body, true);
+
+            //dd($response);
             if($response['status'] == 'success') {
                 $response = $response['data']['transfer']['flutterChargeResponseMessage'];
                 return $response;
@@ -121,32 +128,6 @@ class WalletsController extends Controller
             // return redirect('admin')->with('status', $response);
     }
 
-    public function processWithdraw(Request $request, $human_atm)
-	{      
-
-		$human_atm_id = $human_atm;
-		$validation = Validator::make($request->all(), $this->withdrawFormRules());
-
-		if ($validation->fails()){
-			return \Redirect::back()->withInput()->withErrors( $validation->messages() );
-		}
-
-		$createWithdrawalRequest = Withdrawal::create([
-			'withdrawer_id' => Auth::id(),
-			'payer_id'      => $human_atm_id,
-			'phone_number'  => $request->phone_number,
-			'bank_id'       => $request->bank_id,
-			'amount'        => (int)$request->amount + 150,
-			'account_number'=> $request->account_number,
-			'location'      => $request->location,
-		]);
-
-		if ($createWithdrawalRequest)
-		{
-			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
-		}
-
-	}
 
     public function walletToAccount(Request $request){
          $token = Wallet::getToken();
@@ -259,6 +240,47 @@ class WalletsController extends Controller
             } else {
                 return redirect()->action('pagesController@failed', $response);
             }
+        }
+    }
+   
+   /**
+   * this function does nothing serious
+   * it only makes the wallet.blade.php dynamic
+   */
+    public function walletBalance()
+    {
+
+    $wallet = Wallet::where('user_id', Auth::id())->first();
+    if ($wallet){
+       $balance = $wallet->balance ;
+
+       return view('wallet', compact('balance'));
+    }
+    $balance = 0;
+    return view('wallet', compact('balance'));
+    }
+
+
+    public function fakeWallet(){
+
+        $id = Auth::id();
+
+        $wallet = Wallet::where('user_id', $id)->first();
+
+        if($wallet)
+        {
+            return back();
+        }
+
+        $fund_wallet  = Wallet::create([
+
+          'user_id' => $id,
+          'balance' => '20000',
+        ]);
+
+        if($fund_wallet){
+
+            echo "wallet funded";
         }
     }
 

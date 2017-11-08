@@ -1,8 +1,39 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('title')
 <title> Withdraw | HumanATM</title>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @section('content')
     <section>
@@ -84,3 +115,4 @@
 </body>
 @endsection
 
+ --}}
