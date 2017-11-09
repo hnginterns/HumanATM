@@ -113,14 +113,17 @@ class WalletsController extends Controller
         $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer/charge/auth/card', $headers, $body);
         $response = json_decode($response->raw_body, true);
 
-        dd($response);
-        if($response['status'] == 'success') {
-            $response = $response['data']['transfer']['flutterChargeResponseMessage'];
-            return $response;
-        }
+
+
+        // dd($response);
+        // if($response['status'] == 'success') {
+        //     $response = $response['data']['flutterChargeResponseMessage'];
+        //     return $response;
+        // }
+        //dd($response['data']['flutterChargeResponseMessage']);
 
         if(isset($response['data'])) {
-            Session::flash('status', $response['status'].": ".$response['data']);
+            Session::flash('status', $response['data']['flutterChargeResponseMessage']);
             return redirect('/fundwallet');
         }
         Session::flash('status', $response['status']);

@@ -25,9 +25,9 @@ class CreateUsersTable extends Migration
         });
 
         DB::table('users')->insert([
-             'email' => "oriebizline@gmail.com",
+             'email' => "humanatm@gmail.com",
              'wallet_id' => substr(md5(uniqid(rand(1, 1000))) , 0, 7),
-             'name' => "Orie Chinedu",
+             'name' => "HumanATM Admin ",
              'password' => bcrypt('123456'),
              'role' => 1,
         ]);
