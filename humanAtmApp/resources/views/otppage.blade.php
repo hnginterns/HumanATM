@@ -6,9 +6,9 @@
     @endsection
 
     @section('content')
-        <div class="container-fluid daily-margin">
+        <div class="container-fluid blue-fall outerBox-margin">
         @include('header')
-        <div class="row">
+        <div class=" box-margin">
             <div class="col-sm-offset-3 col-sm-6 otp-rectangle-box" >
                 <div class="otp-text">
                     <h4><b>ENTER OTP</b></h4>
