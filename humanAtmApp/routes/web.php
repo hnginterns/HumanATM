@@ -92,6 +92,10 @@ Route::get('/register/ref={code}', function($code){
 		 return view('auth.register',compact('code'));
 	});
 
+Route::get('/emailinvite', function(){
+		
+			 return view('inviteemail');
+		});
 
 
 

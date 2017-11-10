@@ -1182,4 +1182,71 @@ Next user should start on the next line*/
     margin-left: 30px;    
 }
 }
+  /* email-page rules */
+
+  header {
+    padding: 154px 0 100px;
+    height: 400px;
+  }
+  
+  .bg-primary{
+    background-color: #0F3B75 !important;
+  }
+  
+  .navbar{
+    height: 80px;
+    background-color: #fff;
+  }
+  
+  .navbar-brand{
+     color: #000;
+     transform: translateX(-50%);
+      left: 50%;
+      position: absolute;
+  }
+  
+  .text-center h1{
+    font-size: 4rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .signature-right{
+    margin-bottom:40px;
+  }
+  .about {
+    padding-top: 50px;
+  }
+  .reduce{
+      margin-top:-50px;
+      color:white;
+  }
+  .email-head{
+      background: #0F3B75;
+  }
+  .end{
+      background: #0F3B75;
+      height:40px;
+  }
+  .btn-btn{
+      width:130px;
+  }
+  .col-lg-8 h2 {
+    padding-bottom: 30px;
+  }
+  
+  .space {
+    margin: 40px 40px 40px 40px;
+  }
+  
+  .centered {
+    text-align: center;
+    font-size: 5rem;
+    padding: 10px 70px;
+  }
+  
+   
+  @media only screen and (min-width: 400px){
+   background-color:black;
+  }
+  
   
