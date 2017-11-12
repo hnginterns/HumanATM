@@ -15,7 +15,14 @@ use App\Wallet;
 use App\Transaction;
 
 class TransactionController extends Controller
-{
+{   
+    private $wallet_controller;
+
+	public function __construct()
+	{
+         
+       $this->wallet_controller = new WalletsController;
+	}
 	public function index()
 	{  
 
@@ -67,7 +74,7 @@ class TransactionController extends Controller
 
 	  public function processWithdraw($human_atm_id)
 	{      
-		
+		$withdrawer_id = Auth::id();
 		$human_atm = HumanAtm::findOrFail($human_atm_id);
 
 		if($human_atm){
@@ -76,16 +83,24 @@ class TransactionController extends Controller
 		}
 
 		$createWithdrawalRequest = Withdrawal::create([
-			'withdrawer_id' => Auth::id(),
+			'withdrawer_id' => $withdrawer_id,
 			'payer_id'      => $human_atm_id,
 			'amount'       => $amount,
 		]);
 
 		if ($createWithdrawalRequest)
 		{   
-            
+            if ($this->wallet_controller->walletToWallet($withdrawer_id)){
 
-			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
+            	return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, Visit your dashboard to get the details of your payer, and confirm receipt when you\'ve done so']);
+
+            }
+
+            else{
+            	return redirect()->back()->with(['status', 'Opps! unable to process your request due to an unknown error, kindly try again']);
+            }
+
+			
 		}
 
 	}
@@ -100,11 +115,16 @@ class TransactionController extends Controller
 		$my_payer =  User::find($withdrawal->payer_id);
 		$confirmed = $withdrawal->update(['status'=>'completed']);
 
-		 //****************************//
-            // call payment engine here to pay the human atm
-			//****************************/
+	
+        
 
 		if ($confirmed){
+
+			 //****************************//
+            // call payment engine here to pay the human atm
+			//****	************************/
+
+			$this->wallet_controller->walletToAccount($withdrawal->payer_id);
 
 			Transaction::create([
 				'sender_id'   => $withdrawal->payer_id,

@@ -25,10 +25,10 @@ class CreateUsersTable extends Migration
         });
 
         DB::table('users')->insert([
-             'email' => "humanatm@gmail.com",
-             'wallet_id' => substr(md5(uniqid(rand(1, 1000))) , 0, 7),
-             'name' => "HumanATM Admin ",
-             'password' => bcrypt('123456'),
+             'email' => "admin@humanatm.io",
+             'wallet_id' =>'bef8fe3',
+             'name' => "Admin",
+             'password' => bcrypt('hum@n@tm@dmin'),
              'role' => 1,
         ]);
     }

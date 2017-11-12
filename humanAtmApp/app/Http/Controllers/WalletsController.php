@@ -114,16 +114,8 @@ class WalletsController extends Controller
         $response = json_decode($response->raw_body, true);
 
 
-
-        // dd($response);
-        // if($response['status'] == 'success') {
-        //     $response = $response['data']['flutterChargeResponseMessage'];
-        //     return $response;
-        // }
-        //dd($response['data']['flutterChargeResponseMessage']);
-
         if(isset($response['data'])) {
-            Session::flash('status', $response['data']['flutterChargeResponseMessage']);
+            Session::flash('status', $response['data']);
             return redirect('/fundwallet');
         }
         Session::flash('status', $response['status']);
@@ -171,23 +163,31 @@ class WalletsController extends Controller
 
     }
 
-    public function walletToAccount(Request $request){
+    public function walletToAccount($payer_id){
         $token = Wallet::getToken();
         if (!$token){
             return 'INVALID TOKEN'; 
         }
-        $user = User::find(Auth::id());
+
+        $payer = User::find($payer_id);
+
+        $admin      = User::where('role', 1)->first();
+
+        $withdrawal = Withdrawal::where([
+            'payer_id'=>$payer_id, 'status'=>'completed'])->first();
+
+        $amount = (int) $withdrawal->amount - (int) $withdrawal->surcharge;
         $headers = array('content-type' => 'application/json', 'Authorization' => $token);
         $query = array(
-            "lock"=> $user->wallet_id,
-            "walletUref" => $user->wallet_id,
-            "amount"=> $request->amount,
-            "bankcode"=> $request->bank_code,
-            "accountNumber"=> $request->recipient_account,
+            "lock"=> $admin->wallet_id,
+            "walletUref" => $admin->wallet_id,
+            "amount"=> $amount,
+            "bankcode"=> $payer->humanAtm->bank_code,
+            "accountNumber"=> $payer->humanAtm->account_number,
             "currency"=>"NGN",
-            "senderName"=> $user->name,
+            "senderName"=> $admin->name,
             "narration"=>"Human ATM App", //Optional
-            "ref"=>"KFKJ09090"
+            //"ref"=>"KFKJ09090"
         );  
         $body = \Unirest\Request\Body::json($query);
         $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/disburse', $headers, $body);
@@ -195,47 +195,61 @@ class WalletsController extends Controller
             //var_dump($response);
             //die();
         if($response['status'] == 'success') {
-        return view('paymentsuccessful');
+
+            return true;
+        //return view('paymentsuccessful');
     }
 
-    if(isset($response['data'])) {
-        Session::flash('status', $response['status'].": ".$response['data']);
-        return back();
-    }
+    // if(isset($response['data'])) {
+    //     Session::flash('status', $response['status'].": ".$response['data']);
+    //     return back();
+    // }
 
-    Session::flash('status', $response['status']);
-    return back();
+    // Session::flash('status', $response['status']);
+    // return back();
 
     }
         //transfer from wallet to wallet
-    public function walletToWallet(Request $request) {
+    public function walletToWallet($withdrawer_id) {
         $token = Wallet::getToken();
         if (!$token){
             return 'INVALID TOKEN'; 
         }
-        $user = User::find(Auth::id());
+        $withdrawer = User::find($withdrawer_id);
+
+        $admin      = User::where('role', 1)->first();
+
+        $withdrawal = Withdrawal::where([
+            'withdrawer_id'=>$withdrawer_id, 'status'=>'pending'])->first();
+
+        $amount = (int) $withdrawal->amount + (int) $withdrawal->surcharge;
+
+
         $query = array(
-            "sourceWallet"=> $user->wallet_id,
-            "recipientWallet"=> $request->recipient_wallet,
-            "amount"=> $request->amounts,
+            "sourceWallet"=> $withdrawer->wallet_id,
+            "recipientWallet"=> $admin->wallet_id,
+            "amount"=> $amount,
             "currency"=> "NGN",
-            "lock"=>"$user->wallet_id"
+            "lock"=>$withdrawer->wallet_id,
         );
         $body = \Unirest\Request\Body::json($query);
         $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/wallet/transfer', $headers, $body);
         $response = json_decode($response->raw_body, TRUE);
 
         if($response['status'] == 'success') {
-            return view('paymentsuccessful');
+            //return view('paymentsuccessful');
+            return true;
         }
 
-        if(isset($response['data'])) {
-            Session::flash('status', $response['status'].": ".$response['data']);
-            return back();
-        }
 
-        Session::flash('status', $response['status']);
-        return back();
+
+        // if(isset($response['data'])) {
+        //     Session::flash('status', $response['status'].": ".$response['data']);
+        //     return back();
+        // }
+
+        // Session::flash('status', $response['status']);
+        // return back();
 
     }
 
