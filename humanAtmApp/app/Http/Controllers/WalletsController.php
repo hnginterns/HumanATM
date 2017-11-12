@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Session;
 use App\Wallet;
 use App\User;
+use App\Withdrawal;
 use Auth;
 
 class WalletsController extends Controller
@@ -113,7 +114,7 @@ class WalletsController extends Controller
         $response = \Unirest\Request::post('https://moneywave.herokuapp.com/v1/transfer/charge/auth/card', $headers, $body);
         $response = json_decode($response->raw_body, true);
 
-
+        //dd($response);
         if(isset($response['data'])) {
             Session::flash('status', $response['data']);
             return redirect('/fundwallet');
@@ -224,7 +225,7 @@ class WalletsController extends Controller
 
         $amount = (int) $withdrawal->amount + (int) $withdrawal->surcharge;
 
-
+        $headers = array('content-type' => 'application/json', 'Authorization' => $token);
         $query = array(
             "sourceWallet"=> $withdrawer->wallet_id,
             "recipientWallet"=> $admin->wallet_id,
