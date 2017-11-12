@@ -73,7 +73,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/fundwallet', 'WalletsController@showFundWallet');
 	Route::post('/fund','WalletsController@cardToWallet');
 	Route::post('/otp','WalletsController@otp');
-	Route::get('wallet', 'WalletsController@walletBalance');
+	Route::get('wallet', 'WalletsController@showWalletToAccount');
+	Route::post('fundaccount', 'WalletsController@walletToAccount');
 });
 
 	

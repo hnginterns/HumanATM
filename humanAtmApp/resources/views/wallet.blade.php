@@ -29,8 +29,13 @@
                        
                         <div class="row daily-margin">
                             <div class="col-md-10 col-md-offset-1">
+                                @if (Session::has('status'))
+                                    <h4 class="alert alert-danger">{{Session::get('status')}}</h4>
+                                
+                                @endif
 
-                                <form action="#" class="wallet-formMargin" method="get">
+                                <form action="fundaccount" class="wallet-formMargin" method="post">
+                                    {{ csrf_field() }}
                                     <div class="form-group ">
                                 
                                         <input type="text" class="form-control wallet-input col-sm-6" placeholder="Amount  (Max=50,000)">
@@ -42,16 +47,11 @@
 
                                         
                                         
-                                        <select class="wallet-expand form-control" >
+                                        <select class="wallet-expand form-control" name="bank_code">
                                                 <option value="" selected="selected">Select Bank</option>
-                                                <option value="first Bank of Nigeria" >First Bank of Nigeria</option>
-                                                <option value="union Bank of Nigeria">Union Bank of Nigeria</option>
-                                                <option value="united Bank for Africa">United Bank for Africa</option>
-                                                <option value="unity Bank plc">Unity Bank plc</option>
-                                                <option value="fidelity Bank Nigeria">Fidelity Bank Nigeria</option>
-                                                <option value="first City Monument Bank">First City Monument Bank</option>
-                                                <option value="guaranty Trust_Bank">Guaranty Trust Bank</option>
-                                                <option value="heritage Bank Plc">Heritage Bank plc</option>
+                                                @foreach($banks as $bank_id=>$bank_name)
+                                                    <option value="{{$bank_id}}" >{{$bank_name}}</option>
+                                                @endforeach
                                     </select>
                                     
                                     <p class="text-center wallet-text">
