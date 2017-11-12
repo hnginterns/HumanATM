@@ -116,7 +116,7 @@ class WalletsController extends Controller
 
         //dd($response);
         if(isset($response['data'])) {
-            Session::flash('status', $response['data']);
+            Session::flash('status', $response['status']);
             return redirect('/fundwallet');
         }
         Session::flash('status', $response['status']);
