@@ -6,6 +6,7 @@ use App\Http\Controllers\WalletsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Session;
 use App\HumanAtm;
 use App\BankAtm;
 use App\Withdrawal;
@@ -15,11 +16,18 @@ use App\Wallet;
 use App\Transaction;
 
 class TransactionController extends Controller
-{
+{   
+	private $wallet_controller;
+
+	public function __construct()
+	{
+
+		$this->wallet_controller = new WalletsController;
+	}
 	public function index()
 	{  
 
-		$human_atms = HumanAtm::all();
+		$human_atms = HumanAtm::where('status', 'pending')->get();
 
 		$human_atms->load('user');
 		$bank_atms = BankAtm::all()->load('bank');
@@ -38,19 +46,19 @@ class TransactionController extends Controller
 		// $wallet =  Wallet::where('user_id', Auth::id())->first();
 
 		$wallet = new WalletsController;
- 
+
 		$balance = $wallet->getBalance(); //get the wallet balance of the withdrawer
 
 		
-             if ($balance == 0){
+		if ($balance == 0){
 
-             	return redirect()->back()->with(['status' => "Sorry, Your wallet balance is empty,  kindly fund your wallet and try again"]);
-             }
+			return redirect()->back()->with(['status' => "Sorry, Your wallet balance is empty,  kindly fund your wallet and try again"]);
+		}
 
-			if($balance < $human_atm_amount){
+		if($balance < $human_atm_amount){
 
-				return redirect()->back()->with(['status' => "Sorry, Your wallet balance is less than the amount you want to withdraw kindly fund your wallet and try again"]);
-			}
+			return redirect()->back()->with(['status' => "Sorry, Your wallet balance is less than the amount you want to withdraw kindly fund your wallet and try again"]);
+		}
 
 
 		return view('human-atm-profile', compact('human_atm_profile'));
@@ -59,15 +67,15 @@ class TransactionController extends Controller
 	public function confirmProceed($human_atm_id)
 	{   
 		
-        $human_atm = HumanAtm::findOrFail($human_atm_id);
+		$human_atm = HumanAtm::findOrFail($human_atm_id);
 
 		return view('proceed-withdraw', compact('human_atm_id', 'human_atm' ));
 
 	}
 
-	  public function processWithdraw($human_atm_id)
+	public function processWithdraw($human_atm_id)
 	{      
-		
+		$withdrawer_id = Auth::id();
 		$human_atm = HumanAtm::findOrFail($human_atm_id);
 
 		if($human_atm){
@@ -76,16 +84,26 @@ class TransactionController extends Controller
 		}
 
 		$createWithdrawalRequest = Withdrawal::create([
-			'withdrawer_id' => Auth::id(),
+			'withdrawer_id' => $withdrawer_id,
 			'payer_id'      => $human_atm_id,
 			'amount'       => $amount,
 		]);
 
 		if ($createWithdrawalRequest)
 		{   
-            
+			if ($this->wallet_controller->walletToWallet($withdrawer_id)){
 
-			return redirect()->back()->with(['status' => 'Your withdrawal request has been sumbitted, wait as we process it in a moment!']);
+				
+				Session::flash('status', 'Your withdrawal request has been sumbitted, the details of your payer is on your dashboard, kindly confirm receipt when you\'ve done so');
+				return redirect('/dashboard');
+
+			}
+
+			else{
+				return redirect()->back()->with(['status', 'Opps! unable to process your request due to an unknown error, kindly try again']);
+			}
+
+			
 		}
 
 	}
@@ -97,14 +115,28 @@ class TransactionController extends Controller
 
 
 		$withdrawal = Withdrawal::find($withdrawal_id);
-		$my_payer =  User::find($withdrawal->payer_id);
-		$confirmed = $withdrawal->update(['status'=>'completed']);
 
-		 //****************************//
-            // call payment engine here to pay the human atm
-			//****************************/
+		$my_payer =  User::find($withdrawal->payer_id);
+
+
+		
+       //if the user says he has recieved the cash, change the status in the withdrawal table
+		
+		$confirmed = $withdrawal->update(['status'=>'completed']);
+		
+        //Change the status in human_atms table to prevent this from showing in the location listing
+		HumanAtm::find($withdrawal->payer_id)->update(['status'=>'completed']); 
+
 
 		if ($confirmed){
+
+			 //****************************//
+            // call payment engine here to pay the human atm
+			
+
+			//$this->wallet_controller->walletToAccount($withdrawal->payer_id);
+
+			//****************************//
 
 			Transaction::create([
 				'sender_id'   => $withdrawal->payer_id,
@@ -113,13 +145,17 @@ class TransactionController extends Controller
 				'status'      => 'completed',
 			]);
 
-			return redirect()->back()->with(['status' => 'You have confirmed that you have recieved the sum of '. ' NGN'. $withdrawal->amount. '  from '. $my_payer->name. ' Thanks for using our service!, Don\'t forget to hit the invite button to share your testimony with your friends']);
+			
+			Session::flash('status', 'You have confirmed that you have recieved the sum of '. ' NGN'. $withdrawal->amount. '  from '. $my_payer->name. ' Thanks for using our service!, Don\'t forget to hit the invite button to share your testimony with your friends');
+
+			return redirect('/dashboard');
+
 		}
 	}
 
 	public function rejectPayment($payment_id)
 	{
-		// $deleted = Withdrawal::findOrFail($payment_id)->delete();
+		
 		$w = Withdrawal::findOrFail($payment_id);
 
 		$payer_id = $w->payer_id;

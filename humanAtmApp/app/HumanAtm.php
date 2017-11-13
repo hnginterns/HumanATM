@@ -10,7 +10,7 @@ class HumanAtm extends Model
     protected $fillable = [
     	'user_id', 'amount', 'location',
     	'phone_number', 'account_number',
-    	'bank_code',
+    	'bank_code', 'status',
     ];
 
     public function user()
@@ -22,5 +22,9 @@ class HumanAtm extends Model
     {
         return $this->belongsTo(Bank::class);
 
+    }
+    public function withdrawal()
+    {
+        return $this->hasMany(Withdrawal::class);
     }
 }

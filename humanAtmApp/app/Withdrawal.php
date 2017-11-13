@@ -10,4 +10,9 @@ class Withdrawal extends Model
     	'payer_id', 'withdrawer_id',
     	'amount',  'status',
     ];
+
+    public function humanAtm()
+    {
+    	return $this->belongsTo(HumanAtm::class);
+    }
 }
