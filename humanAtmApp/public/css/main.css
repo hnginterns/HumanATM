@@ -882,10 +882,7 @@ Next user should start on the next line*/
 }
 /* rules for other pages header and footer*/
 
-#header-color2 > li > a{
-    /* color:#0F3B75;
-    font-weight: bold; */
-}
+
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,.navbar-nav > li > a:hover {
     text-decoration: none;
@@ -1194,14 +1191,14 @@ Next user should start on the next line*/
   }
   
   .navbar{
-    height: 80px;
+    height: 40px;
     background-color: #fff;
   }
   
   .navbar-brand{
      color: #000;
      transform: translateX(-50%);
-      left: 50%;
+      left: 10%;
       position: absolute;
   }
   
