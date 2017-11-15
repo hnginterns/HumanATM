@@ -83,9 +83,6 @@ Route::group(['middleware' => 'auth'], function () {
 		
 			return view('auth.register',compact('code'));
 		});
-	// Route::get('/{name}', function ($name){
-	// 	return view($name);
-	// });
 
 Route::get('/emailinvite', function(){
 		
