@@ -86,7 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/emailinvite', function(){
 		
-			 return view('inviteemail');
+			 return view('emails.inviteemail');
 		});
 
 

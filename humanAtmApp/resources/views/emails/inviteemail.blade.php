@@ -41,7 +41,7 @@
                             irrespective of their location.
                             </p>
                             <div class="space"></div>
-                            <p class="lead">You are just one click away from getting freed from all the hassles associated with withdrawing or paying in money into your account. </p>
+                            <p class="lead">You are just one click away from being free from all the hassles associated with withdrawing or paying in money into your account. </p>
                             <p class="lead">Kindly click on the button below to join a world of hassle free transactions. </p>
                         </div>
                         
